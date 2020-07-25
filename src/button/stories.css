@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://kit-free.fontawesome.com/releases/latest/css/free.min.css');
+
+:root {
+  --mdc-theme-error: #ff2222;
+  --mdc-theme-on-error: white;
+  --mdc-theme-secondary: #ff9900;
+}
+button { margin: 1em; }
+
+.demo-button-shaped { border-radius: 18px; }
+
+.mdc-button.mdc-theme--secondary	{
+  color: var(--mdc-theme-secondary, #ff9900);
+}
+.mdc-button.mdc-theme--secondary-bg,
+.mdc-button.mdc-theme--on-secondary {
+  background-color: var(--mdc-theme-secondary, #ff9900);
+}
+.mdc-button.mdc-theme--secondary .mdc-button__ripple::before,
+.mdc-button.mdc-theme--secondary .mdc-button__ripple::after {
+  background-color: var(--mdc-theme-secondary, #ff9900);
+}

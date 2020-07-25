@@ -1,0 +1,27 @@
+{
+  "name": "@pmwc/pmwc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preact": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "classnames": "^2.2.6",
+    "material-components-web": "^7.0.0",
+    "preact": "^10.4.6",
+    "react": "^16.13.1"
+  }
+}

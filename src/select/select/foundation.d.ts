@@ -1,0 +1,27 @@
+import { h } from 'preact';
+import { FloatingLabelApi } from '@rmwc/floating-label';
+import { MenuApi } from '@rmwc/menu';
+import { SelectIconApi } from '../select-icon';
+import { SelectProps } from './';
+export declare const useSelectFoundation: (props: SelectProps & React.HTMLProps<any>) => {
+    rootEl: import("@rmwc/base").FoundationElement<any, HTMLElement>;
+    selectedTextEl: import("@rmwc/base").FoundationElement<any, HTMLElement>;
+    notchWidth: number | undefined;
+    menuOpen: boolean;
+    lineRippleActive: boolean;
+    lineRippleCenter: number;
+    floatLabel: boolean;
+    selectedIndex: number;
+    selectedTextContent: string;
+    setFloatingLabel: (api: FloatingLabelApi | null) => void;
+    setMenu: (api: MenuApi) => void;
+    setLeadingIcon: (api: SelectIconApi | null) => void;
+    setNativeControl: (el: HTMLSelectElement) => void;
+    handleFocus: (evt: any) => void;
+    handleBlur: (evt: any) => void;
+    handleClick: (evt: any) => void;
+    handleKeydown: (evt: any) => void;
+    handleMenuClosed: () => void;
+    handleMenuOpened: () => void;
+    handleMenuSelected: (index: number) => void;
+};

@@ -1,46 +1,48 @@
-import { __assign, __rest } from "tslib";
-import { useEffect, useRef } from 'react';
+import { h } from 'preact'
+import { useEffect, useRef } from 'preact/compat';
 import { useFoundation } from '@rmwc/base';
 import { MDCNotchedOutlineFoundation } from '@material/notched-outline';
-export var useNotchedOutlineFoundation = function (props) {
-    var _a = useFoundation({
-        props: props,
-        elements: {
-            rootEl: true,
-            notchedEl: true
-        },
-        foundation: function (_a) {
-            var rootEl = _a.rootEl, notchedEl = _a.notchedEl;
-            return new MDCNotchedOutlineFoundation({
-                addClass: function (className) { return rootEl.addClass(className); },
-                removeClass: function (className) { return rootEl.removeClass(className); },
-                setNotchWidthProperty: function (width) {
-                    return notchedEl.setStyle('width', width + 'px');
-                },
-                removeNotchWidthProperty: function () { return notchedEl.setStyle('width', ''); }
-            });
-        }
-    }), foundation = _a.foundation, elements = __rest(_a, ["foundation"]);
-    var rootEl = elements.rootEl;
-    var labelRef = useRef();
-    useEffect(function () {
-        !!props.notch ? foundation.notch(props.notch) : foundation.closeNotch();
-    }, [props.notch, foundation]);
-    useEffect(function () {
-        var _a;
-        labelRef.current =
-            ((_a = rootEl.ref) === null || _a === void 0 ? void 0 : _a.querySelector('.mdc-floating-label')) || undefined;
-        var label = labelRef.current;
-        if (label) {
-            label.style.transitionDuration = '0s';
-            rootEl.addClass(MDCNotchedOutlineFoundation.cssClasses.OUTLINE_UPGRADED);
-            requestAnimationFrame(function () {
-                label && (label.style.transitionDuration = '');
-            });
-        }
-        else {
-            rootEl.addClass(MDCNotchedOutlineFoundation.cssClasses.NO_LABEL);
-        }
-    }, [rootEl]);
-    return __assign({ foundation: foundation }, elements);
+
+export const useNotchedOutlineFoundation = (props) => {
+  const { foundation, ...elements } = useFoundation({
+    props,
+    elements: {
+      rootEl: true,
+      notchedEl: true
+    },
+    foundation: ({ rootEl, notchedEl }) => {
+      return new MDCNotchedOutlineFoundation({
+        addClass: (className) => rootEl.addClass(className),
+        removeClass: (className) => rootEl.removeClass(className),
+        setNotchWidthProperty: (width) =>
+          notchedEl.setStyle('width', width + 'px'),
+        removeNotchWidthProperty: () => notchedEl.setStyle('width', '')
+      });
+    }
+  });
+
+  const { rootEl } = elements;
+  const labelRef = useRef();
+
+  useEffect(() => {
+    !!props.notch ? foundation.notch(props.notch) : foundation.closeNotch();
+  }, [props.notch, foundation]);
+
+  useEffect(() => {
+    labelRef.current =
+      rootEl.ref?.querySelector('.mdc-floating-label') || undefined;
+    const label = labelRef.current;
+
+    if (label) {
+      label.style.transitionDuration = '0s';
+      rootEl.addClass(MDCNotchedOutlineFoundation.cssClasses.OUTLINE_UPGRADED);
+      requestAnimationFrame(() => {
+        label && (label.style.transitionDuration = '');
+      });
+    } else {
+      rootEl.addClass(MDCNotchedOutlineFoundation.cssClasses.NO_LABEL);
+    }
+  }, [rootEl]);
+
+  return { foundation, ...elements };
 };

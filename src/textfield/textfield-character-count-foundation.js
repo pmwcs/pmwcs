@@ -1,25 +1,31 @@
-import { __assign, __read, __rest } from "tslib";
-import { useState } from 'react';
+import { useState } from 'preact/hooks';
 import { useFoundation } from '@rmwc/base';
 import { MDCTextFieldCharacterCounterFoundation } from '@material/textfield';
-export var useTextFieldCharacterCountFoundation = function (props) {
-    var _a = __read(useState(), 2), content = _a[0], setContent = _a[1];
-    var _b = useFoundation({
-        props: props,
-        api: function (_a) {
-            var foundation = _a.foundation;
-            return {
-                getFoundation: function () { return foundation; }
-            };
-        },
-        elements: {},
-        foundation: function () {
-            return new MDCTextFieldCharacterCounterFoundation({
-                setContent: function (content) {
-                    setContent(content);
-                }
-            });
+
+export const useTextFieldCharacterCountFoundation = (
+  props
+) => {
+  const [content, setContent] = useState();
+
+  const { foundation, ...elements } = useFoundation({
+    props,
+    api: ({foundation}) => {
+      return {
+        getFoundation: () => foundation
+      };
+    },
+    elements: {},
+    foundation: () => {
+      return new MDCTextFieldCharacterCounterFoundation({
+        setContent: (content) => {
+          setContent(content);
         }
-    }), foundation = _b.foundation, elements = __rest(_b, ["foundation"]);
-    return __assign({ content: content }, elements);
+      });
+    }
+  });
+
+  return {
+    content,
+    ...elements
+  };
 };

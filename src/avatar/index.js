@@ -52,7 +52,7 @@ const AvatarRoot = withRipple({})(
         'pmwc-avatar--has-image': hasImage
       }
     ]);
-    // console.log({rest, className})
+
     return <Icon {...rest} basename='' className={className} ref={ref} />;
   })
 );

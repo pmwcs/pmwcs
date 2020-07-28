@@ -1,18 +1,20 @@
+import {h} from 'preact';
+import { EventType, SpecificEventListener } from '@material/base/types';
 import { MDCFormFieldFoundation } from '@material/form-field';
-import { useFoundation } from '@rmwc/base';
-export var useFormfieldFoundation = function (props) {
-    useFoundation({
-        props: props,
-        elements: {},
-        foundation: function () {
-            // For RMWC, the entire foundation is a noop. Interactions and ripples are controlled
-            // on the components themselves
-            return new MDCFormFieldFoundation({
-                registerInteractionHandler: function (evtType, handler) { },
-                deregisterInteractionHandler: function (evtType, handler) { },
-                activateInputRipple: function () { },
-                deactivateInputRipple: function () { }
-            });
-        }
-    });
+import { useFoundation } from '@pmwc/base';
+
+export const useFormfieldFoundation = (props) => {
+  useFoundation({
+    props,
+    elements: {},
+    foundation: () =>
+      // For RMWC, the entire foundation is a noop. Interactions and ripples are controlled
+      // on the components themselves
+      new MDCFormFieldFoundation({
+        registerInteractionHandler: () => {},
+        deregisterInteractionHandler: () => {},
+        activateInputRipple: () => {},
+        deactivateInputRipple: () => {}
+      })
+  });
 };

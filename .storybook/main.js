@@ -7,7 +7,6 @@ module.exports = {
     return _config
   },
   stories: [
-    '../stories/**/*.stories.js',
     '../src/**/*.stories.js'
   ],
   addons: [

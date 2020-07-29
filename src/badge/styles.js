@@ -1,1 +1,1 @@
-import '@rmwc/badge/badge.css';
+import '@pmwc/badge/badge.css';

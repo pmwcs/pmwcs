@@ -1,0 +1,66 @@
+.pmwc-badge {
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--mdc-theme-on-error);
+  background: var(--mdc-theme-error);
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 9999px;
+  transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  transform: none;
+  min-width: 1.5rem;
+  box-sizing: border-box;
+  padding: 0 0.3125rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  transform: scale(1);
+  margin-top: var(--pmwc-badge-inset, 0);
+  text-transform: uppercase;
+}
+
+.pmwc-badge--no-content {
+  transform: scale(0.5);
+  font-size: 0;
+}
+
+.pmwc-badge--exited {
+  transform: scale(0);
+  opacity: 0;
+  font-size: 0;
+}
+
+.pmwc-badge--align-start,
+.pmwc-badge--align-end {
+  position: absolute;
+  top: -0.75rem;
+  z-index: 1;
+}
+
+.pmwc-badge--align-start,
+[dir='rtl'] .pmwc-badge--align-end {
+  left: -0.75rem;
+  margin-left: var(--pmwc-badge-inset, 0);
+  right: auto;
+}
+
+.pmwc-badge--align-end,
+[dir='rtl'] .pmwc-badge--align-start {
+  right: -0.75rem;
+  margin-right: var(--pmwc-badge-inset, 0);
+  left: auto;
+}
+
+.pmwc-badge--align-inline {
+  margin: 0.5rem;
+}
+
+.pmwc-badge-anchor {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+}

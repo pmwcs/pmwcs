@@ -4,7 +4,6 @@ import { useEffect, useState , useRef, useMemo} from 'preact/hooks'
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
 import { toCamel } from './utils/strings';
-import { MDCFoundation } from '@material/base';
 import { handleRef } from './component';
 
 const reactPropFromEventName = (evtName) => eventsMap[evtName] || evtName;

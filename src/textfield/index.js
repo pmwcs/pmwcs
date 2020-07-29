@@ -1,10 +1,5 @@
 import {h} from 'preact';
 import React from 'preact/compat';
-import {
-  MDCTextFieldCharacterCounterFoundation,
-  MDCTextFieldIconFoundation,
-  MDCTextFieldFoundation
-} from '@material/textfield';
 
 import { useClassNames, Tag, useId, createComponent } from '@rmwc/base';
 import { Icon } from '@rmwc/icon';

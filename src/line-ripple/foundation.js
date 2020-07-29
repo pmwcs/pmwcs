@@ -1,38 +1,53 @@
-import { __assign, __rest } from "tslib";
-import { useEffect } from 'react';
+import { useEffect } from 'preact/hooks';
 import { useFoundation } from '@rmwc/base';
 import { MDCLineRippleFoundation } from '@material/line-ripple';
-export var useLineRippleFoundation = function (props) {
-    var _a = useFoundation({
-        props: props,
-        elements: {
-            rootEl: true
-        },
-        foundation: function (_a) {
-            var rootEl = _a.rootEl;
-            return new MDCLineRippleFoundation({
-                addClass: function (className) { return rootEl.addClass(className); },
-                removeClass: function (className) { return rootEl.removeClass(className); },
-                hasClass: function (className) { return rootEl.hasClass(className); },
-                setStyle: function (propertyName, value) {
-                    return rootEl.setStyle(propertyName, value);
-                },
-                registerEventHandler: function (evtType, handler) { return rootEl.addEventListener(evtType, handler); },
-                deregisterEventHandler: function (evtType, handler) { return rootEl.removeEventListener(evtType, handler); }
-            });
-        }
-    }), foundation = _a.foundation, elements = __rest(_a, ["foundation"]);
-    var rootEl = elements.rootEl;
-    // Active
-    useEffect(function () {
-        props.active ? foundation.activate() : foundation.deactivate();
-    }, [props.active, foundation]);
-    // Center
-    useEffect(function () {
-        typeof props.center === 'number' &&
-            foundation.setRippleCenter(props.center);
-    }, [props.center, foundation]);
-    // Transition end
-    rootEl.setProp('onTransitionEnd', function (evt) { return foundation.handleTransitionEnd(evt); }, true);
-    return __assign({ foundation: foundation }, elements);
+import { EventType, SpecificEventListener } from '@material/base/types';
+import { LineRippleProps } from '.';
+
+export const useLineRippleFoundation = (props) => {
+  const { foundation, ...elements } = useFoundation({
+    props,
+    elements: {
+      rootEl: true
+    },
+    foundation: ({ rootEl }) => {
+      return new MDCLineRippleFoundation({
+        addClass: (className) => rootEl.addClass(className),
+        removeClass: (className) => rootEl.removeClass(className),
+        hasClass: (className) => rootEl.hasClass(className),
+        setStyle: (propertyName, value) =>
+          rootEl.setStyle(propertyName, value),
+        registerEventHandler: (
+          evtType,
+          handler
+        ) => rootEl.addEventListener(evtType, handler),
+        deregisterEventHandler: (
+          evtType,
+          handler
+        ) => rootEl.removeEventListener(evtType, handler)
+      });
+    }
+  });
+
+  const { rootEl } = elements;
+
+  // Active
+  useEffect(() => {
+    props.active ? foundation.activate() : foundation.deactivate();
+  }, [props.active, foundation]);
+
+  // Center
+  useEffect(() => {
+    typeof props.center === 'number' &&
+      foundation.setRippleCenter(props.center);
+  }, [props.center, foundation]);
+
+  // Transition end
+  rootEl.setProp(
+    'onTransitionEnd',
+    (evt) => foundation.handleTransitionEnd(evt),
+    true
+  );
+
+  return { foundation, ...elements };
 };

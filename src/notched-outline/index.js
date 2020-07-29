@@ -1,3 +1,4 @@
+import { h } from 'preact'
 import React from 'preact/compat';
 import { useNotchedOutlineFoundation } from './foundation';
 import { createComponent, Tag } from '@rmwc/base';

@@ -1,4 +1,4 @@
-import { h } from 'preact'
+import { h, Fragment } from 'preact'
 import { useEffect, useState } from 'preact/hooks'
 import { useRef, createPortal } from 'preact/compat';
 
@@ -46,5 +46,5 @@ export function PortalChild({
     return createPortal(children, portalEl);
   }
 
-  return <>{children}</>;
+  return <Fragment>{children}</Fragment>;
 }

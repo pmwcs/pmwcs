@@ -13,8 +13,6 @@ import {
 import {Button} from '@pmwc/button'
 import {IconButton} from '@pmwc/icon-button'
 import {Avatar} from '@pmwc/avatar'
-import avatarBlue from '@pmwc/avatar/images/avatar-blue.png'
-import avatarGrey from '@pmwc/avatar/images/avatar-grey.png'
 
 export default {
   title: 'Badge',
@@ -69,7 +67,7 @@ export const withOtherComponents = () => (
     <p>On Avatar</p>
     <BadgeAnchor>
       <Avatar
-        src={avatarBlue}
+        src="images/avatars/ironman.png"
         size="large"
         name="Tony Stark"
       />
@@ -78,7 +76,7 @@ export const withOtherComponents = () => (
 
     <BadgeAnchor>
       <Avatar
-        src={avatarGrey}
+        src="images/avatars/blackwidow.png"
         size="large"
         name="Natalia Alianovna Romanova"
         square

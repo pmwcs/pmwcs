@@ -5,14 +5,11 @@ import { h } from 'preact'
 import './styles.js'
 // import './stories.css'
 
-import avatarBlue from './images/avatar-blue.png'
-import avatarGreen from './images/avatar-green.png'
-import avatarGrey from './images/avatar-grey.png'
-import avatarOrange from './images/avatar-orange.png'
-import avatarPink from './images/avatar-pink.png'
-
 import { AvatarGroup, Avatar, AvatarCount } from './index.js'
-import { Typography } from '../typography'
+import { Typography } from '@pmwc/typography'
+import { Button } from '@pmwc/button'
+import { Chip } from '@pmwc/chip'
+import { TextField } from '@pmwc/textfield'
 
 export default {
   title: 'Avatar',
@@ -24,27 +21,27 @@ export const all = () => (
     <Typography use='body1'>Avatar</Typography>
 
     <Avatar
-      src={avatarGreen}
+      src="images/avatars/blackwidow.png"
       size="xsmall"
       name="Natalia Alianovna Romanova"
     />
     <Avatar
-      src={avatarPink}
+      src="images/avatars/hulk.png"
       size="small"
       name="Bruce Banner"
     />
     <Avatar
-      src={avatarBlue}
+      src="images/avatars/thor.png"
       size="medium"
       name="Thor Odinson"
     />
     <Avatar
-      src={avatarOrange}
+      src="images/avatars/captainamerica.png"
       size="large"
       name="Steve Rogers"
     />
     <Avatar
-      src={avatarGrey}
+      src="images/avatars/ironman.png"
       size="xlarge"
       name="Tony Stark"
     />
@@ -60,14 +57,14 @@ export const all = () => (
     <br/>
 
     <Avatar
-      src={avatarGrey}
+      src="images/avatars/blackwidow.png"
       size="large"
       name="Natalia Alianovna Romanova"
       square
     />
 
     <Avatar
-      src={avatarGreen}
+      src="images/avatars/google.svg"
       size="large"
       contain
       name="Google"
@@ -78,13 +75,13 @@ export const all = () => (
 
     <AvatarGroup>
       <Avatar
-        src={avatarOrange}
+        src="images/avatars/captainamerica.png"
         name="Steve Rogers"
         size="large"
         interactive
       />
       <Avatar
-        src={avatarPink}
+        src="images/avatars/ironman.png"
         name="Tony Stark"
         size="large"
         interactive
@@ -96,19 +93,50 @@ export const all = () => (
 
     <AvatarGroup dense>
       <Avatar
-        src={avatarOrange}
+        src="images/avatars/captainamerica.png"
         name="Steve Rogers"
         size="large"
         interactive
       />
       <Avatar
-        src={avatarPink}
+        src="images/avatars/ironman.png"
         name="Tony Stark"
         size="large"
         interactive
       />
-      <AvatarCount size="large" value={12} interactive />
+      <AvatarCount size="large" overflow value={4} interactive />
     </AvatarGroup>
 
+  </section>
+)
+
+export const withOtherComponents = () => (
+  <section>
+    <Button
+      label="Enlist now!"
+      icon={
+        <Avatar
+          src="images/avatars/captainamerica.png"
+          name="Steve Rogers"
+        />
+      }
+    />
+
+    <Chip
+      label="Hulk Smash"
+      icon={<Avatar src="images/avatars/hulk.png" name="Bruce Banner" />}
+    />
+
+    <TextField
+      label="Message Natalia..."
+      outlined
+      icon={
+        <Avatar
+          src="images/avatars/blackwidow.png"
+          name="Natalia Alianovna Romanova"
+          square
+        />
+      }
+    />
   </section>
 )

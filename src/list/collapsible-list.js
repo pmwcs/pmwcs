@@ -1,41 +1,22 @@
-import * as RMWC from '@rmwc/types';
-import React from 'react';
-import { classNames, Tag } from '@rmwc/base';
+import { h, Component, cloneElement } from 'preact'
 
-/** A collapsible list component. */
-export interface CollapsibleListProps {
-  /** The handle that opens and closes the collapsible section. Usually a ListItem. */
-  handle: React.ReactElement<any>;
-  /** Show the collapsible list as open. */
-  open?: boolean;
-  /** Starts the collapsible list as open. */
-  defaultOpen?: boolean;
-  /** Callback for when the collapsible list opens. */
-  onOpen?: () => void;
-  /** Callback for when the collapsible list closes. */
-  onClose?: () => void;
-}
+import { classNames, Tag } from '@pmwc/base';
 
-interface CollapsibleState {
-  open: boolean;
-  childrenStyle: React.CSSProperties;
-}
-
-const possiblyFocusElement = (el: Element | null) => {
+const possiblyFocusElement = (el) => {
   if (!el) return false;
 
   const tabIndex = el.getAttribute('tabindex');
   if (tabIndex && Number(tabIndex) >= 0) {
-    (el as HTMLElement).focus();
+    el.focus();
     return true;
   }
   return false;
 };
 
 const getNextSibling = (
-  el: HTMLElement | null,
-  isBack: boolean
-): HTMLElement | null => {
+  el,
+  isBack
+) => {
   if (!el) return null;
 
   const next = isBack ? el.previousElementSibling : el.nextElementSibling;
@@ -44,19 +25,16 @@ const getNextSibling = (
     return getNextSibling(el.parentElement, isBack);
   }
 
-  return next as HTMLElement;
+  return next;
 };
 
 /** A collapsible list component. */
-export class CollapsibleList extends React.Component<
-  CollapsibleListProps & RMWC.HTMLProps,
-  CollapsibleState
-> {
+export class CollapsibleList extends Component {
   static displayName = 'CollapsibleList';
 
   static getDerivedStateFromProps(
-    props: CollapsibleListProps,
-    state: CollapsibleState
+    props,
+    state
   ) {
     if (props.open !== undefined && props.open !== state.open) {
       return {
@@ -68,18 +46,17 @@ export class CollapsibleList extends React.Component<
     return state;
   }
 
-  childContainer: HTMLDivElement | null = null;
-  root: HTMLDivElement | null = null;
-  rafId: number | null = null;
-  timerId: number | null = null;
-
-  state: CollapsibleState = {
-    open: !!this.props.defaultOpen || !!this.props.open,
-    childrenStyle: {}
-  };
-
-  constructor(props: any) {
+  constructor(props) {
     super(props);
+    this.childContainer = null;
+    this.root = null;
+    this.rafId = null;
+    this.timerId = null;
+
+    this.state = {
+      open: !!this.props.defaultOpen || !!this.props.open,
+      childrenStyle: {}
+    };
     this.handleClick = this.handleClick.bind(this);
     this.handleKeydown = this.handleKeydown.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
@@ -90,8 +67,8 @@ export class CollapsibleList extends React.Component<
   }
 
   componentDidUpdate(
-    prevProps: CollapsibleListProps,
-    prevState: CollapsibleState
+    prevProps,
+    prevState
   ) {
     if (prevState.open !== this.state.open) {
       this.syncOpenState();
@@ -134,7 +111,7 @@ export class CollapsibleList extends React.Component<
     });
   }
 
-  correctFocus(back: boolean) {
+  correctFocus(back) {
     this.rafId = window.requestAnimationFrame(() => {
       if (
         !this.state.open &&
@@ -158,11 +135,11 @@ export class CollapsibleList extends React.Component<
     });
   }
 
-  toggleOpen(isOpen: boolean) {
+  toggleOpen(isOpen) {
     this.setState({ open: isOpen });
   }
 
-  handleClick(evt: React.MouseEvent) {
+  handleClick(evt) {
     // call events that might have been on the handle
     const { handle } = this.props;
     handle.props.onClick && handle.props.onClick(evt);
@@ -170,7 +147,7 @@ export class CollapsibleList extends React.Component<
     this.toggleOpen(!this.state.open);
   }
 
-  handleKeydown(evt: React.KeyboardEvent) {
+  handleKeydown(evt) {
     // call events that might have been on the handle
     const { handle } = this.props;
     handle.props.onKeyDown && handle.props.onKeyDown(evt);
@@ -196,7 +173,7 @@ export class CollapsibleList extends React.Component<
     }
   }
 
-  handleFocus(evt: React.FocusEvent) {
+  handleFocus(evt) {
     if (
       !this.state.open &&
       this.root &&
@@ -206,7 +183,7 @@ export class CollapsibleList extends React.Component<
       const el = this.root.querySelector(
         '.rmwc-collapsible-list__handle .mdc-list-item'
       );
-      el && (el as HTMLElement).focus();
+      el && el.focus();
     }
   }
 
@@ -227,13 +204,13 @@ export class CollapsibleList extends React.Component<
       <Tag
         {...rest}
         onFocus={this.handleFocus}
-        ref={(el: HTMLDivElement) => (this.root = el)}
+        ref={(el) => (this.root = el)}
         className={classNames('rmwc-collapsible-list', className, {
           'rmwc-collapsible-list--open': open
         })}
       >
         <div className="rmwc-collapsible-list__handle">
-          {React.cloneElement(handle, {
+          {cloneElement(handle, {
             ...handle.props,
             onClick: this.handleClick,
             onKeyDown: this.handleKeydown

@@ -11,7 +11,8 @@ import {
   ListItemGraphic,
   ListItemPrimaryText,
   ListItemMeta,
-  SimpleListItem
+  SimpleListItem,
+  CollapsibleList
 } from './index.js';
 
 import { Checkbox } from '@pmwc/checkbox'
@@ -161,3 +162,84 @@ export const radioList = () => {
   }
   return <Example />
 }
+
+export const collapsibleList = () => (
+  <List>
+    <CollapsibleList
+      handle={
+        <SimpleListItem
+          text="Cookies"
+          graphic="favorite"
+          metaIcon="chevron_right"
+        />
+      }
+      onOpen={() => console.log('open')}
+      onClose={() => console.log('close')}
+    >
+      <SimpleListItem text="Chocolate Chip" />
+      <SimpleListItem text="Ginger Snap" />
+      <SimpleListItem text="Peanut Butter" />
+    </CollapsibleList>
+
+    <CollapsibleList
+      handle={
+        <SimpleListItem
+          text="Pizza"
+          graphic="local_pizza"
+          metaIcon="chevron_right"
+        />
+      }
+    >
+      <SimpleListItem text="Cheese" />
+      <SimpleListItem text="Pepperoni" />
+      <SimpleListItem text="Supreme" />
+    </CollapsibleList>
+
+    <CollapsibleList
+      handle={
+        <SimpleListItem
+          text="Icecream"
+          graphic="star"
+          metaIcon="chevron_right"
+        />
+      }
+    >
+      <SimpleListItem text="Vanilla" />
+      <SimpleListItem text="Chocolate" />
+      <CollapsibleList
+        handle={
+          <SimpleListItem
+            text="Nested Collapsible"
+            graphic="touch_app"
+            metaIcon="chevron_right"
+          />
+        }
+      >
+        <SimpleListItem text="Orange" />
+        <SimpleListItem text="Strawberry" />
+        <SimpleListItem text="Blueberry" />
+      </CollapsibleList>
+    </CollapsibleList>
+
+    <CollapsibleList
+      open
+      handle={
+        <SimpleListItem
+          text="Custom Content, forced open"
+          graphic="help"
+          metaIcon="chevron_right"
+        />
+      }
+    >
+      <div
+        style={{
+          padding: '4rem',
+          background: 'green',
+          color: 'white'
+        }}
+      >
+        Collapsibles can contain any content
+      </div>
+    </CollapsibleList>
+  </List>
+)

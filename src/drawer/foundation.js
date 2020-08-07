@@ -1,108 +1,133 @@
-import { __assign, __rest } from "tslib";
-import { MDCModalDrawerFoundation, MDCDismissibleDrawerFoundation } from '@material/drawer';
-import { useFoundation, focusTrapFactory, triggerWindowResize } from '@pmwc/base';
-import { useRef, useEffect, useCallback } from 'react';
-var useDrawerFoundationFactory = function (MDCConstructor) {
-    return function useDrawerFoundation(props) {
-        var focusTrapRef = useRef();
-        var _a = useFoundation({
-            props: props,
-            elements: {
-                rootEl: true,
-                scrimEl: true
-            },
-            foundation: function (_a) {
-                var rootEl = _a.rootEl, emit = _a.emit, getProps = _a.getProps;
-                var previousFocusEl;
-                var f = new MDCConstructor({
-                    addClass: function (className) { return rootEl.addClass(className); },
-                    removeClass: function (className) { return rootEl.removeClass(className); },
-                    hasClass: function (className) { return rootEl.hasClass(className); },
-                    elementHasClass: function (element, className) {
-                        return element.classList.contains(className);
-                    },
-                    saveFocus: function () {
-                        previousFocusEl = document.activeElement;
-                    },
-                    restoreFocus: function () {
-                        if (rootEl.ref &&
-                            rootEl.ref.contains(document.activeElement) &&
-                            previousFocusEl) {
-                            previousFocusEl.focus();
-                        }
-                    },
-                    focusActiveNavigationItem: function () {
-                        var _a;
-                        var activeNavItemEl = (_a = rootEl.ref) === null || _a === void 0 ? void 0 : _a.querySelector(".mdc-list-item--activated");
-                        if (activeNavItemEl) {
-                            activeNavItemEl.focus();
-                        }
-                    },
-                    notifyClose: function () {
-                        //emit('onClose', {}, true /* shouldBubble */);
-                    },
-                    notifyOpen: function () {
-                        emit('onOpen', {}, true /* shouldBubble */);
-                    },
-                    trapFocus: function () {
-                        var _a;
-                        try {
-                            (_a = focusTrapRef.current) === null || _a === void 0 ? void 0 : _a.trapFocus();
-                        }
-                        catch (err) { }
-                    },
-                    releaseFocus: function () {
-                        var _a;
-                        try {
-                            (_a = focusTrapRef.current) === null || _a === void 0 ? void 0 : _a.releaseFocus();
-                        }
-                        catch (err) { }
-                    }
-                });
-                // Fixes a very annoying issue where the menu isn't stateful
-                // this allows us to keep the menu open based on its controlled prop.
-                var existingClose = f.close.bind(f);
-                var newClose = function () {
-                    emit('onClose', {});
-                    setTimeout(function () {
-                        if (!getProps().open) {
-                            existingClose();
-                        }
-                    });
-                };
-                f.close = newClose;
-                return f;
+import { useRef, useEffect, useCallback } from 'preact/hooks';
+import {
+  MDCModalDrawerFoundation,
+  MDCDismissibleDrawerFoundation
+} from '@material/drawer';
+import {
+  useFoundation,
+  focusTrapFactory,
+  triggerWindowResize
+} from '@pmwc/base';
+
+const useDrawerFoundationFactory = (MDCConstructor) =>
+  function useDrawerFoundation(props) {
+    const focusTrapRef = useRef();
+
+    const { foundation, ...elements } = useFoundation({
+      props,
+      elements: {
+        rootEl: true,
+        scrimEl: true
+      },
+      foundation: ({ rootEl, emit, getProps }) => {
+        let previousFocusEl;
+
+        const f = new MDCConstructor({
+          addClass: (className) => rootEl.addClass(className),
+          removeClass: (className) => rootEl.removeClass(className),
+          hasClass: (className) => rootEl.hasClass(className),
+          elementHasClass: (element, className) =>
+            element.classList.contains(className),
+          saveFocus: () => {
+            previousFocusEl = document.activeElement;
+          },
+          restoreFocus: () => {
+            if (
+              rootEl.ref &&
+              rootEl.ref.contains(document.activeElement) &&
+              previousFocusEl
+            ) {
+              previousFocusEl.focus();
             }
-        }), foundation = _a.foundation, elements = __rest(_a, ["foundation"]);
-        var rootEl = elements.rootEl, scrimEl = elements.scrimEl;
-        useEffect(function () {
-            if (rootEl.ref) {
-                focusTrapRef.current = focusTrapFactory(rootEl.ref);
+          },
+          focusActiveNavigationItem: () => {
+            const activeNavItemEl = rootEl.ref?.querySelector(
+              `.mdc-list-item--activated`
+            );
+            if (activeNavItemEl) {
+              activeNavItemEl.focus();
             }
-        }, [rootEl.ref]);
-        useEffect(function () {
-            props.open ? foundation.open() : foundation.close();
-        }, [props.open, foundation]);
-        var handleScrimClick = useCallback(function () {
-            var _a, _b;
-            (_b = (_a = foundation).handleScrimClick) === null || _b === void 0 ? void 0 : _b.call(_a);
-        }, [foundation]);
-        var handleKeyDown = useCallback(function (evt) {
-            var _a;
-            (_a = props.onKeyDown) === null || _a === void 0 ? void 0 : _a.call(props, evt);
-            foundation.handleKeydown(evt);
-        }, [foundation, props.onKeyDown]);
-        var handleTransitionEnd = useCallback(function (evt) {
-            var _a;
-            (_a = props.onTransitionEnd) === null || _a === void 0 ? void 0 : _a.call(props, evt);
-            foundation.handleTransitionEnd(evt);
-            triggerWindowResize();
-        }, [foundation, props.onTransitionEnd]);
-        rootEl.setProp('onKeyDown', handleKeyDown, true);
-        rootEl.setProp('onTransitionEnd', handleTransitionEnd, true);
-        scrimEl.setProp('onClick', handleScrimClick, true);
-        return __assign({ foundation: foundation }, elements);
-    };
-};
-export var useDismissableDrawerFoundation = useDrawerFoundationFactory(MDCDismissibleDrawerFoundation);
-export var useModalDrawerFoundation = useDrawerFoundationFactory(MDCModalDrawerFoundation);
+          },
+          notifyClose: () => {
+            //emit('onClose', {}, true /* shouldBubble */);
+          },
+          notifyOpen: () => {
+            emit('onOpen', {}, true /* shouldBubble */);
+          },
+          trapFocus: () => {
+            try {
+              focusTrapRef.current?.trapFocus();
+            } catch (err) {}
+          },
+          releaseFocus: () => {
+            try {
+              focusTrapRef.current?.releaseFocus();
+            } catch (err) {}
+          }
+        });
+
+        // Fixes a very annoying issue where the menu isn't stateful
+        // this allows us to keep the menu open based on its controlled prop.
+        const existingClose = f.close.bind(f);
+        const newClose = () => {
+          emit('onClose', {});
+
+          setTimeout(() => {
+            if (!getProps().open) {
+              existingClose();
+            }
+          });
+        };
+        f.close = newClose;
+
+        return f;
+      }
+    });
+
+    const { rootEl, scrimEl } = elements;
+
+    useEffect(() => {
+      if (rootEl.ref) {
+        focusTrapRef.current = focusTrapFactory(rootEl.ref);
+      }
+    }, [rootEl.ref]);
+
+    useEffect(() => {
+      props.open ? foundation.open() : foundation.close();
+    }, [props.open, foundation]);
+
+    const handleScrimClick = useCallback(() => {
+      foundation.handleScrimClick?.();
+    }, [foundation]);
+
+    const handleKeyDown = useCallback(
+      (evt) => {
+        props.onKeyDown?.(evt);
+        foundation.handleKeydown(evt);
+      },
+      [foundation, props.onKeyDown]
+    );
+
+    const handleTransitionEnd = useCallback(
+      (evt) => {
+        props.onTransitionEnd?.(evt);
+        foundation.handleTransitionEnd(evt);
+        triggerWindowResize();
+      },
+      [foundation, props.onTransitionEnd]
+    );
+
+    rootEl.setProp('onKeyDown', handleKeyDown, true);
+    rootEl.setProp('onTransitionEnd', handleTransitionEnd, true);
+    scrimEl.setProp('onClick', handleScrimClick, true);
+
+    return { foundation, ...elements };
+  };
+
+export const useDismissableDrawerFoundation = useDrawerFoundationFactory(
+  MDCDismissibleDrawerFoundation
+);
+
+export const useModalDrawerFoundation = useDrawerFoundationFactory(
+  MDCModalDrawerFoundation
+);

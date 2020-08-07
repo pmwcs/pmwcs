@@ -1,7 +1,9 @@
 /** @jsx h */
 import { h } from 'preact'
 import { PMWCProvider } from '@pmwc/provider';
+
 import './stories.css'
+
 import './styles.js'
 
 import { Icon } from './index.js'
@@ -12,8 +14,31 @@ export default {
   component: Icon,
 };
 
+// css-stylesheet order is broken.
+const style = `
+.pmwc-icon--url {
+  font-size: 1.5rem;
+}
+.pmwc-icon--size-xsmall {
+  font-size: 1.125rem;
+}
+.pmwc-icon--size-small {
+  font-size: 1.25rem;
+}
+.pmwc-icon--size-medium {
+  font-size: 1.5rem;
+}
+.pmwc-icon--size-large {
+  font-size: 2.25rem;
+}
+.pmwc-icon--size-xlarge {
+  font-size: 3rem;
+}
+`
+
 export const all = () => (
   <section className='mdc-typography'>
+    <style dangerouslySetInnerHTML={{__html:style}}></style>
     <Typography use='body1'>
       <a href='https://material.io/resources/icons/?style=baseline'>Material Icons</a>
     </Typography>

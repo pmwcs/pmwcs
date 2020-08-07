@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from 'preact'
 
-import './stories.css'
+// import './stories.css'
 import './styles.js'
 
 import { IconButton } from './index.js'

@@ -26,6 +26,7 @@ export class EventEmitter {
 
 export class ArrayEmitter extends EventEmitter {
   constructor () {
+    super()
     this.array = [];
   }
   push(...items) {

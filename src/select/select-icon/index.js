@@ -1,11 +1,20 @@
-import { __assign, __rest } from "tslib";
-import { h } from 'preact';
+import { h } from 'preact'
+
 import { Icon } from '@pmwc/icon';
 import { useClassNames } from '@pmwc/base';
 import { useSelectIconFoundation } from './foundation';
-export var SelectIcon = function SelectIcon(props) {
-    var apiRef = props.apiRef, rest = __rest(props, ["apiRef"]);
-    var rootEl = useSelectIconFoundation(props).rootEl;
-    var className = useClassNames(props, ['mdc-select__icon']);
-    return (React.createElement(Icon, __assign({}, rootEl.props(__assign(__assign({}, rest), { className: className })))));
+
+export const SelectIcon = function SelectIcon(props) {
+  const { apiRef, ...rest } = props;
+  const { rootEl } = useSelectIconFoundation(props);
+  const className = useClassNames(props, ['mdc-select__icon']);
+
+  return (
+    <Icon
+      {...rootEl.props({
+        ...rest,
+        className
+      })}
+    />
+  );
 };

@@ -1,32 +1,36 @@
-import { __assign, __rest } from "tslib";
 import { useFoundation } from '@pmwc/base';
 import { MDCSelectIconFoundation } from '@material/select';
-export var useSelectIconFoundation = function (props) {
-    var _a = useFoundation({
-        props: props,
-        elements: { rootEl: true },
-        api: function (_a) {
-            var foundation = _a.foundation;
-            return {
-                getFoundation: function () { return foundation; }
-            };
+
+export const useSelectIconFoundation = (props) => {
+  const { foundation, ...elements } = useFoundation({
+    props,
+    elements: { rootEl: true },
+    api: ({foundation}) => {
+      return {
+        getFoundation: () => foundation
+      };
+    },
+    foundation: ({ rootEl, emit }) => {
+      return new MDCSelectIconFoundation({
+        getAttr: (attr) => rootEl.getProp(attr),
+        setAttr: (attr, value) =>
+          rootEl.setProp(attr, value),
+        removeAttr: (attr) => rootEl.removeProp(attr),
+        setContent: (content) => {
+          rootEl.ref && (rootEl.ref.textContent = content);
         },
-        foundation: function (_a) {
-            var rootEl = _a.rootEl, emit = _a.emit;
-            return new MDCSelectIconFoundation({
-                getAttr: function (attr) { return rootEl.getProp(attr); },
-                setAttr: function (attr, value) {
-                    return rootEl.setProp(attr, value);
-                },
-                removeAttr: function (attr) { return rootEl.removeProp(attr); },
-                setContent: function (content) {
-                    rootEl.ref && (rootEl.ref.textContent = content);
-                },
-                registerInteractionHandler: function (evtType, handler) { return rootEl.addEventListener(evtType, handler); },
-                deregisterInteractionHandler: function (evtType, handler) { return rootEl.removeEventListener(evtType, handler); },
-                notifyIconAction: function () { return emit('onClick', {}, true); }
-            });
-        }
-    }), foundation = _a.foundation, elements = __rest(_a, ["foundation"]);
-    return __assign({}, elements);
+        registerInteractionHandler: (
+          evtType,
+          handler
+        ) => rootEl.addEventListener(evtType, handler),
+        deregisterInteractionHandler: (
+          evtType,
+          handler
+        ) => rootEl.removeEventListener(evtType, handler),
+        notifyIconAction: () => emit('onClick', {}, true)
+      });
+    }
+  });
+
+  return { ...elements };
 };

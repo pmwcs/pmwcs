@@ -1,22 +1,50 @@
-import { __assign, __rest } from "tslib";
-import React, { useRef } from 'react';
+import { h } from 'preact'
+import { useRef } from 'preact/hooks';
+
 import { Tag, useClassNames, createComponent } from '@pmwc/base';
+
+import { MDCTabBarFoundation } from '@material/tab-bar';
+import { MDCTabInteractionEvent } from '@material/tab';
 import { TabScroller } from './tab-scroller';
 import { TabBarContext } from './tab-bar-context';
 import { useTabBarFoundation } from './tab-bar-foundation';
-export var TabBar = createComponent(function TabBar(props, ref) {
-    var children = props.children, activeTabIndex = props.activeTabIndex, onActivate = props.onActivate, foundationRef = props.foundationRef, rest = __rest(props, ["children", "activeTabIndex", "onActivate", "foundationRef"]);
-    var _a = useTabBarFoundation(props), rootEl = _a.rootEl, handleTabInteraction = _a.handleTabInteraction, setTabScrollerApi = _a.setTabScrollerApi, registerTab = _a.registerTab, unregisterTab = _a.unregisterTab;
-    var contextApi = useRef({
-        onTabInteraction: function (evt) {
-            return handleTabInteraction(evt);
-        },
-        registerTab: registerTab,
-        unregisterTab: unregisterTab,
-        indicatorTransition: props.indicatorTransition || 'slide'
-    });
-    var className = useClassNames(props, ['mdc-tab-bar']);
-    return (React.createElement(TabBarContext.Provider, { value: contextApi.current },
-        React.createElement(Tag, __assign({ tag: "nav", element: rootEl }, rest, { className: className, ref: ref }),
-            React.createElement(TabScroller, { apiRef: setTabScrollerApi }, children))));
+
+/************************************************************
+ * TabBar
+ ************************************************************/
+
+export const TabBar = createComponent(function TabBar(props, ref) {
+  const {
+    children,
+    activeTabIndex,
+    onActivate,
+    foundationRef,
+    ...rest
+  } = props;
+
+  const {
+    rootEl,
+    handleTabInteraction,
+    setTabScrollerApi,
+    registerTab,
+    unregisterTab
+  } = useTabBarFoundation(props);
+
+  const contextApi = useRef({
+    onTabInteraction: (evt) =>
+      handleTabInteraction(evt),
+    registerTab,
+    unregisterTab,
+    indicatorTransition: props.indicatorTransition || 'slide'
+  });
+
+  const className = useClassNames(props, ['mdc-tab-bar']);
+
+  return (
+    <TabBarContext.Provider value={contextApi.current}>
+      <Tag tag="nav" element={rootEl} {...rest} className={className} ref={ref}>
+        <TabScroller apiRef={setTabScrollerApi}>{children}</TabScroller>
+      </Tag>
+    </TabBarContext.Provider>
+  );
 });

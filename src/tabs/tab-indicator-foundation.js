@@ -1,47 +1,57 @@
-import { __assign, __rest } from "tslib";
+import { TabIndicatorProps, TabIndicatorApi } from './tab-indicator';
 import { useFoundation, emptyClientRect } from '@pmwc/base';
-import { MDCFadingTabIndicatorFoundation, MDCSlidingTabIndicatorFoundation } from '@material/tab-indicator';
-export var useTabIndicatorFoundation = function (props) {
-    var _a = useFoundation({
-        props: props,
-        elements: { rootEl: true, contentEl: true },
-        foundation: function (_a) {
-            var rootEl = _a.rootEl, contentEl = _a.contentEl;
-            var adapter = {
-                addClass: function (className) {
-                    rootEl.addClass(className);
-                },
-                removeClass: function (className) {
-                    rootEl.removeClass(className);
-                },
-                computeContentClientRect: function () {
-                    return contentEl.ref
-                        ? contentEl.ref.getBoundingClientRect()
-                        : emptyClientRect;
-                },
-                setContentStyleProperty: function (prop, value) {
-                    contentEl.setStyle(prop, value);
-                }
-            };
-            if (props.transition === 'fade') {
-                return new MDCFadingTabIndicatorFoundation(adapter);
-            }
-            return new MDCSlidingTabIndicatorFoundation(adapter);
+import {
+  MDCFadingTabIndicatorFoundation,
+  MDCSlidingTabIndicatorFoundation,
+} from '@material/tab-indicator';
+
+export const useTabIndicatorFoundation = (props) => {
+  const { foundation, ...elements } = useFoundation({
+    props,
+    elements: { rootEl: true, contentEl: true },
+    foundation: ({ rootEl, contentEl }) => {
+      console.log({ rootEl, contentEl })
+      console.log('#', typeof contentEl.ref?.getBoundingClientRect)
+
+      const adapter = {
+        addClass: (className) => {
+          rootEl.addClass(className);
         },
-        api: function (_a) {
-            var foundation = _a.foundation;
-            return {
-                activate: function (previousIndicatorClientRect) {
-                    foundation.activate(previousIndicatorClientRect);
-                },
-                deactivate: function () {
-                    foundation.deactivate();
-                },
-                computeContentClientRect: function () {
-                    return foundation.computeContentClientRect();
-                }
-            };
+        removeClass: (className) => {
+          rootEl.removeClass(className);
+        },
+        computeContentClientRect: () => {
+          return contentEl.ref?.getBoundingClientRect
+            ? contentEl.ref?.getBoundingClientRect()
+            : emptyClientRect
+        },
+        setContentStyleProperty: (prop, value) => {
+          contentEl.setStyle(prop, value);
         }
-    }), foundation = _a.foundation, elements = __rest(_a, ["foundation"]);
-    return __assign({}, elements);
+      };
+
+      if (props.transition === 'fade') {
+        return new MDCFadingTabIndicatorFoundation(adapter);
+      }
+
+      return new MDCSlidingTabIndicatorFoundation(adapter);
+    },
+    api: ({
+      foundation
+    }) => {
+      return {
+        activate: (previousIndicatorClientRect) => {
+          foundation.activate(previousIndicatorClientRect);
+        },
+        deactivate: () => {
+          foundation.deactivate();
+        },
+        computeContentClientRect: () => {
+          return foundation.computeContentClientRect();
+        }
+      };
+    }
+  });
+
+  return { ...elements };
 };

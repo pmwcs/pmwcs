@@ -4,7 +4,7 @@ import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 import { Grid, GridCell, GridRow } from '.';
 export default function () {
-    return (React.createElement(Docs, { title: "Layout Grid", lead: "Material design\u2019s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.", module: "@rmwc/grid", styles: ['@material/layout-grid/dist/mdc.layout-grid.css'], docsLink: "https://material.io/develop/web/components/layout-grid/", examples: examples },
+    return (React.createElement(Docs, { title: "Layout Grid", lead: "Material design\u2019s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.", module: "@pmwc/grid", styles: ['@material/layout-grid/dist/mdc.layout-grid.css'], docsLink: "https://material.io/develop/web/components/layout-grid/", examples: examples },
         React.createElement(DocsExample, { label: "Standard Grid" },
             React.createElement(Grid, null,
                 React.createElement(GridCell, { span: 4 }, "1"),

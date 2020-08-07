@@ -1,7 +1,7 @@
 import { __assign, __read, __rest } from "tslib";
 import React, { useEffect, useState } from 'react';
-import { List, ListItem } from '@rmwc/list';
-import { getDisplayName, classNames, useClassNames, createComponent } from '@rmwc/base';
+import { List, ListItem } from '@pmwc/list';
+import { getDisplayName, classNames, useClassNames, createComponent } from '@pmwc/base';
 import { MenuSurface, MenuSurfaceAnchor } from '../menu-surface';
 import { useMenuFoundation } from './foundation';
 /** A wrapper for menu items */

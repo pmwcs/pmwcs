@@ -1,8 +1,8 @@
 import { __assign, __rest } from "tslib";
 import { useEffect } from 'react';
 import { MDCSnackbarFoundation, util } from '@material/snackbar';
-import { closest, triggerWindowResize } from '@rmwc/base';
-import { useFoundation } from '@rmwc/base';
+import { closest, triggerWindowResize } from '@pmwc/base';
+import { useFoundation } from '@pmwc/base';
 /** Monkey patch the foundation to accept dynamic reasons rather than just "action" */
 // @ts-ignore
 MDCSnackbarFoundation.prototype.handleActionButtonClick = function (evt, reason) {

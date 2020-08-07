@@ -1,7 +1,7 @@
 import { __assign, __read, __rest, __spread } from "tslib";
 import { useCallback, useRef, useEffect } from 'react';
 import { MDCMenuFoundation } from '@material/menu';
-import { useFoundation, closest } from '@rmwc/base';
+import { useFoundation, closest } from '@pmwc/base';
 export var useMenuFoundation = function (props) {
     var menuSurfaceApi = useRef();
     var listApi = useRef();

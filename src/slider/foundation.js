@@ -1,7 +1,7 @@
 import { __assign, __rest } from "tslib";
 import { useRef, useEffect } from 'react';
-import { useFoundation, emptyClientRect } from '@rmwc/base';
-import { debounce } from '@rmwc/base';
+import { useFoundation, emptyClientRect } from '@pmwc/base';
+import { debounce } from '@pmwc/base';
 import { MDCSliderFoundation } from '@material/slider';
 export var useSliderFoundation = function (props) {
     var trackRef = useRef();

@@ -1,7 +1,7 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
 import { useLinearProgressFoundation } from './foundation';
-import { Tag, useClassNames, createComponent } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@pmwc/base';
 /** A component to display linear progress. */
 export var LinearProgress = createComponent(function LinearProgress(props, ref) {
     var reversed = props.reversed, closed = props.closed, progress = props.progress, buffer = props.buffer, foundationRef = props.foundationRef, rest = __rest(props, ["reversed", "closed", "progress", "buffer", "foundationRef"]);

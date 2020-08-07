@@ -1,6 +1,6 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 import { h } from 'preact';
-import { IconProps } from '@rmwc/icon';
+import { IconProps } from '@pmwc/icon';
 /** Grid List Component */
 export interface GridListProps {
     /** Use a 1px gutter. */

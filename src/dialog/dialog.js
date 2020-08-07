@@ -8,7 +8,7 @@ import {
   Tag,
   createComponent,
   PortalChild
-} from '@rmwc/base';
+} from '@pmwc/base';
 import { useDialogFoundation } from './foundation';
 
 

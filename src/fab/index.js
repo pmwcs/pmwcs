@@ -1,8 +1,8 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
-import { withRipple } from '@rmwc/ripple';
-import { Icon } from '@rmwc/icon';
-import { Tag, useClassNames, createComponent } from '@rmwc/base';
+import { withRipple } from '@pmwc/ripple';
+import { Icon } from '@pmwc/icon';
+import { Tag, useClassNames, createComponent } from '@pmwc/base';
 /** A floating action button component */
 export var Fab = withRipple({ surface: false })(createComponent(function Fab(props, ref) {
     var children = props.children, label = props.label, icon = props.icon, trailingIcon = props.trailingIcon, mini = props.mini, exited = props.exited, rest = __rest(props, ["children", "label", "icon", "trailingIcon", "mini", "exited"]);

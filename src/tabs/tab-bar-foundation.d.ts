@@ -8,5 +8,5 @@ export declare const useTabBarFoundation: (props: TabBarProps & React.HTMLProps<
     handleTabInteraction: (evt: MDCTabInteractionEvent) => void;
     registerTab: (tab: TabApi) => void;
     unregisterTab: (tab: TabApi) => void;
-    rootEl: import("@rmwc/base").FoundationElement<any, HTMLElement>;
+    rootEl: import("@pmwc/base").FoundationElement<any, HTMLElement>;
 };

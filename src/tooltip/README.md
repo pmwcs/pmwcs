@@ -2,12 +2,12 @@
 
 Tooltips display informative text when users hover over, focus on, or tap an element.
 
-- Module **@rmwc/tooltip**
+- Module **@pmwc/tooltip**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/tooltip/styles';
+    - import '@pmwc/tooltip/styles';
   - Or include stylesheets
-    - **'@rmwc/tooltip/tooltip.css'**
+    - **'@pmwc/tooltip/tooltip.css'**
 
 
 ## Basic Usage

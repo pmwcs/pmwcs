@@ -7,7 +7,7 @@ import { Drawer, DrawerHeader, DrawerContent, DrawerTitle, DrawerSubtitle, Drawe
 import { List, ListItem } from '../list';
 import { Button } from '../button';
 export default function () {
-    return (React.createElement(Docs, { title: "Drawers", lead: "A navigation drawer slides in from the left and contains the navigation destinations for your app.", module: "@rmwc/drawer", styles: ['@material/drawer/dist/mdc.drawer.css'], docsLink: "https://material.io/develop/web/components/drawers/", examples: examples },
+    return (React.createElement(Docs, { title: "Drawers", lead: "A navigation drawer slides in from the left and contains the navigation destinations for your app.", module: "@pmwc/drawer", styles: ['@material/drawer/dist/mdc.drawer.css'], docsLink: "https://material.io/develop/web/components/drawers/", examples: examples },
         React.createElement(DocsSubtitle, null, "Permanent"),
         React.createElement(DocsP, null, "These are drawers that are permanently fixed inside of a view."),
         React.createElement(DocsExample, null,

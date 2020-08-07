@@ -1,6 +1,6 @@
 import { __assign, __rest } from "tslib";
-import { useFoundation, emptyClientRect } from '@rmwc/base';
-import { matches } from '@rmwc/base';
+import { useFoundation, emptyClientRect } from '@pmwc/base';
+import { matches } from '@pmwc/base';
 import { MDCTabScrollerFoundation, util as scrollerUtil } from '@material/tab-scroller';
 export var useTabScrollerFoundation = function (props) {
     var _a = useFoundation({

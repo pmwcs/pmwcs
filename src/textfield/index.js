@@ -1,12 +1,12 @@
 import {h} from 'preact';
 import React from 'preact/compat';
 
-import { useClassNames, Tag, useId, createComponent } from '@rmwc/base';
-import { Icon } from '@rmwc/icon';
-import { LineRipple } from '@rmwc/line-ripple';
-import { FloatingLabel } from '@rmwc/floating-label';
-import { NotchedOutline } from '@rmwc/notched-outline';
-import { withRipple } from '@rmwc/ripple';
+import { useClassNames, Tag, useId, createComponent } from '@pmwc/base';
+import { Icon } from '@pmwc/icon';
+import { LineRipple } from '@pmwc/line-ripple';
+import { FloatingLabel } from '@pmwc/floating-label';
+import { NotchedOutline } from '@pmwc/notched-outline';
+import { withRipple } from '@pmwc/ripple';
 
 import { useTextFieldIconFoundation } from './textfield-icon-foundation';
 import { useTextFieldCharacterCountFoundation } from './textfield-character-count-foundation';

@@ -1,12 +1,12 @@
 import { __assign, __extends, __read } from "tslib";
 import { h } from 'preact';
-import { TabBar, Tab } from '@rmwc/tabs';
-import { ListItem, ListGroupSubheader, ListItemGraphic, ListItemMeta } from '@rmwc/list';
-import { MenuSurface, MenuSurfaceAnchor } from '@rmwc/menu';
-import { Button } from '@rmwc/button';
-import { toCamel, toDashCase } from '@rmwc/base';
-import { getAutoColorsForTheme } from '@rmwc/theme/utils';
-import { TopAppBarActionItem } from '@rmwc/top-app-bar';
+import { TabBar, Tab } from '@pmwc/tabs';
+import { ListItem, ListGroupSubheader, ListItemGraphic, ListItemMeta } from '@pmwc/list';
+import { MenuSurface, MenuSurfaceAnchor } from '@pmwc/menu';
+import { Button } from '@pmwc/button';
+import { toCamel, toDashCase } from '@pmwc/base';
+import { getAutoColorsForTheme } from '@pmwc/theme/utils';
+import { TopAppBarActionItem } from '@pmwc/top-app-bar';
 var DEFAULT_THEME = {
     '--mdc-theme-primary': '#6200ee',
     '--mdc-theme-secondary': '#03dac4',

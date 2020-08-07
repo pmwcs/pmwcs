@@ -1,6 +1,6 @@
 import { h } from 'preact';
-import { classNames, Tag } from '@rmwc/base';
-import { Icon } from '@rmwc/icon';
+import { classNames, Tag } from '@pmwc/base';
+import { Icon } from '@pmwc/icon';
 import { useTabIndicatorFoundation } from './tab-indicator-foundation';
 export function TabIndicator(props) {
     var _a = useTabIndicatorFoundation(props), rootEl = _a.rootEl, contentEl = _a.contentEl;

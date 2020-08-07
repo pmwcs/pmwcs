@@ -1,12 +1,12 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
-import { useClassNames, useId, Tag, createComponent } from '@rmwc/base';
-import { FloatingLabel } from '@rmwc/floating-label';
-import { LineRipple } from '@rmwc/line-ripple';
-import { NotchedOutline } from '@rmwc/notched-outline';
-import { Menu, MenuItem, MenuItems } from '@rmwc/menu';
-import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
-import { withRipple } from '@rmwc/ripple';
+import { useClassNames, useId, Tag, createComponent } from '@pmwc/base';
+import { FloatingLabel } from '@pmwc/floating-label';
+import { LineRipple } from '@pmwc/line-ripple';
+import { NotchedOutline } from '@pmwc/notched-outline';
+import { Menu, MenuItem, MenuItems } from '@pmwc/menu';
+import { ListGroup, ListGroupSubheader, ListDivider } from '@pmwc/list';
+import { withRipple } from '@pmwc/ripple';
 import { useSelectFoundation } from './foundation';
 import { SelectIcon } from '../select-icon';
 /**

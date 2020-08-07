@@ -1,6 +1,6 @@
 import { __assign, __read, __rest } from "tslib";
 import { useRef, useEffect, useCallback, useState } from 'react';
-import { useFoundation } from '@rmwc/base';
+import { useFoundation } from '@pmwc/base';
 import { MDCTabBarFoundation } from '@material/tab-bar';
 export var useTabBarFoundation = function (props) {
     var _a = __read(useState(props.activeTabIndex || 0), 2), activeTabIndex = _a[0], setActiveTabIndex = _a[1];

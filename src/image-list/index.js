@@ -1,6 +1,6 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
-import { Tag, useClassNames, createComponent } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@pmwc/base';
 /** The root of the Image List. */
 export var ImageList = createComponent(function ImageList(props, ref) {
     var masonry = props.masonry, withTextProtection = props.withTextProtection, rest = __rest(props, ["masonry", "withTextProtection"]);

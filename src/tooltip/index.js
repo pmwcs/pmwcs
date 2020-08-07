@@ -1,8 +1,8 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
-import { classNames } from '@rmwc/base';
+import { classNames } from '@pmwc/base';
 import ReactTooltip from 'rc-tooltip';
-import { useProviderContext } from '@rmwc/provider';
+import { useProviderContext } from '@pmwc/provider';
 /** A Tooltip component for displaying informative popover information. */
 export var Tooltip = function Tooltip(_a) {
     var children = _a.children, content = _a.content, className = _a.className, open = _a.open, rest = __rest(_a, ["children", "content", "className", "open"]);

@@ -1,6 +1,6 @@
 import { __assign, __rest } from "tslib";
 import { useRef, useContext, useEffect, useMemo } from 'react';
-import { useFoundation, useId, emptyClientRect } from '@rmwc/base';
+import { useFoundation, useId, emptyClientRect } from '@pmwc/base';
 import { MDCTabFoundation } from '@material/tab';
 import { TabBarContext } from './tab-bar-context';
 export var useTabFoundation = function (props) {

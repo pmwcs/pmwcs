@@ -10,12 +10,12 @@ import { Select } from '../select';
 import { IconButton } from '../icon-button';
 import { Checkbox } from '../checkbox';
 export default function () {
-    return (React.createElement(Docs, { title: "Menus", lead: "Menus display a list of choices on a transient sheet of material.", module: "@rmwc/menu", styles: [
+    return (React.createElement(Docs, { title: "Menus", lead: "Menus display a list of choices on a transient sheet of material.", module: "@pmwc/menu", styles: [
             '@material/menu/dist/mdc.menu.css',
             '@material/menu-surface/dist/mdc.menu-surface.css',
             '@material/ripple/dist/mdc.ripple.css',
             '@material/list/dist/mdc.list.css',
-            '@rmwc/icon/icon.css'
+            '@pmwc/icon/icon.css'
         ], docsLink: "https://material.io/develop/web/components/menus/", examples: examples },
         React.createElement(DocsSubtitle, null, "Basic Usage"),
         React.createElement(DocsP, null, "You can compose a menu with the given components, and manually manage the open state. `Menu` expects MenuItems as children while `MenuSurface` is a generic container which can have anything as a child."),
@@ -78,7 +78,7 @@ export default function () {
         React.createElement(DocsSubtitle, null, "Rendering through Portals"),
         React.createElement(DocsP, null, "Occasionally, you may find your menu being cut off from being inside a container that is styled to be `overflow:hidden`. RMWC provides a `renderToPortal` prop that lets you use React's portal functionality to render the menu dropdown in a different container."),
         React.createElement(DocsP, null, "You can specify any element or selector you want, but the simplest method is to pass `true` and use RMWC's built in `Portal` component."),
-        React.createElement(DocsExample, { codeOnly: true }, /* jsx */ "\n          // Somewhere at the top level of your app\n          // Render the RMWC Portal\n          // You only have to do this once\n          import { h } from 'preact';\n          import { Portal } from '@rmwc/base';\n\n          export default function App() {\n            return (\n              <div>\n                ...\n                <Portal />\n              </div>\n            )\n          }\n        "),
+        React.createElement(DocsExample, { codeOnly: true }, /* jsx */ "\n          // Somewhere at the top level of your app\n          // Render the RMWC Portal\n          // You only have to do this once\n          import { h } from 'preact';\n          import { Portal } from '@pmwc/base';\n\n          export default function App() {\n            return (\n              <div>\n                ...\n                <Portal />\n              </div>\n            )\n          }\n        "),
         React.createElement(DocsP, null, "Now you can use the `renderToPortal` prop. Below is a contrived example of a menu being cut off due to `overflow: hidden`."),
         React.createElement(DocsExample, null, function Example() {
             var _a = __read(React.useState(true), 2), renderToPortal = _a[0], setRenderToPortal = _a[1];

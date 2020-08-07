@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'preact/compat';
 import {
   SimpleDialog,
 } from './dialog';
-import { ArrayEmitter, randomId } from '@rmwc/base';
-import { TextField } from '@rmwc/textfield';
+import { ArrayEmitter, randomId } from '@pmwc/base';
+import { TextField } from '@pmwc/textfield';
 
 /** A snackbar queue for rendering messages */
 export function DialogQueue({

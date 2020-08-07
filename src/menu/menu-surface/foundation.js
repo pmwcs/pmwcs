@@ -1,6 +1,6 @@
 import { __assign, __read, __rest } from "tslib";
 import { useCallback, useEffect, useState, useRef } from 'react';
-import { useFoundation, closest, emptyClientRect, raf } from '@rmwc/base';
+import { useFoundation, closest, emptyClientRect, raf } from '@pmwc/base';
 import { MDCMenuSurfaceFoundation, util } from '@material/menu-surface';
 var ANCHOR_CORNER_MAP = {
     bottomEnd: 'BOTTOM_END',

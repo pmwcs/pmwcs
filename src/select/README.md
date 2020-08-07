@@ -2,12 +2,12 @@
 
 Menus display a list of choices on a transient sheet of material.
 
-- Module **@rmwc/select**
+- Module **@pmwc/select**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/select/styles';
+    - import '@pmwc/select/styles';
   - Or include stylesheets
-    - **'@rmwc/select/select.css'**
+    - **'@pmwc/select/select.css'**
     - **'@material/select/dist/mdc.select.css'**
     - **'@material/floating-label/dist/mdc.floating-label.css'**
     - **'@material/notched-outline/dist/mdc.notched-outline.css'**

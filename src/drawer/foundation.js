@@ -1,6 +1,6 @@
 import { __assign, __rest } from "tslib";
 import { MDCModalDrawerFoundation, MDCDismissibleDrawerFoundation } from '@material/drawer';
-import { useFoundation, focusTrapFactory, triggerWindowResize } from '@rmwc/base';
+import { useFoundation, focusTrapFactory, triggerWindowResize } from '@pmwc/base';
 import { useRef, useEffect, useCallback } from 'react';
 var useDrawerFoundationFactory = function (MDCConstructor) {
     return function useDrawerFoundation(props) {

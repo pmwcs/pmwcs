@@ -1,7 +1,7 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
-import { Icon } from '@rmwc/icon';
-import { useClassNames } from '@rmwc/base';
+import { Icon } from '@pmwc/icon';
+import { useClassNames } from '@pmwc/base';
 import { useSelectIconFoundation } from './foundation';
 export var SelectIcon = function SelectIcon(props) {
     var apiRef = props.apiRef, rest = __rest(props, ["apiRef"]);

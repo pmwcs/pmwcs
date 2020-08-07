@@ -1,7 +1,7 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 import { h } from 'preact';
 import { MDCSnackbarFoundation } from '@material/snackbar';
-import { ButtonProps } from '@rmwc/button';
+import { ButtonProps } from '@pmwc/button';
 /*********************************************************************
  * Events
  *********************************************************************/

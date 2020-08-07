@@ -1,4 +1,4 @@
-import { useFoundation } from '@rmwc/base';
+import { useFoundation } from '@pmwc/base';
 import { MDCTextFieldIconFoundation } from '@material/textfield';
 
 export const useTextFieldIconFoundation = (props) => {

@@ -1,5 +1,5 @@
 import { __assign, __rest } from "tslib";
-import { useFoundation } from '@rmwc/base';
+import { useFoundation } from '@pmwc/base';
 import { MDCSelectIconFoundation } from '@material/select';
 export var useSelectIconFoundation = function (props) {
     var _a = useFoundation({

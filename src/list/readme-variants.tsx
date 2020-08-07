@@ -28,7 +28,7 @@ export default function() {
     <Docs
       title="Lists"
       lead="Lists are continuous, vertical indexes of text or images."
-      module="@rmwc/list"
+      module="@pmwc/list"
       styles={['@material/list/dist/mdc.list.css']}
       docsLink="https://material.io/develop/web/components/lists/"
       examples={examples}

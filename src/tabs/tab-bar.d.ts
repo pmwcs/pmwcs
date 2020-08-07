@@ -1,4 +1,4 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 import { h } from 'preact';
 import { MDCTabBarFoundation } from '@material/tab-bar';
 /************************************************************

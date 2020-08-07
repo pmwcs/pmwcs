@@ -1,7 +1,7 @@
 import { __assign, __read, __rest } from "tslib";
 import React, { useState, useEffect, useCallback } from 'react';
 import { Snackbar, SnackbarAction } from './snackbar';
-import { ArrayEmitter } from '@rmwc/base';
+import { ArrayEmitter } from '@pmwc/base';
 /** A snackbar queue for rendering messages */
 export function SnackbarQueue(_a) {
     var messages = _a.messages, defaultSnackbarProps = __rest(_a, ["messages"]);

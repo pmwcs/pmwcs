@@ -1,4 +1,4 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 import { h } from 'preact';
 /** The root of the Image List. */
 export interface ImageListProps {

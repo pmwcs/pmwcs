@@ -1,7 +1,7 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
-import { Icon } from '@rmwc/icon';
-import { useClassNames, Tag, createComponent, createMemoComponent } from '@rmwc/base';
+import { Icon } from '@pmwc/icon';
+import { useClassNames, Tag, createComponent, createMemoComponent } from '@pmwc/base';
 /** Grid List Component */
 export var GridList = createComponent(function GridList(props, ref) {
     var _a;

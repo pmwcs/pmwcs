@@ -8,7 +8,7 @@ import { Button } from '../button';
 import { Avatar } from '../avatar';
 import { PMWCProvider } from '../provider';
 export default function () {
-    return (React.createElement(Docs, { title: "Tooltips", lead: "Tooltips display informative text when users hover over, focus on, or tap an element.", module: "@rmwc/tooltip", styles: ['@rmwc/tooltip/tooltip.css'], examples: examples, addon: true },
+    return (React.createElement(Docs, { title: "Tooltips", lead: "Tooltips display informative text when users hover over, focus on, or tap an element.", module: "@pmwc/tooltip", styles: ['@pmwc/tooltip/tooltip.css'], examples: examples, addon: true },
         React.createElement(DocsSubtitle, null, "Basic Usage"),
         React.createElement(DocsP, null, "Wrap any component in a `Tooltip` and provide the content attribute. The only requirement is that is has a single React child, and that the child can accept `onMouseEnter`, `onMouseLeave`, `onFocus`, and `onClick` props."),
         React.createElement(DocsExample, { label: "Default" },

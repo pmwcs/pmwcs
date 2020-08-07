@@ -2,12 +2,12 @@
 
 Material icons use geometric shapes to visually represent core ideas, capabilities, or topics.
 
-- Module **@rmwc/icon**
+- Module **@pmwc/icon**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/icon/styles';
+    - import '@pmwc/icon/styles';
   - Or include stylesheets
-    - **'@rmwc/icon/icon.css'**
+    - **'@pmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/icons](https://material.io/icons)
 
 ## Setup
@@ -204,13 +204,13 @@ A more relevant example involves an app that has a custom / existing icon compon
 
   `
   // 1) Your app has an icon component you use
-  import { MyIconComponent } from '@rmwc/icon';
+  import { MyIconComponent } from '@pmwc/icon';
   <MyIconComponent name="search" />
 
   // 2) Now you are using RMWC, lots of components are instances of Icons
   // You need to be able to delegate the handling of an icon prop to your own component
-  import { TextField } from '@rmwc/textField';
-  import { Chip } from '@rmwc/chip';
+  import { TextField } from '@pmwc/textField';
+  import { Chip } from '@pmwc/chip';
   <TextField icon="favorite" />
   <Chip icon="favorite" />
 
@@ -219,8 +219,8 @@ A more relevant example involves an app that has a custom / existing icon compon
   import React from 'react';
   import * as ReactDOM from 'react-dom';
   import App from './App'; // your main app component
-  import { RMWCProvider } from '@rmwc/provider';
-  import { MyIconComponent } from '@rmwc/icon';
+  import { RMWCProvider } from '@pmwc/provider';
+  import { MyIconComponent } from '@pmwc/icon';
 
   const iconRenderHandler = ({ content, className, ...rest }) => {
     // content is whatever was passed to the icon prop
@@ -242,7 +242,7 @@ A more relevant example involves an app that has a custom / existing icon compon
 
   // 4) Now anywhere in your app that an Icon instance is used, it will be
   // delegated to your handler and render your custom component
-  import { TextFieldIcon } from '@rmwc/textfield';
+  import { TextFieldIcon } from '@pmwc/textfield';
   <TextFieldIcon icon="search" />
 `
 

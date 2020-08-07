@@ -2,15 +2,15 @@
 
 Top App Bar acts as a container for items such as application title, navigation icon, and action items.
 
-- Module **@rmwc/top-app-bar**
+- Module **@pmwc/top-app-bar**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/top-app-bar/styles';
+    - import '@pmwc/top-app-bar/styles';
   - Or include stylesheets
     - **'@material/top-app-bar/dist/mdc.top-app-bar.css'**
     - **'@material/icon-button/dist/mdc.icon-button.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
-    - **'@rmwc/icon/icon.css'**
+    - **'@pmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/top-app-bar/](https://material.io/develop/web/components/top-app-bar/)
 
 Whats the difference between the TopAppBar and Toolbar? Toolbar is technically deprecated (although it still works just fine). TopAppBar functionality continues to be worked on by the `material-components-web` team.

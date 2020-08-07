@@ -1,5 +1,5 @@
 import { __assign, __rest } from "tslib";
-import { useFoundation, emptyClientRect } from '@rmwc/base';
+import { useFoundation, emptyClientRect } from '@pmwc/base';
 import { MDCFadingTabIndicatorFoundation, MDCSlidingTabIndicatorFoundation } from '@material/tab-indicator';
 export var useTabIndicatorFoundation = function (props) {
     var _a = useFoundation({

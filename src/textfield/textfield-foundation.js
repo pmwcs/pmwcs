@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'preact/compat';
-import { useFoundation } from '@rmwc/base';
+import { useFoundation } from '@pmwc/base';
 import { MDCTextFieldFoundation } from '@material/textfield';
 
 export const useTextFieldFoundation = (props) => {

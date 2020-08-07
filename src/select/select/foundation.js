@@ -1,6 +1,6 @@
 import { __assign, __read, __rest, __spread } from "tslib";
 import { useCallback, useState, useRef, useEffect } from 'react';
-import { useFoundation, raf } from '@rmwc/base';
+import { useFoundation, raf } from '@pmwc/base';
 import { MDCSelectFoundation, cssClasses } from '@material/select';
 export var useSelectFoundation = function (props) {
     var _a;

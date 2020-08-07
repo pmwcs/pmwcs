@@ -2,10 +2,10 @@
 
 Radio buttons allow the user to select one option from a set. Use radio buttons for exclusive selection if you think that the user needs to see all available options side-by-side.
 
-- Module **@rmwc/radio**
+- Module **@pmwc/radio**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/radio/styles';
+    - import '@pmwc/radio/styles';
   - Or include stylesheets
     - **'@material/radio/dist/mdc.radio.css'**
     - **'@material/form-field/dist/mdc.form-field.css'**

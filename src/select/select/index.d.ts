@@ -1,7 +1,7 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 import { h } from 'preact';
 import { MDCSelectFoundation } from '@material/select';
-import { MenuProps } from '@rmwc/menu';
+import { MenuProps } from '@pmwc/menu';
 export interface FormattedOption extends Omit<React.AllHTMLAttributes<any>, 'label'> {
     label: React.ReactNode;
     value?: string;

@@ -1,7 +1,7 @@
 import { h } from 'preact'
 
 import { useLineRippleFoundation } from './foundation';
-import { createComponent, Tag } from '@rmwc/base';
+import { createComponent, Tag } from '@pmwc/base';
 
 export const LineRipple = createComponent(function LineRipple(
   props,

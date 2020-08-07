@@ -2,14 +2,14 @@
 
 Data tables display sets of data.
 
-- Module **@rmwc/data-table**
+- Module **@pmwc/data-table**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/data-table/styles';
+    - import '@pmwc/data-table/styles';
   - Or include stylesheets
     - **'@material/data-table/dist/mdc.data-table.css'**
-    - **'@rmwc/data-table/data-table.css'**
-    - **'@rmwc/icon/icon.css'**
+    - **'@pmwc/data-table/data-table.css'**
+    - **'@pmwc/icon/icon.css'**
 
 
 ## Standard Table

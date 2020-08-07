@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 export interface TabIndicatorProps {
     /** Use an icon instead of an underline for the tab */
     icon?: RMWC.IconPropT;

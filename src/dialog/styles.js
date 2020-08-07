@@ -1,3 +1,3 @@
 import '@material/dialog/dist/mdc.dialog.css';
-import '@rmwc/button/styles';
-import '@rmwc/ripple/styles';
+import '@pmwc/button/styles';
+import '@pmwc/ripple/styles';

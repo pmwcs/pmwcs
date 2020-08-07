@@ -1,6 +1,6 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
-import { useClassNames, Tag, createComponent } from '@rmwc/base';
+import { useClassNames, Tag, createComponent } from '@pmwc/base';
 import { useSliderFoundation } from './foundation';
 var SliderTrack = React.memo(React.forwardRef(function SliderTrack(props, ref) {
     return React.createElement("div", { ref: ref, className: "mdc-slider__track" });

@@ -2,7 +2,7 @@
 
 A component that provides global configuration for RMWC.
 
-- Module **@rmwc/provider**
+- Module **@pmwc/provider**
 
 
 You can wrap your top level App component with RMWC provider to set global configuration options. Just pass the options in as props.
@@ -13,7 +13,7 @@ You can wrap your top level App component with RMWC provider to set global confi
   import React from 'react';
   import * as ReactDOM from 'react-dom';
   import App from './App'; // your main app component
-  import { RMWCProvider } from '@rmwc/provider';
+  import { RMWCProvider } from '@pmwc/provider';
 
   // This example disables ripples globally by default
   ReactDOM.render(

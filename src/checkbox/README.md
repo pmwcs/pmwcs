@@ -2,10 +2,10 @@
 
 Checkboxes allow the user to select multiple options from a set.
 
-- Module **@rmwc/checkbox**
+- Module **@pmwc/checkbox**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/checkbox/styles';
+    - import '@pmwc/checkbox/styles';
   - Or include stylesheets
     - **'@material/checkbox/dist/mdc.checkbox.css'**
     - **'@material/form-field/dist/mdc.form-field.css'**

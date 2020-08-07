@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'preact/compat';
-import { useFoundation } from '@rmwc/base';
+import { useFoundation } from '@pmwc/base';
 
 import {
   MDCTopAppBarFoundation,

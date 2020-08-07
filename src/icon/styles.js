@@ -1,1 +1,1 @@
-import '@rmwc/icon/icon.css';
+import '@pmwc/icon/icon.css';

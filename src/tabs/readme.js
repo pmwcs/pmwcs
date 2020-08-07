@@ -5,13 +5,13 @@ import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 import { TabBar, Tab } from '.';
 export default function () {
-    return (React.createElement(Docs, { title: "Tabs", lead: "Tabs make it easy to explore and switch between different views.", module: "@rmwc/tabs", styles: [
+    return (React.createElement(Docs, { title: "Tabs", lead: "Tabs make it easy to explore and switch between different views.", module: "@pmwc/tabs", styles: [
             '@material/tab-bar/dist/mdc.tab-bar.css',
             '@material/tab/dist/mdc.tab.css',
             '@material/tab-scroller/dist/mdc.tab-scroller.css',
             '@material/tab-indicator/dist/mdc.tab-indicator.css',
             '@material/ripple/dist/mdc.ripple.css',
-            '@rmwc/icon/icon.css'
+            '@pmwc/icon/icon.css'
         ], docsLink: "https://material.io/develop/web/components/tabs/tab-bar/", examples: examples },
         React.createElement(DocsSubtitle, null, "Basic Usage"),
         React.createElement(DocsP, null, "Tabs can be either controlled or uncontrolled just like inputs. Use the `activeTabIndex` and `onActivate` callback for controlled components."),

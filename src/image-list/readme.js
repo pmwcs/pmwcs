@@ -4,7 +4,7 @@ import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 import { ImageList, ImageListItem, ImageListImageAspectContainer, ImageListImage, ImageListSupporting, ImageListLabel } from '.';
 export default function () {
-    return (React.createElement(Docs, { title: "Image Lists", lead: "MDC Image List provides a RTL-aware Material Design image list component, representing an evolution of the Material Design Grid List spec. An Image List consists of several items, each containing an image and optionally supporting content (i.e. a text label).", module: "@rmwc/image-list", styles: ['@material/image-list/dist/mdc.image-list.css'], docsLink: "https://material.io/develop/web/components/image-lists/", examples: examples },
+    return (React.createElement(Docs, { title: "Image Lists", lead: "MDC Image List provides a RTL-aware Material Design image list component, representing an evolution of the Material Design Grid List spec. An Image List consists of several items, each containing an image and optionally supporting content (i.e. a text label).", module: "@pmwc/image-list", styles: ['@material/image-list/dist/mdc.image-list.css'], docsLink: "https://material.io/develop/web/components/image-lists/", examples: examples },
         React.createElement(DocsSubtitle, null, "Standard Layout"),
         React.createElement(DocsP, null, "Image Lists will give you basic layout, but you will have to use inline styling or CSS to achieve things like spacing, aspect ratio, and column count. Check out the inline styles below as examples."),
         React.createElement(DocsExample, { label: "Default" },

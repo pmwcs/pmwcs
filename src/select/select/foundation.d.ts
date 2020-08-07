@@ -1,11 +1,11 @@
 import { h } from 'preact';
-import { FloatingLabelApi } from '@rmwc/floating-label';
-import { MenuApi } from '@rmwc/menu';
+import { FloatingLabelApi } from '@pmwc/floating-label';
+import { MenuApi } from '@pmwc/menu';
 import { SelectIconApi } from '../select-icon';
 import { SelectProps } from './';
 export declare const useSelectFoundation: (props: SelectProps & React.HTMLProps<any>) => {
-    rootEl: import("@rmwc/base").FoundationElement<any, HTMLElement>;
-    selectedTextEl: import("@rmwc/base").FoundationElement<any, HTMLElement>;
+    rootEl: import("@pmwc/base").FoundationElement<any, HTMLElement>;
+    selectedTextEl: import("@pmwc/base").FoundationElement<any, HTMLElement>;
     notchWidth: number | undefined;
     menuOpen: boolean;
     lineRippleActive: boolean;

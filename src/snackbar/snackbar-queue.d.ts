@@ -1,8 +1,8 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 import { h } from 'preact';
 import { SnackbarProps, SnackbarActionProps, SnackbarHTMLProps } from './snackbar';
-import { IconPropT } from '@rmwc/types';
-import { ArrayEmitter } from '@rmwc/base';
+import { IconPropT } from '@pmwc/types';
+import { ArrayEmitter } from '@pmwc/base';
 interface SnackbarQueueMessageBase {
     title?: React.ReactNode;
     body?: React.ReactNode;

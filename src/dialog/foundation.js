@@ -5,7 +5,7 @@ import {
   useFoundation,
   focusTrapFactory,
   triggerWindowResize
-} from '@rmwc/base';
+} from '@pmwc/base';
 import {h} from 'preact'
 import { useRef, useEffect, useMemo } from 'preact/compat';
 

@@ -8,10 +8,10 @@ import { Select } from '../select';
 import { Checkbox } from '../checkbox';
 import { Switch } from '../switch';
 export default function () {
-    return (React.createElement(Docs, { title: "Data Tables", lead: "Data tables display sets of data.", module: "@rmwc/data-table", styles: [
+    return (React.createElement(Docs, { title: "Data Tables", lead: "Data tables display sets of data.", module: "@pmwc/data-table", styles: [
             '@material/data-table/dist/mdc.data-table.css',
-            '@rmwc/data-table/data-table.css',
-            '@rmwc/icon/icon.css'
+            '@pmwc/data-table/data-table.css',
+            '@pmwc/icon/icon.css'
         ], examples: examples },
         React.createElement(DocsSubtitle, null, "Standard Table"),
         React.createElement(DocsP, null, "The DataTable components are intended to be flexible, properly styled, Material compliant HTML tables. Because of the complexities of working with datasets (especially large ones), the DataTable component DOES NOT handle pagination, data fetching, sorting, or performance of long lists."),

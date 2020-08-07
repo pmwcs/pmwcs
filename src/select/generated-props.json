@@ -89,7 +89,7 @@
                         "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
                         "metadata": {}
                     },
-                    "fileName": "src/select/node_modules/@rmwc/menu/node_modules/@rmwc/list/node_modules/@rmwc/icon/index.tsx",
+                    "fileName": "src/select/node_modules/@pmwc/menu/node_modules/@pmwc/list/node_modules/@pmwc/icon/index.tsx",
                     "flags": {
                         "isExported": true,
                         "isExternal": false,

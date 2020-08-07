@@ -1,7 +1,7 @@
 /// <reference types="react" />
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 import { MDCSelectIconFoundation } from '@material/select';
-import { IconProps } from '@rmwc/icon';
+import { IconProps } from '@pmwc/icon';
 export interface SelectIconApi {
     getFoundation: () => MDCSelectIconFoundation;
 }

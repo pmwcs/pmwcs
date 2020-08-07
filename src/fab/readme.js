@@ -4,9 +4,9 @@ import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 import { Fab } from '.';
 export default function () {
-    return (React.createElement(Docs, { title: "Fabs", lead: "A floating action button (FAB) represents the primary action of a screen.", module: "@rmwc/fab", styles: [
+    return (React.createElement(Docs, { title: "Fabs", lead: "A floating action button (FAB) represents the primary action of a screen.", module: "@pmwc/fab", styles: [
             '@material/fab/dist/mdc.fab.css',
-            '@rmwc/icon/icon.css',
+            '@pmwc/icon/icon.css',
             '@material/ripple/dist/mdc.ripple.css'
         ], docsLink: "https://material.io/develop/web/components/buttons/floating-action-buttons/", examples: examples },
         React.createElement(DocsExample, { label: "Default" },

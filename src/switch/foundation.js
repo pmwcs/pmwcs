@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useEffect } from 'preact/hooks';
-import { useToggleFoundation } from '@rmwc/toggleable';
-import { useFoundation } from '@rmwc/base';
+import { useToggleFoundation } from '@pmwc/toggleable';
+import { useFoundation } from '@pmwc/base';
 
 import { MDCSwitchFoundation, MDCSwitchAdapter } from '@material/switch';
 

@@ -2,10 +2,10 @@
 
 Grid lists are an alternative to standard list views.
 
-- Module **@rmwc/grid-list**
+- Module **@pmwc/grid-list**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/grid-list/styles';
+    - import '@pmwc/grid-list/styles';
   - Or include stylesheets
     - **'@material/grid-list/dist/mdc.grid-list.css'**
 - MDC Docs: [https://material.io/components/web/catalog/grid-lists/](https://material.io/components/web/catalog/grid-lists/)

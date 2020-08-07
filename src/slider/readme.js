@@ -5,7 +5,7 @@ import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 import { Slider } from '.';
 export default function () {
-    return (React.createElement(Docs, { title: "Sliders", lead: "Sliders let users select from a range of values by moving the slider thumb.", module: "@rmwc/slider", styles: ['@material/slider/dist/mdc.slider.css'], docsLink: "https://material.io/develop/web/components/input-controls/sliders/", examples: examples },
+    return (React.createElement(Docs, { title: "Sliders", lead: "Sliders let users select from a range of values by moving the slider thumb.", module: "@pmwc/slider", styles: ['@material/slider/dist/mdc.slider.css'], docsLink: "https://material.io/develop/web/components/input-controls/sliders/", examples: examples },
         React.createElement(DocsP, null, "Sliders can be both uncontrolled and controlled. When creating a controlled `Slider`, you should be listening to the `onInput` event and use `evt.detail.value` to set your new value."),
         React.createElement(DocsP, null, "Sliders will automatically layout themselves on window resize. If you need to manually trigger a layout because the sliders container size changed, the simplest way is to trigger a resize event `window.dispatchEvent(new Event('resize'));`."),
         React.createElement(DocsP, null, "**Known Issue** `material-components-web` uses pointer events internally. If you are using something below React 16.4, you will see unknown attribute errors, however the slider should still work."),

@@ -5,7 +5,7 @@ import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 import { Elevation } from '.';
 export default function () {
-    return (React.createElement(Docs, { title: "Elevation", lead: "Elevation is the relative distance between two surfaces along the z-axis.", module: "@rmwc/elevation", styles: ['@material/elevation/dist/mdc.elevation.css'], docsLink: "https://material.io/develop/web/components/elevation/", examples: examples },
+    return (React.createElement(Docs, { title: "Elevation", lead: "Elevation is the relative distance between two surfaces along the z-axis.", module: "@pmwc/elevation", styles: ['@material/elevation/dist/mdc.elevation.css'], docsLink: "https://material.io/develop/web/components/elevation/", examples: examples },
         React.createElement(DocsExample, { label: "Elevation" },
             React.createElement(React.Fragment, null, Array(25)
                 .fill(undefined)

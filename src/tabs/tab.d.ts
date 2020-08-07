@@ -1,4 +1,4 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 import { h } from 'preact';
 import { MDCTabFoundation } from '@material/tab';
 export declare type TabOnInteractionEventT = RMWC.CustomEventT<{

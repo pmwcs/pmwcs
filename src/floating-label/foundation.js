@@ -1,4 +1,4 @@
-import { useFoundation } from '@rmwc/base';
+import { useFoundation } from '@pmwc/base';
 
 import {
   MDCFloatingLabelFoundation,

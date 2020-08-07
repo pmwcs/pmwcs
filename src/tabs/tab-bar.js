@@ -1,6 +1,6 @@
 import { __assign, __rest } from "tslib";
 import React, { useRef } from 'react';
-import { Tag, useClassNames, createComponent } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@pmwc/base';
 import { TabScroller } from './tab-scroller';
 import { TabBarContext } from './tab-bar-context';
 import { useTabBarFoundation } from './tab-bar-foundation';

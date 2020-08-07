@@ -1,11 +1,11 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
 import { MDCSnackbarFoundation } from '@material/snackbar';
-import { Button } from '@rmwc/button';
-import { useClassNames, Tag, createComponent } from '@rmwc/base';
+import { Button } from '@pmwc/button';
+import { useClassNames, Tag, createComponent } from '@pmwc/base';
 import { useSnackbarFoundation } from './foundation';
-import { IconButton } from '@rmwc/icon-button';
-import { Icon } from '@rmwc/icon';
+import { IconButton } from '@pmwc/icon-button';
+import { Icon } from '@pmwc/icon';
 /** A Snackbar component for notifications. */
 export var Snackbar = createComponent(function Snackbar(props, ref) {
     var _a = useSnackbarFoundation(props), rootEl = _a.rootEl, surfaceEl = _a.surfaceEl, labelEl = _a.labelEl;

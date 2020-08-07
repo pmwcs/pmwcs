@@ -1,6 +1,6 @@
 import '@material/textfield/dist/mdc.textfield.css';
-import '@rmwc/floating-label/styles';
-import '@rmwc/notched-outline/styles';
-import '@rmwc/line-ripple/styles';
-import '@rmwc/ripple/styles';
-import '@rmwc/icon/styles';
+import '@pmwc/floating-label/styles';
+import '@pmwc/notched-outline/styles';
+import '@pmwc/line-ripple/styles';
+import '@pmwc/ripple/styles';
+import '@pmwc/icon/styles';

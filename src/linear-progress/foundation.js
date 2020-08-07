@@ -1,7 +1,7 @@
 import { __assign, __read, __rest } from "tslib";
 import { useEffect, useState } from 'react';
 import { MDCLinearProgressFoundation } from '@material/linear-progress';
-import { useFoundation } from '@rmwc/base';
+import { useFoundation } from '@pmwc/base';
 export var useLinearProgressFoundation = function (props) {
     var _a = useFoundation({
         props: props,

@@ -1,8 +1,8 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
-import { useClassNames, Tag, createComponent } from '@rmwc/base';
+import { useClassNames, Tag, createComponent } from '@pmwc/base';
 import { useMenuSurfaceFoundation } from './foundation';
-import { PortalChild } from '@rmwc/base';
+import { PortalChild } from '@pmwc/base';
 /****************************************************************
  * MenuSurface
  ****************************************************************/

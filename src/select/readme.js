@@ -5,8 +5,8 @@ import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 import { Select } from '.';
 export default function () {
-    return (React.createElement(Docs, { title: "Select Menus", lead: "Menus display a list of choices on a transient sheet of material.", module: "@rmwc/select", styles: [
-            '@rmwc/select/select.css',
+    return (React.createElement(Docs, { title: "Select Menus", lead: "Menus display a list of choices on a transient sheet of material.", module: "@pmwc/select", styles: [
+            '@pmwc/select/select.css',
             '@material/select/dist/mdc.select.css',
             '@material/floating-label/dist/mdc.floating-label.css',
             '@material/notched-outline/dist/mdc.notched-outline.css',

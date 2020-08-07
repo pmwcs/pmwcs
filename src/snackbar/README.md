@@ -2,10 +2,10 @@
 
 Snackbars provide brief feedback about an operation through a message at the bottom of the screen.
 
-- Module **@rmwc/snackbar**
+- Module **@pmwc/snackbar**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/snackbar/styles';
+    - import '@pmwc/snackbar/styles';
   - Or include stylesheets
     - **'@material/snackbar/dist/mdc.snackbar.css'**
     - **'@material/button/dist/mdc.button.css'**
@@ -85,7 +85,7 @@ Setup is nice and easy, create a queue object you can pass around in your code b
 
 // Create a file that exports your queue
 // myQueue.js
-import { createSnackbarQueue } from '@rmwc/snackbar';
+import { createSnackbarQueue } from '@pmwc/snackbar';
 
 export const queue = createSnackbarQueue()
 ```

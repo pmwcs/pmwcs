@@ -1,7 +1,7 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 import { h } from 'preact';
 import { MDCMenuFoundation } from '@material/menu';
-import { ListItemProps, ListProps, ListApi } from '@rmwc/list';
+import { ListItemProps, ListProps, ListApi } from '@pmwc/list';
 import { MenuSurfaceProps, MenuSurfaceApi } from '../menu-surface';
 /****************************************************************
  * Menu

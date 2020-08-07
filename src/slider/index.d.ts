@@ -1,4 +1,4 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 import { h } from 'preact';
 import { MDCSliderFoundation } from '@material/slider';
 export declare type SliderOnChangeEventT = RMWC.CustomEventT<{

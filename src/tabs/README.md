@@ -2,17 +2,17 @@
 
 Tabs make it easy to explore and switch between different views.
 
-- Module **@rmwc/tabs**
+- Module **@pmwc/tabs**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/tabs/styles';
+    - import '@pmwc/tabs/styles';
   - Or include stylesheets
     - **'@material/tab-bar/dist/mdc.tab-bar.css'**
     - **'@material/tab/dist/mdc.tab.css'**
     - **'@material/tab-scroller/dist/mdc.tab-scroller.css'**
     - **'@material/tab-indicator/dist/mdc.tab-indicator.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
-    - **'@rmwc/icon/icon.css'**
+    - **'@pmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/tabs/tab-bar/](https://material.io/develop/web/components/tabs/tab-bar/)
 
 ## Basic Usage

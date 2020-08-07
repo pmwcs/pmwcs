@@ -7,7 +7,7 @@ import { GridList, GridTile, GridTileIcon, GridTilePrimary, GridTilePrimaryConte
 import { Checkbox } from '../checkbox';
 import { Select } from '../select';
 export default function () {
-    return (React.createElement(Docs, { title: "Grid Lists", lead: "Grid lists are an alternative to standard list views.", module: "@rmwc/grid-list", styles: ['@material/grid-list/dist/mdc.grid-list.css'], docsLink: "https://material.io/components/web/catalog/grid-lists/", examples: examples },
+    return (React.createElement(Docs, { title: "Grid Lists", lead: "Grid lists are an alternative to standard list views.", module: "@pmwc/grid-list", styles: ['@material/grid-list/dist/mdc.grid-list.css'], docsLink: "https://material.io/components/web/catalog/grid-lists/", examples: examples },
         React.createElement(DocsExample, null, function Example() {
             var _a = __read(React.useState({
                 tileGutter1: false,

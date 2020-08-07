@@ -1,5 +1,5 @@
 import { useEffect } from 'preact/hooks';
-import { useFoundation } from '@rmwc/base';
+import { useFoundation } from '@pmwc/base';
 import { MDCLineRippleFoundation } from '@material/line-ripple';
 import { EventType, SpecificEventListener } from '@material/base/types';
 import { LineRippleProps } from '.';

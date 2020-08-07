@@ -1,11 +1,11 @@
 import { __awaiter, __generator, __read, __spread } from "tslib";
 import React, { useState, useRef } from 'react';
 import { menuContent } from '../../common/menu-content';
-import { Menu, MenuItems, MenuSurfaceAnchor } from '@rmwc/menu';
-import { SimpleListItem } from '@rmwc/list';
-import { TextField } from '@rmwc/textfield';
+import { Menu, MenuItems, MenuSurfaceAnchor } from '@pmwc/menu';
+import { SimpleListItem } from '@pmwc/list';
+import { TextField } from '@pmwc/textfield';
 import { Link } from 'react-router-dom';
-import { CircularProgress } from '@rmwc/circular-progress';
+import { CircularProgress } from '@pmwc/circular-progress';
 import { history } from '../../common/history';
 import styles from './site-search.module.css';
 var componentsList = (function () {

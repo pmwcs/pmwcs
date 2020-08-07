@@ -1,6 +1,6 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
-import { getDisplayName, Tag, useClassNames, createComponent } from '@rmwc/base';
+import { getDisplayName, Tag, useClassNames, createComponent } from '@pmwc/base';
 /** A Grid component */
 export var Grid = createComponent(function Grid(props, ref) {
     var _a;

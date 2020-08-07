@@ -1,7 +1,7 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 import { h } from 'preact';
 import { Corner, MDCMenuSurfaceFoundation } from '@material/menu-surface';
-import { PortalPropT } from '@rmwc/base';
+import { PortalPropT } from '@pmwc/base';
 export declare type AnchorT = 'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart';
 export declare type MenuSurfaceOnOpenEventT = RMWC.CustomEventT<{}>;
 export declare type MenuSurfaceOnCloseEventT = RMWC.CustomEventT<{}>;

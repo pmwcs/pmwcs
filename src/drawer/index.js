@@ -1,6 +1,6 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
-import { mergeRefs, Tag, useClassNames, createComponent } from '@rmwc/base';
+import { mergeRefs, Tag, useClassNames, createComponent } from '@pmwc/base';
 import { useDismissableDrawerFoundation, useModalDrawerFoundation } from './foundation';
 /** A Drawer component. */
 export var Drawer = createComponent(function Drawer(props, ref) {

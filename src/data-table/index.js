@@ -1,7 +1,7 @@
 import { __assign, __rest } from "tslib";
 import React, { useContext } from 'react';
-import { Icon } from '@rmwc/icon';
-import { useClassNames, Tag, createComponent, DataTableHeadContext, DataTableContext } from '@rmwc/base';
+import { Icon } from '@pmwc/icon';
+import { useClassNames, Tag, createComponent, DataTableHeadContext, DataTableContext } from '@pmwc/base';
 /** The DataTable Component. */
 export var DataTable = createComponent(function DataTable(props, ref) {
     var stickyColumns = props.stickyColumns, stickyRows = props.stickyRows, rest = __rest(props, ["stickyColumns", "stickyRows"]);

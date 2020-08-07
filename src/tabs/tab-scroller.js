@@ -1,6 +1,6 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
-import { Tag } from '@rmwc/base';
+import { Tag } from '@pmwc/base';
 import { useTabScrollerFoundation } from './tab-scroller-foundation';
 export function TabScroller(props) {
     var children = props.children, apiRef = props.apiRef, rest = __rest(props, ["children", "apiRef"]);

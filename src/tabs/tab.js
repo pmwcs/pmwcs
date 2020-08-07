@@ -1,8 +1,8 @@
 import { __assign, __rest } from "tslib";
 import { h } from 'preact';
-import { useClassNames, Tag, createComponent } from '@rmwc/base';
-import { Icon } from '@rmwc/icon';
-import { withRipple, RippleSurface } from '@rmwc/ripple';
+import { useClassNames, Tag, createComponent } from '@pmwc/base';
+import { Icon } from '@pmwc/icon';
+import { withRipple, RippleSurface } from '@pmwc/ripple';
 import { TabBarContext } from './tab-bar-context';
 import { TabIndicator } from './tab-indicator';
 import { useTabFoundation } from './tab-foundation';

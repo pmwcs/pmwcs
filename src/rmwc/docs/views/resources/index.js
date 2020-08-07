@@ -1,7 +1,7 @@
 import { h } from 'preact';
-import { Card, CardPrimaryAction, CardMedia, CardActionButton, CardActions, CardActionButtons } from '@rmwc/card';
-import { Icon } from '@rmwc/icon';
-import { Typography } from '@rmwc/typography';
+import { Card, CardPrimaryAction, CardMedia, CardActionButton, CardActions, CardActionButtons } from '@pmwc/card';
+import { Icon } from '@pmwc/icon';
+import { Typography } from '@pmwc/typography';
 import styles from './resources.module.css';
 var RESOURCES = [
     {

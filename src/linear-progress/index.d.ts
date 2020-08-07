@@ -1,4 +1,4 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 import { h } from 'preact';
 import { MDCLinearProgressFoundation } from '@material/linear-progress';
 /** A component to display linear progress. */

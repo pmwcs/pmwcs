@@ -2,16 +2,16 @@
 
 Menus display a list of choices on a transient sheet of material.
 
-- Module **@rmwc/menu**
+- Module **@pmwc/menu**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/menu/styles';
+    - import '@pmwc/menu/styles';
   - Or include stylesheets
     - **'@material/menu/dist/mdc.menu.css'**
     - **'@material/menu-surface/dist/mdc.menu-surface.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
     - **'@material/list/dist/mdc.list.css'**
-    - **'@rmwc/icon/icon.css'**
+    - **'@pmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/menus/](https://material.io/develop/web/components/menus/)
 
 ## Basic Usage
@@ -153,7 +153,7 @@ You can specify any element or selector you want, but the simplest method is to 
   // Render the RMWC Portal
   // You only have to do this once
   import React from 'react';
-  import { Portal } from '@rmwc/base';
+  import { Portal } from '@pmwc/base';
 
   export default function App() {
     return (

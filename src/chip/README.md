@@ -2,13 +2,13 @@
 
 Chips represent complex entities in small blocks, such as a contact.
 
-- Module **@rmwc/chip**
+- Module **@pmwc/chip**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/chip/styles';
+    - import '@pmwc/chip/styles';
   - Or include stylesheets
     - **'@material/chips/dist/mdc.chips.css'**
-    - **'@rmwc/icon/icon.css'**
+    - **'@pmwc/icon/icon.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/chips/](https://material.io/develop/web/components/chips/)
 

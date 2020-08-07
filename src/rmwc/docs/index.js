@@ -6,7 +6,7 @@ import { history } from './common/history';
 import ReactGA from 'react-ga';
 import { AppContainer } from 'react-hot-loader';
 import App from './views/app';
-import { PMWCProvider } from '@rmwc/provider';
+import { PMWCProvider } from '@pmwc/provider';
 var renderApp = function (Component) {
     ReactDOM.render(React.createElement(PMWCProvider, null,
         React.createElement(AppContainer, null,

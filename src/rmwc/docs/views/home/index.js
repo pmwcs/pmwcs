@@ -1,13 +1,13 @@
 import { h } from 'preact';
 import { Link } from 'react-router-dom';
 import { version } from '../../../package.json';
-import { Typography } from '@rmwc/typography';
-import { Card, CardMedia } from '@rmwc/card';
-import { Grid, GridCell } from '@rmwc/grid';
-import { Theme } from '@rmwc/theme';
-import { Icon } from '@rmwc/icon';
+import { Typography } from '@pmwc/typography';
+import { Card, CardMedia } from '@pmwc/card';
+import { Grid, GridCell } from '@pmwc/grid';
+import { Theme } from '@pmwc/theme';
+import { Icon } from '@pmwc/icon';
 import styles from './home.module.css';
-import { Button } from '@rmwc/button';
+import { Button } from '@pmwc/button';
 import { galleryContent } from '../../common/menu-content';
 var checklist = [
     "Uses Google's official material-components-web library",

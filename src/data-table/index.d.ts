@@ -1,4 +1,4 @@
-import * as RMWC from '@rmwc/types';
+import * as RMWC from '@pmwc/types';
 import { h } from 'preact';
 interface SharedDataTableCellProps {
     /** Changes alignment for numeric columns */

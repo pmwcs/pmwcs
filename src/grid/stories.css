@@ -1,0 +1,5 @@
+.story-layout-grid .mdc-layout-grid__cell {
+  background: rgba(0,0,0,.1);
+  padding: 1rem 0;
+  text-align: center;
+}

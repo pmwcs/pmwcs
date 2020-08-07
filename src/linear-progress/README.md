@@ -2,10 +2,10 @@
 
 > Progress and activity indicators are visual indications of an app loading content.
 
-- Module **@pmwc/linear-progress**
+- Module **@rmwc/linear-progress**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/linear-progress/styles';
+    - import '@rmwc/linear-progress/styles';
   - Or include stylesheets
     - **'@material/linear-progress/dist/mdc.linear-progress.css'**
 - MDC Docs: [https://material.io/develop/web/components/linear-progress/](https://material.io/develop/web/components/linear-progress/)

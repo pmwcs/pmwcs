@@ -2,10 +2,7 @@ import { h } from 'preact'
 import { useCallback, useRef, useEffect } from 'preact/hooks';
 
 import { MDCMenuFoundation } from '@material/menu';
-import { useFoundation, closest } from '@rmwc/base';
-import { ListApi } from '@rmwc/list';
-import { MenuSurfaceOnOpenEventT, MenuSurfaceApi } from '../menu-surface';
-import { MenuProps } from './';
+import { useFoundation, closest } from '@pmwc/base';
 
 export const useMenuFoundation = (props) => {
   const menuSurfaceApi = useRef();

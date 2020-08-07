@@ -39,7 +39,7 @@ export var useTabBarFoundation = function (props) {
                         // ignore clicks when using controlled tabs, but we still need to notify
                         // to trigger the callback
                         // @ts-ignore ignoring unsafe protected access
-                        foundation.adapter_.notifyTabActivated(index);
+                        foundation.adapter.notifyTabActivated(index);
                     }
                 },
                 activateTabAtIndex: function (index, clientRect) {
@@ -114,7 +114,7 @@ export var useTabBarFoundation = function (props) {
     useEffect(function () {
         var index = activeTabIndex;
         // @ts-ignore ignoring unsafe protected access
-        var adapter = foundation.adapter_;
+        var adapter = foundation.adapter;
         var previousActiveIndex = adapter.getPreviousActiveTabIndex();
         // @ts-ignore private method access
         if (!foundation.indexIsInRange_(index) || index === previousActiveIndex) {

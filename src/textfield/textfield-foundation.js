@@ -162,7 +162,7 @@ export const useTextFieldFoundation = (props) => {
     if (props.floatLabel !== undefined) {
       foundation.notchOutline(props.floatLabel);
       // @ts-ignore unsafe adapter access
-      foundation.adapter_.floatLabel(props.floatLabel);
+      foundation.adapter.floatLabel(props.floatLabel);
     }
   }, [foundation, props.floatLabel]);
 

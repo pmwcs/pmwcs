@@ -3,8 +3,6 @@ import { useRef } from 'preact/hooks';
 
 import { Tag, useClassNames, createComponent } from '@pmwc/base';
 
-import { MDCTabBarFoundation } from '@material/tab-bar';
-import { MDCTabInteractionEvent } from '@material/tab';
 import { TabScroller } from './tab-scroller';
 import { TabBarContext } from './tab-bar-context';
 import { useTabBarFoundation } from './tab-bar-foundation';

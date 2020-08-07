@@ -2,12 +2,9 @@ import { h } from 'preact'
 import {useContext} from 'preact/hooks'
 import { memo } from 'preact/compat'
 
-import { MDCTabFoundation } from '@material/tab';
-
 import {
   useClassNames,
   Tag,
-  FoundationElement,
   createComponent
 } from '@pmwc/base';
 import { Icon } from '@pmwc/icon';

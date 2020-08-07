@@ -11,7 +11,9 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+    "rc-tooltip": "^4.2.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@storybook/addon-actions": "^5.3.19",

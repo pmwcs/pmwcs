@@ -1,6 +1,5 @@
 /** @jsx h */
 import { h } from 'preact'
-import { useState } from 'preact/hooks'
 import './styles.js'
 
 import {
@@ -16,7 +15,7 @@ import {
 } from './index.js'
 
 import { Typography } from '@pmwc/typography'
-// import { ListDivider } from '@pmwc/list-divider'
+import { ListDivider } from '@pmwc/list'
 
 export default {
   title: 'Card',
@@ -69,7 +68,7 @@ export const fullyFeatured = () => (
   </Card>
   </section>
 )
-/*
+
 export const articlePreview = () => (
   <Card outlined style={{ width: '21rem' }}>
     <Typography
@@ -133,7 +132,7 @@ export const articlePreview = () => (
     </CardActions>
   </Card>
 )
-*/
+
 export const miniCard = () => (
   <Card style={{ width: '12.5rem' }}>
     <CardPrimaryAction>

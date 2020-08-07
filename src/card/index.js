@@ -1,4 +1,4 @@
-import {h } from 'preact'
+import { h } from 'preact'
 import React from 'preact/compat';
 
 import { withRipple } from '@pmwc/ripple';

@@ -1,38 +1,97 @@
-import { __assign, __rest } from "tslib";
-import { h } from 'preact';
-import { classNames, mergeRefs, Tag, useClassNames, createComponent } from '@rmwc/base';
-import { withRipple } from '@rmwc/ripple';
+import { h } from 'preact'
+import React from 'preact/compat'
+
+import { MDCSwitchFoundation } from '@material/switch';
+import {
+  classNames,
+  mergeRefs,
+  Tag,
+  useClassNames,
+  createComponent
+} from '@pmwc/base';
+import { withRipple } from '@pmwc/ripple';
+import { ToggleableProps, ToggleHTMLProps } from '@pmwc/toggleable';
 import { useSwitchFoundation } from './foundation';
+
+/*********************************************************************
+ * Switch
+ *********************************************************************/
+
 /** A Switch component. */
-export var Switch = createComponent(function Switch(props, ref) {
-    var _a;
-    var _b = useSwitchFoundation(props), renderToggle = _b.renderToggle, id = _b.id, toggleRootProps = _b.toggleRootProps, rootEl = _b.rootEl, checkboxEl = _b.checkboxEl;
-    var rootClassName = useClassNames(toggleRootProps, ['mdc-switch']);
-    var children = props.children, className = props.className, label = props.label, style = props.style, inputRef = props.inputRef, foundationRef = props.foundationRef, rest = __rest(props, ["children", "className", "label", "style", "inputRef", "foundationRef"]);
-    var renderedSwitch = (React.createElement(Tag, __assign({}, rootEl.props(__assign(__assign({}, toggleRootProps), { className: rootClassName })), { ref: ref }),
-        React.createElement(SwitchTrack, null),
-        React.createElement(SwitchThumbUnderlay, null,
-            React.createElement(SwitchThumb, null),
-            React.createElement("input", __assign({}, checkboxEl.props(__assign(__assign({}, rest), { className: 'mdc-switch__native-control' })), { type: "checkbox", id: id, ref: mergeRefs(checkboxEl.setRef, inputRef), role: "switch", "aria-checked": (_a = rest.checked) !== null && _a !== void 0 ? _a : rest['aria-checked'] }))),
-        React.createElement(SwitchKnob, null)));
-    return renderToggle(renderedSwitch);
+export const Switch = createComponent(function Switch(props, ref) {
+  const {
+    renderToggle,
+    id,
+    toggleRootProps,
+    rootEl,
+    checkboxEl
+  } = useSwitchFoundation(props);
+
+  const rootClassName = useClassNames(toggleRootProps, ['mdc-switch']);
+  const {
+    children,
+    className,
+    label,
+    style,
+    inputRef,
+    foundationRef,
+    ...rest
+  } = props;
+
+  const renderedSwitch = (
+    <Tag
+      {...rootEl.props({ ...toggleRootProps, className: rootClassName })}
+      ref={ref}
+    >
+      <SwitchTrack />
+      <SwitchThumbUnderlay>
+        <SwitchThumb />
+        <input
+          {...checkboxEl.props({
+            ...rest,
+            className: 'mdc-switch__native-control'
+          })}
+          type="checkbox"
+          id={id}
+          ref={mergeRefs(checkboxEl.setRef, inputRef)}
+          role="switch"
+          aria-checked={rest.checked ?? rest['aria-checked']}
+        />
+      </SwitchThumbUnderlay>
+      <SwitchKnob />
+    </Tag>
+  );
+
+  return renderToggle(renderedSwitch);
 });
+
 /*********************************************************************
  * Bits
  *********************************************************************/
-var SwitchTrack = React.memo(function SwitchTrack() {
-    return React.createElement("div", { className: "mdc-switch__track" });
+
+const SwitchTrack = React.memo(function SwitchTrack() {
+  return <div className="mdc-switch__track" />;
 });
-var SwitchKnob = React.memo(function SwitchKnob() {
-    return React.createElement("div", { className: "mdc-switch__knob" });
+
+const SwitchKnob = React.memo(function SwitchKnob() {
+  return <div className="mdc-switch__knob" />;
 });
-var SwitchThumb = React.memo(function SwitchThumb() {
-    return React.createElement("div", { className: "mdc-switch__thumb" });
+
+const SwitchThumb = React.memo(function SwitchThumb() {
+  return <div className="mdc-switch__thumb" />;
 });
-var SwitchThumbUnderlay = withRipple({
-    unbounded: true,
-    surface: false
-})(function SwitchThumbUnderlay(_a) {
-    var className = _a.className, rest = __rest(_a, ["className"]);
-    return (React.createElement("div", __assign({ className: classNames(className, 'mdc-switch__thumb-underlay') }, rest)));
+
+const SwitchThumbUnderlay = withRipple({
+  unbounded: true,
+  surface: false
+})(function SwitchThumbUnderlay({
+  className,
+  ...rest
+}) {
+  return (
+    <div
+      className={classNames(className, 'mdc-switch__thumb-underlay')}
+      {...rest}
+    />
+  );
 });

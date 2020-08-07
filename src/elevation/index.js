@@ -1,16 +1,23 @@
-import { __assign, __rest } from "tslib";
-import { h } from 'preact';
-import { wrapChild, createComponent } from '@pmwc/base';
-import { Tag, useClassNames } from '@pmwc/base';
+import { h } from 'preact'
+
+import { Tag, useClassNames, wrapChild, createComponent } from '@pmwc/base';
+
+
 /** The Elevation Component */
-export var Elevation = createComponent(function Elevation(props, ref) {
-    var _a = props.z, z = _a === void 0 ? 0 : _a, _b = props.transition, transition = _b === void 0 ? false : _b, wrap = props.wrap, rest = __rest(props, ["z", "transition", "wrap"]);
-    var className = useClassNames(props, [
-        "mdc-elevation--z" + z,
-        { 'mdc-elevation-transition': transition }
-    ]);
-    if (wrap) {
-        return wrapChild(__assign(__assign({}, rest), { className: className, ref: ref }));
-    }
-    return React.createElement(Tag, __assign({}, rest, { ref: ref, className: className }));
+export const Elevation = createComponent(function Elevation(
+  props,
+  ref
+) {
+  const { z = 0, transition = false, wrap, ...rest } = props;
+
+  const className = useClassNames(props, [
+    `mdc-elevation--z${z}`,
+    { 'mdc-elevation-transition': transition }
+  ]);
+
+  if (wrap) {
+    return wrapChild({ ...rest, className, ref });
+  }
+
+  return <Tag {...rest} ref={ref} className={className} />;
 });

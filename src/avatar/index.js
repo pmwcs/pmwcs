@@ -1,4 +1,4 @@
-import { h } from 'preact'
+import { h, Fragment } from 'preact'
 
 import { Icon } from '@pmwc/icon';
 import { withRipple } from '@pmwc/ripple';
@@ -98,12 +98,12 @@ export const Avatar = createComponent(function Avatar(
       {...rest}
       icon={{
         icon: (
-          <>
+          <Fragment>
             <div className="pmwc-avatar__icon" style={avatarStyle} />
             <div className="pmwc-avatar__text">
               <div className="pmwc-avatar__text-inner">{initials}</div>
             </div>
-          </>
+          </Fragment>
         )
       }}
     />

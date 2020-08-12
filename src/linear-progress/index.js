@@ -23,7 +23,7 @@ export const LinearProgress = createComponent(
       }
     ]);
     const { rootEl } = useLinearProgressFoundation(props);
-console.log(rootEl)
+
     return (
       <Tag
         aria-label="Progress Bar"

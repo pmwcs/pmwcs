@@ -14,8 +14,6 @@ import {
 
 import { List, ListItem } from '@pmwc/list'
 import { Button } from '@pmwc/button'
-// import { Switch } from '@pmwc/switch'
-// import { Select } from '@pmwc/select'
 
 export default {
   title: 'Drawer',
@@ -40,7 +38,7 @@ export const permanent = () => (
 
 export const dismissible = () => {
   function Example() {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     return (
       <section>
@@ -82,7 +80,7 @@ export const dismissible = () => {
 
 export const modal = () => {
   function Example() {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     return (
       <section>
@@ -111,7 +109,7 @@ export const modal = () => {
 
 export const rightSideDrawers = () => {
   function Example() {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     return (
       <section>

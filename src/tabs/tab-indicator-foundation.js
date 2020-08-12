@@ -10,9 +10,6 @@ export const useTabIndicatorFoundation = (props) => {
     props,
     elements: { rootEl: true, contentEl: true },
     foundation: ({ rootEl, contentEl }) => {
-      console.log({ rootEl, contentEl })
-      console.log('#', typeof contentEl.ref?.getBoundingClientRect)
-
       const adapter = {
         addClass: (className) => {
           rootEl.addClass(className);

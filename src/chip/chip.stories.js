@@ -32,7 +32,7 @@ export const all = () => (
 export const withState = () => {
   function Example() {
     const [selected, setSelected] = useState(false);
-    console.log(selected)
+
     return (
       <ChipSet>
         <Chip

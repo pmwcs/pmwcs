@@ -47,7 +47,8 @@ export const Menu= createComponent(function Menu(props, ref) {
   const { children, focusOnOpen, onSelect, foundationRef, ...rest } = props;
   const { rootEl, setListApi, setMenuSurfaceApi } = useMenuFoundation(props);
 
-  const needsMenuItemsWrapper Children.map(children, isMenuItems) || []
+  const needsMenuItemsWrapper = (
+    Children.map(children, isMenuItems) || []
   ).every((val) => val === false);
 
   const menuItemsProps = {
@@ -68,7 +69,7 @@ export const Menu= createComponent(function Menu(props, ref) {
         Children.map(children, (child) => {
           if (isMenuItems(child)) {
             return cloneElement(child, {
-              ...(.isValidElement(child) ? (child.props) : {}),
+              ...(isValidElement(child) ? (child.props) : {}),
               ...menuItemsProps
             });
           }

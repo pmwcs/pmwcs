@@ -21,7 +21,7 @@ export default {
 
 export const standardUsage = () => {
   function Example() {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     return (
       <section>
         <Dialog
@@ -53,7 +53,7 @@ export const standardUsage = () => {
 
 export const simplifiedUsage = () => {
   function Example() {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     return (
       <section>
         <SimpleDialog

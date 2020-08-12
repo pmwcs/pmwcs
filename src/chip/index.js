@@ -21,6 +21,7 @@ export const Chip = withRipple({})(
       label,
       children,
       selected,
+      outlined,
       foundationRef,
       ...rest
     } = props;
@@ -30,7 +31,8 @@ export const Chip = withRipple({})(
     const className = useClassNames(props, [
       'mdc-chip',
       {
-        'mdc-chip--selected': selected
+        'mdc-chip--selected': selected,
+        'pmwc-chip--outlined': outlined
       }
     ]);
 

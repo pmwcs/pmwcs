@@ -26,6 +26,10 @@ export const all = () => (
     <ChipSet>
       <Chip icon="favorite" label="Cookies" trailingIcon="close" />
     </ChipSet>
+
+    <ChipSet>
+      <Chip outlined icon="favorite" label="Outlined" trailingIcon="close" />
+    </ChipSet>
   </section>
 )
 

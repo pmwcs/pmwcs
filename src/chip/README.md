@@ -151,6 +151,7 @@ A Chip component.
 | `onRemove` | `undefined \| (evt: ChipOnRemoveEventT) => void` | A callback that is fired once the chip is in an exited state from removing it. evt.detail = { chipId: string } |
 | `onTrailingIconInteraction` | `undefined \| (evt: ChipOnTrailingIconInteractionEventT) => void` | A callback for click or enter key for the trailing icon. material-components-web always treats this as an intent to remove the chip. evt.detail = { chipId: string } |
 | `selected` | `undefined \| false \| true` | makes the Chip appear selected. |
+| `outlined` | `undefined \| false \| true` | makes the Chip appear outlined. |
 | `trailingIcon` | `RMWC.IconPropT` | Instance of an Icon Component. |
 | `trailingIconRemovesChip` | `undefined \| false \| true` | Defaults to true. Set this to false if your trailing icon is something other than a remove button. |
 
@@ -164,5 +165,3 @@ A container for multiple chips.
 |------|------|-------------|
 | `choice` | `undefined \| false \| true` | Creates a choice chipset |
 | `filter` | `undefined \| false \| true` | Creates a filter chipset |
-
-

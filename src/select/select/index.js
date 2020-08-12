@@ -1,5 +1,5 @@
-import { h, Fragment } from 'preact'
-import { memo, isValidElement } from 'preact/compat';
+import { h, Fragment, isValidElement } from 'preact'
+import { memo } from 'preact/compat';
 
 import { useClassNames, useId, Tag, createComponent } from '@pmwc/base';
 import { FloatingLabel } from '@pmwc/floating-label';

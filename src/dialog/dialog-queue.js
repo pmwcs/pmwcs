@@ -1,10 +1,9 @@
-import {h} from 'preact';
-import React, { useState, useEffect } from 'preact/compat';
-import {
-  SimpleDialog,
-} from './dialog';
+import { h } from 'preact';
+import { useState, useEffect } from 'preact/hooks';
+
 import { ArrayEmitter, randomId } from '@pmwc/base';
 import { TextField } from '@pmwc/textfield';
+import { SimpleDialog } from './dialog';
 
 /** A snackbar queue for rendering messages */
 export function DialogQueue({

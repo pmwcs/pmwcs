@@ -1,4 +1,4 @@
-import { useState } from 'preact/compat';
+import { useState } from 'preact/hooks';
 import { randomId } from './random-id';
 
 export const useId = function (prefix, props) {

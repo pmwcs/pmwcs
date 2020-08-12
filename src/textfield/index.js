@@ -1,5 +1,5 @@
-import {h, Fragment} from 'preact';
-import {memo, isValidElement, forwardRef} from 'preact/compat';
+import {h, Fragment, isValidElement} from 'preact';
+import {memo, forwardRef} from 'preact/compat';
 
 import { useClassNames, Tag, useId, createComponent } from '@pmwc/base';
 import { Icon } from '@pmwc/icon';

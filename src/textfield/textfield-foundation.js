@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'preact/compat';
+import { useState, useRef, useEffect } from 'preact/hooks';
 import { useFoundation } from '@pmwc/base';
 import { MDCTextFieldFoundation } from '@material/textfield';
 

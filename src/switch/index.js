@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import React from 'preact/compat'
+import { memo } from 'preact/compat'
 
 import { MDCSwitchFoundation } from '@material/switch';
 import {
@@ -69,15 +69,15 @@ export const Switch = createComponent(function Switch(props, ref) {
  * Bits
  *********************************************************************/
 
-const SwitchTrack = React.memo(function SwitchTrack() {
+const SwitchTrack = memo(function SwitchTrack() {
   return <div className="mdc-switch__track" />;
 });
 
-const SwitchKnob = React.memo(function SwitchKnob() {
+const SwitchKnob = memo(function SwitchKnob() {
   return <div className="mdc-switch__knob" />;
 });
 
-const SwitchThumb = React.memo(function SwitchThumb() {
+const SwitchThumb = memo(function SwitchThumb() {
   return <div className="mdc-switch__thumb" />;
 });
 

@@ -1,5 +1,5 @@
 import { h, createElement, createContext } from 'preact';
-import { useContext } from 'preact/compat';
+import { useContext } from 'preact/hooks';
 
 // Default provider options
 const providerDefaults = {

@@ -1,6 +1,6 @@
-import { h } from 'preact'
+import { h, cloneElement } from 'preact'
 import { useEffect, useState } from 'preact/hooks';
-import React from 'preact/compat'
+import { Children } from 'preact/compat'
 
 import { List, ListItem } from '@pmwc/list';
 import {
@@ -47,8 +47,7 @@ export const Menu= createComponent(function Menu(props, ref) {
   const { children, focusOnOpen, onSelect, foundationRef, ...rest } = props;
   const { rootEl, setListApi, setMenuSurfaceApi } = useMenuFoundation(props);
 
-  const needsMenuItemsWrapper = (
-    React.Children.map(children, isMenuItems) || []
+  const needsMenuItemsWrapper Children.map(children, isMenuItems) || []
   ).every((val) => val === false);
 
   const menuItemsProps = {
@@ -66,10 +65,10 @@ export const Menu= createComponent(function Menu(props, ref) {
       {needsMenuItemsWrapper ? (
         <MenuItems {...menuItemsProps}>{children}</MenuItems>
       ) : (
-        React.Children.map(children, (child) => {
+        Children.map(children, (child) => {
           if (isMenuItems(child)) {
-            return React.cloneElement(child, {
-              ...(React.isValidElement(child) ? (child.props) : {}),
+            return cloneElement(child, {
+              ...(.isValidElement(child) ? (child.props) : {}),
               ...menuItemsProps
             });
           }
@@ -104,7 +103,7 @@ const simpleMenuFactory = (MenuComponent) =>
       ...rest
     } = props;
 
-    const wrappedHandle = React.cloneElement(handle, {
+    const wrappedHandle = cloneElement(handle, {
       ...handle.props,
       onClick: (evt) => {
         setStateOpen(!stateOpen);

@@ -1,6 +1,7 @@
-import {h} from 'preact';
-import React from 'preact/compat';
-import {Button} from '@pmwc/button'
+import { h } from 'preact';
+import { memo } from 'preact/compat';
+
+import { Button } from '@pmwc/button'
 import { MDCDialogFoundation } from '@material/dialog';
 
 import {
@@ -110,7 +111,7 @@ export const SimpleDialog = createComponent(
  * Bits
  *********************************************************************/
 
-const DialogScrim = React.memo(function DialogScrim({
+const DialogScrim = memo(function DialogScrim({
   disableInteraction
 }) {
   const style = disableInteraction

@@ -1,0 +1,35 @@
+{
+  "name": "@pmwc/snackbar",
+  "version": "1.0.0-0",
+  "description": "PMWC snackbar component",
+  "keywords": [
+    "pmwc"
+  ],
+  "license": "MIT",
+  "author": "",
+  "sideEffects": [
+    "./styles.js",
+    "*.css"
+  ],
+  "main": "dist/index.js",
+  "module": "next/index.js",
+  "scripts": {
+    "publish:dist": "npm publish dist --access=public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@material/button": "^7.0.0",
+    "@material/ripple": "^7.0.0",
+    "@material/snackbar": "^7.0.0",
+    "@pmwc/base": "^1.0.0",
+    "@pmwc/button": "^1.0.0",
+    "@pmwc/icon": "^1.0.0",
+    "@pmwc/icon-button": "^1.0.0"
+  },
+  "peerDependencies": {
+    "preact": "^10.4.7"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,6 +1,6 @@
 import { h, Fragment } from 'preact'
-import { useEffect, useState } from 'preact/hooks'
-import { useRef, createPortal } from 'preact/compat';
+import { useEffect, useState, useRef } from 'preact/hooks'
+import { createPortal } from 'preact/compat';
 
 const PORTAL_ID = 'rmwcPortal';
 

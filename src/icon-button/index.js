@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import React from 'preact/compat'
+import { memo} from 'preact/compat'
 
 import { useClassNames, createComponent } from '@pmwc/base';
 import { Icon } from '@pmwc/icon';
@@ -78,7 +78,7 @@ const IconButtonToggle = createComponent(function IconButtonToggle (props, ref) 
    );
  }))
 
- const IconButtonIcon = React.memo(function IconButtonIcon(props) {
+ const IconButtonIcon = memo(function IconButtonIcon(props) {
    const { on, ...rest } = props;
    const className = useClassNames(props, [
      'mdc-icon-button__icon',

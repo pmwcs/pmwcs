@@ -1,8 +1,6 @@
 import { useEffect } from 'preact/hooks';
 import { useFoundation } from '@pmwc/base';
 import { MDCLineRippleFoundation } from '@material/line-ripple';
-import { EventType, SpecificEventListener } from '@material/base/types';
-import { LineRippleProps } from '.';
 
 export const useLineRippleFoundation = (props) => {
   const { foundation, ...elements } = useFoundation({

@@ -1,4 +1,4 @@
-import { useEffect } from 'preact/compat';
+import { useEffect } from 'preact/hooks';
 import { useFoundation } from '@pmwc/base';
 import { MDCIconButtonToggleFoundation } from '@material/icon-button';
 

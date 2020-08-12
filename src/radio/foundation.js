@@ -1,5 +1,5 @@
-import {h} from 'preact';
-import React from 'preact/compat'
+import { h } from 'preact';
+
 import { useToggleFoundation } from '@pmwc/toggleable';
 import { useFoundation } from '@pmwc/base';
 import { MDCRadioFoundation } from '@material/radio';

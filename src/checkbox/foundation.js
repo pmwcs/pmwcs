@@ -1,8 +1,9 @@
+import { h } from 'preact';
+import { useEffect, useCallback } from 'preact/hooks';
+
 import { useToggleFoundation } from '@pmwc/toggleable';
 import { useFoundation } from '@pmwc/base';
 import { MDCCheckboxFoundation } from '@material/checkbox';
-import {h} from 'preact';
-import { useEffect, useCallback } from 'preact/compat';
 
 export const useCheckboxFoundation = (props) => {
   const { renderToggle, toggleRootProps, id } = useToggleFoundation(props);

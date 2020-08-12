@@ -7,7 +7,7 @@ import './stories.css'
 import './styles.js'
 
 import { Icon } from './index.js'
-import { Typography } from '../typography'
+import { Typography } from '@pmwc/typography'
 
 export default {
   title: 'Icon',

@@ -1,3 +1,6 @@
+import { h } from 'preact'
+import { useRef, useEffect, useMemo } from 'preact/hooks';
+
 import { MDCDialogFoundation } from '@material/dialog';
 import {
   closest,
@@ -6,8 +9,6 @@ import {
   focusTrapFactory,
   triggerWindowResize
 } from '@pmwc/base';
-import {h} from 'preact'
-import { useRef, useEffect, useMemo } from 'preact/compat';
 
 const isScrollable = (el) => {
   return el.scrollHeight > el.offsetHeight;

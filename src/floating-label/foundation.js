@@ -1,9 +1,7 @@
-import { useFoundation } from '@pmwc/base';
-
-import {
-  MDCFloatingLabelFoundation,
-} from '@material/floating-label';
 import { useEffect } from 'preact/hooks';
+
+import { useFoundation } from '@pmwc/base';
+import { MDCFloatingLabelFoundation } from '@material/floating-label';
 
 export const useFloatingLabelFoundation = (props) => {
   const { foundation, ...elements } = useFoundation({

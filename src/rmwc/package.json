@@ -1,83 +1,85 @@
 {
-    "name": "rmwc",
-    "version": "6.1.3",
-    "description": "RMWC is a React UI Kit built on Google's official Material Components Web library.",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "module": "next/index.js",
-    "sideEffects": true,
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "publish:dist": "npm publish dist --access=public",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/jamesmfriedman/rmwc.git"
-    },
-    "keywords": [
-        "rmwc",
-        "react",
-        "react-material",
-        "material-design",
-        "react-mdc",
-        "react-material-design"
-    ],
-    "author": "James Friedman",
-    "private": false,
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/jamesmfriedman/rmwc/issues"
-    },
-    "homepage": "https://github.com/jamesmfriedman/rmwc#readme",
-    "peerDependencies": {
-        "react": "^16.3.x",
-        "react-dom": "^16.3.x"
-    },
-    "dependencies": {
-        "@pmwc/avatar": "^6.1.3",
-        "@pmwc/badge": "^6.0.14",
-        "@pmwc/base": "^6.0.14",
-        "@pmwc/button": "^6.1.3",
-        "@pmwc/card": "^6.1.3",
-        "@pmwc/checkbox": "^6.1.3",
-        "@pmwc/chip": "^6.1.3",
-        "@pmwc/circular-progress": "^6.0.14",
-        "@pmwc/data-table": "^6.1.3",
-        "@pmwc/dialog": "^6.1.3",
-        "@pmwc/drawer": "^6.0.14",
-        "@pmwc/elevation": "^6.1.0",
-        "@pmwc/fab": "^6.1.3",
-        "@pmwc/floating-label": "^6.1.2",
-        "@pmwc/formfield": "^6.0.14",
-        "@pmwc/grid": "^6.0.14",
-        "@pmwc/grid-list": "^6.1.3",
-        "@pmwc/icon": "^6.1.3",
-        "@pmwc/icon-button": "^6.1.3",
-        "@pmwc/image-list": "^6.0.14",
-        "@pmwc/line-ripple": "^6.0.14",
-        "@pmwc/linear-progress": "^6.0.14",
-        "@pmwc/list": "^6.1.3",
-        "@pmwc/menu": "^6.1.3",
-        "@pmwc/notched-outline": "^6.0.14",
-        "@pmwc/provider": "^6.1.3",
-        "@pmwc/radio": "^6.1.3",
-        "@pmwc/ripple": "^6.1.3",
-        "@pmwc/select": "^6.1.3",
-        "@pmwc/slider": "^6.0.14",
-        "@pmwc/snackbar": "^6.1.3",
-        "@pmwc/switch": "^6.1.3",
-        "@pmwc/tabs": "^6.1.3",
-        "@pmwc/textfield": "^6.1.3",
-        "@pmwc/theme": "^6.1.2",
-        "@pmwc/toggleable": "^6.0.14",
-        "@pmwc/tooltip": "^6.1.3",
-        "@pmwc/top-app-bar": "^6.1.3",
-        "@pmwc/types": "^6.0.5",
-        "@pmwc/typography": "^6.1.3",
-        "material-components-web": "^5.1.0"
-    },
-    "gitHead": "d9befec0e3b258864b71686eecd16c16feb43cf1"
+  "name": "@pmwc/rmwc",
+  "version": "6.1.3",
+  "description": "RMWC is a React UI Kit built on Google's official Material Components Web library.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "next/index.js",
+  "sideEffects": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "publish:dist": "npm publish dist --access=public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesmfriedman/rmwc.git"
+  },
+  "keywords": [
+    "rmwc",
+    "react",
+    "react-material",
+    "material-design",
+    "react-mdc",
+    "react-material-design"
+  ],
+  "author": "James Friedman",
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesmfriedman/rmwc/issues"
+  },
+  "homepage": "https://github.com/jamesmfriedman/rmwc#readme",
+  "peerDependencies": {
+    "react": "^16.3.x",
+    "react-dom": "^16.3.x"
+  },
+  "dependencies": {
+    "@pmwc/avatar": "^6.1.3",
+    "@pmwc/badge": "^6.0.14",
+    "@pmwc/base": "^6.0.14",
+    "@pmwc/button": "^6.1.3",
+    "@pmwc/card": "^6.1.3",
+    "@pmwc/checkbox": "^6.1.3",
+    "@pmwc/chip": "^6.1.3",
+    "@pmwc/circular-progress": "^6.0.14",
+    "@pmwc/data-table": "^6.1.3",
+    "@pmwc/dialog": "^6.1.3",
+    "@pmwc/drawer": "^6.0.14",
+    "@pmwc/elevation": "^6.1.0",
+    "@pmwc/fab": "^6.1.3",
+    "@pmwc/floating-label": "^6.1.2",
+    "@pmwc/formfield": "^6.0.14",
+    "@pmwc/grid": "^6.0.14",
+    "@pmwc/grid-list": "^6.1.3",
+    "@pmwc/icon": "^6.1.3",
+    "@pmwc/icon-button": "^6.1.3",
+    "@pmwc/image-list": "^6.0.14",
+    "@pmwc/line-ripple": "^6.0.14",
+    "@pmwc/linear-progress": "^6.0.14",
+    "@pmwc/list": "^6.1.3",
+    "@pmwc/menu": "^6.1.3",
+    "@pmwc/notched-outline": "^6.0.14",
+    "@pmwc/provider": "^6.1.3",
+    "@pmwc/radio": "^6.1.3",
+    "@pmwc/ripple": "^6.1.3",
+    "@pmwc/select": "^6.1.3",
+    "@pmwc/slider": "^6.0.14",
+    "@pmwc/snackbar": "^6.1.3",
+    "@pmwc/switch": "^6.1.3",
+    "@pmwc/tabs": "^6.1.3",
+    "@pmwc/textfield": "^6.1.3",
+    "@pmwc/theme": "^6.1.2",
+    "@pmwc/toggleable": "^6.0.14",
+    "@pmwc/tooltip": "^6.1.3",
+    "@pmwc/top-app-bar": "^6.1.3",
+    "@pmwc/types": "^6.0.5",
+    "@pmwc/typography": "^6.1.3",
+    "material-components-web": "^5.1.0"
+  },
+  "directories": {
+    "doc": "docs"
+  }
 }

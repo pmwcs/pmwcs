@@ -181,7 +181,7 @@ export class CollapsibleList extends Component {
       this.childContainer.contains(document.activeElement)
     ) {
       const el = this.root.querySelector(
-        '.rmwc-collapsible-list__handle .mdc-list-item'
+        '.pmwc-collapsible-list__handle .mdc-list-item'
       );
       el && el.focus();
     }
@@ -205,20 +205,20 @@ export class CollapsibleList extends Component {
         {...rest}
         onFocus={this.handleFocus}
         ref={(el) => (this.root = el)}
-        className={classNames('rmwc-collapsible-list', className, {
-          'rmwc-collapsible-list--open': open
+        className={classNames('pmwc-collapsible-list', className, {
+          'pmwc-collapsible-list--open': open
         })}
       >
-        <div className="rmwc-collapsible-list__handle">
+        <div className="pmwc-collapsible-list__handle">
           {cloneElement(handle, {
             ...handle.props,
             onClick: this.handleClick,
             onKeyDown: this.handleKeydown
           })}
         </div>
-        <div className="rmwc-collapsible-list__children" style={childrenStyle}>
+        <div className="pmwc-collapsible-list__children" style={childrenStyle}>
           <div
-            className="rmwc-collapsible-list__children-inner"
+            className="pmwc-collapsible-list__children-inner"
             ref={(el) => (this.childContainer = el)}
           >
             {children}

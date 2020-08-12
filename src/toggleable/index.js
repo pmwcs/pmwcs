@@ -1,4 +1,5 @@
-import {h} from 'preact';
+import { h } from 'preact';
+
 import { useId } from '@pmwc/base';
 import { FormField } from '@pmwc/formfield';
 

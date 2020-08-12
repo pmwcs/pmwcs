@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import React from 'preact/compat';
+import { memo } from 'preact/compat';
 import { useNotchedOutlineFoundation } from './foundation';
 import { createComponent, Tag } from '@pmwc/base';
 
@@ -38,10 +38,10 @@ export const NotchedOutline = createComponent(
  * Bits
  *********************************************************************/
 
-const NotchedOutlineLeading = React.memo(function NotchedOutlineLeading() {
+const NotchedOutlineLeading = memo(function NotchedOutlineLeading() {
   return <div className="mdc-notched-outline__leading" />;
 });
 
-const NotchedOutlineTrailing = React.memo(function NotchedOutlineTrailing() {
+const NotchedOutlineTrailing = memo(function NotchedOutlineTrailing() {
   return <div className="mdc-notched-outline__trailing" />;
 });

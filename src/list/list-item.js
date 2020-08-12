@@ -1,5 +1,4 @@
-import { h } from 'preact'
-import React from 'preact/compat';
+import { h, cloneElement, isValidElement } from 'preact'
 
 import { classNames, useClassNames, Tag, createComponent } from '@pmwc/base';
 import { withRipple } from '@pmwc/ripple';
@@ -66,9 +65,9 @@ export const ListItemMeta = createComponent(
       );
     }
 
-    if (React.isValidElement(props.children)) {
+    if (isValidElement(props.children)) {
       const { children, ...rest } = props;
-      return React.cloneElement(props.children, {
+      return cloneElement(props.children, {
         ...rest,
         ...props.children.props,
         className: classNames(className, props.children.props.className)

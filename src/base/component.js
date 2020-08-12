@@ -1,5 +1,5 @@
 import { h, createElement, Fragment } from 'preact';
-import { forwardRef, memo } from 'preact/compat'
+import { memo, forwardRef } from 'preact/compat'
 
 import classNamesFunc from 'classnames';
 import { parseThemeOptions } from './with-theme';

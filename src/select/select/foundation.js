@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import { useCallback, useState, useRef, useEffect } from 'preact/compat';
+import { useCallback, useState, useRef, useEffect } from 'preact/hooks';
 
 import { useFoundation, raf } from '@pmwc/base';
 import {

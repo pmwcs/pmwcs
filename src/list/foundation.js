@@ -1,7 +1,7 @@
 import { useEffect, useCallback } from 'preact/hooks';
+
 import { MDCListFoundation } from '@material/list';
-import { matches } from '@pmwc/base';
-import { useFoundation } from '@pmwc/base';
+import { matches, useFoundation } from '@pmwc/base';
 
 export const useListFoundation = (props) => {
   const listElements = useCallback((el) => {

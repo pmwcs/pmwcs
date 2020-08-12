@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'preact/compat';
+import { useEffect, useRef } from 'preact/hooks';
 import { useFoundation } from '@pmwc/base';
 
 import {

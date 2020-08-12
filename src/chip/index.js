@@ -1,5 +1,6 @@
 import { h } from 'preact'
-import React from 'preact/compat'
+import { memo, forwardRef } from 'preact/compat'
+
 import { withRipple } from '@pmwc/ripple';
 import { Icon } from '@pmwc/icon';
 import { useChipFoundation } from './foundation';
@@ -74,13 +75,13 @@ export const Chip = withRipple({})(
  * Bits
  *********************************************************************/
 
-const ChipRipple = React.memo(function ChipRipple() {
+const ChipRipple = memo(function ChipRipple() {
   return <div className="mdc-chip__ripple"></div>;
 });
 
 /** A checkmark for chip selection and filtering. */
-const ChipCheckmark = React.memo(
-  React.forwardRef(function ChipCheckmark(props, ref) {
+const ChipCheckmark = memo(
+  forwardRef(function ChipCheckmark(props, ref) {
     return (
       <div ref={ref} className="mdc-chip__checkmark">
         <svg className="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
@@ -97,7 +98,7 @@ const ChipCheckmark = React.memo(
 );
 
 /** Icons inside of a chip. This is an instance of the Icon component. To make the icons interactive, add props tabIndex="0" and role="button". */
-const ChipIcon = React.memo(function ChipIcon(props) {
+const ChipIcon = memo(function ChipIcon(props) {
   const { leading, trailing, hidden, ...rest } = props;
   const className = useClassNames(props, [
     'mdc-chip__icon',

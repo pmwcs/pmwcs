@@ -1,5 +1,4 @@
 import { h } from 'preact'
-import React from 'preact/compat';
 
 import { Icon } from '@pmwc/icon';
 import { withRipple } from '@pmwc/ripple';

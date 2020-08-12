@@ -1,5 +1,6 @@
 import {h} from 'preact';
-import React, { useContext } from 'preact/compat';
+import { useContext } from 'preact/hooks';
+import { memo, forwardRef } from 'preact/compat';
 import { MDCCheckboxFoundation } from '@material/checkbox';
 import {
   Tag,
@@ -87,7 +88,7 @@ const CheckboxRoot = withRipple({
   surface: false,
   unbounded: true
 })(
-  React.forwardRef(function CheckboxRoot(
+  forwardRef(function CheckboxRoot(
     props,
     ref
   ) {
@@ -107,11 +108,11 @@ const CheckboxRoot = withRipple({
   })
 );
 
-const CheckboxRipple = React.memo(function CheckboxRipple() {
+const CheckboxRipple = memo(function CheckboxRipple() {
   return <div className="mdc-checkbox__ripple" />;
 });
 
-const CheckboxBackground = React.memo(() => {
+const CheckboxBackground = memo(() => {
   return (
     <div className="mdc-checkbox__background">
       <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">

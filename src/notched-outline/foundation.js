@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import { useEffect, useRef } from 'preact/compat';
+import { useEffect, useRef } from 'preact/hooks';
 import { useFoundation } from '@pmwc/base';
 import { MDCNotchedOutlineFoundation } from '@material/notched-outline';
 

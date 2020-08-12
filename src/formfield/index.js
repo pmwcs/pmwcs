@@ -1,4 +1,4 @@
-import {h} from 'preact';
+import { h } from 'preact';
 import { MDCFormFieldFoundation } from '@material/form-field';
 import { Tag, useClassNames, createComponent } from '@pmwc/base';
 import { useFormfieldFoundation } from './foundation';

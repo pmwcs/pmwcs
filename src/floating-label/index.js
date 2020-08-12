@@ -1,6 +1,6 @@
 import { h } from 'preact'
-import { useFloatingLabelFoundation } from './foundation';
 import { createComponent, mergeRefs } from '@pmwc/base';
+import { useFloatingLabelFoundation } from './foundation';
 
 export const FloatingLabel = createComponent(function FloatingLabel(props, ref) {
   const { rootEl } = useFloatingLabelFoundation(props);

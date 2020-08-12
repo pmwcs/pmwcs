@@ -1,5 +1,5 @@
-import { h, Component, cloneElement } from 'preact'
-import { createContext, findDOMNode, isValidElement, forwardRef, Children } from 'preact/compat'
+import { h, Component, cloneElement, isValidElement, createContext } from 'preact'
+import { findDOMNode, forwardRef, Children } from 'preact/compat'
 
 import { classNames } from '@pmwc/base';
 import { useProviderContext } from '@pmwc/provider';

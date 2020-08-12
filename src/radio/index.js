@@ -1,5 +1,6 @@
 import {h} from 'preact';
-import React from 'preact/compat'
+import { memo, forwardRef } from 'preact/compat'
+
 import { MDCRadioFoundation } from '@material/radio';
 import { Tag, useClassNames, mergeRefs, createComponent } from '@pmwc/base';
 import { withRipple } from '@pmwc/ripple';
@@ -49,7 +50,7 @@ export const Radio = createComponent(function Radio(props, ref) {
  * Bits
  *********************************************************************/
 
-const RadioRipple = React.memo(function RadioRipple() {
+const RadioRipple = memo(function RadioRipple() {
   return <div className="mdc-radio__ripple" />;
 });
 
@@ -57,7 +58,7 @@ const RadioRoot = withRipple({
   surface: false,
   unbounded: true
 })(
-  React.forwardRef(function RadioRoot(
+  forwardRef(function RadioRoot(
     props,
     ref
   ) {
@@ -72,7 +73,7 @@ const RadioRoot = withRipple({
   })
 );
 
-const RadioBackground = React.memo(function RadioBackground() {
+const RadioBackground = memo(function RadioBackground() {
   return (
     <div className="mdc-radio__background">
       <div className="mdc-radio__outer-circle" />

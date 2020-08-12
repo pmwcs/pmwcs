@@ -13,15 +13,24 @@ export default {
 };
 
 const Block = ({children, ...props}) => (
-  <div style={{margin: '1em 0.5em'}}>
+  <div style={{margin: '1.5em 0.5em'}}>
     {children}
   </div>
 )
 
 export const variants = () => (
   <section>
+    {/*<Block>
+    <label class="mdc-text-field mdc-text-field--filled">
+      <span class="mdc-text-field__ripple"></span>
+      <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id"/>
+      <span class="mdc-floating-label" id="my-label-id">Hint text</span>
+      <span class="mdc-line-ripple"></span>
+    </label>
+    </Block>*/}
+
     <Block>
-      <TextField label="standard..." />
+      <TextField type="text" label="standard..." />
     </Block>
     <Block>
       <TextField outlined label="outlined..." />
@@ -84,6 +93,13 @@ export const validation = () => (
         value="#@!$"
         onChange={() => {}}
       />
+    </Block>
+    <Block>
+      <TextField
+        label="Validate Pattern"
+        maxLength={3}
+        pattern="[A-Za-z]{3}"
+        helpText={<span>Enter three letters [A-Za-z]{3} blabla bla bla</span>}/>
     </Block>
     <Block>
       <TextField label="Validate Pattern" pattern="[A-Za-z]{3}" />

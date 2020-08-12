@@ -15,15 +15,15 @@
     "rc-tooltip": "^4.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.5",
-    "@storybook/addon-actions": "^5.3.19",
-    "@storybook/addon-links": "^5.3.19",
-    "@storybook/addons": "^5.3.19",
-    "@storybook/preact": "^5.3.19",
+    "@babel/core": "^7.11.1",
+    "@storybook/addon-actions": "^6.0.3",
+    "@storybook/addon-links": "^6.0.3",
+    "@storybook/addons": "^6.0.3",
+    "@storybook/preact": "^6.0.3",
     "babel-loader": "^8.1.0",
     "classnames": "^2.2.6",
     "material-components-web": "^7.0.0",
-    "preact": "^10.4.6",
+    "preact": "^10.4.7",
     "react": "^16.13.1"
   }
 }

@@ -1,5 +1,5 @@
-import {h} from 'preact';
-import React from 'preact/compat';
+import {h, Fragment} from 'preact';
+import {memo, isValidElement, forwardRef} from 'preact/compat';
 
 import { useClassNames, Tag, useId, createComponent } from '@pmwc/base';
 import { Icon } from '@pmwc/icon';
@@ -62,7 +62,7 @@ export const TextField = createComponent(function TextField(
 
   const className = useClassNames(props, [
     'mdc-text-field',
-    'mdc-text-field--upgraded',
+    'mdc-text-field--filled',
     {
       'mdc-text-field--textarea': textarea,
       'mdc-text-field--fullwidth': fullwidth,
@@ -101,7 +101,7 @@ export const TextField = createComponent(function TextField(
     }
 
     const shouldSpread =
-      typeof helpText === 'object' && !React.isValidElement(helpText);
+      typeof helpText === 'object' && !isValidElement(helpText);
 
     return (
       <div className="mdc-text-field-helper-line">
@@ -131,7 +131,7 @@ export const TextField = createComponent(function TextField(
   ) : null;
 
   return (
-    <>
+    <Fragment>
       <TextFieldRoot
         {...rootProps}
         element={rootEl}
@@ -155,29 +155,29 @@ export const TextField = createComponent(function TextField(
         />
 
         {!!outlined ? (
-          <>
+          <Fragment>
             <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
             {!!trailingIcon && renderIcon(trailingIcon, 'trailing')}
-          </>
+          </Fragment>
         ) : (
-          <>
+          <Fragment>
             {renderedLabel}
             {!!trailingIcon && renderIcon(trailingIcon, 'trailing')}
             <LineRipple active={lineRippleActive} center={lineRippleCenter} />
-          </>
+          </Fragment>
         )}
       </TextFieldRoot>
       {renderHelpText(renderedCharacterCounter)}
-    </>
+    </Fragment>
   );
 });
 
-const TextFieldRipple = React.memo(function TextFieldRipple() {
+const TextFieldRipple = memo(function TextFieldRipple() {
   return <span className="mdc-text-field__ripple"></span>;
 });
 
 const TextFieldRoot = withRipple({ surface: false })(
-  React.forwardRef(function TextFieldRoot(props, ref) {
+  forwardRef(function TextFieldRoot(props, ref) {
     return <Tag {...props} tag="label" ref={ref} />;
   })
 );
@@ -186,7 +186,7 @@ const TextFieldRoot = withRipple({ surface: false })(
  * Character Count
  *********************************************************************/
 
-const TextFieldCharacterCount = React.memo(function TextFieldCharacterCount(
+const TextFieldCharacterCount = memo(function TextFieldCharacterCount(
   props
 ) {
   const { content } = useTextFieldCharacterCountFoundation(props);

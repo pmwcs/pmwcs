@@ -136,5 +136,3 @@ A TextField component for accepting text input from a user.
 | `trailingIcon` | `RMWC.IconPropT` | Add a trailing icon. |
 | `type` | `undefined \| string` | The type of input field to render, search, number, etc |
 | `value` | `string \| number` | Sets the value for controlled TextFields. |
-
-

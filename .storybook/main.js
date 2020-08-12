@@ -7,7 +7,8 @@ module.exports = {
     return _config
   },
   stories: [
-    '../src/**/*.stories.js'
+    '../src/**/*.stories.js',
+    // '../src/textfield/textfield.stories.js'
   ],
   addons: [
     '@storybook/addon-actions',

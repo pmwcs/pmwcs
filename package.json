@@ -1,28 +1,41 @@
 {
   "name": "@pmwc/pmwc",
   "version": "1.0.0",
+  "private": true,
+  "description": "RMWC is a Preact UI Kit built on Google's official Material Components Web library.",
+  "keywords": [],
+  "license": "MIT",
+  "author": "",
+  "sideEffects": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf src/**/dist src/**/next src/**/pmwc*.tgz",
+    "build": "node scripts/build.js",
+    "build-storybook": "build-storybook",
+    "pack": "lerna exec npm pack",
     "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
-    "@storybook/addon-actions": "^6.0.3",
-    "@storybook/addon-links": "^6.0.3",
-    "@storybook/addons": "^6.0.3",
-    "@storybook/preact": "^6.0.3",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "@storybook/addon-actions": "^6.0.5",
+    "@storybook/addon-links": "^6.0.5",
+    "@storybook/addons": "^6.0.5",
+    "@storybook/preact": "^6.0.5",
     "babel-loader": "^8.1.0",
     "classnames": "^2.2.6",
+    "glob": "^7.1.6",
+    "lerna": "^3.22.1",
     "material-components-web": "^7.0.0",
-    "preact": "^10.4.7",
-    "react": "^16.13.1"
+    "preact": "^10.4.7"
+  },
+  "peerDependencies": {
+    "classnames": "^2.2.6",
+    "preact": "^10.4.7"
   }
 }

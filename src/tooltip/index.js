@@ -1,7 +1,6 @@
-import { h } from 'preact';
+import { h, Fragment } from 'preact';
 
-import { classNames } from '@pmwc/base';
-import ReactTooltip from 'rc-tooltip';
+import { Tag, classNames } from '@pmwc/base';
 import { useProviderContext } from '@pmwc/provider';
 
 /** A Tooltip component for displaying informative popover information. */
@@ -10,6 +9,7 @@ export const Tooltip = function Tooltip({
   content,
   className,
   open,
+  tag = 'span',
   ...rest
 }) {
   const providerContext = useProviderContext();
@@ -27,7 +27,7 @@ export const Tooltip = function Tooltip({
   };
 
   return (
-    <ReactTooltip
+    <Tooltip
       {...(open !== undefined ? { visible: open } : {})}
       trigger={Array.isArray(activateOn) ? activateOn : [activateOn]}
       prefixCls="pmwc-tooltip"
@@ -42,6 +42,6 @@ export const Tooltip = function Tooltip({
       destroyTooltipOnHide
     >
       {children}
-    </ReactTooltip>
+    </Tooltip>
   );
 };

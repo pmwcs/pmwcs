@@ -2,31 +2,31 @@
   "name": "@pmwc/button",
   "version": "1.0.0-0",
   "description": "PMWC button component",
-  "main": "dist/index.js",
-  "module": "next/index.js",
+  "keywords": [
+    "pmwc"
+  ],
+  "license": "MIT",
+  "author": "",
   "sideEffects": [
     "./styles.js",
     "*.css"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
+  "main": "dist/index.js",
+  "module": "next/index.js",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "pmwc"
-  ],
-  "author": "",
-  "license": "MIT",
+  "dependencies": {
+    "@material/button": "^7.0.0",
+    "@pmwc/base": "^1.0.0-0",
+    "@pmwc/icon": "^1.0.0-0",
+    "@pmwc/ripple": "^1.0.0-0"
+  },
   "peerDependencies": {
     "preact": "^10.4.7"
   },
-  "dependencies": {
-    "@material/button": "^7.0.0",
-    "@pmwc/base": "^1.0.0",
-    "@pmwc/icon": "^1.0.0",
-    "@pmwc/ripple": "^1.0.0"
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -2,28 +2,28 @@
   "name": "@pmwc/badge",
   "version": "1.0.0-0",
   "description": "PMWC badge component",
-  "main": "dist/index.js",
-  "module": "next/index.js",
+  "keywords": [
+    "pmwc"
+  ],
+  "license": "MIT",
+  "author": "",
   "sideEffects": [
     "./styles.js",
     "*.css"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
+  "main": "dist/index.js",
+  "module": "next/index.js",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "pmwc"
-  ],
-  "author": "",
-  "license": "MIT",
+  "dependencies": {
+    "@pmwc/base": "^1.0.0-0"
+  },
   "peerDependencies": {
     "preact": "^10.4.7"
   },
-  "dependencies": {
-    "@pmwc/base": "^1.0.0"
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "@material/ripple": "^7.0.0",
-    "@pmwc/base": "^1.0.0",
-    "@pmwc/provider": "^1.0.0"
+    "@pmwc/base": "^1.0.0-0",
+    "@pmwc/provider": "^1.0.0-0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

@@ -21,10 +21,10 @@
     "@material/button": "^7.0.0",
     "@material/ripple": "^7.0.0",
     "@material/snackbar": "^7.0.0",
-    "@pmwc/base": "^1.0.0",
-    "@pmwc/button": "^1.0.0",
-    "@pmwc/icon": "^1.0.0",
-    "@pmwc/icon-button": "^1.0.0"
+    "@pmwc/base": "^1.0.0-0",
+    "@pmwc/button": "^1.0.0-0",
+    "@pmwc/icon": "^1.0.0-0",
+    "@pmwc/icon-button": "^1.0.0-0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

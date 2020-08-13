@@ -11,8 +11,7 @@ const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x)
 const addAliases = config => {
   config.resolve.alias = {
     ...(config.resolve.alias || {}),
-    rmwc: path.resolve(root, 'src'),
-    '@pmwc': path.resolve(root, 'src'),
+    // rmwc: path.resolve(root, 'src'),
     '@pmwc': path.resolve(root, 'src'),
     '@doc-utils': path.resolve(root, 'src', 'doc-utils')
   };

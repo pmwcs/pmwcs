@@ -15,7 +15,6 @@ export * from '@pmwc/fab';
 export * from '@pmwc/floating-label';
 export * from '@pmwc/formfield';
 export * from '@pmwc/grid';
-export * from '@pmwc/grid-list';
 export * from '@pmwc/icon';
 export * from '@pmwc/icon-button';
 export * from '@pmwc/image-list';

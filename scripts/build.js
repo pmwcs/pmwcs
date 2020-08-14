@@ -1,22 +1,25 @@
-const fs = require('fs')
-const { resolve, dirname } = require('path')
+const { resolve, dirname, relative } = require('path')
 const { promisify } = require('util')
+const chalk = require('chalk')
 const globSync = require('glob').sync
-
+const { concurrency, cpus } = require('./utils')
 const { exec } = require('child_process')
 const execOpts = { stdio: 'inherit' }
 const execP = promisify(exec)
 
 // ----
 
-const binDir = resolve(__dirname, '../node_modules/.bin')
+const rootd = resolve(__dirname, '..')
+const binDir = resolve(rootd, 'node_modules/.bin')
 const babel = resolve(binDir, 'babel')
 
-const BABEL_OPTS = '--source-maps false --ignore "*.stories.js,dist,next"'
-const BABEL_CONFIG_DIST = resolve(__dirname, '../config/babel.dist.json')
-const BABEL_CONFIG_NEXT = resolve(__dirname, '../config/babel.next.json')
+const BABEL_OPTS = '--source-maps false --ignore "*.stories.js,dist,next,node_modules"'
+const BABEL_CONFIG_DIST = resolve(__dirname, '../config/babel.dist.js')
+const BABEL_CONFIG_NEXT = resolve(__dirname, '../config/babel.next.js')
 
 // ----
+
+let failed = false
 
 const getFiles = () => globSync(resolve(__dirname, '../src/*/package.json'))
   .map(pckJson => dirname(pckJson))
@@ -31,18 +34,32 @@ const transpile = async ({ cwd, config, outdir }) => execP(
   { ...execOpts, cwd }
 )
 
+const buildPackage = async ({ cwd }) => {
+  try {
+    await clean({ cwd, dirs: ['dist', 'next'] })
+    await Promise.all([
+      await transpile({ cwd, config: BABEL_CONFIG_DIST, outdir: 'dist' }),
+      await transpile({ cwd, config: BABEL_CONFIG_NEXT, outdir: 'next' })
+    ])
+      .then(arr => {
+        console.log('%s %s\n  %s',
+          chalk.green('✔ PASS'), relative(rootd, cwd),
+          arr.map(({ stdout }) => stdout).join('  ').replace(/\s+$/m, '')
+        )
+      })
+  } catch (err) {
+    failed = true
+    console.error('%s %s %s', chalk.red('✖ FAIL'), relative(rootd, cwd), err.message)
+  }
+}
+
 const build = async () => {
   const dirs = getFiles()
   // const dirs = [ `${__dirname}/../src/base` ]
-
-  for (let cwd of dirs) {
-    console.log(cwd)
-    await clean({ cwd , dirs: ['dist', 'next']})
-    // run stuff in parallel
-    transpile({ cwd, config: BABEL_CONFIG_DIST, outdir: 'dist' })
-      .catch(err => console.error('%s %s', cwd, err.message))
-    transpile({ cwd, config: BABEL_CONFIG_NEXT, outdir: 'next' })
-      .catch(err => console.error('%s %s', cwd, err.message))
+  const queue = dirs.map(cwd => () => buildPackage({ cwd }))
+  await concurrency(cpus(), queue)
+  if (failed) {
+    process.exit(1)
   }
 }
 

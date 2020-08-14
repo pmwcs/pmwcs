@@ -1,5 +1,5 @@
-import {h} from 'preact'
-import { useClassNames, Tag, createComponent } from '@pmwc/base';
+import { h } from 'preact'
+import { useClassNames, Tag, createComponent } from '@pmwc/base'
 
 const SIZE_MAP = {
   xsmall: 18,
@@ -7,43 +7,43 @@ const SIZE_MAP = {
   medium: 24,
   large: 36,
   xlarge: 48
-};
+}
 
 export const CircularProgress = createComponent(
-  function CircularProgress(props, ref) {
-    const { size = 'medium', max = 1, min = 0, progress, ...rest } = props;
+  function CircularProgress (props, ref) {
+    const { size = 'medium', max = 1, min = 0, progress, ...rest } = props
 
     const className = useClassNames(props, [
-      'rmwc-circular-progress',
+      'pmwc-circular-progress',
       {
-        [`rmwc-circular-progress--size-${props.size}`]:
+        [`pmwc-circular-progress--size-${props.size}`]:
           typeof props.size === 'string',
-        'rmwc-circular-progress--indeterminate': progress === undefined,
-        'rmwc-circular-progress--thickerstroke':
+        'pmwc-circular-progress--indeterminate': progress === undefined,
+        'pmwc-circular-progress--thickerstroke':
           !!props.size && (SIZE_MAP[size] || Number(size)) > 36
       }
-    ]);
+    ])
 
     const style = !SIZE_MAP[size]
       ? { ...rest.style, fontSize: Number(size) }
-      : rest.style;
-    const _size = SIZE_MAP[size] || Number(size);
+      : rest.style
+    const _size = SIZE_MAP[size] || Number(size)
 
     const calculateRatio = (value) => {
-      if (value < min) return 0;
-      if (value > max) return 1;
-      return (value - min) / (max - min);
-    };
+      if (value < min) return 0
+      if (value > max) return 1
+      return (value - min) / (max - min)
+    }
 
     const circularStyle = (size) => {
       return progress !== undefined
         ? {
-            strokeDasharray: `${
+          strokeDasharray: `${
               2 * Math.PI * (size / 2.4) * calculateRatio(progress)
             }, 666.66%`
-          }
-        : undefined;
-    };
+        }
+        : undefined
+    }
 
     return (
       <Tag
@@ -56,11 +56,11 @@ export const CircularProgress = createComponent(
         ref={ref}
       >
         <svg
-          className="rmwc-circular-progress__circle"
+          className='pmwc-circular-progress__circle'
           viewBox={`0 0 ${_size} ${_size}`}
         >
           <circle
-            className="rmwc-circular-progress__path"
+            className='pmwc-circular-progress__path'
             style={circularStyle(_size)}
             cx={_size / 2}
             cy={_size / 2}
@@ -68,6 +68,6 @@ export const CircularProgress = createComponent(
           />
         </svg>
       </Tag>
-    );
+    )
   }
-);
+)

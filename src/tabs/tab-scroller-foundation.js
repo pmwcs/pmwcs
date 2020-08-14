@@ -1,11 +1,9 @@
-import { h } from 'preact'
+import { useFoundation, emptyClientRect, matches } from '@pmwc/base'
 
-import { useFoundation, emptyClientRect } from '@pmwc/base';
-import { matches } from '@pmwc/base';
 import {
   MDCTabScrollerFoundation,
   util as scrollerUtil
-} from '@material/tab-scroller';
+} from '@material/tab-scroller'
 
 export const useTabScrollerFoundation = (
   props
@@ -13,14 +11,14 @@ export const useTabScrollerFoundation = (
   const { foundation, ...elements } = useFoundation({
     props,
     api: ({ foundation, contentEl }) => {
-      const f = foundation;
+      const f = foundation
       return {
         scrollTo: (scrollX) => f.scrollTo(scrollX),
         incrementScroll: (scrollXIncrement) =>
           f.incrementScroll(scrollXIncrement),
         getScrollPosition: () => f.getScrollPosition(),
         getScrollContentWidth: () => contentEl.ref?.offsetWidth || 0
-      };
+      }
     },
     elements: { rootEl: true, areaEl: true, contentEl: true },
     foundation: ({ rootEl, areaEl, contentEl }) => {
@@ -39,9 +37,9 @@ export const useTabScrollerFoundation = (
         getScrollContentStyleValue: (propName) => {
           const val =
             contentEl.ref &&
-            window.getComputedStyle(contentEl.ref).getPropertyValue(propName);
+            window.getComputedStyle(contentEl.ref).getPropertyValue(propName)
 
-          return val || 'none';
+          return val || 'none'
         },
         setScrollAreaScrollLeft: (scrollX) =>
           areaEl.ref && (areaEl.ref.scrollLeft = scrollX),
@@ -58,29 +56,29 @@ export const useTabScrollerFoundation = (
             : emptyClientRect,
         computeHorizontalScrollbarHeight: () =>
           scrollerUtil.computeHorizontalScrollbarHeight(document)
-      });
+      })
     }
-  });
+  })
 
-  const { areaEl, contentEl } = elements;
+  const { areaEl, contentEl } = elements
 
   const handleInteraction = () => {
-    foundation.handleInteraction();
-  };
+    foundation.handleInteraction()
+  }
 
   const handleTransitionEnd = (
     evt
   ) => {
-    foundation.handleTransitionEnd(evt );
-  };
+    foundation.handleTransitionEnd(evt)
+  }
 
-  areaEl.setProp('onWheel', handleInteraction, true);
-  areaEl.setProp('onTouchStart', handleInteraction, true);
-  areaEl.setProp('onPointerDown', handleInteraction, true);
-  areaEl.setProp('onMouseDown', handleInteraction, true);
-  areaEl.setProp('onKeyDown', handleInteraction, true);
+  areaEl.setProp('onWheel', handleInteraction, true)
+  areaEl.setProp('onTouchStart', handleInteraction, true)
+  areaEl.setProp('onPointerDown', handleInteraction, true)
+  areaEl.setProp('onMouseDown', handleInteraction, true)
+  areaEl.setProp('onKeyDown', handleInteraction, true)
 
-  contentEl.setProp('onTransitionEnd', handleTransitionEnd, true);
+  contentEl.setProp('onTransitionEnd', handleTransitionEnd, true)
 
-  return { ...elements };
-};
+  return { ...elements }
+}

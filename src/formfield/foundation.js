@@ -1,7 +1,5 @@
-import {h} from 'preact';
-
-import { MDCFormFieldFoundation } from '@material/form-field';
-import { useFoundation } from '@pmwc/base';
+import { MDCFormFieldFoundation } from '@material/form-field'
+import { useFoundation } from '@pmwc/base'
 
 export const useFormfieldFoundation = (props) => {
   useFoundation({
@@ -16,5 +14,5 @@ export const useFormfieldFoundation = (props) => {
         activateInputRipple: () => {},
         deactivateInputRipple: () => {}
       })
-  });
-};
+  })
+}

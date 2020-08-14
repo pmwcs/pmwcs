@@ -1,22 +1,22 @@
 import { h } from 'preact'
-import { memo } from 'preact/compat';
-import { useNotchedOutlineFoundation } from './foundation';
-import { createComponent, Tag } from '@pmwc/base';
+import { memo } from 'preact/compat'
+import { useNotchedOutlineFoundation } from './foundation'
+import { createComponent, Tag } from '@pmwc/base'
 
 /*********************************************************************
  * Notched Outline
  *********************************************************************/
 
 export const NotchedOutline = createComponent(
-  function NotchedOutline(props, ref) {
-    const { children, ...rest } = props;
-    const { rootEl, notchedEl } = useNotchedOutlineFoundation(props);
+  function NotchedOutline (props, ref) {
+    const { children, ...rest } = props
+    const { rootEl, notchedEl } = useNotchedOutlineFoundation(props)
 
     return (
       <Tag
         {...rest}
         element={rootEl}
-        className={'mdc-notched-outline'}
+        className='mdc-notched-outline'
         ref={ref}
       >
         <NotchedOutlineLeading />
@@ -30,18 +30,18 @@ export const NotchedOutline = createComponent(
         </div>
         <NotchedOutlineTrailing />
       </Tag>
-    );
+    )
   }
-);
+)
 
 /*********************************************************************
  * Bits
  *********************************************************************/
 
-const NotchedOutlineLeading = memo(function NotchedOutlineLeading() {
-  return <div className="mdc-notched-outline__leading" />;
-});
+const NotchedOutlineLeading = memo(function NotchedOutlineLeading () {
+  return <div className='mdc-notched-outline__leading' />
+})
 
-const NotchedOutlineTrailing = memo(function NotchedOutlineTrailing() {
-  return <div className="mdc-notched-outline__trailing" />;
-});
+const NotchedOutlineTrailing = memo(function NotchedOutlineTrailing () {
+  return <div className='mdc-notched-outline__trailing' />
+})

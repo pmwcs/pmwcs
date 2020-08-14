@@ -15,8 +15,8 @@ import {
 
 export default {
   title: 'TopAppBar',
-  component: TopAppBar,
-};
+  component: TopAppBar
+}
 
 export const basic = () => (
   <section>
@@ -38,13 +38,13 @@ export const allFeatures = () => (
     <TopAppBar>
       <TopAppBarRow>
         <TopAppBarSection alignStart>
-          <TopAppBarNavigationIcon icon="menu" />
+          <TopAppBarNavigationIcon icon='menu' />
           <TopAppBarTitle>All Features</TopAppBarTitle>
         </TopAppBarSection>
         <TopAppBarSection alignEnd>
-          <TopAppBarActionItem icon="favorite" />
-          <TopAppBarActionItem icon="star" />
-          <TopAppBarActionItem icon="mood" />
+          <TopAppBarActionItem icon='favorite' />
+          <TopAppBarActionItem icon='star' />
+          <TopAppBarActionItem icon='mood' />
         </TopAppBarSection>
       </TopAppBarRow>
       <TopAppBarRow>
@@ -62,7 +62,7 @@ export const allFeatures = () => (
 export const simple = () => (
   <section>
     <SimpleTopAppBar
-      title="test"
+      title='test'
       navigationIcon
       onNav={() => console.log('Navigate')}
       actionItems={[
@@ -81,66 +81,66 @@ export const simple = () => (
 )
 
 export const fixed = () => (
-<section>
-  <TopAppBar fixed>
-    <TopAppBarRow>
-      <TopAppBarSection>
-        <TopAppBarTitle>Fixed</TopAppBarTitle>
-      </TopAppBarSection>
-    </TopAppBarRow>
-  </TopAppBar>
-  <TopAppBarFixedAdjust />
+  <section>
+    <TopAppBar fixed>
+      <TopAppBarRow>
+        <TopAppBarSection>
+          <TopAppBarTitle>Fixed</TopAppBarTitle>
+        </TopAppBarSection>
+      </TopAppBarRow>
+    </TopAppBar>
+    <TopAppBarFixedAdjust />
 
-  <div style={{ height: '100rem', padding: '1rem' }}>Scroll Me</div>
-</section>
+    <div style={{ height: '100rem', padding: '1rem' }}>Scroll Me</div>
+  </section>
 )
 
 export const dense = () => (
-<section>
-  <TopAppBar dense>
-    <TopAppBarRow>
-      <TopAppBarSection>
-        <TopAppBarTitle>Dense</TopAppBarTitle>
-      </TopAppBarSection>
-    </TopAppBarRow>
-  </TopAppBar>
-  <TopAppBarFixedAdjust />
+  <section>
+    <TopAppBar dense>
+      <TopAppBarRow>
+        <TopAppBarSection>
+          <TopAppBarTitle>Dense</TopAppBarTitle>
+        </TopAppBarSection>
+      </TopAppBarRow>
+    </TopAppBar>
+    <TopAppBarFixedAdjust />
 
-  <div style={{ height: '100rem', padding: '1rem' }}>Scroll Me</div>
-</section>
+    <div style={{ height: '100rem', padding: '1rem' }}>Scroll Me</div>
+  </section>
 )
 
 export const short = () => (
-<section>
-  {/** Additionally you can specify shortCollapsed to have it always minimized */}
-  <TopAppBar short>
-    <TopAppBarRow>
-      <TopAppBarSection>
-        <TopAppBarNavigationIcon icon="menu" />
-        <TopAppBarTitle>Short</TopAppBarTitle>
-      </TopAppBarSection>
-      <TopAppBarSection alignEnd>
-        <TopAppBarActionItem icon="favorite" />
-      </TopAppBarSection>
-    </TopAppBarRow>
-  </TopAppBar>
-  <TopAppBarFixedAdjust />
+  <section>
+    {/** Additionally you can specify shortCollapsed to have it always minimized */}
+    <TopAppBar short>
+      <TopAppBarRow>
+        <TopAppBarSection>
+          <TopAppBarNavigationIcon icon='menu' />
+          <TopAppBarTitle>Short</TopAppBarTitle>
+        </TopAppBarSection>
+        <TopAppBarSection alignEnd>
+          <TopAppBarActionItem icon='favorite' />
+        </TopAppBarSection>
+      </TopAppBarRow>
+    </TopAppBar>
+    <TopAppBarFixedAdjust />
 
-  <div style={{ height: '100rem', padding: '1rem' }}>Scroll Me</div>
-</section>
+    <div style={{ height: '100rem', padding: '1rem' }}>Scroll Me</div>
+  </section>
 )
 
 export const prominent = () => (
-<section>
-  <TopAppBar prominent>
-    <TopAppBarRow>
-      <TopAppBarSection>
-        <TopAppBarTitle>Prominent</TopAppBarTitle>
-      </TopAppBarSection>
-    </TopAppBarRow>
-  </TopAppBar>
-  <TopAppBarFixedAdjust />
+  <section>
+    <TopAppBar prominent>
+      <TopAppBarRow>
+        <TopAppBarSection>
+          <TopAppBarTitle>Prominent</TopAppBarTitle>
+        </TopAppBarSection>
+      </TopAppBarRow>
+    </TopAppBar>
+    <TopAppBarFixedAdjust />
 
-  <div style={{ height: '100rem', padding: '1rem' }}>Scroll Me</div>
-</section>
+    <div style={{ height: '100rem', padding: '1rem' }}>Scroll Me</div>
+  </section>
 )

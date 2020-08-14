@@ -1,1 +1,1 @@
-import '@material/layout-grid/dist/mdc.layout-grid.css';
+import '@material/layout-grid/dist/mdc.layout-grid.css'

@@ -1,6 +1,4 @@
-/** @jsx h */
 import { h } from 'preact'
-import { useState } from 'preact/hooks'
 import './styles.js'
 
 import {
@@ -11,8 +9,8 @@ import { Button } from '@pmwc/button'
 
 export default {
   title: 'CircularProgress',
-  component: CircularProgress,
-};
+  component: CircularProgress
+}
 
 export const all = () => (
   <section>
@@ -26,11 +24,11 @@ export const all = () => (
 
 export const sizing = () => (
   <section>
-    <CircularProgress size="xsmall" />
-    <CircularProgress size="small" />
-    <CircularProgress size="medium" />
-    <CircularProgress size="large" />
-    <CircularProgress size="xlarge" />
+    <CircularProgress size='xsmall' />
+    <CircularProgress size='small' />
+    <CircularProgress size='medium' />
+    <CircularProgress size='large' />
+    <CircularProgress size='xlarge' />
     <CircularProgress size={72} />
   </section>
 )
@@ -38,8 +36,8 @@ export const sizing = () => (
 export const useWithOthers = () => (
   <section>
     <Button
-      icon={<CircularProgress theme="secondary" />}
-      label="Cookies"
+      icon={<CircularProgress theme='secondary' />}
+      label='Cookies'
     />
     {/*
     <List>

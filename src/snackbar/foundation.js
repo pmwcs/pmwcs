@@ -1,9 +1,7 @@
-import { useEffect } from 'preact/hooks';
+import { useEffect } from 'preact/hooks'
 
-import { SnackbarProps } from '.';
-import { MDCSnackbarFoundation, util } from '@material/snackbar';
-import { closest, triggerWindowResize } from '@pmwc/base';
-import { useFoundation } from '@pmwc/base';
+import { MDCSnackbarFoundation, util } from '@material/snackbar'
+import { closest, triggerWindowResize, useFoundation } from '@pmwc/base'
 
 /** Monkey patch the foundation to accept dynamic reasons rather than just "action" */
 // @ts-ignore
@@ -11,10 +9,10 @@ MDCSnackbarFoundation.prototype.handleActionButtonClick = function (
   evt,
   reason
 ) {
-  this.close(reason);
-};
+  this.close(reason)
+}
 
-export function useSnackbarFoundation(
+export function useSnackbarFoundation (
   props
 ) {
   const { foundation, ...elements } = useFoundation({
@@ -31,32 +29,32 @@ export function useSnackbarFoundation(
         announce: () => labelEl.ref && util.announce(labelEl.ref),
         notifyOpening: () => emit('onOpen', {}),
         notifyOpened: () => {
-          triggerWindowResize();
-          emit('onOpened', {});
+          triggerWindowResize()
+          emit('onOpened', {})
         },
         notifyClosing: (reason) => {
-          emit('onClose', reason ? { reason } : {});
+          emit('onClose', reason ? { reason } : {})
         },
         notifyClosed: (reason) =>
           emit('onClosed', reason ? { reason } : {})
-      });
+      })
     }
-  });
+  })
 
-  const { rootEl, surfaceEl } = elements;
+  const { rootEl, surfaceEl } = elements
 
   const handleKeyDown = (evt) => {
-    props.onKeyDown && props.onKeyDown(evt);
-    foundation.handleKeyDown(evt);
-  };
+    props.onKeyDown && props.onKeyDown(evt)
+    foundation.handleKeyDown(evt)
+  }
 
   const handleSurfaceClick = (evt) => {
     if (evt.target instanceof Element) {
-      let el = evt.target;
+      let el = evt.target
 
-      const button = closest(el, '.mdc-button');
+      const button = closest(el, '.mdc-button')
       if (button) {
-        el = button;
+        el = button
       }
 
       if (
@@ -67,33 +65,33 @@ export function useSnackbarFoundation(
           evt,
           // @ts-ignore
           el.dataset.mdcSnackbarAction
-        );
+        )
       } else if (el.classList.contains('mdc-snackbar__dismiss')) {
-        foundation.handleActionIconClick(evt);
+        foundation.handleActionIconClick(evt)
       }
     }
-  };
+  }
 
-  rootEl.setProp('onKeyDown', handleKeyDown, true);
-  surfaceEl.setProp('onClick', handleSurfaceClick, true);
+  rootEl.setProp('onKeyDown', handleKeyDown, true)
+  surfaceEl.setProp('onClick', handleSurfaceClick, true)
 
   // open
   useEffect(() => {
-    props.open ? foundation.open() : foundation.close();
-  }, [props.open, foundation]);
+    props.open ? foundation.open() : foundation.close()
+  }, [props.open, foundation])
 
   // timeout
   useEffect(() => {
     if (props.timeout) {
       if (props.timeout === -1) {
-        foundation.setTimeoutMs(props.timeout);
+        foundation.setTimeoutMs(props.timeout)
       } else {
         // don't tell me what I can cant set my timeout too...
         // directly patch over using setTimeoutMs
-        foundation.autoDismissTimeoutMs_ = props.timeout;
+        foundation.autoDismissTimeoutMs_ = props.timeout
       }
     }
-  }, [props.timeout, foundation]);
+  }, [props.timeout, foundation])
 
-  return { foundation, ...elements };
+  return { foundation, ...elements }
 }

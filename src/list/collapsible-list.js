@@ -1,38 +1,38 @@
 import { h, Component, cloneElement } from 'preact'
 
-import { classNames, Tag } from '@pmwc/base';
+import { classNames, Tag } from '@pmwc/base'
 
 const possiblyFocusElement = (el) => {
-  if (!el) return false;
+  if (!el) return false
 
-  const tabIndex = el.getAttribute('tabindex');
+  const tabIndex = el.getAttribute('tabindex')
   if (tabIndex && Number(tabIndex) >= 0) {
-    el.focus();
-    return true;
+    el.focus()
+    return true
   }
-  return false;
-};
+  return false
+}
 
 const getNextSibling = (
   el,
   isBack
 ) => {
-  if (!el) return null;
+  if (!el) return null
 
-  const next = isBack ? el.previousElementSibling : el.nextElementSibling;
+  const next = isBack ? el.previousElementSibling : el.nextElementSibling
 
   if (next === null) {
-    return getNextSibling(el.parentElement, isBack);
+    return getNextSibling(el.parentElement, isBack)
   }
 
-  return next;
-};
+  return next
+}
 
 /** A collapsible list component. */
 export class CollapsibleList extends Component {
   static displayName = 'CollapsibleList';
 
-  static getDerivedStateFromProps(
+  static getDerivedStateFromProps (
     props,
     state
   ) {
@@ -40,140 +40,141 @@ export class CollapsibleList extends Component {
       return {
         ...state,
         open: props.open
-      };
+      }
     }
 
-    return state;
+    return state
   }
 
-  constructor(props) {
-    super(props);
-    this.childContainer = null;
-    this.root = null;
-    this.rafId = null;
-    this.timerId = null;
+  constructor (props) {
+    super(props)
+    this.childContainer = null
+    this.root = null
+    this.rafId = null
+    this.timerId = null
 
     this.state = {
       open: !!this.props.defaultOpen || !!this.props.open,
       childrenStyle: {}
-    };
-    this.handleClick = this.handleClick.bind(this);
-    this.handleKeydown = this.handleKeydown.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
+    }
+    this.handleClick = this.handleClick.bind(this)
+    this.handleKeydown = this.handleKeydown.bind(this)
+    this.handleFocus = this.handleFocus.bind(this)
   }
 
-  componentDidMount() {
-    this.syncOpenState();
+  componentDidMount () {
+    this.syncOpenState()
   }
 
-  componentDidUpdate(
+  componentDidUpdate (
     prevProps,
     prevState
   ) {
     if (prevState.open !== this.state.open) {
-      this.syncOpenState();
+      this.syncOpenState()
     }
   }
 
-  componentWillUnmount() {
-    this.rafId && window.cancelAnimationFrame(this.rafId);
-    this.timerId && window.clearTimeout(this.timerId);
+  componentWillUnmount () {
+    this.rafId && window.cancelAnimationFrame(this.rafId)
+    this.timerId && window.clearTimeout(this.timerId)
   }
 
-  syncOpenState() {
-    const { onOpen, onClose } = this.props;
+  syncOpenState () {
+    const { onOpen, onClose } = this.props
     const childrenStyle = {
       maxHeight: this.childContainer
         ? `${this.childContainer.offsetHeight}px`
         : '0px'
-    };
+    }
 
     this.setState({ childrenStyle }, () => {
       if (this.state.open) {
-        onOpen && onOpen();
+        onOpen && onOpen()
         this.timerId = window.setTimeout(() => {
           if (this.state.open) {
             this.setState({
               childrenStyle: {
                 maxHeight: 'none'
               }
-            });
+            })
           }
-        }, 300);
+        }, 300)
       } else {
-        onClose && onClose();
+        onClose && onClose()
         this.rafId = window.requestAnimationFrame(() => {
           this.setState({
             childrenStyle: {}
-          });
-        });
+          })
+        })
       }
-    });
+    })
   }
 
-  correctFocus(back) {
+  correctFocus (back) {
     this.rafId = window.requestAnimationFrame(() => {
       if (
         !this.state.open &&
         this.root &&
         this.root.contains(document.activeElement)
       ) {
-        const sibling = getNextSibling(this.root, back);
+        const sibling = getNextSibling(this.root, back)
 
         if (possiblyFocusElement(sibling)) {
-          return;
+          return
         }
         if (sibling) {
-          const els = sibling.querySelectorAll('[tabindex]');
+          const els = sibling.querySelectorAll('[tabindex]')
           for (let i = 0; i < els.length; i++) {
             if (possiblyFocusElement(els[i])) {
-              break;
+              break
             }
           }
         }
       }
-    });
+    })
   }
 
-  toggleOpen(isOpen) {
-    this.setState({ open: isOpen });
+  toggleOpen (isOpen) {
+    this.setState({ open: isOpen })
   }
 
-  handleClick(evt) {
+  handleClick (evt) {
     // call events that might have been on the handle
-    const { handle } = this.props;
-    handle.props.onClick && handle.props.onClick(evt);
+    const { handle } = this.props
+    handle.props.onClick && handle.props.onClick(evt)
 
-    this.toggleOpen(!this.state.open);
+    this.toggleOpen(!this.state.open)
   }
 
-  handleKeydown(evt) {
+  handleKeydown (evt) {
     // call events that might have been on the handle
-    const { handle } = this.props;
-    handle.props.onKeyDown && handle.props.onKeyDown(evt);
+    const { handle } = this.props
+    handle.props.onKeyDown && handle.props.onKeyDown(evt)
 
     switch (evt.which) {
       case 13:
-        this.toggleOpen(!this.state.open);
-        return;
+        this.toggleOpen(!this.state.open)
+        break
       case 39:
-        this.toggleOpen(true);
-        return;
+        this.toggleOpen(true)
+        break
       case 38:
       case 40:
-      case 9:
-        const isBack = evt.shiftKey || evt.which === 38;
-        this.correctFocus(isBack);
-        return;
+      case 9: {
+        const isBack = evt.shiftKey || evt.which === 38
+        this.correctFocus(isBack)
+        break
+      }
       case 37:
-        this.toggleOpen(false);
-        return;
+        this.toggleOpen(false)
+        break
       default:
-        break;
+        break
     }
   }
 
-  handleFocus(evt) {
+  handleFocus (evt) {
     if (
       !this.state.open &&
       this.root &&
@@ -182,12 +183,12 @@ export class CollapsibleList extends Component {
     ) {
       const el = this.root.querySelector(
         '.pmwc-collapsible-list__handle .mdc-list-item'
-      );
-      el && el.focus();
+      )
+      el && el.focus()
     }
   }
 
-  render() {
+  render () {
     const {
       children,
       handle,
@@ -197,8 +198,8 @@ export class CollapsibleList extends Component {
       defaultOpen,
       className,
       ...rest
-    } = this.props;
-    const { open, childrenStyle } = this.state;
+    } = this.props
+    const { open, childrenStyle } = this.state
 
     return (
       <Tag
@@ -209,22 +210,22 @@ export class CollapsibleList extends Component {
           'pmwc-collapsible-list--open': open
         })}
       >
-        <div className="pmwc-collapsible-list__handle">
+        <div className='pmwc-collapsible-list__handle'>
           {cloneElement(handle, {
             ...handle.props,
             onClick: this.handleClick,
             onKeyDown: this.handleKeydown
           })}
         </div>
-        <div className="pmwc-collapsible-list__children" style={childrenStyle}>
+        <div className='pmwc-collapsible-list__children' style={childrenStyle}>
           <div
-            className="pmwc-collapsible-list__children-inner"
+            className='pmwc-collapsible-list__children-inner'
             ref={(el) => (this.childContainer = el)}
           >
             {children}
           </div>
         </div>
       </Tag>
-    );
+    )
   }
 }

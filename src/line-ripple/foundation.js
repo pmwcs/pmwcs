@@ -1,6 +1,6 @@
-import { useEffect } from 'preact/hooks';
-import { useFoundation } from '@pmwc/base';
-import { MDCLineRippleFoundation } from '@material/line-ripple';
+import { useEffect } from 'preact/hooks'
+import { useFoundation } from '@pmwc/base'
+import { MDCLineRippleFoundation } from '@material/line-ripple'
 
 export const useLineRippleFoundation = (props) => {
   const { foundation, ...elements } = useFoundation({
@@ -23,29 +23,29 @@ export const useLineRippleFoundation = (props) => {
           evtType,
           handler
         ) => rootEl.removeEventListener(evtType, handler)
-      });
+      })
     }
-  });
+  })
 
-  const { rootEl } = elements;
+  const { rootEl } = elements
 
   // Active
   useEffect(() => {
-    props.active ? foundation.activate() : foundation.deactivate();
-  }, [props.active, foundation]);
+    props.active ? foundation.activate() : foundation.deactivate()
+  }, [props.active, foundation])
 
   // Center
   useEffect(() => {
     typeof props.center === 'number' &&
-      foundation.setRippleCenter(props.center);
-  }, [props.center, foundation]);
+      foundation.setRippleCenter(props.center)
+  }, [props.center, foundation])
 
   // Transition end
   rootEl.setProp(
     'onTransitionEnd',
     (evt) => foundation.handleTransitionEnd(evt),
     true
-  );
+  )
 
-  return { foundation, ...elements };
-};
+  return { foundation, ...elements }
+}

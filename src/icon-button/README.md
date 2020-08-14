@@ -28,7 +28,7 @@ Icon buttons allow users to take actions, and make choices, with a single tap.
     tag="a"
     target="_blank"
     href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      'You should definitely be using RMWC for your next project! https://rmwc.io'
+      'You should definitely be using PMWC for your next project! https://pmwc.io'
     )}`}
   />
 </>
@@ -102,10 +102,10 @@ An IconButton component that can also be used as a toggle.
 | `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
 | `disabled` | `undefined \| false \| true` | Makes the button disabled |
 | `foundationRef` | `React.Ref<MDCIconButtonToggleFoundation>` | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. |
-| `icon` | `RMWC.IconPropT` | Icon for the button |
+| `icon` | `PMWC.IconPropT` | Icon for the button |
 | `label` | `undefined \| string` | Apply an aria label. |
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
-| `onIcon` | `RMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
+| `onIcon` | `PMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 
 

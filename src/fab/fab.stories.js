@@ -1,6 +1,5 @@
-/** @jsx h */
 import { h } from 'preact'
-import { useState } from 'preact/hooks'
+
 import './styles.js'
 
 import {
@@ -9,28 +8,28 @@ import {
 
 export default {
   title: 'Fab',
-  component: Fab,
-};
+  component: Fab
+}
 
 export const basic = () => (
   <section>
-    <Fab icon="favorite" />
+    <Fab icon='favorite' />
 
-    <p></p>
-    <Fab icon="favorite" mini />
+    <p />
+    <Fab icon='favorite' mini />
 
-    <p></p>
+    <p />
     <div>
-      <Fab icon="add" label="Create" />
-      <Fab trailingIcon="add" label="Create" />
-      <Fab label="Label only" />
+      <Fab icon='add' label='Create' />
+      <Fab trailingIcon='add' label='Create' />
+      <Fab label='Label only' />
     </div>
 
-    <p></p>
+    <p />
     <div>
-      <Fab icon="favorite_outline" theme={['primaryBg', 'onPrimary']} />
+      <Fab icon='favorite_outline' theme={['primaryBg', 'onPrimary']} />
       <Fab
-        icon="delete"
+        icon='delete'
         style={{ backgroundColor: 'var(--mdc-theme-error)' }}
         theme={['onError']}
       />

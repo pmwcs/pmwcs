@@ -1,2 +1,2 @@
-export * from './dialog';
-export * from './dialog-queue';
+export * from './dialog'
+export * from './dialog-queue'

@@ -1,6 +1,6 @@
-import { useEffect } from 'preact/hooks';
-import { useFoundation } from '@pmwc/base';
-import { MDCIconButtonToggleFoundation } from '@material/icon-button';
+import { useEffect } from 'preact/hooks'
+import { useFoundation } from '@pmwc/base'
+import { MDCIconButtonToggleFoundation } from '@material/icon-button'
 
 export function useIconButtonFoundation (props) {
   const { foundation, ...elements } = useFoundation({
@@ -14,25 +14,25 @@ export function useIconButtonFoundation (props) {
         setAttr: (attrName, attrValue) =>
           rootEl.setProp(attrName, attrValue),
         notifyChange: (evtData) => emit('onChange', evtData)
-      });
+      })
     }
-  });
+  })
 
-  const { rootEl } = elements;
-  const isOn = props.checked !== undefined ? props.checked : foundation.isOn();
+  const { rootEl } = elements
+  const isOn = props.checked !== undefined ? props.checked : foundation.isOn()
 
   useEffect(() => {
     if (isOn !== foundation.isOn()) {
-      foundation.toggle(isOn);
+      foundation.toggle(isOn)
     }
-  }, [foundation, isOn]);
+  }, [foundation, isOn])
 
   const handleClick = (evt) => {
-    props.onClick?.(evt);
-    foundation.handleClick();
-  };
+    props.onClick?.(evt)
+    foundation.handleClick()
+  }
 
-  rootEl.setProp('onClick', handleClick, true);
+  rootEl.setProp('onClick', handleClick, true)
 
-  return { isOn, foundation, ...elements };
+  return { isOn, foundation, ...elements }
 };

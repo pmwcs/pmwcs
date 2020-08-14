@@ -1,5 +1,5 @@
-import { useFoundation } from '@pmwc/base';
-import { MDCTextFieldIconFoundation } from '@material/textfield';
+import { useFoundation } from '@pmwc/base'
+import { MDCTextFieldIconFoundation } from '@material/textfield'
 
 export const useTextFieldIconFoundation = (props) => {
   const { foundation, ...elements } = useFoundation({
@@ -10,7 +10,7 @@ export const useTextFieldIconFoundation = (props) => {
     }) => {
       return {
         getFoundation: () => foundation
-      };
+      }
     },
     foundation: ({ rootEl, emit }) => {
       const f = new MDCTextFieldIconFoundation({
@@ -19,7 +19,7 @@ export const useTextFieldIconFoundation = (props) => {
           rootEl.setProp(attr, value),
         removeAttr: (attr) => rootEl.removeProp(attr),
         setContent: (content) => {
-          rootEl.setProp('icon', content);
+          rootEl.setProp('icon', content)
         },
         registerInteractionHandler: (
           evtType,
@@ -30,11 +30,11 @@ export const useTextFieldIconFoundation = (props) => {
           handler
         ) => rootEl.removeEventListener(evtType, handler),
         notifyIconAction: () => emit('onClick', {}, true)
-      });
+      })
 
-      return f;
+      return f
     }
-  });
+  })
 
-  return { ...elements };
-};
+  return { ...elements }
+}

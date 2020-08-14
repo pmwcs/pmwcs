@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'preact/hooks'
-import { MDCLinearProgressFoundation } from '@material/linear-progress';
-import { useFoundation } from '@pmwc/base';
+import { MDCLinearProgressFoundation } from '@material/linear-progress'
+import { useFoundation } from '@pmwc/base'
 
 export const useLinearProgressFoundation = (props) => {
   const { foundation, ...elements } = useFoundation({
@@ -24,36 +24,36 @@ export const useLinearProgressFoundation = (props) => {
           ) || null
           el && (el.style[styleProperty] = value)
         }
-      });
+      })
     }
-  });
+  })
 
-  const [determinate, setDeterminate] = useState(undefined);
+  const [determinate, setDeterminate] = useState(undefined)
 
   // progress and determinate
   useEffect(() => {
-    foundation.setProgress(props.progress || 0);
+    foundation.setProgress(props.progress || 0)
 
-    const isDeterminate = props.progress !== undefined;
+    const isDeterminate = props.progress !== undefined
     if (isDeterminate !== determinate) {
-      foundation.setDeterminate(isDeterminate);
-      setDeterminate(isDeterminate);
+      foundation.setDeterminate(isDeterminate)
+      setDeterminate(isDeterminate)
     }
-  }, [props.progress, determinate, foundation]);
+  }, [props.progress, determinate, foundation])
 
   // buffer
   useEffect(() => {
-    foundation.setBuffer(props.buffer || 0);
-  }, [props.buffer, foundation]);
+    foundation.setBuffer(props.buffer || 0)
+  }, [props.buffer, foundation])
 
   // reversed
   useEffect(() => {
-    foundation.setReverse(!!props.reversed);
-  }, [props.reversed, foundation]);
+    foundation.setReverse(!!props.reversed)
+  }, [props.reversed, foundation])
 
   // closed
   useEffect(() => {
-    props.closed ? foundation.close() : foundation.open();
-  }, [props.closed, foundation]);
-  return { foundation, ...elements };
-};
+    props.closed ? foundation.close() : foundation.open()
+  }, [props.closed, foundation])
+  return { foundation, ...elements }
+}

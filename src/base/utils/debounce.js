@@ -1,12 +1,12 @@
 export const debounce = function (func, wait) {
-  let timeout;
+  let timeout
   return function () {
-    const context = this, args = arguments;
+    const context = this; const args = arguments
     const later = function () {
-      timeout = null;
-      func.apply(context, args);
-    };
-    timeout !== null && clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-};
+      timeout = null
+      func.apply(context, args)
+    }
+    timeout !== null && clearTimeout(timeout)
+    timeout = setTimeout(later, wait)
+  }
+}

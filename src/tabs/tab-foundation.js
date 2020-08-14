@@ -1,17 +1,16 @@
-import { h } from 'preact'
-import { useRef, useContext, useEffect, useMemo } from 'preact/hooks';
+import { useRef, useContext, useEffect, useMemo } from 'preact/hooks'
 
-import { useFoundation, useId, emptyClientRect } from '@pmwc/base';
-import { MDCTabFoundation } from '@material/tab';
-import { TabBarContext } from './tab-bar-context';
+import { useFoundation, useId, emptyClientRect } from '@pmwc/base'
+import { MDCTabFoundation } from '@material/tab'
+import { TabBarContext } from './tab-bar-context'
 
 export const useTabFoundation = (props) => {
-  const tabIndicatorApi = useRef();
+  const tabIndicatorApi = useRef()
   const setTabIndicatorApi = (api) =>
-    (tabIndicatorApi.current = api);
+    (tabIndicatorApi.current = api)
 
-  const contextApi = useContext(TabBarContext);
-  const id = useId('tab', props);
+  const contextApi = useContext(TabBarContext)
+  const id = useId('tab', props)
 
   const { foundation, ...elements } = useFoundation({
     props,
@@ -28,9 +27,9 @@ export const useTabFoundation = (props) => {
             tabIndicatorApi.current?.activate(previousIndicatorClientRect),
           deactivateIndicator: () => tabIndicatorApi.current?.deactivate(),
           notifyInteracted: () => {
-            const evt = emit('onInteraction', { tabId: id }, true /* bubble */);
+            const evt = emit('onInteraction', { tabId: id }, true /* bubble */)
 
-            contextApi.onTabInteraction(evt);
+            contextApi.onTabInteraction(evt)
           },
           getOffsetLeft: () => rootEl.ref?.offsetLeft || 0,
           getOffsetWidth: () => rootEl.ref?.offsetWidth || 0,
@@ -38,18 +37,18 @@ export const useTabFoundation = (props) => {
           getContentOffsetWidth: () => contentEl.ref?.offsetWidth || 0,
           focus: () => rootEl.ref && rootEl.ref.focus && rootEl.ref.focus()
         }
-      );
+      )
     }
-  });
+  })
 
-  const { rootEl } = elements;
+  const { rootEl } = elements
 
   const handleClick = (evt) => {
-    props.onClick?.(evt);
-    foundation.handleClick();
-  };
+    props.onClick?.(evt)
+    foundation.handleClick()
+  }
 
-  rootEl.setProp('onClick', handleClick, true);
+  rootEl.setProp('onClick', handleClick, true)
 
   const tabApi = useMemo(() => {
     return {
@@ -66,19 +65,19 @@ export const useTabFoundation = (props) => {
         rootEl.ref?.parentElement
           ? Array.from(rootEl.ref.parentElement.children).indexOf(rootEl.ref)
           : -1
-    };
-  }, [foundation, rootEl.ref, id]);
+    }
+  }, [foundation, rootEl.ref, id])
 
   useEffect(() => {
-    contextApi.registerTab(tabApi);
+    contextApi.registerTab(tabApi)
 
     return () => {
-      contextApi.unregisterTab(tabApi);
-    };
-  }, [contextApi, tabApi]);
+      contextApi.unregisterTab(tabApi)
+    }
+  }, [contextApi, tabApi])
 
   return {
     ...elements,
     setTabIndicatorApi
-  };
-};
+  }
+}

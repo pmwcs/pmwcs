@@ -1,5 +1,5 @@
-import { h } from 'preact';
-import { useState } from 'preact/hooks';
+import { h } from 'preact'
+import { useState } from 'preact/hooks'
 
 import './styles.js'
 
@@ -14,33 +14,33 @@ export default {
 
 export const basic = () => (
   <section>
-    <Switch defaultChecked label="Pizza" />
+    <Switch defaultChecked label='Pizza' />
 
-    <br/>
+    <br />
 
     <Switch>Icecream</Switch>
 
-    <br/>
+    <br />
 
-    <Switch disabled label="Disabled" />
+    <Switch disabled label='Disabled' />
 
-    <br/>
+    <br />
 
-    <Switch disabled defaultChecked label="Disabled" />
+    <Switch disabled defaultChecked label='Disabled' />
   </section>
 )
 
 export const withState = () => {
-  function Example() {
-    const [checked, setChecked] = useState(false);
+  function Example () {
+    const [checked, setChecked] = useState(false)
 
     return (
       <Switch
         checked={checked}
         onChange={evt => setChecked(!!evt.currentTarget.checked)}
-        label="Cookies"
+        label='Cookies'
       />
-    );
+    )
   }
-  return <Example/>
+  return <Example />
 }

@@ -4,13 +4,12 @@ import './styles.js'
 
 import {
   LinearProgress
-} from './index.js';
-
+} from './index.js'
 
 export default {
   title: 'LinearProgress',
-  component: LinearProgress,
-};
+  component: LinearProgress
+}
 
 export const basic = () => (
   <section>

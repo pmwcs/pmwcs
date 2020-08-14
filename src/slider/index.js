@@ -1,52 +1,52 @@
 import { h } from 'preact'
 import { memo, forwardRef } from 'preact/compat'
 
-import { useClassNames, Tag, createComponent } from '@pmwc/base';
-import { useSliderFoundation } from './foundation';
+import { useClassNames, Tag, createComponent } from '@pmwc/base'
+import { useSliderFoundation } from './foundation'
 
 const SliderTrack = memo(
-  forwardRef(function SliderTrack(props, ref) {
-    return <div ref={ref} className="mdc-slider__track" />;
+  forwardRef(function SliderTrack (props, ref) {
+    return <div ref={ref} className='mdc-slider__track' />
   })
-);
+)
 
 const SliderTrackMarkerContainer = memo(
-  forwardRef(function SliderTrackMarkerContainer(
+  forwardRef(function SliderTrackMarkerContainer (
     props,
     ref
   ) {
-    return <div ref={ref} className="mdc-slider__track-marker-container"></div>;
+    return <div ref={ref} className='mdc-slider__track-marker-container' />
   })
-);
+)
 
-const SliderPin = memo(function SliderPin({ value }) {
+const SliderPin = memo(function SliderPin ({ value }) {
   return (
-    <div className="mdc-slider__pin">
-      <span className="mdc-slider__pin-value-marker">{value}</span>
+    <div className='mdc-slider__pin'>
+      <span className='mdc-slider__pin-value-marker'>{value}</span>
     </div>
-  );
-});
+  )
+})
 
-const SliderThumb = memo(function SliderThumb() {
+const SliderThumb = memo(function SliderThumb () {
   return (
-    <svg className="mdc-slider__thumb" width="21" height="21">
-      <circle cx="10.5" cy="10.5" r="7.875" />
+    <svg className='mdc-slider__thumb' width='21' height='21'>
+      <circle cx='10.5' cy='10.5' r='7.875' />
     </svg>
-  );
-});
+  )
+})
 
-const SliderFocusRing = memo(function SliderFocusRing() {
-  return <div className="mdc-slider__focus-ring" />;
-});
+const SliderFocusRing = memo(function SliderFocusRing () {
+  return <div className='mdc-slider__focus-ring' />
+})
 
-export const Slider = createComponent(function Slider(props, ref) {
+export const Slider = createComponent(function Slider (props, ref) {
   const {
     rootEl,
     thumbContainerEl,
     sliderPinEl,
     setTrackRef,
     setTrackMarkerContainerRef
-  } = useSliderFoundation(props);
+  } = useSliderFoundation(props)
 
   const {
     value,
@@ -61,7 +61,7 @@ export const Slider = createComponent(function Slider(props, ref) {
     children,
     foundationRef,
     ...rest
-  } = props;
+  } = props
 
   const className = useClassNames(props, [
     'mdc-slider',
@@ -69,25 +69,24 @@ export const Slider = createComponent(function Slider(props, ref) {
       'mdc-slider--discrete': discrete,
       'mdc-slider--display-markers': displayMarkers && discrete
     }
-  ]);
+  ])
 
-  const dataStep = step ? { 'data-step': step } : {};
+  const dataStep = step ? { 'data-step': step } : {}
 
   if (displayMarkers && !discrete) {
     console.warn(
-      `The 'displayMarkers' prop on rmwc Slider will
+      `The 'displayMarkers' prop on pmwc Slider will
         only work in conjunction with the 'discrete' prop`
-    );
+    )
   }
 
   return (
     <Tag
       tabIndex={0}
-      //eslint-disable-next-line jsx-a11y/role-has-required-aria-props
-      role="slider"
+      role='slider'
       aria-valuemax={max}
       aria-valuenow={value}
-      aria-label="Select Value"
+      aria-label='Select Value'
       {...(disabled ? { 'aria-disabled': disabled } : {})}
       {...dataStep}
       {...rest}
@@ -95,18 +94,18 @@ export const Slider = createComponent(function Slider(props, ref) {
       element={rootEl}
       className={className}
     >
-      <div className="mdc-slider__track-container">
+      <div className='mdc-slider__track-container'>
         <SliderTrack ref={setTrackRef} />
         {displayMarkers && (
           <SliderTrackMarkerContainer ref={setTrackMarkerContainerRef} />
         )}
       </div>
-      <Tag element={thumbContainerEl} className="mdc-slider__thumb-container">
+      <Tag element={thumbContainerEl} className='mdc-slider__thumb-container'>
         {discrete && <SliderPin value={sliderPinEl.getProp('value')} />}
         <SliderThumb />
         <SliderFocusRing />
       </Tag>
       {children}
     </Tag>
-  );
-});
+  )
+})

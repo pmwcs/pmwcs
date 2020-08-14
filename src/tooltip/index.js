@@ -1,10 +1,10 @@
-import { h, Fragment } from 'preact';
+import { h, Fragment } from 'preact'
 
-import { Tag, classNames } from '@pmwc/base';
-import { useProviderContext } from '@pmwc/provider';
+import { Tag, classNames } from '@pmwc/base'
+import { useProviderContext } from '@pmwc/provider'
 
 /** A Tooltip component for displaying informative popover information. */
-export const Tooltip = function Tooltip({
+export const Tooltip = function Tooltip ({
   children,
   content,
   className,
@@ -12,7 +12,7 @@ export const Tooltip = function Tooltip({
   tag = 'span',
   ...rest
 }) {
-  const providerContext = useProviderContext();
+  const providerContext = useProviderContext()
 
   // merge together provider options
   const {
@@ -24,15 +24,15 @@ export const Tooltip = function Tooltip({
   } = {
     ...providerContext.tooltip,
     ...rest
-  };
+  }
 
   return (
     <Tooltip
       {...(open !== undefined ? { visible: open } : {})}
       trigger={Array.isArray(activateOn) ? activateOn : [activateOn]}
-      prefixCls="pmwc-tooltip"
+      prefixCls='pmwc-tooltip'
       placement={align}
-      transitionName="pmwc-tooltip-zoom"
+      transitionName='pmwc-tooltip-zoom'
       mouseEnterDelay={enterDelay / 1000}
       mouseLeaveDelay={leaveDelay / 1000}
       overlay={content}
@@ -43,5 +43,5 @@ export const Tooltip = function Tooltip({
     >
       {children}
     </Tooltip>
-  );
-};
+  )
+}

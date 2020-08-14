@@ -1,13 +1,13 @@
-# Tooltips `RMWC ADDON`
+# Tooltips `PMWC ADDON`
 
 Tooltips display informative text when users hover over, focus on, or tap an element.
 
-- Module **@rmwc/tooltip**
+- Module **@pmwc/tooltip**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/tooltip/styles';
+    - import '@pmwc/tooltip/styles';
   - Or include stylesheets
-    - **'@rmwc/tooltip/tooltip.css'**
+    - **'@pmwc/tooltip/tooltip.css'**
 
 
 ## Basic Usage
@@ -146,12 +146,12 @@ By default, tooltips will activate on hover and focus. You can change this behav
 </>
 ```
 
-## Usage with RMWCProvider
+## Usage with PMWCProvider
 
-The RMWCProvider allows you to specify global defaults for your tooltips.
+The PMWCProvider allows you to specify global defaults for your tooltips.
 
 ```jsx
-<RMWCProvider
+<PMWCProvider
   tooltip={{
     align: 'right',
     activateOn: 'hover',
@@ -163,7 +163,7 @@ The RMWCProvider allows you to specify global defaults for your tooltips.
   <Tooltip content="Hello World!">
     <Button label="With Provider" />
   </Tooltip>
-</RMWCProvider>
+</PMWCProvider>
 ```
 
 ## Tooltip

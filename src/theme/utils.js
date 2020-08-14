@@ -140,35 +140,35 @@ const colorMap = {
   whitesmoke: '#f5f5f5',
   yellow: '#ffff00',
   yellowgreen: '#9acd32'
-};
+}
 
-const nameToHex = (name) => colorMap[name] || name;
+const nameToHex = (name) => colorMap[name] || name
 
 const hexToRgb = (hex) => {
   if (hex.length === 4) {
-    hex = hex + hex.slice(1);
+    hex = hex + hex.slice(1)
   }
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    }
     : {
-        r: 0,
-        g: 0,
-        b: 0
-      };
-};
+      r: 0,
+      g: 0,
+      b: 0
+    }
+}
 
 const luminance = (r, g, b) => {
-  var a = [r, g, b].map(function(v) {
-    v /= 255;
-    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
-  });
-  return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
-};
+  var a = [r, g, b].map(function (v) {
+    v /= 255
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4)
+  })
+  return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722
+}
 
 const contrast = (
   rgb1,
@@ -177,19 +177,19 @@ const contrast = (
   return (
     (luminance(rgb1[0], rgb1[1], rgb1[2]) + 0.05) /
     (luminance(rgb2[0], rgb2[1], rgb2[2]) + 0.05)
-  );
-};
+  )
+}
 
 export const getRgb = (color) => {
-  color = nameToHex(color);
-  return hexToRgb(color);
-};
+  color = nameToHex(color)
+  return hexToRgb(color)
+}
 
 export const isDark = (color) => {
-  const { r, g, b } = getRgb(color);
-  const ratio = contrast([255, 255, 255], [r, g, b]);
-  return ratio > 3 ? false : true;
-};
+  const { r, g, b } = getRgb(color)
+  const ratio = contrast([255, 255, 255], [r, g, b])
+  return !(ratio > 3)
+}
 
 const paletteMap = {
   '--mdc-theme-primary': [['--mdc-theme-on-primary', 0]],
@@ -202,19 +202,19 @@ const paletteMap = {
     ['--mdc-theme-text-disabled-on-background', 2],
     ['--mdc-theme-text-icon-on-background', 2]
   ]
-};
+}
 
 const lightTextPalette = [
   'rgba(0, 0, 0, 0.87)',
   'rgba(0, 0, 0, 0.54)',
   'rgba(0, 0, 0, 0.38)'
-];
+]
 
 const darkTextPalette = [
   'rgba(255, 255, 255, 1)',
   'rgba(255, 255, 255, 0.7)',
   'rgba(255, 255, 255, 0.5)'
-];
+]
 
 export const getAutoColorsForTheme = (colors) => {
   const autoColors = Object.keys(paletteMap).reduce(
@@ -222,19 +222,19 @@ export const getAutoColorsForTheme = (colors) => {
       if (colors[key]) {
         const palette = isDark(colors[key])
           ? lightTextPalette
-          : darkTextPalette;
+          : darkTextPalette
 
         paletteMap[key].forEach(k => {
-          acc[k[0]] = palette[k[1]];
-        });
+          acc[k[0]] = palette[k[1]]
+        })
       }
-      return acc;
+      return acc
     },
     {}
-  );
+  )
 
   return {
     ...autoColors,
     ...colors
-  };
-};
+  }
+}

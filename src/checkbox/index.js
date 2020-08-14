@@ -1,7 +1,7 @@
-import {h} from 'preact';
-import { useContext } from 'preact/hooks';
-import { memo, forwardRef } from 'preact/compat';
-import { MDCCheckboxFoundation } from '@material/checkbox';
+import { h } from 'preact'
+import { useContext } from 'preact/hooks'
+import { memo, forwardRef } from 'preact/compat'
+import { MDCCheckboxFoundation } from '@material/checkbox'
 import {
   Tag,
   useClassNames,
@@ -9,9 +9,9 @@ import {
   createComponent,
   DataTableContext,
   DataTableHeadContext
-} from '@pmwc/base';
-import { withRipple } from '@pmwc/ripple';
-import { useCheckboxFoundation } from './foundation';
+} from '@pmwc/base'
+import { withRipple } from '@pmwc/ripple'
+import { useCheckboxFoundation } from './foundation'
 
 /*********************************************************************
  * Events
@@ -24,14 +24,14 @@ import { useCheckboxFoundation } from './foundation';
  * to do the same.
  */
 // @ts-ignore
-MDCCheckboxFoundation.prototype.installPropertyChangeHooks_ = () => {};
+MDCCheckboxFoundation.prototype.installPropertyChangeHooks_ = () => {}
 
 /*********************************************************************
  * Checkbox
  *********************************************************************/
 
 /** A Checkbox component. */
-export const Checkbox = createComponent(function Checkbox(
+export const Checkbox = createComponent(function Checkbox (
   props,
   ref
 ) {
@@ -41,7 +41,7 @@ export const Checkbox = createComponent(function Checkbox(
     toggleRootProps,
     rootEl,
     checkboxEl
-  } = useCheckboxFoundation(props);
+  } = useCheckboxFoundation(props)
 
   const {
     children,
@@ -52,7 +52,7 @@ export const Checkbox = createComponent(function Checkbox(
     inputRef,
     foundationRef,
     ...rest
-  } = props;
+  } = props
 
   const checkbox = (
     <CheckboxRoot
@@ -68,17 +68,17 @@ export const Checkbox = createComponent(function Checkbox(
           ...rest,
           className: 'mdc-checkbox__native-control'
         })}
-        type="checkbox"
+        type='checkbox'
         ref={mergeRefs(checkboxEl.setRef, inputRef)}
         id={id}
       />
       <CheckboxBackground />
       <CheckboxRipple />
     </CheckboxRoot>
-  );
+  )
 
-  return renderToggle(checkbox);
-});
+  return renderToggle(checkbox)
+})
 
 /*********************************************************************
  * Bits
@@ -88,13 +88,13 @@ const CheckboxRoot = withRipple({
   surface: false,
   unbounded: true
 })(
-  forwardRef(function CheckboxRoot(
+  forwardRef(function CheckboxRoot (
     props,
     ref
   ) {
-    const isDataTable = useContext(DataTableContext);
-    const isDataTableHeader = useContext(DataTableHeadContext);
-    const { disabled, checked, indeterminate, ...rest } = props;
+    const isDataTable = useContext(DataTableContext)
+    const isDataTableHeader = useContext(DataTableHeadContext)
+    const { disabled, checked, indeterminate, ...rest } = props
     const className = useClassNames(props, [
       'mdc-checkbox',
       {
@@ -103,27 +103,27 @@ const CheckboxRoot = withRipple({
         'mdc-checkbox--disabled': disabled,
         'mdc-checkbox--selected': checked || indeterminate
       }
-    ]);
-    return <Tag {...rest} className={className} ref={ref} />;
+    ])
+    return <Tag {...rest} className={className} ref={ref} />
   })
-);
+)
 
-const CheckboxRipple = memo(function CheckboxRipple() {
-  return <div className="mdc-checkbox__ripple" />;
-});
+const CheckboxRipple = memo(function CheckboxRipple () {
+  return <div className='mdc-checkbox__ripple' />
+})
 
 const CheckboxBackground = memo(() => {
   return (
-    <div className="mdc-checkbox__background">
-      <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+    <div className='mdc-checkbox__background'>
+      <svg className='mdc-checkbox__checkmark' viewBox='0 0 24 24'>
         <path
-          className="mdc-checkbox__checkmark-path"
-          fill="none"
-          stroke="white"
-          d="M1.73,12.91 8.1,19.28 22.79,4.59"
+          className='mdc-checkbox__checkmark-path'
+          fill='none'
+          stroke='white'
+          d='M1.73,12.91 8.1,19.28 22.79,4.59'
         />
       </svg>
-      <div className="mdc-checkbox__mixedmark" />
+      <div className='mdc-checkbox__mixedmark' />
     </div>
-  );
-});
+  )
+})

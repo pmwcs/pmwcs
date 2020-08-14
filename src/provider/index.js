@@ -1,30 +1,30 @@
-import { h, createElement, createContext } from 'preact';
-import { useContext } from 'preact/hooks';
+import { createElement, createContext } from 'preact'
+import { useContext } from 'preact/hooks'
 
 // Default provider options
 const providerDefaults = {
   ripple: true,
-    tooltip: {
-      align: 'top',
-      showArrow: false,
-      activateOn: ['hover', 'focus'],
-      enterDelay: 0,
-      leaveDelay: 0
-    },
-    typography: null,
-    icon: {
-      icon: '',
-      basename: 'material-icons',
-      prefix: '',
-      strategy: 'auto',
-      render: undefined
-    }
-};
+  tooltip: {
+    align: 'top',
+    showArrow: false,
+    activateOn: ['hover', 'focus'],
+    enterDelay: 0,
+    leaveDelay: 0
+  },
+  typography: null,
+  icon: {
+    icon: '',
+    basename: 'material-icons',
+    prefix: '',
+    strategy: 'auto',
+    render: undefined
+  }
+}
 
-export const ProviderContext = createContext(providerDefaults);
+export const ProviderContext = createContext(providerDefaults)
 export const useProviderContext = () => useContext(ProviderContext)
 
-/** A provider for setting global options in RMWC. */
+/** A provider for setting global options in PMWC. */
 export const PMWCProvider = function (props) {
   const { children, ...rest } = props
   return (createElement(

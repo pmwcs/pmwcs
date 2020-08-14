@@ -1,4 +1,4 @@
-# Avatars `RMWC ADDON`
+# Avatars `PMWC ADDON`
 
 Avatars are virtual representations of users in a system.
 
@@ -159,7 +159,7 @@ An Avatar component for displaying users in a system.
 | `interactive` | `undefined \| false \| true` | Make the avatar interactive. |
 | `name` | `undefined \| string` | The name of the user. This will get converted to initials and set the hover title. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `size` | `RMWC.IconSizeT` | The size of the avatar |
+| `size` | `PMWC.IconSizeT` | The size of the avatar |
 | `square` | `undefined \| false \| true` | Make the avatar square. |
 | `src` | `undefined \| string` | The url for the image. This gets passed to the Icon component. |
 
@@ -183,7 +183,7 @@ An Avatar count for displaying list overflow.
 |------|------|-------------|
 | `interactive` | `undefined \| false \| true` | Make the avatar interactive. |
 | `overflow` | `undefined \| false \| true` | Optionally renders a "+" to indicate overlow. |
-| `size` | `RMWC.IconSizeT` | The size of the avatar |
+| `size` | `PMWC.IconSizeT` | The size of the avatar |
 | `square` | `undefined \| false \| true` | Make the avatar square. |
 | `value` | `number` | The number of users. |
 

@@ -1,3 +1,3 @@
-# RMWC Base module
+# PMWC Base module
 
-This module contains core functionality shared between all RMWC components.
+This module contains core functionality shared between all PMWC components.

@@ -1,11 +1,11 @@
-import { h, Fragment } from 'preact';
+import { h, Fragment } from 'preact'
 
-import { Tag, classNames } from '@pmwc/base';
+import { Tag, classNames } from '@pmwc/base'
 // import ReactTooltip from 'rc-tooltip';
 // import { useProviderContext } from '@pmwc/provider';
 
 /** A Tooltip component for displaying informative popover information. */
-export const Tooltip = function Tooltip({
+export const Tooltip = function Tooltip ({
   children,
   content,
   className,
@@ -35,8 +35,7 @@ export const Tooltip = function Tooltip({
   return (
     <Fragment>
       {children}
-      <Tag tag={tag} title={content} className={className_}>
-      </Tag>
+      <Tag tag={tag} title={content} className={className_} />
     </Fragment>
   )
 
@@ -58,4 +57,4 @@ export const Tooltip = function Tooltip({
   //     {children}
   //   </ReactTooltip>
   // );
-};
+}

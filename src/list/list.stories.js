@@ -13,7 +13,7 @@ import {
   ListItemMeta,
   SimpleListItem,
   CollapsibleList
-} from './index.js';
+} from './index.js'
 
 import { Checkbox } from '@pmwc/checkbox'
 import { Switch } from '@pmwc/switch'
@@ -21,8 +21,8 @@ import { Radio } from '@pmwc/radio'
 
 export default {
   title: 'List',
-  component: List,
-};
+  component: List
+}
 
 export const basic = () => (
   <List>
@@ -35,23 +35,23 @@ export const basic = () => (
 export const list = () => (
   <List twoLine foundationRef={console.log}>
     <ListItem>
-      <ListItemGraphic icon="star_border" />
+      <ListItemGraphic icon='star_border' />
       <ListItemText>
         <ListItemPrimaryText>Cookies</ListItemPrimaryText>
         <ListItemSecondaryText>$4.99 a dozen</ListItemSecondaryText>
       </ListItemText>
-      <ListItemMeta icon="info" />
+      <ListItemMeta icon='info' />
     </ListItem>
     <ListItem>
-      <ListItemGraphic icon="local_pizza" />
+      <ListItemGraphic icon='local_pizza' />
       <ListItemText>
         <ListItemPrimaryText>Pizza</ListItemPrimaryText>
         <ListItemSecondaryText>$1.99 a slice</ListItemSecondaryText>
       </ListItemText>
-      <ListItemMeta icon="info" />
+      <ListItemMeta icon='info' />
     </ListItem>
     <ListItem activated>
-      <ListItemGraphic icon="mood" />
+      <ListItemGraphic icon='mood' />
       <ListItemText>
         <ListItemPrimaryText>Icecream</ListItemPrimaryText>
         <ListItemSecondaryText>$0.99 a scoop</ListItemSecondaryText>
@@ -64,34 +64,34 @@ export const list = () => (
 export const simpleList = () => (
   <List twoLine>
     <SimpleListItem
-      graphic="star_border"
-      text="Cookies"
-      secondaryText="Chocolate chip"
-      metaIcon="info"
+      graphic='star_border'
+      text='Cookies'
+      secondaryText='Chocolate chip'
+      metaIcon='info'
     />
     <SimpleListItem
-      graphic="local_pizza"
-      text="Pizza"
-      secondaryText="Pepperoni"
-      metaIcon="info"
+      graphic='local_pizza'
+      text='Pizza'
+      secondaryText='Pepperoni'
+      metaIcon='info'
     />
     <SimpleListItem
       activated
-      graphic="mood"
-      text="Icecream"
-      secondaryText="Chocolate cookie dough"
-      meta="Winner!"
+      graphic='mood'
+      text='Icecream'
+      secondaryText='Chocolate cookie dough'
+      meta='Winner!'
     />
   </List>
 )
 
 export const selectable = () => {
-  function Example() {
+  function Example () {
     const [checked, setChecked] = useState({
       Cookies: false,
       Pizza: false,
       Icecream: false
-    });
+    })
 
     return (
       <List>
@@ -99,8 +99,7 @@ export const selectable = () => {
           <ListItem
             key={key}
             onClick={() =>
-              setChecked({ ...checked, [key]: !checked[key] })
-            }
+              setChecked({ ...checked, [key]: !checked[key] })}
           >
             {key}
             <ListItemMeta>
@@ -109,18 +108,18 @@ export const selectable = () => {
           </ListItem>
         ))}
       </List>
-    );
+    )
   }
   return <Example />
 }
 
 export const checkboxList = () => {
-  function Example() {
+  function Example () {
     const [checked, setChecked] = useState({
       Cookies: false,
       Pizza: false,
       Icecream: false
-    });
+    })
 
     return (
       <List>
@@ -128,8 +127,7 @@ export const checkboxList = () => {
           <ListItem
             key={key}
             onClick={() =>
-              setChecked({ ...checked, [key]: !checked[key] })
-            }
+              setChecked({ ...checked, [key]: !checked[key] })}
           >
             {key}
             <ListItemMeta>
@@ -138,14 +136,14 @@ export const checkboxList = () => {
           </ListItem>
         ))}
       </List>
-    );
+    )
   }
   return <Example />
 }
 
 export const radioList = () => {
-  function Example() {
-    const [checked, setChecked] = useState('Cookies');
+  function Example () {
+    const [checked, setChecked] = useState('Cookies')
 
     return (
       <List>
@@ -158,7 +156,7 @@ export const radioList = () => {
           </ListItem>
         ))}
       </List>
-    );
+    )
   }
   return <Example />
 }
@@ -168,56 +166,56 @@ export const collapsibleList = () => (
     <CollapsibleList
       handle={
         <SimpleListItem
-          text="Cookies"
-          graphic="favorite"
-          metaIcon="chevron_right"
+          text='Cookies'
+          graphic='favorite'
+          metaIcon='chevron_right'
         />
       }
       onOpen={() => console.log('open')}
       onClose={() => console.log('close')}
     >
-      <SimpleListItem text="Chocolate Chip" />
-      <SimpleListItem text="Ginger Snap" />
-      <SimpleListItem text="Peanut Butter" />
+      <SimpleListItem text='Chocolate Chip' />
+      <SimpleListItem text='Ginger Snap' />
+      <SimpleListItem text='Peanut Butter' />
     </CollapsibleList>
 
     <CollapsibleList
       handle={
         <SimpleListItem
-          text="Pizza"
-          graphic="local_pizza"
-          metaIcon="chevron_right"
+          text='Pizza'
+          graphic='local_pizza'
+          metaIcon='chevron_right'
         />
       }
     >
-      <SimpleListItem text="Cheese" />
-      <SimpleListItem text="Pepperoni" />
-      <SimpleListItem text="Supreme" />
+      <SimpleListItem text='Cheese' />
+      <SimpleListItem text='Pepperoni' />
+      <SimpleListItem text='Supreme' />
     </CollapsibleList>
 
     <CollapsibleList
       handle={
         <SimpleListItem
-          text="Icecream"
-          graphic="star"
-          metaIcon="chevron_right"
+          text='Icecream'
+          graphic='star'
+          metaIcon='chevron_right'
         />
       }
     >
-      <SimpleListItem text="Vanilla" />
-      <SimpleListItem text="Chocolate" />
+      <SimpleListItem text='Vanilla' />
+      <SimpleListItem text='Chocolate' />
       <CollapsibleList
         handle={
           <SimpleListItem
-            text="Nested Collapsible"
-            graphic="touch_app"
-            metaIcon="chevron_right"
+            text='Nested Collapsible'
+            graphic='touch_app'
+            metaIcon='chevron_right'
           />
         }
       >
-        <SimpleListItem text="Orange" />
-        <SimpleListItem text="Strawberry" />
-        <SimpleListItem text="Blueberry" />
+        <SimpleListItem text='Orange' />
+        <SimpleListItem text='Strawberry' />
+        <SimpleListItem text='Blueberry' />
       </CollapsibleList>
     </CollapsibleList>
 
@@ -225,9 +223,9 @@ export const collapsibleList = () => (
       open
       handle={
         <SimpleListItem
-          text="Custom Content, forced open"
-          graphic="help"
-          metaIcon="chevron_right"
+          text='Custom Content, forced open'
+          graphic='help'
+          metaIcon='chevron_right'
         />
       }
     >

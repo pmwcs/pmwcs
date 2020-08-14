@@ -1,4 +1,3 @@
-/** @jsx h */
 import { h } from 'preact'
 import { useState } from 'preact/hooks'
 
@@ -9,29 +8,29 @@ import {
   SnackbarAction,
   SnackbarQueue,
   createSnackbarQueue
-} from './index.js';
+} from './index.js'
 
-import  { Button } from '@pmwc/button'
+import { Button } from '@pmwc/button'
 
 export default {
   title: 'Snackbar',
-  component: Snackbar,
-};
+  component: Snackbar
+}
 
 export const basic = () => {
-  function Example() {
-    const [open, setOpen] = useState(false);
+  function Example () {
+    const [open, setOpen] = useState(false)
 
     return (
       <section>
         <Snackbar
           open={open}
           onClose={evt => setOpen(false)}
-          message="This is a new message"
+          message='This is a new message'
           dismissesOnAction
           action={
             <SnackbarAction
-              label="Dismiss"
+              label='Dismiss'
               onClick={() => console.log('Click Me')}
             />
           }
@@ -39,35 +38,35 @@ export const basic = () => {
 
         <Button
           raised
-          label="Show snackbar"
+          label='Show snackbar'
           onClick={evt => setOpen(!open)}
         />
       </section>
-    );
+    )
   }
 
   return (
     <section>
-      <Example/>
+      <Example />
     </section>
   )
 }
 
 export const startAligned = () => {
-  function Example() {
-    const [open, setOpen] = useState(false);
+  function Example () {
+    const [open, setOpen] = useState(false)
 
     return (
       <section>
         <Snackbar
           open={open}
           onClose={evt => setOpen(false)}
-          message="Start aligned, open until dismissed"
+          message='Start aligned, open until dismissed'
           stacked
           dismissesOnAction
           action={[
-            <SnackbarAction label="Yeah!" />,
-            <SnackbarAction label="No..." />
+            <SnackbarAction key='1' label='Yeah!' />,
+            <SnackbarAction key='2' label='No...' />
           ]}
           leading
           timeout={-1}
@@ -75,40 +74,39 @@ export const startAligned = () => {
 
         <Button
           raised
-          label="Show start-aligned"
+          label='Show start-aligned'
           onClick={evt => setOpen(!open)}
         />
       </section>
-    );
+    )
   }
-  return <Example/>
+  return <Example />
 }
 
 export const snackbarQueue = () => {
-  const { messages, notify } = createSnackbarQueue();
-  function App() {
-   return (
-     <div>
-       <Button
-         label="Notify"
-         onClick={() =>
-           notify({
-             title: <b>Success</b>,
-             body: 'You have selected pizza!',
-             dismissesOnAction: true,
-             icon: 'check',
-             actions: [
-               {
-                 title: 'Dismiss'
-               }
-             ]
-           })
-         }
-       />
-       <SnackbarQueue messages={messages} />
-     </div>
-   );
+  const { messages, notify } = createSnackbarQueue()
+  function App () {
+    return (
+      <div>
+        <Button
+          label='Notify'
+          onClick={() =>
+            notify({
+              title: <b>Success</b>,
+              body: 'You have selected pizza!',
+              dismissesOnAction: true,
+              icon: 'check',
+              actions: [
+                {
+                  title: 'Dismiss'
+                }
+              ]
+            })}
+        />
+        <SnackbarQueue messages={messages} />
+      </div>
+    )
   }
 
-  return <App />;
+  return <App />
 }

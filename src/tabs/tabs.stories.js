@@ -1,5 +1,5 @@
-import { h } from 'preact';
-import { useState } from 'preact/hooks';
+import { h } from 'preact'
+import { useState } from 'preact/hooks'
 
 import './styles.js'
 
@@ -14,8 +14,8 @@ export default {
 }
 
 export const basic = () => {
-  function Example() {
-    const [activeTab, setActiveTab] = useState(0);
+  function Example () {
+    const [activeTab, setActiveTab] = useState(0)
 
     return (
       <TabBar
@@ -26,48 +26,48 @@ export const basic = () => {
         <Tab>Pizza</Tab>
         <Tab>Icecream</Tab>
       </TabBar>
-    );
-  }
-    return (
-      <section>
-        <TabBar>
-          <Tab>Cookies</Tab>
-          <Tab>Pizza</Tab>
-          <Tab>Icecream</Tab>
-        </TabBar>
-
-        <Example/>
-      </section>
     )
+  }
+  return (
+    <section>
+      <TabBar>
+        <Tab>Cookies</Tab>
+        <Tab>Pizza</Tab>
+        <Tab>Icecream</Tab>
+      </TabBar>
+
+      <Example />
+    </section>
+  )
 }
 
 export const variants = () => (
   <section>
     <TabBar>
-      <Tab icon="star_border" label="Cookies" />
-      <Tab icon="favorite_border" label="Pizza" />
-      <Tab icon="mood" label="Icecream" />
+      <Tab icon='star_border' label='Cookies' />
+      <Tab icon='favorite_border' label='Pizza' />
+      <Tab icon='mood' label='Icecream' />
     </TabBar>
 
-    <p></p>
+    <p />
     <TabBar>
-      <Tab icon="star_border" />
-      <Tab icon="favorite_border" />
-      <Tab icon="mood" />
+      <Tab icon='star_border' />
+      <Tab icon='favorite_border' />
+      <Tab icon='mood' />
     </TabBar>
 
-    <p></p>
+    <p />
     <TabBar>
-      <Tab stacked icon="star_border" label="Cookies" />
-      <Tab stacked icon="favorite_border" label="Pizza" />
-      <Tab stacked icon="mood" label="Icecream" />
+      <Tab stacked icon='star_border' label='Cookies' />
+      <Tab stacked icon='favorite_border' label='Pizza' />
+      <Tab stacked icon='mood' label='Icecream' />
     </TabBar>
 
-    <p></p>
+    <p />
     <TabBar>
-      <Tab stacked restrictIndicator icon="star_border" label="Cookies" />
-      <Tab stacked restrictIndicator icon="favorite_border" label="Pizza" />
-      <Tab stacked restrictIndicator icon="mood" label="Icecream" />
+      <Tab stacked restrictIndicator icon='star_border' label='Cookies' />
+      <Tab stacked restrictIndicator icon='favorite_border' label='Pizza' />
+      <Tab stacked restrictIndicator icon='mood' label='Icecream' />
     </TabBar>
   </section>
 )
@@ -90,49 +90,49 @@ export const autoscroll = () => (
 )
 
 export const iconsAsIndicators = () => {
-  function IconIndicatorExample() {
-  const style = {
-    transformOrigin: 'center center',
-    transform: 'translateY(1rem) scale(0.45)'
-  };
+  function IconIndicatorExample () {
+    const style = {
+      transformOrigin: 'center center',
+      transform: 'translateY(1rem) scale(0.45)'
+    }
 
+    return (
+      <TabBar>
+        <Tab
+          label='Cookies'
+          iconIndicator={{
+            icon: 'star',
+            style: style
+          }}
+        />
+        <Tab
+          label='Pizza'
+          iconIndicator={{
+            icon: 'favorite',
+            style: style
+          }}
+        />
+        <Tab
+          label='Icecream'
+          iconIndicator={{
+            icon: 'mood',
+            style: style
+          }}
+        />
+      </TabBar>
+    )
+  }
   return (
-    <TabBar>
-      <Tab
-        label="Cookies"
-        iconIndicator={{
-          icon: 'star',
-          style: style
-        }}
-      />
-      <Tab
-        label="Pizza"
-        iconIndicator={{
-          icon: 'favorite',
-          style: style
-        }}
-      />
-      <Tab
-        label="Icecream"
-        iconIndicator={{
-          icon: 'mood',
-          style: style
-        }}
-      />
-    </TabBar>
-  );
-}
-  return (
-  <section>
-  <TabBar>
-    <Tab iconIndicator="star">Cookies</Tab>
-    <Tab iconIndicator="favorite">Pizza</Tab>
-    <Tab iconIndicator="mood">Icecream</Tab>
-  </TabBar>
+    <section>
+      <TabBar>
+        <Tab iconIndicator='star'>Cookies</Tab>
+        <Tab iconIndicator='favorite'>Pizza</Tab>
+        <Tab iconIndicator='mood'>Icecream</Tab>
+      </TabBar>
 
-  <p></p>
+      <p />
 
-  <IconIndicatorExample/>
-  </section>
-)
+      <IconIndicatorExample />
+    </section>
+  )
 }

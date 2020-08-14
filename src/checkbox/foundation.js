@@ -1,12 +1,11 @@
-import { h } from 'preact';
-import { useEffect, useCallback } from 'preact/hooks';
+import { useEffect, useCallback } from 'preact/hooks'
 
-import { useToggleFoundation } from '@pmwc/toggleable';
-import { useFoundation } from '@pmwc/base';
-import { MDCCheckboxFoundation } from '@material/checkbox';
+import { useToggleFoundation } from '@pmwc/toggleable'
+import { useFoundation } from '@pmwc/base'
+import { MDCCheckboxFoundation } from '@material/checkbox'
 
 export const useCheckboxFoundation = (props) => {
-  const { renderToggle, toggleRootProps, id } = useToggleFoundation(props);
+  const { renderToggle, toggleRootProps, id } = useToggleFoundation(props)
 
   const { foundation, ...elements } = useFoundation({
     props,
@@ -32,41 +31,41 @@ export const useCheckboxFoundation = (props) => {
           checkboxEl.setProp('disabled', disabled),
         forceLayout: () => rootEl.ref?.offsetWidth,
         isAttachedToDOM: () => true
-      });
+      })
     }
-  });
+  })
 
-  const { rootEl, checkboxEl } = elements;
+  const { rootEl, checkboxEl } = elements
 
   // Handles syncing of indeterminate state
   const doSync = useCallback(() => {
     if (checkboxEl.ref) {
       (checkboxEl.ref).indeterminate = Boolean(
         props.indeterminate
-      );
+      )
     }
     window.requestAnimationFrame(() => {
-      foundation.handleChange();
-    });
-  }, [props.indeterminate, foundation, checkboxEl.ref]);
+      foundation.handleChange()
+    })
+  }, [props.indeterminate, foundation, checkboxEl.ref])
 
   useEffect(() => {
-    doSync();
-  }, [doSync]);
+    doSync()
+  }, [doSync])
 
   // Callback handling
   const handleAnimationEnd = (evt) => {
-    props.onAnimationEnd?.(evt);
-    foundation.handleAnimationEnd();
-  };
+    props.onAnimationEnd?.(evt)
+    foundation.handleAnimationEnd()
+  }
 
   const handleOnChange = (evt) => {
-    props.onChange?.(evt);
-    doSync();
-  };
+    props.onChange?.(evt)
+    doSync()
+  }
 
-  rootEl.setProp('onAnimationEnd', handleAnimationEnd, true);
-  checkboxEl.setProp('onChange', handleOnChange, true);
+  rootEl.setProp('onAnimationEnd', handleAnimationEnd, true)
+  checkboxEl.setProp('onChange', handleOnChange, true)
 
-  return { foundation, renderToggle, toggleRootProps, id, ...elements };
-};
+  return { foundation, renderToggle, toggleRootProps, id, ...elements }
+}

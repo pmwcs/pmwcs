@@ -6,6 +6,6 @@ export const randomId = (prefix) => {
   const id =
     process.env.NODE_ENV === 'test'
       ? 'test'
-      : (Math.random() + Math.random() + 1).toString(36).substring(2);
-  return `${prefix}-${id}`;
-};
+      : (Math.random() + Math.random() + 1).toString(36).substring(2)
+  return `${prefix}-${id}`
+}

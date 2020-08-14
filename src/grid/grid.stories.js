@@ -12,8 +12,8 @@ import {
 
 export default {
   title: 'Grid',
-  component: Grid,
-};
+  component: Grid
+}
 
 export const basic = () => (
   <section className='story-layout-grid'>

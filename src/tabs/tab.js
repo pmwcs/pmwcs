@@ -6,35 +6,35 @@ import {
   useClassNames,
   Tag,
   createComponent
-} from '@pmwc/base';
-import { Icon } from '@pmwc/icon';
-import { withRipple, RippleSurface } from '@pmwc/ripple';
+} from '@pmwc/base'
+import { Icon } from '@pmwc/icon'
+import { withRipple, RippleSurface } from '@pmwc/ripple'
 
-import { TabBarContext } from './tab-bar-context';
-import { TabIndicator } from './tab-indicator';
-import { useTabFoundation } from './tab-foundation';
+import { TabBarContext } from './tab-bar-context'
+import { TabIndicator } from './tab-indicator'
+import { useTabFoundation } from './tab-foundation'
 
 const TabRoot = withRipple({ surface: false })(
-  createComponent(function TabRoot(props, ref) {
-    const { stacked, minWidth, ...rest } = props;
+  createComponent(function TabRoot (props, ref) {
+    const { stacked, minWidth, ...rest } = props
     const className = useClassNames(props, [
       'mdc-tab',
       {
         'mdc-tab--stacked': stacked,
         'mdc-tab--min-width': minWidth
       }
-    ]);
-    return <Tag tag="button" {...rest} className={className} ref={ref} />;
+    ])
+    return <Tag tag='button' {...rest} className={className} ref={ref} />
   })
-);
+)
 
 /** A Tab icon. This is an instance of the Icon component. */
-const TabIcon = memo(function TabIcon(props) {
-  return <Icon {...props} className="mdc-tab__icon" />;
-});
+const TabIcon = memo(function TabIcon (props) {
+  return <Icon {...props} className='mdc-tab__icon' />
+})
 
 /** A Tab component */
-export const Tab = createComponent(function Tab(props, ref) {
+export const Tab = createComponent(function Tab (props, ref) {
   const {
     children,
     label,
@@ -45,11 +45,11 @@ export const Tab = createComponent(function Tab(props, ref) {
     iconIndicator,
     foundationRef,
     ...rest
-  } = props;
+  } = props
 
-  const { rootEl, contentEl, setTabIndicatorApi } = useTabFoundation(props);
+  const { rootEl, contentEl, setTabIndicatorApi } = useTabFoundation(props)
 
-  const contextApi = useContext(TabBarContext);
+  const contextApi = useContext(TabBarContext)
 
   const tabIndicator = (
     <TabIndicator
@@ -57,14 +57,14 @@ export const Tab = createComponent(function Tab(props, ref) {
       transition={contextApi.indicatorTransition}
       icon={iconIndicator}
     />
-  );
+  )
 
   return (
     <TabRoot element={rootEl} stacked={stacked} {...rest} ref={ref}>
-      <div className="mdc-tab__content" ref={contentEl.setRef}>
+      <div className='mdc-tab__content' ref={contentEl.setRef}>
         {!!icon && <TabIcon icon={icon} />}
         {(children !== undefined || label !== undefined) && (
-          <span className="mdc-tab__text-label">
+          <span className='mdc-tab__text-label'>
             {label}
             {children}
           </span>
@@ -72,7 +72,7 @@ export const Tab = createComponent(function Tab(props, ref) {
         {!!restrictIndicator && tabIndicator}
       </div>
       {!restrictIndicator && tabIndicator}
-      <RippleSurface className="mdc-tab__ripple" />
+      <RippleSurface className='mdc-tab__ripple' />
     </TabRoot>
-  );
-});
+  )
+})

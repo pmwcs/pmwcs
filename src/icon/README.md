@@ -12,7 +12,7 @@ Material icons use geometric shapes to visually represent core ideas, capabiliti
 
 ## Setup
 
-Icons are not part of the official material-components-web spec, but they are referenced many times in the documentation. RMWC provides a declarative way to use icons. Note that RMWC does not ship with any icons of its own. Make sure you include an icon set! You can use any one you want, but Google's Material Icons are available through open source. Follow Google's developer guide to get them setup with your app. https://google.github.io/material-design-icons/
+Icons are not part of the official material-components-web spec, but they are referenced many times in the documentation. PMWC provides a declarative way to use icons. Note that PMWC does not ship with any icons of its own. Make sure you include an icon set! You can use any one you want, but Google's Material Icons are available through open source. Follow Google's developer guide to get them setup with your app. https://google.github.io/material-design-icons/
 
 There are lots of different strategies for implementing icons on the web, and the Icon component is flexible for most of them. Use ligatures, classNames, inline SVGs, HTML, or URLs to get icons into your app. The default strategy is 'ligature' which works with the material.io font icon set.
 
@@ -64,7 +64,7 @@ The Icon component, (really the icon prop itself) can accept a variety of format
 
 ## Icon Sizing
 
-The Material spec details multiple sizes for icons. The Icon component doesn't assign a size by default, but these are available to you to force a size. Please note, this will only work if you've included the RMWC icon css file.
+The Material spec details multiple sizes for icons. The Icon component doesn't assign a size by default, but these are available to you to force a size. Please note, this will only work if you've included the PMWC icon css file.
 
 ```jsx
 <>
@@ -96,7 +96,7 @@ This is for icon fonts that support ligatures like material-icons. This is the d
 
 ## URLs
 
-This is for icons that are accessible via HTTP(S) and will be loaded directly into an `img` tag. This can be auto-detected for things that look like urls. The image will be set as a backgroundImage of the icon. Make sure you impor the RMWC icon css file for this to work properly.
+This is for icons that are accessible via HTTP(S) and will be loaded directly into an `img` tag. This can be auto-detected for things that look like urls. The image will be set as a backgroundImage of the icon. Make sure you impor the PMWC icon css file for this to work properly.
 
 ```jsx
 <>
@@ -153,9 +153,9 @@ This will render a child component inside of the icon. This is useful for all so
 
 ## Classnames
 
-Some font icon sets like Ion Icons and Glyph Icons render based on a className that is set. RMWC docs doesn't include extra icon fonts so there is no example to render, but the below code should give you an approximation.
+Some font icon sets like Ion Icons and Glyph Icons render based on a className that is set. PMWC docs doesn't include extra icon fonts so there is no example to render, but the below code should give you an approximation.
 
-**THIS CANNOT BE AUTO DETECTED**. You'll have to explicitly set the strategy directly on the Icon or specify it globally via the RMWCProvider.
+**THIS CANNOT BE AUTO DETECTED**. You'll have to explicitly set the strategy directly on the Icon or specify it globally via the PMWCProvider.
 
 ```jsx
 <>
@@ -169,10 +169,10 @@ Some font icon sets like Ion Icons and Glyph Icons render based on a className t
     }}
   />
   {/**
-   * Set the option globally throug RMWCProvider
+   * Set the option globally throug PMWCProvider
    * Glyphicons <span class="glyphicons glyphicons-heart"></span>
    **/}
-  <RMWCProvider
+  <PMWCProvider
     icon={{
       strategy: 'className',
       basename: 'glyphicons',
@@ -180,13 +180,13 @@ Some font icon sets like Ion Icons and Glyph Icons render based on a className t
     }}
   >
     <Icon icon="heart" />
-  </RMWCProvider>
+  </PMWCProvider>
 </>
 ```
 
 ## Custom Rendering
 
-Sometimes, you just need to do your own thing. Maybe you have a legacy project that already has icons and you want to incorporate them with RMWC. If none of the other strategies are what you need, then you can hijack the whole thing and delegate it to your own render function.
+Sometimes, you just need to do your own thing. Maybe you have a legacy project that already has icons and you want to incorporate them with PMWC. If none of the other strategies are what you need, then you can hijack the whole thing and delegate it to your own render function.
 
 ```jsx
 <Icon
@@ -207,7 +207,7 @@ A more relevant example involves an app that has a custom / existing icon compon
   import { MyIconComponent } from '@pmwc/icon';
   <MyIconComponent name="search" />
 
-  // 2) Now you are using RMWC, lots of components are instances of Icons
+  // 2) Now you are using PMWC, lots of components are instances of Icons
   // You need to be able to delegate the handling of an icon prop to your own component
   import { TextField } from '@pmwc/textField';
   import { Chip } from '@pmwc/chip';
@@ -215,11 +215,11 @@ A more relevant example involves an app that has a custom / existing icon compon
   <Chip icon="favorite" />
 
   // 3) Instead, you should set the custom strategy to be your default
-  // and add your own handling with RMWCProvider
+  // and add your own handling with PMWCProvider
   import React from 'react';
   import * as ReactDOM from 'react-dom';
   import App from './App'; // your main app component
-  import { RMWCProvider } from '@pmwc/provider';
+  import { PMWCProvider } from '@pmwc/provider';
   import { MyIconComponent } from '@pmwc/icon';
 
   const iconRenderHandler = ({ content, className, ...rest }) => {
@@ -234,9 +234,9 @@ A more relevant example involves an app that has a custom / existing icon compon
   };
 
   ReactDOM.render(
-    <RMWCProvider icon={{strategy: 'custom', render: iconRenderHandler}}>
+    <PMWCProvider icon={{strategy: 'custom', render: iconRenderHandler}}>
       <App />
-    </RMWCProvider>,
+    </PMWCProvider>,
     document.getElementById('root')
   );
 
@@ -255,6 +255,6 @@ An Icon component. Most of these options can be set once globally, read the docu
 
 | Name | Type | Description |
 |------|------|-------------|
-| `icon` | `RMWC.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
+| `icon` | `PMWC.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
 
 

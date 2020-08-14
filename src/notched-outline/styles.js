@@ -1,1 +1,1 @@
-import '@material/notched-outline/dist/mdc.notched-outline.css';
+import '@material/notched-outline/dist/mdc.notched-outline.css'

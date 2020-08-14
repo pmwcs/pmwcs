@@ -9,7 +9,7 @@ import {
   DrawerTitle,
   DrawerSubtitle,
   DrawerContent,
-  DrawerAppContent,
+  DrawerAppContent
 } from './index.js'
 
 import { List, ListItem } from '@pmwc/list'
@@ -17,8 +17,8 @@ import { Button } from '@pmwc/button'
 
 export default {
   title: 'Drawer',
-  component: Drawer,
-};
+  component: Drawer
+}
 
 export const permanent = () => (
   <Drawer>
@@ -37,8 +37,8 @@ export const permanent = () => (
 )
 
 export const dismissible = () => {
-  function Example() {
-    const [open, setOpen] = useState(true);
+  function Example () {
+    const [open, setOpen] = useState(true)
 
     return (
       <section>
@@ -73,14 +73,14 @@ export const dismissible = () => {
           </Button>
         </div>
       </section>
-    );
+    )
   }
-  return <Example/>
+  return <Example />
 }
 
 export const modal = () => {
-  function Example() {
-    const [open, setOpen] = useState(true);
+  function Example () {
+    const [open, setOpen] = useState(true)
 
     return (
       <section>
@@ -102,31 +102,31 @@ export const modal = () => {
           Toggle Modal
         </Button>
       </section>
-    );
+    )
   }
-  return <Example/>
+  return <Example />
 }
 
 export const rightSideDrawers = () => {
-  function Example() {
-    const [open, setOpen] = useState(true);
+  function Example () {
+    const [open, setOpen] = useState(true)
 
     return (
       <section>
         {/** Make the drawer appear right-to-left */}
         <Drawer
-          dir="rtl"
+          dir='rtl'
           modal
           open={open}
           onClose={() => setOpen(false)}
         >
           {/** Set the content back to left-to-right */}
-          <DrawerHeader dir="ltr">
+          <DrawerHeader dir='ltr'>
             <DrawerTitle>Right Drawer</DrawerTitle>
             <DrawerSubtitle>Subtitle</DrawerSubtitle>
           </DrawerHeader>
 
-          <DrawerContent dir="ltr">
+          <DrawerContent dir='ltr'>
             <List>
               <ListItem>Cookies</ListItem>
               <ListItem>Pizza</ListItem>
@@ -139,7 +139,7 @@ export const rightSideDrawers = () => {
           Toggle Right Drawer
         </Button>
       </section>
-    );
+    )
   }
-  return <Example/>
+  return <Example />
 }

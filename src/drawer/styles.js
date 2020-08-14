@@ -1,1 +1,1 @@
-import '@material/drawer/dist/mdc.drawer.css';
+import '@material/drawer/dist/mdc.drawer.css'

@@ -1,21 +1,21 @@
 import { h, Fragment, isValidElement } from 'preact'
-import { memo } from 'preact/compat';
+import { memo } from 'preact/compat'
 
-import { useClassNames, useId, Tag, createComponent } from '@pmwc/base';
-import { FloatingLabel } from '@pmwc/floating-label';
-import { LineRipple } from '@pmwc/line-ripple';
+import { useClassNames, useId, Tag, createComponent } from '@pmwc/base'
+import { FloatingLabel } from '@pmwc/floating-label'
+import { LineRipple } from '@pmwc/line-ripple'
 
-import { NotchedOutline } from '@pmwc/notched-outline';
+import { NotchedOutline } from '@pmwc/notched-outline'
 import {
   Menu,
   MenuItem,
   MenuItems
-} from '@pmwc/menu';
-import { ListGroup, ListGroupSubheader, ListDivider } from '@pmwc/list';
-import { withRipple } from '@pmwc/ripple';
+} from '@pmwc/menu'
+import { ListGroup, ListGroupSubheader, ListDivider } from '@pmwc/list'
+import { withRipple } from '@pmwc/ripple'
 
-import { useSelectFoundation } from './foundation';
-import { SelectIcon } from '../select-icon';
+import { useSelectFoundation } from './foundation'
+import { SelectIcon } from '../select-icon'
 
 /**
  * Takes multiple structures for options and returns [{label: 'label', value: 'value', ...rest}]
@@ -25,15 +25,15 @@ const createSelectOptions = (options) => {
   if (Array.isArray(options) && options[0] && typeof options[0] === 'object') {
     return options.map((opt) => {
       if (typeof opt !== 'object') {
-        throw new Error(`Encountered non object for Select ${opt}`);
+        throw new Error(`Encountered non object for Select ${opt}`)
       }
-      return { ...opt, options: createSelectOptions(opt.options) };
-    });
+      return { ...opt, options: createSelectOptions(opt.options) }
+    })
   }
 
   // simple array
   if (Array.isArray(options)) {
-    return options.map((value) => ({ value, label: value }));
+    return options.map((value) => ({ value, label: value }))
   }
 
   // value => label objects
@@ -41,25 +41,25 @@ const createSelectOptions = (options) => {
     return Object.keys(options).map((value) => ({
       value,
       label: options[value]
-    }));
+    }))
   }
 
   // default, just return
-  return options;
-};
+  return options
+}
 
-const SelectDropdownArrow = memo(function SelectDropdownArrow() {
-  return <i className="mdc-select__dropdown-icon" />;
-});
+const SelectDropdownArrow = memo(function SelectDropdownArrow () {
+  return <i className='mdc-select__dropdown-icon' />
+})
 
-function NativeMenu(props) {
+function NativeMenu (props) {
   const {
     selectOptions,
     placeholder = '',
     children,
     elementRef,
     ...rest
-  } = props;
+  } = props
 
   const renderOption = ({
     label,
@@ -70,10 +70,10 @@ function NativeMenu(props) {
       <option key={index} {...option} value={option.value}>
         {label}
       </option>
-    );
-  };
+    )
+  }
 
-  const isEmptyValue = !props.value && !props.defaultValue;
+  const isEmptyValue = !props.value && !props.defaultValue
 
   return (
     <select
@@ -83,7 +83,7 @@ function NativeMenu(props) {
       className={`pmwc-select__native-control ${rest.className || ''}`}
     >
       {(props.placeholder !== undefined || isEmptyValue) && (
-        <option value="" disabled={isEmptyValue}>
+        <option value='' disabled={isEmptyValue}>
           {placeholder}
         </option>
       )}
@@ -101,26 +101,26 @@ function NativeMenu(props) {
                     })
                   )}
                 </optgroup>
-              );
+              )
             }
 
             return renderOption({
               label,
               option,
               index
-            });
+            })
           }
         )}
       {children}
     </select>
-  );
+  )
 }
 
 const SelectedTextEl = withRipple({ surface: false })(function (props) {
-  return <Tag {...props} />;
-});
+  return <Tag {...props} />
+})
 
-function EnhancedMenu(props) {
+function EnhancedMenu (props) {
   const {
     selectOptions,
     menuApiRef,
@@ -129,15 +129,15 @@ function EnhancedMenu(props) {
     children,
     selectedIndex,
     ...rest
-  } = props;
+  } = props
 
-  let currentIndex = 0;
+  let currentIndex = 0
 
   const renderOption = ({
     label,
     option
   }) => {
-    currentIndex += 1;
+    currentIndex += 1
 
     return (
       <MenuItem
@@ -152,21 +152,21 @@ function EnhancedMenu(props) {
       >
         {label}
       </MenuItem>
-    );
-  };
+    )
+  }
 
   return (
     <Menu
       {...rest}
       apiRef={menuApiRef}
-      className="mdc-select__menu"
+      className='mdc-select__menu'
       focusOnOpen
     >
       {!!props.placeholder && (
         <MenuItem
           selected={currentIndex - 1 === selectedIndex}
-          data-value=""
-          theme="textDisabledOnBackground"
+          data-value=''
+          theme='textDisabledOnBackground'
         >
           {placeholder}
         </MenuItem>
@@ -178,7 +178,7 @@ function EnhancedMenu(props) {
             return (
               <ListGroup key={i}>
                 {label && (
-                  <ListGroupSubheader theme="textDisabledOnBackground">
+                  <ListGroupSubheader theme='textDisabledOnBackground'>
                     {label}
                   </ListGroupSubheader>
                 )}
@@ -189,18 +189,18 @@ function EnhancedMenu(props) {
                 </MenuItems>
                 {i < selectOptions.length - 1 && <ListDivider />}
               </ListGroup>
-            );
+            )
           }
 
-          return renderOption({ label, option });
+          return renderOption({ label, option })
         }
       )}
       {children}
     </Menu>
-  );
+  )
 }
 
-export const Select = createComponent(function Select(props, ref) {
+export const Select = createComponent(function Select (props, ref) {
   const {
     placeholder,
     children,
@@ -220,9 +220,9 @@ export const Select = createComponent(function Select(props, ref) {
     helpText,
     foundationRef,
     ...rest
-  } = props;
+  } = props
 
-  const selectOptions = createSelectOptions(options);
+  const selectOptions = createSelectOptions(options)
   const {
     rootEl,
     selectedTextEl,
@@ -244,9 +244,9 @@ export const Select = createComponent(function Select(props, ref) {
     handleMenuClosed,
     handleMenuOpened,
     handleMenuSelected
-  } = useSelectFoundation(props);
+  } = useSelectFoundation(props)
 
-  const id = useId('select', props);
+  const id = useId('select', props)
 
   const className = useClassNames(props, [
     'mdc-select',
@@ -257,52 +257,52 @@ export const Select = createComponent(function Select(props, ref) {
       'mdc-select--with-leading-icon': !!icon,
       'mdc-select--no-label': !label
     }
-  ]);
+  ])
 
-  const enhancedMenuProps = typeof enhanced === 'object' ? enhanced : {};
+  const enhancedMenuProps = typeof enhanced === 'object' ? enhanced : {}
 
   const defaultValue =
-    value !== undefined ? undefined : props.defaultValue || '';
+    value !== undefined ? undefined : props.defaultValue || ''
 
   const renderedLabel = (
     <FloatingLabel float={floatLabel} apiRef={setFloatingLabel} htmlFor={id}>
       {label}
     </FloatingLabel>
-  );
+  )
 
   const renderHelpText = () => {
-    const shouldRender = !!helpText;
+    const shouldRender = !!helpText
 
     if (!shouldRender) {
-      return null;
+      return null
     }
 
     const shouldSpread =
-      typeof helpText === 'object' && !isValidElement(helpText);
+      typeof helpText === 'object' && !isValidElement(helpText)
 
     return helpText && shouldSpread ? (
       <SelectHelperText {...helpText} />
     ) : (
       <SelectHelperText>{helpText}</SelectHelperText>
-    );
-  };
+    )
+  }
 
   return (
     <Fragment>
       <Tag
-        role="listbox"
+        role='listbox'
         {...rootProps}
         element={rootEl}
         ref={ref}
         className={className}
       >
-        <div className="mdc-select__anchor">
+        <div className='mdc-select__anchor'>
           {!!icon && <SelectIcon apiRef={setLeadingIcon} icon={icon} />}
           <SelectDropdownArrow />
           <SelectedTextEl
-            className="mdc-select__selected-text"
-            role="button"
-            aria-haspopup="listbox"
+            className='mdc-select__selected-text'
+            role='button'
+            aria-haspopup='listbox'
             element={selectedTextEl}
             onFocus={handleFocus}
             onBlur={handleBlur}
@@ -333,8 +333,7 @@ export const Select = createComponent(function Select(props, ref) {
               onFocus={handleFocus}
               onBlur={handleBlur}
               onChange={(evt) =>
-                handleMenuSelected(evt.currentTarget.selectedIndex)
-              }
+                handleMenuSelected(evt.currentTarget.selectedIndex)}
             />
           )}
         </div>
@@ -343,14 +342,14 @@ export const Select = createComponent(function Select(props, ref) {
           <EnhancedMenu
             {...rest}
             {...enhancedMenuProps}
-            anchorCorner="bottomStart"
+            anchorCorner='bottomStart'
             defaultValue={defaultValue}
             placeholder={placeholder}
             open={menuOpen}
             onClose={handleMenuClosed}
             onOpen={handleMenuOpened}
             onSelect={(evt) => {
-              handleMenuSelected(evt.detail.index);
+              handleMenuSelected(evt.detail.index)
             }}
             selectOptions={selectOptions}
             value={value}
@@ -362,22 +361,22 @@ export const Select = createComponent(function Select(props, ref) {
       </Tag>
       {renderHelpText()}
     </Fragment>
-  );
-});
+  )
+})
 
 /** A help text component */
-export const SelectHelperText = createComponent(function SelectHelperText(
+export const SelectHelperText = createComponent(function SelectHelperText (
   props,
   ref
 ) {
-  const { persistent, validationMsg, ...rest } = props;
+  const { persistent, validationMsg, ...rest } = props
   const className = useClassNames(props, [
     'mdc-select-helper-text',
     {
       'mdc-select-helper-text--persistent': persistent,
       'mdc-select-helper-text--validation-msg': validationMsg
     }
-  ]);
+  ])
 
-  return <Tag tag="p" {...rest} className={className} ref={ref} />;
-});
+  return <Tag tag='p' {...rest} className={className} ref={ref} />
+})

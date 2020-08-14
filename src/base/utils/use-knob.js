@@ -1,8 +1,8 @@
 /* istanbul ignore file */
-import { useState } from 'preact';
-import * as knobTypes from '@storybook/addon-knobs';
+import { useState } from 'preact'
+import * as knobTypes from '@storybook/addon-knobs'
 
-import { manager } from '@storybook/addon-knobs/dist/registerKnobs';
+import { manager } from '@storybook/addon-knobs/dist/registerKnobs'
 
 export const useKnob = (
   knobType,
@@ -10,16 +10,16 @@ export const useKnob = (
   defaultValue
 ) => {
   const knobFunc = knobTypes[knobType]
-  const [stateValue, _stateSetter] = useState(defaultValue);
-  const knobValue = knobFunc(name, stateValue);
+  const [stateValue, _stateSetter] = useState(defaultValue)
+  const knobValue = knobFunc(name, stateValue)
 
   const stateSetter = (value) => {
-    _stateSetter(value);
-    manager.knob(name, stateValue);
-  };
+    _stateSetter(value)
+    manager.knob(name, stateValue)
+  }
 
   if (knobValue !== stateValue) {
-    stateSetter(knobValue);
+    stateSetter(knobValue)
   }
-  return [stateValue, stateSetter];
-};
+  return [stateValue, stateSetter]
+}

@@ -1,59 +1,59 @@
-import { h, cloneElement } from 'preact'
-import { useEffect, useState } from 'preact/hooks';
+import { h, cloneElement, isValidElement } from 'preact'
+import { useEffect, useState } from 'preact/hooks'
 import { Children } from 'preact/compat'
 
-import { List, ListItem } from '@pmwc/list';
+import { List, ListItem } from '@pmwc/list'
 import {
   getDisplayName,
   classNames,
   useClassNames,
   createComponent
-} from '@pmwc/base';
+} from '@pmwc/base'
 
 import {
   MenuSurface,
   MenuSurfaceAnchor
-} from '../menu-surface';
+} from '../menu-surface'
 
-import { useMenuFoundation } from './foundation';
+import { useMenuFoundation } from './foundation'
 
 /****************************************************************
  * Menu
  ****************************************************************/
 
 /** A wrapper for menu items */
-export const MenuItems = createComponent(function MenuItems(
+export const MenuItems = createComponent(function MenuItems (
   props,
   ref
 ) {
-  const className = useClassNames(props, ['mdc-list mdc-menu__items']);
-  return <List role="menu" {...props} className={className} ref={ref} />;
-});
-MenuItems.displayName = 'MenuItems';
+  const className = useClassNames(props, ['mdc-list mdc-menu__items'])
+  return <List role='menu' {...props} className={className} ref={ref} />
+})
+MenuItems.displayName = 'MenuItems'
 
 /** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
-export const MenuItem = createComponent(function MenuItem(
+export const MenuItem = createComponent(function MenuItem (
   props,
   ref
 ) {
-  return <ListItem role="menuitem" tabIndex={0} {...props} ref={ref} />;
-});
+  return <ListItem role='menuitem' tabIndex={0} {...props} ref={ref} />
+})
 
 const isMenuItems = (child) =>
-  getDisplayName(child) === 'MenuItems';
+  getDisplayName(child) === 'MenuItems'
 
 /** A menu component for displaying lists items. */
-export const Menu= createComponent(function Menu(props, ref) {
-  const { children, focusOnOpen, onSelect, foundationRef, ...rest } = props;
-  const { rootEl, setListApi, setMenuSurfaceApi } = useMenuFoundation(props);
+export const Menu = createComponent(function Menu (props, ref) {
+  const { children, focusOnOpen, onSelect, foundationRef, ...rest } = props
+  const { rootEl, setListApi, setMenuSurfaceApi } = useMenuFoundation(props)
 
   const needsMenuItemsWrapper = (
     Children.map(children, isMenuItems) || []
-  ).every((val) => val === false);
+  ).every((val) => val === false)
 
   const menuItemsProps = {
     apiRef: setListApi
-  };
+  }
 
   return (
     <MenuSurface
@@ -71,14 +71,14 @@ export const Menu= createComponent(function Menu(props, ref) {
             return cloneElement(child, {
               ...(isValidElement(child) ? (child.props) : {}),
               ...menuItemsProps
-            });
+            })
           }
-          return child;
+          return child
         })
       )}
     </MenuSurface>
-  );
-});
+  )
+})
 
 /****************************************************************
  * Simple Menu
@@ -86,13 +86,13 @@ export const Menu= createComponent(function Menu(props, ref) {
 
 const simpleMenuFactory = (MenuComponent) =>
   function (props) {
-    const [stateOpen, setStateOpen] = useState(!!props.open);
+    const [stateOpen, setStateOpen] = useState(!!props.open)
 
     useEffect(() => {
       if (props.open !== undefined && props.open !== stateOpen) {
-        setStateOpen(!!props.open);
+        setStateOpen(!!props.open)
       }
-    }, [props.open, stateOpen]);
+    }, [props.open, stateOpen])
 
     const {
       handle,
@@ -102,22 +102,22 @@ const simpleMenuFactory = (MenuComponent) =>
       open,
       foundationRef,
       ...rest
-    } = props;
+    } = props
 
     const wrappedHandle = cloneElement(handle, {
       ...handle.props,
       onClick: (evt) => {
-        setStateOpen(!stateOpen);
+        setStateOpen(!stateOpen)
         if (handle.props.onClick) {
-          handle.props.onClick(evt);
+          handle.props.onClick(evt)
         }
       }
-    });
+    })
 
     const wrappedOnClose = (evt) => {
-      setStateOpen(!!open || false);
-      onClose?.(evt);
-    };
+      setStateOpen(!!open || false)
+      onClose?.(evt)
+    }
 
     return (
       <MenuSurfaceAnchor {...rootProps}>
@@ -130,13 +130,13 @@ const simpleMenuFactory = (MenuComponent) =>
         </MenuComponent>
         {wrappedHandle}
       </MenuSurfaceAnchor>
-    );
-  };
+    )
+  }
 
 /** A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor */
-export const SimpleMenu = simpleMenuFactory(Menu);
+export const SimpleMenu = simpleMenuFactory(Menu)
 
 /** The same as SimpleMenu, but a generic surface. */
 export const SimpleMenuSurface = simpleMenuFactory(
   MenuSurface
-);
+)

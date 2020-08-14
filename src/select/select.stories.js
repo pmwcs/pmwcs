@@ -5,40 +5,40 @@ import './styles.js'
 
 import {
   Select
-} from './index.js';
+} from './index.js'
 
 export default {
   title: 'Select',
-  component: Select,
-};
+  component: Select
+}
 
 export const basic = () => (
   <section>
-    <Select label="Standard" options={['Cookies', 'Pizza', 'Icecream']} />
+    <Select label='Standard' options={['Cookies', 'Pizza', 'Icecream']} />
 
-    <br/>
+    <br />
 
     <Select
-      label="Outlined"
+      label='Outlined'
       outlined
       options={['Cookies', 'Pizza', 'Icecream']}
     />
 
-    <br/>
+    <br />
 
     <Select
-      label="Enhanced"
+      label='Enhanced'
       enhanced
       options={['Cookies', 'Pizza', 'Icecream']}
     />
 
-    <br/>
+    <br />
 
     <Select
-      label="With Icon"
-      defaultValue="Pizza"
-      helpText="Choose your favorite snack..."
-      icon="favorite"
+      label='With Icon'
+      defaultValue='Pizza'
+      helpText='Choose your favorite snack...'
+      icon='favorite'
       options={['Cookies', 'Pizza', 'Icecream']}
     />
   </section>
@@ -47,19 +47,19 @@ export const basic = () => (
 export const validation = () => (
   <section>
     <Select
-      label="Required"
+      label='Required'
       required
       options={['Cookies', 'Pizza', 'Icecream']}
     />
 
     <Select
-      label="Invalid"
+      label='Invalid'
       invalid
       options={['Cookies', 'Pizza', 'Icecream']}
     />
 
     <Select
-      label="Disabled"
+      label='Disabled'
       disabled
       options={['Cookies', 'Pizza', 'Icecream']}
     />
@@ -68,7 +68,7 @@ export const validation = () => (
 
 export const controlled = () => {
   function Controlled (props) {
-    const [value, setValue] = useState(props.options[0]);
+    const [value, setValue] = useState(props.options[0])
     console.log(value, setValue)
     return (
       <Select
@@ -76,19 +76,19 @@ export const controlled = () => {
         value={value}
         onChange={(evt) => setValue(evt.currentTarget.value)}
       />
-    );
+    )
   }
 
   return (
     <section>
       <Controlled
-        label="Controlled"
+        label='Controlled'
         options={['Cookies', 'Pizza', 'Icecream']}
       />
       <Select
-        label="Uncontrolled"
+        label='Uncontrolled'
         options={['Cookies', 'Pizza', 'Icecream']}
-        defaultValue="Cookies"
+        defaultValue='Cookies'
         onChange={(evt) => console.log(evt.currentTarget.value)}
       />
     </section>

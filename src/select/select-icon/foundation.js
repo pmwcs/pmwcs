@@ -1,14 +1,14 @@
-import { useFoundation } from '@pmwc/base';
-import { MDCSelectIconFoundation } from '@material/select';
+import { useFoundation } from '@pmwc/base'
+import { MDCSelectIconFoundation } from '@material/select'
 
 export const useSelectIconFoundation = (props) => {
   const { foundation, ...elements } = useFoundation({
     props,
     elements: { rootEl: true },
-    api: ({foundation}) => {
+    api: ({ foundation }) => {
       return {
         getFoundation: () => foundation
-      };
+      }
     },
     foundation: ({ rootEl, emit }) => {
       return new MDCSelectIconFoundation({
@@ -17,7 +17,7 @@ export const useSelectIconFoundation = (props) => {
           rootEl.setProp(attr, value),
         removeAttr: (attr) => rootEl.removeProp(attr),
         setContent: (content) => {
-          rootEl.ref && (rootEl.ref.textContent = content);
+          rootEl.ref && (rootEl.ref.textContent = content)
         },
         registerInteractionHandler: (
           evtType,
@@ -28,9 +28,9 @@ export const useSelectIconFoundation = (props) => {
           handler
         ) => rootEl.removeEventListener(evtType, handler),
         notifyIconAction: () => emit('onClick', {}, true)
-      });
+      })
     }
-  });
+  })
 
-  return { ...elements };
-};
+  return { ...elements }
+}

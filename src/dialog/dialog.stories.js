@@ -16,27 +16,27 @@ import { Button } from '@pmwc/button'
 
 export default {
   title: 'Dialog',
-  component: Dialog,
-};
+  component: Dialog
+}
 
 export const standardUsage = () => {
-  function Example() {
-    const [open, setOpen] = useState(true);
+  function Example () {
+    const [open, setOpen] = useState(true)
     return (
       <section>
         <Dialog
           open={open}
           onClose={evt => {
-            console.log(evt.detail.action);
-            setOpen(false);
+            console.log(evt.detail.action)
+            setOpen(false)
           }}
           onClosed={evt => console.log(evt.detail.action)}
         >
           <DialogTitle>Dialog Title</DialogTitle>
           <DialogContent>This is a standard dialog.</DialogContent>
           <DialogActions>
-            <DialogButton action="close">Cancel</DialogButton>
-            <DialogButton action="accept" isDefaultAction>
+            <DialogButton action='close'>Cancel</DialogButton>
+            <DialogButton action='accept' isDefaultAction>
               Sweet!
             </DialogButton>
           </DialogActions>
@@ -46,23 +46,23 @@ export const standardUsage = () => {
           Open standard Dialog
         </Button>
       </section>
-    );
+    )
   }
   return <Example />
 }
 
 export const simplifiedUsage = () => {
-  function Example() {
-    const [open, setOpen] = useState(true);
+  function Example () {
+    const [open, setOpen] = useState(true)
     return (
       <section>
         <SimpleDialog
-          title="This is a simple dialog"
-          body="You can pass the body prop or children."
+          title='This is a simple dialog'
+          body='You can pass the body prop or children.'
           open={open}
           onClose={evt => {
-            console.log(evt.detail.action);
-            setOpen(false);
+            console.log(evt.detail.action)
+            setOpen(false)
           }}
         />
 
@@ -70,7 +70,7 @@ export const simplifiedUsage = () => {
           Open Simple Dialog
         </Button>
       </section>
-    );
+    )
   }
-  return <Example/>
+  return <Example />
 }

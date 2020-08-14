@@ -1,17 +1,17 @@
-import { useRef, useEffect, useCallback } from 'preact/hooks';
+import { useRef, useEffect, useCallback } from 'preact/hooks'
 import {
   MDCModalDrawerFoundation,
   MDCDismissibleDrawerFoundation
-} from '@material/drawer';
+} from '@material/drawer'
 import {
   useFoundation,
   focusTrapFactory,
   triggerWindowResize
-} from '@pmwc/base';
+} from '@pmwc/base'
 
 const useDrawerFoundationFactory = (MDCConstructor) =>
-  function useDrawerFoundation(props) {
-    const focusTrapRef = useRef();
+  function useDrawerFoundation (props) {
+    const focusTrapRef = useRef()
 
     const { foundation, ...elements } = useFoundation({
       props,
@@ -20,7 +20,7 @@ const useDrawerFoundationFactory = (MDCConstructor) =>
         scrimEl: true
       },
       foundation: ({ rootEl, emit, getProps }) => {
-        let previousFocusEl;
+        let previousFocusEl
 
         const f = new MDCConstructor({
           addClass: (className) => rootEl.addClass(className),
@@ -29,7 +29,7 @@ const useDrawerFoundationFactory = (MDCConstructor) =>
           elementHasClass: (element, className) =>
             element.classList.contains(className),
           saveFocus: () => {
-            previousFocusEl = document.activeElement;
+            previousFocusEl = document.activeElement
           },
           restoreFocus: () => {
             if (
@@ -37,97 +37,97 @@ const useDrawerFoundationFactory = (MDCConstructor) =>
               rootEl.ref.contains(document.activeElement) &&
               previousFocusEl
             ) {
-              previousFocusEl.focus();
+              previousFocusEl.focus()
             }
           },
           focusActiveNavigationItem: () => {
             const activeNavItemEl = rootEl.ref?.querySelector(
-              `.mdc-list-item--activated`
-            );
+              '.mdc-list-item--activated'
+            )
             if (activeNavItemEl) {
-              activeNavItemEl.focus();
+              activeNavItemEl.focus()
             }
           },
           notifyClose: () => {
-            //emit('onClose', {}, true /* shouldBubble */);
+            // emit('onClose', {}, true /* shouldBubble */);
           },
           notifyOpen: () => {
-            emit('onOpen', {}, true /* shouldBubble */);
+            emit('onOpen', {}, true /* shouldBubble */)
           },
           trapFocus: () => {
             try {
-              focusTrapRef.current?.trapFocus();
+              focusTrapRef.current?.trapFocus()
             } catch (err) {}
           },
           releaseFocus: () => {
             try {
-              focusTrapRef.current?.releaseFocus();
+              focusTrapRef.current?.releaseFocus()
             } catch (err) {}
           }
-        });
+        })
 
         // Fixes a very annoying issue where the menu isn't stateful
         // this allows us to keep the menu open based on its controlled prop.
-        const existingClose = f.close.bind(f);
+        const existingClose = f.close.bind(f)
         const newClose = () => {
-          emit('onClose', {});
+          emit('onClose', {})
 
           setTimeout(() => {
             if (!getProps().open) {
-              existingClose();
+              existingClose()
             }
-          });
-        };
-        f.close = newClose;
+          })
+        }
+        f.close = newClose
 
-        return f;
+        return f
       }
-    });
+    })
 
-    const { rootEl, scrimEl } = elements;
+    const { rootEl, scrimEl } = elements
 
     useEffect(() => {
       if (rootEl.ref) {
-        focusTrapRef.current = focusTrapFactory(rootEl.ref);
+        focusTrapRef.current = focusTrapFactory(rootEl.ref)
       }
-    }, [rootEl.ref]);
+    }, [rootEl.ref])
 
     useEffect(() => {
-      props.open ? foundation.open() : foundation.close();
-    }, [props.open, foundation]);
+      props.open ? foundation.open() : foundation.close()
+    }, [props.open, foundation])
 
     const handleScrimClick = useCallback(() => {
-      foundation.handleScrimClick?.();
-    }, [foundation]);
+      foundation.handleScrimClick?.()
+    }, [foundation])
 
     const handleKeyDown = useCallback(
       (evt) => {
-        props.onKeyDown?.(evt);
-        foundation.handleKeydown(evt);
+        props.onKeyDown?.(evt)
+        foundation.handleKeydown(evt)
       },
       [foundation, props.onKeyDown]
-    );
+    )
 
     const handleTransitionEnd = useCallback(
       (evt) => {
-        props.onTransitionEnd?.(evt);
-        foundation.handleTransitionEnd(evt);
-        triggerWindowResize();
+        props.onTransitionEnd?.(evt)
+        foundation.handleTransitionEnd(evt)
+        triggerWindowResize()
       },
       [foundation, props.onTransitionEnd]
-    );
+    )
 
-    rootEl.setProp('onKeyDown', handleKeyDown, true);
-    rootEl.setProp('onTransitionEnd', handleTransitionEnd, true);
-    scrimEl.setProp('onClick', handleScrimClick, true);
+    rootEl.setProp('onKeyDown', handleKeyDown, true)
+    rootEl.setProp('onTransitionEnd', handleTransitionEnd, true)
+    scrimEl.setProp('onClick', handleScrimClick, true)
 
-    return { foundation, ...elements };
-  };
+    return { foundation, ...elements }
+  }
 
 export const useDismissableDrawerFoundation = useDrawerFoundationFactory(
   MDCDismissibleDrawerFoundation
-);
+)
 
 export const useModalDrawerFoundation = useDrawerFoundationFactory(
   MDCModalDrawerFoundation
-);
+)

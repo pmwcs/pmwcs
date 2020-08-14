@@ -107,7 +107,7 @@ function () {
 
 ## Data Driven Selects
 
-To fit common use cases, RMWC Select provides a data driven method for rendering select menus. There are multiple formats you can pass data in, use the one that best fits your requirements. To make your label not float by default and to have an unselected blank value, set the `placeholder` prop to a blank string.
+To fit common use cases, PMWC Select provides a data driven method for rendering select menus. There are multiple formats you can pass data in, use the one that best fits your requirements. To make your label not float by default and to have an unselected blank value, set the `placeholder` prop to a blank string.
 
 ```jsx
 function Example() {
@@ -221,7 +221,7 @@ A Select Component
 | `enhanced` | `boolean \| MenuProps` | Renders a non native / enhanced dropdown |
 | `foundationRef` | `React.Ref<MDCSelectFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `helpText` | `React.ReactNode \| SelectHelperTextProps` | Adds help text to the field |
-| `icon` | `RMWC.IconPropT` | Add a leading icon. |
+| `icon` | `PMWC.IconPropT` | Add a leading icon. |
 | `inputRef` | `undefined \| (ref: HTMLSelectElement \| null) => void` | A reference to the native select element. Not applicable when `enhanced` is true. |
 | `invalid` | `undefined \| false \| true` | Makes the Select visually invalid. This is sometimes automatically my material-components-web. |
 | `label` | `undefined \| string` | A label for the form control. |

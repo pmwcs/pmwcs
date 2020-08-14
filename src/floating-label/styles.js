@@ -1,1 +1,1 @@
-import '@material/floating-label/dist/mdc.floating-label.css';
+import '@material/floating-label/dist/mdc.floating-label.css'

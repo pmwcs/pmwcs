@@ -20,12 +20,12 @@ import { Select } from '@pmwc/select'
 
 export default {
   title: 'DataTable',
-  component: DataTable,
-};
+  component: DataTable
+}
 
 export const standardTable = () => {
-  function Example() {
-    const [sortDir, setSortDir] = useState(null);
+  function Example () {
+    const [sortDir, setSortDir] = useState(null)
     return (
       <DataTable>
         <DataTableContent>
@@ -36,8 +36,8 @@ export const standardTable = () => {
                 alignEnd
                 sort={sortDir}
                 onSortChange={sortDir => {
-                  setSortDir(sortDir);
-                  console.log(sortDir);
+                  setSortDir(sortDir)
+                  console.log(sortDir)
                 }}
               >
                 Quantity (Click Me)
@@ -64,17 +64,17 @@ export const standardTable = () => {
           </DataTableBody>
         </DataTableContent>
       </DataTable>
-    );
+    )
   }
-  return <Example/>
+  return <Example />
 }
 
 export const scrollableTable = () => {
-  function Example() {
-    const [rows, setRows] = useState(0);
-    const [cols, setCols] = useState(0);
-    const sampleColumns = Array(7).fill(undefined);
-    const sampleRows = Array(50).fill(undefined);
+  function Example () {
+    const [rows, setRows] = useState(0)
+    const [cols, setCols] = useState(0)
+    const sampleColumns = Array(7).fill(undefined)
+    const sampleRows = Array(50).fill(undefined)
 
     return (
       <section>
@@ -109,30 +109,30 @@ export const scrollableTable = () => {
           </DataTableContent>
         </DataTable>
 
-        <div className="doc-controls">
+        <div className='doc-controls'>
           <Select
-            label="Sticky Rows"
+            label='Sticky Rows'
             options={['0', '1']}
             value={String(rows)}
             onChange={evt => setRows(Number(evt.currentTarget.value))}
           />
           <Select
-            label="Sticky Cols"
+            label='Sticky Cols'
             options={['0', '1']}
             value={String(cols)}
             onChange={evt => setCols(Number(evt.currentTarget.value))}
           />
         </div>
       </section>
-    );
+    )
   }
-  return <Example/>
+  return <Example />
 }
 
 export const formControl = () => {
-  function Example() {
-    const [checked, setChecked] = useState({});
-    const sampleRows = new Array(5).fill(undefined);
+  function Example () {
+    const [checked, setChecked] = useState({})
+    const sampleRows = new Array(5).fill(undefined)
 
     return (
       <DataTable>
@@ -155,15 +155,15 @@ export const formControl = () => {
                   <Checkbox
                     checked={checked[i]}
                     onChange={evt => {
-                      checked[i] = evt.currentTarget.checked;
-                      setChecked({ ...checked });
+                      checked[i] = evt.currentTarget.checked
+                      setChecked({ ...checked })
                     }}
                   />
                 </DataTableCell>
                 <DataTableCell>Label</DataTableCell>
                 <DataTableCell>
                   <Select
-                    placeholder="--Select--"
+                    placeholder='--Select--'
                     options={['Cookies', 'Pizza', 'Icecream']}
                   />
                 </DataTableCell>
@@ -176,22 +176,22 @@ export const formControl = () => {
           </DataTableBody>
         </DataTableContent>
       </DataTable>
-    );
+    )
   }
-  return <Example/>
+  return <Example />
 }
 
 export const simplified = () => (
   <SimpleDataTable
     getRowProps={row => {
-      return row[1] > 100 ? { activated: true } : {};
+      return row[1] > 100 ? { activated: true } : {}
     }}
     getCellProps={(cell, index, isHead) => {
-      const props = { isNumeric: index > 0, style: undefined };
+      const props = { isNumeric: index > 0, style: undefined }
 
       return !isHead && index === 2 && !cell.includes('$')
         ? { ...props, style: { color: 'red' } }
-        : props;
+        : props
     }}
     headers={[['Item', 'Quantity', 'Value']]}
     data={[

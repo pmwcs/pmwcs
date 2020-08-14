@@ -1,22 +1,22 @@
 import { h, Fragment } from 'preact'
 
-import { MDCSnackbarFoundation } from '@material/snackbar';
-import { Button } from '@pmwc/button';
-import { useClassNames, Tag, createComponent } from '@pmwc/base';
-import { useSnackbarFoundation } from './foundation';
-import { IconButton } from '@pmwc/icon-button';
-import { Icon } from '@pmwc/icon';
+import { MDCSnackbarFoundation } from '@material/snackbar'
+import { Button } from '@pmwc/button'
+import { useClassNames, Tag, createComponent } from '@pmwc/base'
+import { useSnackbarFoundation } from './foundation'
+import { IconButton } from '@pmwc/icon-button'
+import { Icon } from '@pmwc/icon'
 
 /*********************************************************************
  * Snackbar
  *********************************************************************/
 
 /** A Snackbar component for notifications. */
-export const Snackbar = createComponent(function Snackbar(
+export const Snackbar = createComponent(function Snackbar (
   props,
   ref
 ) {
-  const { rootEl, surfaceEl, labelEl } = useSnackbarFoundation(props);
+  const { rootEl, surfaceEl, labelEl } = useSnackbarFoundation(props)
 
   const {
     open,
@@ -33,7 +33,7 @@ export const Snackbar = createComponent(function Snackbar(
     dismissesOnAction,
     foundationRef,
     ...rest
-  } = props;
+  } = props
 
   const className = useClassNames(props, [
     'mdc-snackbar',
@@ -41,25 +41,25 @@ export const Snackbar = createComponent(function Snackbar(
       'mdc-snackbar--leading': leading,
       'mdc-snackbar--stacked': stacked
     }
-  ]);
+  ])
 
   const actions = Array.isArray(action)
     ? action
     : action
-    ? [action]
-    : [];
+      ? [action]
+      : []
 
   return (
     <Tag
       {...rest}
       ref={ref}
       element={rootEl}
-      aria-live="assertive"
+      aria-live='assertive'
       aria-atomic
       aria-hidden
       className={className}
     >
-      <div {...surfaceEl.props({})} className="mdc-snackbar__surface">
+      <div {...surfaceEl.props({})} className='mdc-snackbar__surface'>
         {!!icon && (
           <Icon
             style={{
@@ -73,7 +73,7 @@ export const Snackbar = createComponent(function Snackbar(
         <SnackbarLabel>
           {message}
           {/**
-           * Fixes bug https://github.com/jamesmfriedman/rmwc/issues/418
+           * Fixes bug https://github.com/jamesmfriedman/pmwc/issues/418
            * Wrapping the content for accessibility so it can be announced for screen readers
            */}
           <div style={{ display: 'none' }} ref={labelEl.setRef} />
@@ -92,36 +92,36 @@ export const Snackbar = createComponent(function Snackbar(
         {children}
       </div>
     </Tag>
-  );
-});
+  )
+})
 
 /*********************************************************************
  * Bits
  *********************************************************************/
 
-function SnackbarLabel(props) {
+function SnackbarLabel (props) {
   return (
     <div
-      role="status"
-      aria-live="polite"
-      className="mdc-snackbar__label"
+      role='status'
+      aria-live='polite'
+      className='mdc-snackbar__label'
       {...props}
     />
-  );
+  )
 }
 
-function SnackbarActions(props) {
-  return <div className="mdc-snackbar__actions" {...props} />;
+function SnackbarActions (props) {
+  return <div className='mdc-snackbar__actions' {...props} />
 }
 
 /** A button for a snackbar action. */
 export const SnackbarAction = createComponent(
-  function SnackbarAction(props, ref) {
-    const className = useClassNames(props, ['mdc-snackbar__action']);
+  function SnackbarAction (props, ref) {
+    const className = useClassNames(props, ['mdc-snackbar__action'])
     const {
       action = MDCSnackbarFoundation.strings.REASON_ACTION,
       ...rest
-    } = props;
+    } = props
     return (
       <Button
         {...rest}
@@ -129,10 +129,10 @@ export const SnackbarAction = createComponent(
         ref={ref}
         data-mdc-snackbar-action={action}
       />
-    );
+    )
   }
-);
+)
 
-function SnackbarDismiss(props) {
-  return <IconButton {...props} className="mdc-snackbar__dismiss" />;
+function SnackbarDismiss (props) {
+  return <IconButton {...props} className='mdc-snackbar__dismiss' />
 }

@@ -24,33 +24,31 @@
  * Stores result from applyPassive to avoid redundant processing to detect
  * passive event listener support.
  */
-var supportsPassive_;
+var supportsPassive_
 /**
  * Determine whether the current browser supports passive event listeners, and
  * if so, use them.
  */
-export function applyPassive(globalObj, forceRefresh) {
-    if (globalObj === void 0) {
-        globalObj = window;
-    }
-    if (forceRefresh === void 0) {
-        forceRefresh = false;
-    }
-    if (supportsPassive_ === undefined || forceRefresh) {
-        const isSupported_1 = false;
-        try {
-            globalObj.document.addEventListener('test', function () {
-                return undefined;
-            }, {
-                get passive() {
-                    isSupported_1 = true;
-                    return isSupported_1;
-                }
-            });
+export function applyPassive (globalObj, forceRefresh) {
+  if (globalObj === undefined) {
+    globalObj = window
+  }
+  if (forceRefresh === undefined) {
+    forceRefresh = false
+  }
+  if (supportsPassive_ === undefined || forceRefresh) {
+    let isSupported = false
+    try {
+      globalObj.document.addEventListener('test', function () {
+        return undefined
+      }, {
+        get passive () {
+          isSupported = true
+          return isSupported
         }
-        catch (e) { } // tslint:disable-line:no-empty cannot throw error due to tests. tslint also disables console.log.
-        supportsPassive_ = isSupported_1;
-    }
-    return supportsPassive_ ? { passive: true } : false;
+      })
+    } catch (e) { }
+    supportsPassive_ = isSupported
+  }
+  return supportsPassive_ ? { passive: true } : false
 }
-//# sourceMappingURL=events.js.map

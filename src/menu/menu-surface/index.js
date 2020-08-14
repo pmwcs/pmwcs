@@ -1,7 +1,7 @@
 import { h } from 'preact'
 
-import { useClassNames, Tag, createComponent, PortalChild } from '@pmwc/base';
-import { useMenuSurfaceFoundation } from './foundation';
+import { useClassNames, Tag, createComponent, PortalChild } from '@pmwc/base'
+import { useMenuSurfaceFoundation } from './foundation'
 
 /****************************************************************
  * MenuSurface
@@ -9,7 +9,7 @@ import { useMenuSurfaceFoundation } from './foundation';
 
 /** A generic menu component for displaying any type of content. */
 export const MenuSurface = createComponent(
-  function MenuSurface(props, ref) {
+  function MenuSurface (props, ref) {
     const {
       children,
       open,
@@ -21,16 +21,16 @@ export const MenuSurface = createComponent(
       apiRef,
       foundationRef,
       ...rest
-    } = props;
+    } = props
 
-    const { rootEl } = useMenuSurfaceFoundation(props);
+    const { rootEl } = useMenuSurfaceFoundation(props)
 
     const className = useClassNames(props, [
       'mdc-menu-surface',
       {
         'mdc-menu-surface--fixed': fixed
       }
-    ]);
+    ])
 
     return (
       <PortalChild renderTo={renderToPortal}>
@@ -38,9 +38,9 @@ export const MenuSurface = createComponent(
           {children}
         </Tag>
       </PortalChild>
-    );
+    )
   }
-);
+)
 
 /****************************************************************
  * MenuSurfaceAnchor
@@ -48,8 +48,8 @@ export const MenuSurface = createComponent(
 
 /** A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuSurfaceAnchors css style position to absolute. */
 export const MenuSurfaceAnchor = createComponent(
-  function MenuSurfaceAnchor(props, ref) {
-    const className = useClassNames(props, ['mdc-menu-surface--anchor']);
-    return <Tag {...props} className={className} ref={ref} />;
+  function MenuSurfaceAnchor (props, ref) {
+    const className = useClassNames(props, ['mdc-menu-surface--anchor'])
+    return <Tag {...props} className={className} ref={ref} />
   }
-);
+)

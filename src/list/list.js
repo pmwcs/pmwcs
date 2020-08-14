@@ -1,8 +1,8 @@
 import { h } from 'preact'
-import { Tag, useClassNames, createComponent } from '@pmwc/base';
-import { useListFoundation } from './foundation';
+import { Tag, useClassNames, createComponent } from '@pmwc/base'
+import { useListFoundation } from './foundation'
 
-export const List = createComponent(function List(props, ref) {
+export const List = createComponent(function List (props, ref) {
   const {
     dense,
     twoLine,
@@ -12,8 +12,8 @@ export const List = createComponent(function List(props, ref) {
     onAction,
     foundationRef,
     ...rest
-  } = props;
-  const { rootEl } = useListFoundation(props);
+  } = props
+  const { rootEl } = useListFoundation(props)
   const className = useClassNames(props, [
     'mdc-list',
     {
@@ -22,8 +22,8 @@ export const List = createComponent(function List(props, ref) {
       'mdc-list--avatar-list': avatarList,
       'mdc-list--non-interactive': nonInteractive
     }
-  ]);
+  ])
   return (
-    <Tag tag="ul" {...rest} element={rootEl} className={className} ref={ref} />
-  );
-});
+    <Tag tag='ul' {...rest} element={rootEl} className={className} ref={ref} />
+  )
+})

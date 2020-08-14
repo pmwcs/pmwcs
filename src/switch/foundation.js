@@ -1,12 +1,11 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { useEffect } from 'preact/hooks';
-import { useToggleFoundation } from '@pmwc/toggleable';
-import { useFoundation } from '@pmwc/base';
+import { useEffect } from 'preact/hooks'
+import { useToggleFoundation } from '@pmwc/toggleable'
+import { useFoundation } from '@pmwc/base'
 
-import { MDCSwitchFoundation, MDCSwitchAdapter } from '@material/switch';
+import { MDCSwitchFoundation } from '@material/switch'
 
 export const useSwitchFoundation = (props) => {
-  const { renderToggle, toggleRootProps, id } = useToggleFoundation(props);
+  const { renderToggle, toggleRootProps, id } = useToggleFoundation(props)
 
   const { foundation, ...elements } = useFoundation({
     props,
@@ -24,43 +23,43 @@ export const useSwitchFoundation = (props) => {
           checkboxEl.setProp('disabled', disabled),
         setNativeControlAttr: (attr, value) =>
           rootEl.setProp(attr, value)
-      });
+      })
     }
-  });
+  })
 
-  const { checkboxEl } = elements;
+  const { checkboxEl } = elements
 
   // On mount, sync the values with the native checkbox
   useEffect(() => {
     checkboxEl.ref &&
       foundation.updateCheckedStyling_(
         checkboxEl.ref.checked
-      );
+      )
     checkboxEl.ref &&
-      foundation.setDisabled(checkboxEl.ref.disabled);
-  }, [checkboxEl.ref, foundation]);
+      foundation.setDisabled(checkboxEl.ref.disabled)
+  }, [checkboxEl.ref, foundation])
 
   // sync checked
   useEffect(() => {
     if (props.checked !== undefined) {
-      foundation.updateCheckedStyling_(props.checked);
+      foundation.updateCheckedStyling_(props.checked)
     }
-  }, [props.checked, foundation]);
+  }, [props.checked, foundation])
 
   // sync disabled
   useEffect(() => {
     if (props.disabled !== undefined) {
-      foundation.setDisabled(props.disabled);
+      foundation.setDisabled(props.disabled)
     }
-  }, [props.disabled, foundation]);
+  }, [props.disabled, foundation])
 
   // Callback handling
   const handleOnChange = (evt) => {
-    foundation.handleChange(evt);
-    props.onChange?.(evt);
-  };
+    foundation.handleChange(evt)
+    props.onChange?.(evt)
+  }
 
-  checkboxEl.setProp('onChange', handleOnChange, true);
+  checkboxEl.setProp('onChange', handleOnChange, true)
 
-  return { foundation, renderToggle, toggleRootProps, id, ...elements };
-};
+  return { foundation, renderToggle, toggleRootProps, id, ...elements }
+}

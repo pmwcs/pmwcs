@@ -1,5 +1,5 @@
 export const getDisplayName = (childInput) => {
-  const child = Array.isArray(childInput) ? childInput[0] : childInput;
+  const child = Array.isArray(childInput) ? childInput[0] : childInput
 
   const displayName =
     child?.type?.displayName ||
@@ -7,7 +7,7 @@ export const getDisplayName = (childInput) => {
     child?.displayName ||
     child?.name ||
     child?.constructor?.name ||
-    'Unknown';
+    'Unknown'
 
-  return displayName;
-};
+  return displayName
+}

@@ -1,17 +1,17 @@
-import { useEffect, useCallback } from 'preact/hooks';
+import { useEffect, useCallback } from 'preact/hooks'
 
-import { MDCListFoundation } from '@material/list';
-import { matches, useFoundation } from '@pmwc/base';
+import { MDCListFoundation } from '@material/list'
+import { matches, useFoundation } from '@pmwc/base'
 
 export const useListFoundation = (props) => {
   const listElements = useCallback((el) => {
     if (el) {
       return [].slice.call(
         el.querySelectorAll(`.${MDCListFoundation.cssClasses.LIST_ITEM_CLASS}`)
-      );
+      )
     }
-    return [];
-  }, []);
+    return []
+  }, [])
 
   const { foundation, ...elements } = useFoundation({
     props,
@@ -19,7 +19,7 @@ export const useListFoundation = (props) => {
       rootEl,
       foundation
     }) => {
-      const { adapter } = foundation;
+      const { adapter } = foundation
       return {
         listElements: () => listElements(rootEl.ref),
         focusRoot: () => rootEl.ref && rootEl.ref.focus(),
@@ -29,7 +29,7 @@ export const useListFoundation = (props) => {
         setAttributeForElementIndex: adapter.setAttributeForElementIndex,
         getListItemCount: adapter.getListItemCount,
         focusItemAtIndex: adapter.focusItemAtIndex
-      };
+      }
     },
     elements: { rootEl: true },
     foundation: ({ rootEl, emit }) => {
@@ -40,8 +40,8 @@ export const useListFoundation = (props) => {
             document.activeElement
           ),
         listItemAtIndexHasClass: (index, className) => {
-          const element = listElements(rootEl.ref)[index];
-          return !!element?.classList.contains(className);
+          const element = listElements(rootEl.ref)[index]
+          return !!element?.classList.contains(className)
         },
         setAttributeForElementIndex: (
           index,
@@ -55,95 +55,95 @@ export const useListFoundation = (props) => {
           // }
 
           if (attr === 'tabindex') {
-            attr = 'tabIndex';
+            attr = 'tabIndex'
           }
 
-          const element = listElements(rootEl.ref)[index];
+          const element = listElements(rootEl.ref)[index]
           if (element) {
-            element.setAttribute(attr, String(value));
+            element.setAttribute(attr, String(value))
           }
         },
         addClassForElementIndex: (index, className) => {
-          const element = listElements(rootEl.ref)[index];
+          const element = listElements(rootEl.ref)[index]
           if (element) {
-            element.classList.add(className);
+            element.classList.add(className)
           }
         },
         removeClassForElementIndex: (index, className) => {
-          const element = listElements(rootEl.ref)[index];
+          const element = listElements(rootEl.ref)[index]
           if (element) {
-            element.classList.remove(className);
+            element.classList.remove(className)
           }
         },
         focusItemAtIndex: (index) => {
-          const element = listElements(rootEl.ref)[index];
+          const element = listElements(rootEl.ref)[index]
           if (element) {
-            element.focus();
+            element.focus()
           }
         },
         setTabIndexForListItemChildren: (
           listItemIndex,
           tabIndexValue
         ) => {
-          const element = listElements(rootEl.ref)[listItemIndex];
+          const element = listElements(rootEl.ref)[listItemIndex]
           const listItemChildren = [].slice.call(
             element.querySelectorAll(
               MDCListFoundation.strings.CHILD_ELEMENTS_TO_TOGGLE_TABINDEX
             )
-          );
+          )
           listItemChildren.forEach((ele) =>
             ele.setAttribute('tabindex', String(tabIndexValue))
-          );
+          )
         },
         hasCheckboxAtIndex: (index) => {
-          const listItem = listElements(rootEl.ref)[index];
+          const listItem = listElements(rootEl.ref)[index]
           return !!listItem.querySelector(
             MDCListFoundation.strings.CHECKBOX_SELECTOR
-          );
+          )
         },
         hasRadioAtIndex: (index) => {
-          const listItem = listElements(rootEl.ref)[index];
+          const listItem = listElements(rootEl.ref)[index]
           return !!listItem.querySelector(
             MDCListFoundation.strings.RADIO_SELECTOR
-          );
+          )
         },
         isCheckboxCheckedAtIndex: (index) => {
-          const listItem = listElements(rootEl.ref)[index];
+          const listItem = listElements(rootEl.ref)[index]
           const toggleEl = listItem.querySelector(
             MDCListFoundation.strings.CHECKBOX_SELECTOR
           )
 
-          return toggleEl ? toggleEl.checked : false;
+          return toggleEl ? toggleEl.checked : false
         },
         setCheckedCheckboxOrRadioAtIndex: (
           index,
           isChecked
         ) => {
-          const listItem = listElements(rootEl.ref)[index];
+          const listItem = listElements(rootEl.ref)[index]
           const toggleEl = listItem.querySelector(
             MDCListFoundation.strings.CHECKBOX_RADIO_SELECTOR
           )
 
           if (toggleEl) {
-            toggleEl.checked = isChecked;
+            toggleEl.checked = isChecked
 
-            const event = document.createEvent('Event');
-            event.initEvent('change', true, true);
-            toggleEl.dispatchEvent(event);
+            const event = document.createEvent('Event')
+            event.initEvent('change', true, true)
+            toggleEl.dispatchEvent(event)
           }
         },
         notifyAction: (index) => {
-          emit('onAction', { index });
+          emit('onAction', { index })
         },
         isFocusInsideList: () => {
-          return !!rootEl.ref?.contains(document.activeElement);
+          return !!rootEl.ref?.contains(document.activeElement)
         },
         isRootFocused: () => document.activeElement === rootEl.ref
-      });
+      })
     }
-  });
+  })
 
-  const { rootEl } = elements;
+  const { rootEl } = elements
 
   /**
    * Used to figure out which list item this event is targetting. Or returns -1 if
@@ -151,8 +151,8 @@ export const useListFoundation = (props) => {
    */
   const getListItemIndex = useCallback(
     (evt) => {
-      let eventTarget = evt.target;
-      let index = -1;
+      let eventTarget = evt.target
+      let index = -1
 
       // Find the first ancestor that is a list item or the list.
       while (
@@ -162,7 +162,7 @@ export const useListFoundation = (props) => {
         ) &&
         !eventTarget.classList.contains(MDCListFoundation.cssClasses.ROOT)
       ) {
-        eventTarget = eventTarget.parentElement;
+        eventTarget = eventTarget.parentElement
       }
 
       // Get the index of the element if it is a list item.
@@ -172,36 +172,36 @@ export const useListFoundation = (props) => {
           MDCListFoundation.cssClasses.LIST_ITEM_CLASS
         )
       ) {
-        index = listElements(rootEl.ref).indexOf(eventTarget);
+        index = listElements(rootEl.ref).indexOf(eventTarget)
       }
 
-      return index;
+      return index
     },
     [listElements, rootEl.ref]
-  );
+  )
 
   const handleClick = useCallback(
     (evt) => {
-      props.onClick?.(evt);
+      props.onClick?.(evt)
 
-      const index = getListItemIndex(evt);
+      const index = getListItemIndex(evt)
 
       // Toggle the checkbox only if it's not the target of the event, or the checkbox will have 2 change events.
       const toggleCheckbox = !matches(
         evt.target,
         MDCListFoundation.strings.CHECKBOX_RADIO_SELECTOR
-      );
+      )
 
-      foundation.handleClick(index, toggleCheckbox);
+      foundation.handleClick(index, toggleCheckbox)
     },
     [getListItemIndex, foundation, props.onClick]
-  );
+  )
 
   const handleKeydown = useCallback(
     (evt) => {
-      props.onKeyDown?.(evt);
+      props.onKeyDown?.(evt)
 
-      const index = getListItemIndex(evt);
+      const index = getListItemIndex(evt)
 
       if (index >= 0) {
         foundation.handleKeydown(
@@ -211,47 +211,47 @@ export const useListFoundation = (props) => {
               MDCListFoundation.cssClasses.LIST_ITEM_CLASS
             ),
           index
-        );
+        )
       }
     },
     [getListItemIndex, foundation, props.onKeyDown]
-  );
+  )
 
   const handleFocusIn = useCallback(
     (evt) => {
-      props.onFocus?.(evt);
-      foundation.handleFocusIn(evt, getListItemIndex(evt));
+      props.onFocus?.(evt)
+      foundation.handleFocusIn(evt, getListItemIndex(evt))
     },
     [getListItemIndex, foundation, props.onFocus]
-  );
+  )
 
   const handleFocusOut = useCallback(
     (evt) => {
-      props.onBlur?.(evt);
-      foundation.handleFocusOut(evt, getListItemIndex(evt));
+      props.onBlur?.(evt)
+      foundation.handleFocusOut(evt, getListItemIndex(evt))
     },
     [getListItemIndex, foundation, props.onBlur]
-  );
+  )
 
-  rootEl.setProp('onClick', handleClick, true);
-  rootEl.setProp('onKeyDown', handleKeydown, true);
-  rootEl.setProp('onFocus', handleFocusIn, true);
-  rootEl.setProp('onBlur', handleFocusOut, true);
+  rootEl.setProp('onClick', handleClick, true)
+  rootEl.setProp('onKeyDown', handleKeydown, true)
+  rootEl.setProp('onFocus', handleFocusIn, true)
+  rootEl.setProp('onBlur', handleFocusOut, true)
 
   // layout on mount
   useEffect(() => {
-    foundation.layout();
-  }, [foundation]);
+    foundation.layout()
+  }, [foundation])
 
   useEffect(() => {
-    foundation.setWrapFocus(props.wrapFocus || props.wrapFocus === undefined);
-  }, [foundation, props.wrapFocus]);
+    foundation.setWrapFocus(props.wrapFocus || props.wrapFocus === undefined)
+  }, [foundation, props.wrapFocus])
 
   useEffect(() => {
     foundation.setVerticalOrientation(
       props.vertical || props.vertical === undefined
-    );
-  }, [foundation, props.vertical]);
+    )
+  }, [foundation, props.vertical])
 
-  return { ...elements };
-};
+  return { ...elements }
+}

@@ -124,7 +124,7 @@ A TextField component for accepting text input from a user.
 | `foundationRef` | `React.Ref<MDCTextFieldFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `fullwidth` | `undefined \| false \| true` | Makes the TextField fullwidth. |
 | `helpText` | `React.ReactNode \| TextFieldHelperTextProps` | Adds help text to the field |
-| `icon` | `RMWC.IconPropT` | Add a leading icon. |
+| `icon` | `PMWC.IconPropT` | Add a leading icon. |
 | `inputRef` | `React.Ref<HTMLInputElement \| HTMLTextAreaElement \| null>` | A reference to the native input or textarea. |
 | `invalid` | `undefined \| false \| true` | Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used. |
 | `label` | `React.ReactNode` | A label for the input. |
@@ -133,6 +133,6 @@ A TextField component for accepting text input from a user.
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `rootProps` | `Object` | By default, props spread to the input. These props are for the component's root container. |
 | `textarea` | `undefined \| false \| true` | Makes a multiline TextField. |
-| `trailingIcon` | `RMWC.IconPropT` | Add a trailing icon. |
+| `trailingIcon` | `PMWC.IconPropT` | Add a trailing icon. |
 | `type` | `undefined \| string` | The type of input field to render, search, number, etc |
 | `value` | `string \| number` | Sets the value for controlled TextFields. |

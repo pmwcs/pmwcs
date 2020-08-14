@@ -1,20 +1,19 @@
-import {h} from 'preact';
+import { h } from 'preact'
 import { memo, forwardRef } from 'preact/compat'
 
-import { MDCRadioFoundation } from '@material/radio';
-import { Tag, useClassNames, mergeRefs, createComponent } from '@pmwc/base';
-import { withRipple } from '@pmwc/ripple';
-import { useRadioFoundation } from './foundation';
+import { Tag, useClassNames, mergeRefs, createComponent } from '@pmwc/base'
+import { withRipple } from '@pmwc/ripple'
+import { useRadioFoundation } from './foundation'
 
 /*********************************************************************
  * Radio
  *********************************************************************/
 
 /** A Radio button component. */
-export const Radio = createComponent(function Radio(props, ref) {
+export const Radio = createComponent(function Radio (props, ref) {
   const { renderToggle, id, toggleRootProps, rootEl } = useRadioFoundation(
     props
-  );
+  )
 
   const {
     children,
@@ -24,7 +23,7 @@ export const Radio = createComponent(function Radio(props, ref) {
     inputRef,
     foundationRef,
     ...rest
-  } = props;
+  } = props
 
   const radio = (
     <RadioRoot
@@ -33,51 +32,51 @@ export const Radio = createComponent(function Radio(props, ref) {
     >
       <input
         {...rest}
-        className="mdc-radio__native-control"
-        type="radio"
+        className='mdc-radio__native-control'
+        type='radio'
         id={id}
         ref={inputRef}
       />
       <RadioBackground />
       <RadioRipple />
     </RadioRoot>
-  );
+  )
 
-  return renderToggle(radio);
-});
+  return renderToggle(radio)
+})
 
 /*********************************************************************
  * Bits
  *********************************************************************/
 
-const RadioRipple = memo(function RadioRipple() {
-  return <div className="mdc-radio__ripple" />;
-});
+const RadioRipple = memo(function RadioRipple () {
+  return <div className='mdc-radio__ripple' />
+})
 
 const RadioRoot = withRipple({
   surface: false,
   unbounded: true
 })(
-  forwardRef(function RadioRoot(
+  forwardRef(function RadioRoot (
     props,
     ref
   ) {
-    const { disabled, ...rest } = props;
+    const { disabled, ...rest } = props
     const className = useClassNames(props, [
       'mdc-radio',
       {
         'mdc-radio--disabled': disabled
       }
-    ]);
-    return <Tag {...rest} className={className} ref={ref} />;
+    ])
+    return <Tag {...rest} className={className} ref={ref} />
   })
-);
+)
 
-const RadioBackground = memo(function RadioBackground() {
+const RadioBackground = memo(function RadioBackground () {
   return (
-    <div className="mdc-radio__background">
-      <div className="mdc-radio__outer-circle" />
-      <div className="mdc-radio__inner-circle" />
+    <div className='mdc-radio__background'>
+      <div className='mdc-radio__outer-circle' />
+      <div className='mdc-radio__inner-circle' />
     </div>
-  );
-});
+  )
+})

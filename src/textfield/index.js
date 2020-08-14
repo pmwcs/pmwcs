@@ -1,23 +1,23 @@
-import {h, Fragment, isValidElement} from 'preact';
-import {memo, forwardRef} from 'preact/compat';
+import { h, Fragment, isValidElement } from 'preact'
+import { memo, forwardRef } from 'preact/compat'
 
-import { useClassNames, Tag, useId, createComponent } from '@pmwc/base';
-import { Icon } from '@pmwc/icon';
-import { LineRipple } from '@pmwc/line-ripple';
-import { FloatingLabel } from '@pmwc/floating-label';
-import { NotchedOutline } from '@pmwc/notched-outline';
-import { withRipple } from '@pmwc/ripple';
+import { useClassNames, Tag, useId, createComponent } from '@pmwc/base'
+import { Icon } from '@pmwc/icon'
+import { LineRipple } from '@pmwc/line-ripple'
+import { FloatingLabel } from '@pmwc/floating-label'
+import { NotchedOutline } from '@pmwc/notched-outline'
+import { withRipple } from '@pmwc/ripple'
 
-import { useTextFieldIconFoundation } from './textfield-icon-foundation';
-import { useTextFieldCharacterCountFoundation } from './textfield-character-count-foundation';
-import { useTextFieldFoundation } from './textfield-foundation';
+import { useTextFieldIconFoundation } from './textfield-icon-foundation'
+import { useTextFieldCharacterCountFoundation } from './textfield-character-count-foundation'
+import { useTextFieldFoundation } from './textfield-foundation'
 
 /*********************************************************************
  * TextField
  *********************************************************************/
 
 /** A TextField component for accepting text input from a user. */
-export const TextField = createComponent(function TextField(
+export const TextField = createComponent(function TextField (
   props,
   ref
 ) {
@@ -41,7 +41,7 @@ export const TextField = createComponent(function TextField(
     ripple,
     floatLabel: userFloatLabel,
     ...rest
-  } = props;
+  } = props
 
   const {
     rootEl,
@@ -55,10 +55,10 @@ export const TextField = createComponent(function TextField(
     setTrailingIcon,
     setFloatingLabel,
     setCharacterCounter
-  } = useTextFieldFoundation(props);
+  } = useTextFieldFoundation(props)
 
-  const id = useId('textfield', props);
-  const labelId = id + '-label';
+  const id = useId('textfield', props)
+  const labelId = id + '-label'
 
   const className = useClassNames(props, [
     'mdc-text-field',
@@ -74,7 +74,7 @@ export const TextField = createComponent(function TextField(
       'mdc-text-field--no-label': !label,
       'mdc-text-field--end-aligned': align === 'end'
     }
-  ]);
+  ])
 
   // handle leading and trailing icons
   const renderIcon = (
@@ -84,27 +84,27 @@ export const TextField = createComponent(function TextField(
     return (
       <TextFieldIcon
         apiRef={(api) => {
-          position === 'leading' ? setLeadingIcon(api) : setTrailingIcon(api);
+          position === 'leading' ? setLeadingIcon(api) : setTrailingIcon(api)
         }}
         position={position}
         tabIndex={position === 'trailing' ? 0 : undefined}
         icon={icon}
       />
-    );
-  };
+    )
+  }
 
   const renderHelpText = (renderedCharacterCounter) => {
-    const shouldRender = !!helpText || (characterCount && !textarea);
+    const shouldRender = !!helpText || (characterCount && !textarea)
 
     if (!shouldRender) {
-      return null;
+      return null
     }
 
     const shouldSpread =
-      typeof helpText === 'object' && !isValidElement(helpText);
+      typeof helpText === 'object' && !isValidElement(helpText)
 
     return (
-      <div className="mdc-text-field-helper-line">
+      <div className='mdc-text-field-helper-line'>
         {helpText && shouldSpread ? (
           <TextFieldHelperText {...(helpText)} />
         ) : (
@@ -112,8 +112,8 @@ export const TextField = createComponent(function TextField(
         )}
         {!textarea && renderedCharacterCounter}
       </div>
-    );
-  };
+    )
+  }
 
   const renderedLabel = label ? (
     <FloatingLabel
@@ -124,11 +124,11 @@ export const TextField = createComponent(function TextField(
     >
       {label}
     </FloatingLabel>
-  ) : null;
+  ) : null
 
   const renderedCharacterCounter = characterCount ? (
     <TextFieldCharacterCount apiRef={setCharacterCounter} />
-  ) : null;
+  ) : null
 
   return (
     <Fragment>
@@ -148,13 +148,13 @@ export const TextField = createComponent(function TextField(
         <Tag
           {...rest}
           element={inputEl}
-          className="mdc-text-field__input"
+          className='mdc-text-field__input'
           disabled={disabled}
           tag={textarea ? 'textarea' : 'input'}
           ref={inputRef}
         />
 
-        {!!outlined ? (
+        {outlined ? (
           <Fragment>
             <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
             {!!trailingIcon && renderIcon(trailingIcon, 'trailing')}
@@ -169,29 +169,29 @@ export const TextField = createComponent(function TextField(
       </TextFieldRoot>
       {renderHelpText(renderedCharacterCounter)}
     </Fragment>
-  );
-});
+  )
+})
 
-const TextFieldRipple = memo(function TextFieldRipple() {
-  return <span className="mdc-text-field__ripple"></span>;
-});
+const TextFieldRipple = memo(function TextFieldRipple () {
+  return <span className='mdc-text-field__ripple' />
+})
 
 const TextFieldRoot = withRipple({ surface: false })(
-  forwardRef(function TextFieldRoot(props, ref) {
-    return <Tag {...props} tag="label" ref={ref} />;
+  forwardRef(function TextFieldRoot (props, ref) {
+    return <Tag {...props} tag='label' ref={ref} />
   })
-);
+)
 
 /*********************************************************************
  * Character Count
  *********************************************************************/
 
-const TextFieldCharacterCount = memo(function TextFieldCharacterCount(
+const TextFieldCharacterCount = memo(function TextFieldCharacterCount (
   props
 ) {
-  const { content } = useTextFieldCharacterCountFoundation(props);
-  return <div className="mdc-text-field-character-counter">{content}</div>;
-});
+  const { content } = useTextFieldCharacterCountFoundation(props)
+  return <div className='mdc-text-field-character-counter'>{content}</div>
+})
 
 /*********************************************************************
  * Helper Text
@@ -199,35 +199,35 @@ const TextFieldCharacterCount = memo(function TextFieldCharacterCount(
 
 /** A help text component */
 export const TextFieldHelperText = createComponent(
-  function TextFieldHelperText(props, ref) {
-    const { persistent, validationMsg, ...rest } = props;
+  function TextFieldHelperText (props, ref) {
+    const { persistent, validationMsg, ...rest } = props
     const className = useClassNames(props, [
       'mdc-text-field-helper-text',
       {
         'mdc-text-field-helper-text--persistent': persistent,
         'mdc-text-field-helper-text--validation-msg': validationMsg
       }
-    ]);
+    ])
 
-    return <Tag tag="p" {...rest} className={className} ref={ref} />;
+    return <Tag tag='p' {...rest} className={className} ref={ref} />
   }
-);
+)
 
 /*********************************************************************
  * Icon
  *********************************************************************/
 
 /** An Icon in a TextField */
-const TextFieldIcon = function TextFieldIcon(props) {
-  const { apiRef, position, ...rest } = props;
-  const { rootEl } = useTextFieldIconFoundation(props);
+const TextFieldIcon = function TextFieldIcon (props) {
+  const { apiRef, position, ...rest } = props
+  const { rootEl } = useTextFieldIconFoundation(props)
   const className = useClassNames(props, [
     'mdc-text-field__icon',
     {
       'mdc-text-field__icon--trailing': position === 'trailing',
       'mdc-text-field__icon--leading': position === 'leading'
     }
-  ]);
+  ])
 
   return (
     <Icon
@@ -236,6 +236,6 @@ const TextFieldIcon = function TextFieldIcon(props) {
         className
       })}
     />
-  );
-};
-TextFieldIcon.displayName = 'TextFieldIcon';
+  )
+}
+TextFieldIcon.displayName = 'TextFieldIcon'

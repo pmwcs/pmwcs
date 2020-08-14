@@ -1,4 +1,4 @@
-import { createBrowserHistory } from 'history';
+import { createBrowserHistory } from 'history'
 export var history = createBrowserHistory({
-    basename: process.env.PUBLIC_URL
-});
+  basename: process.env.PUBLIC_URL
+})

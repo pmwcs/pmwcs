@@ -1,9 +1,9 @@
-import { cloneElement } from 'preact';
-import { Children } from 'preact/compat';
-import classNames from 'classnames';
+import { cloneElement } from 'preact'
+import { Children } from 'preact/compat'
+import classNames from 'classnames'
 
 export const wrapChild = (props) => {
-  const child = Children.only(props.children);
+  const child = Children.only(props.children)
   return cloneElement(child, {
     ...props,
     ...child.props,

@@ -2,13 +2,13 @@
 
 A floating action button (FAB) represents the primary action of a screen.
 
-- Module **@rmwc/fab**
+- Module **@pmwc/fab**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/fab/styles';
+    - import '@pmwc/fab/styles';
   - Or include stylesheets
     - **'@material/fab/dist/mdc.fab.css'**
-    - **'@rmwc/icon/icon.css'**
+    - **'@pmwc/icon/icon.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/buttons/floating-action-buttons/](https://material.io/develop/web/components/buttons/floating-action-buttons/)
 
@@ -48,10 +48,10 @@ A floating action button component
 |------|------|-------------|
 | `children` | `React.ReactNode` | Content specified as children. |
 | `exited` | `undefined \| false \| true` | Animates the FAB out of view. When this class is removed, the FAB will return to view. |
-| `icon` | `RMWC.IconPropT` | The icon for the FAB |
+| `icon` | `PMWC.IconPropT` | The icon for the FAB |
 | `label` | `React.ReactNode &amp; any` | Make the Fab extended with a label. |
 | `mini` | `undefined \| false \| true` | Make the Fab smaller. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `trailingIcon` | `RMWC.IconPropT` | A trialing icon for the FAB |
+| `trailingIcon` | `PMWC.IconPropT` | A trialing icon for the FAB |
 
 

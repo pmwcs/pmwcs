@@ -9,8 +9,8 @@ import {
 
 export default {
   title: 'Elevation',
-  component: Elevation,
-};
+  component: Elevation
+}
 
 export const basic = () => (
   <section>
@@ -18,7 +18,7 @@ export const basic = () => (
       <span>Wrapped!</span>
     </Elevation>
 
-    <p><br/></p>
+    <p><br /></p>
 
     {Array(25)
       .fill(undefined)
@@ -31,8 +31,8 @@ export const basic = () => (
 )
 
 export const mouse = () => {
-  function Example() {
-    const [elevation, setElevation] = useState(0);
+  function Example () {
+    const [elevation, setElevation] = useState(0)
 
     return (
       <Elevation
@@ -43,7 +43,7 @@ export const mouse = () => {
       >
         Hover Me {elevation}dp
       </Elevation>
-    );
+    )
   }
-  return <Example/>
+  return <Example />
 }

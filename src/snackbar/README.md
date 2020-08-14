@@ -2,10 +2,10 @@
 
 Snackbars provide brief feedback about an operation through a message at the bottom of the screen.
 
-- Module **@rmwc/snackbar**
+- Module **@pmwc/snackbar**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/snackbar/styles';
+    - import '@pmwc/snackbar/styles';
   - Or include stylesheets
     - **'@material/snackbar/dist/mdc.snackbar.css'**
     - **'@material/button/dist/mdc.button.css'**
@@ -85,7 +85,7 @@ Setup is nice and easy, create a queue object you can pass around in your code b
 
 // Create a file that exports your queue
 // myQueue.js
-import { createSnackbarQueue } from '@rmwc/snackbar';
+import { createSnackbarQueue } from '@pmwc/snackbar';
 
 export const queue = createSnackbarQueue()
 ```
@@ -190,7 +190,7 @@ A Snackbar component for notifications.
 | `dismissIcon` | `boolean \| string` |  |
 | `dismissesOnAction` | `undefined \| false \| true` | Whether or not your want clicking an action to close the Snackbar. |
 | `foundationRef` | `React.Ref<MDCSnackbarFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
-| `icon` | `RMWC.IconPropT` | An icon for the snackbar |
+| `icon` | `PMWC.IconPropT` | An icon for the snackbar |
 | `leading` | `undefined \| false \| true` |  |
 | `message` | `React.ReactNode` | A string or other renderable JSX to be used as the message body. |
 | `onClose` | `undefined \| (evt: SnackbarOnCloseEventT) => void` | A callback thats fired when the Snackbar hides. evt.detail = { reason?: string } |
@@ -212,12 +212,12 @@ A button for a snackbar action.
 | `danger` | `undefined \| false \| true` | Used to indicate a dangerous action. |
 | `dense` | `undefined \| false \| true` | Make the Button dense. |
 | `disabled` | `undefined \| false \| true` | Make the button disabled |
-| `icon` | `RMWC.IconPropT` | An Icon for the Button |
+| `icon` | `PMWC.IconPropT` | An Icon for the Button |
 | `label` | `React.ReactNode \| any` | Content specified as a label prop. |
 | `outlined` | `undefined \| false \| true` | Make the button outlined. |
 | `raised` | `undefined \| false \| true` | Make the Button raised. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `trailingIcon` | `RMWC.IconPropT` | A trailing icon for the Button |
+| `trailingIcon` | `PMWC.IconPropT` | A trailing icon for the Button |
 | `unelevated` | `undefined \| false \| true` | Make the button unelevated. |
 
 

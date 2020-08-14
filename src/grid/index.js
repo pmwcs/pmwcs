@@ -5,33 +5,33 @@ import {
   Tag,
   useClassNames,
   createComponent
-} from '@pmwc/base';
+} from '@pmwc/base'
 
 /** A Grid component */
-export const Grid = createComponent(function Grid(props, ref) {
-  const { children, fixedColumnWidth, align, ...rest } = props;
-  const needsInnerGrid = !(getDisplayName(children) === 'GridRow');
+export const Grid = createComponent(function Grid (props, ref) {
+  const { children, fixedColumnWidth, align, ...rest } = props
+  const needsInnerGrid = !(getDisplayName(children) === 'GridRow')
   const className = useClassNames(props, [
     'mdc-layout-grid',
     {
       [`mdc-layout-grid--align-${align || ''}`]: props.align !== undefined,
       'mdc-layout-grid--fixed-column-width': fixedColumnWidth
     }
-  ]);
+  ])
 
   return (
     <Tag {...rest} className={className} ref={ref}>
-      {!!needsInnerGrid ? <GridRow>{children}</GridRow> : children}
+      {needsInnerGrid ? <GridRow>{children}</GridRow> : children}
     </Tag>
-  );
-});
+  )
+})
 
 /** A Grid cell */
-export const GridCell = createComponent(function GridCell(
+export const GridCell = createComponent(function GridCell (
   props,
   ref
 ) {
-  const { span, phone, tablet, desktop, order, align, ...rest } = props;
+  const { span, phone, tablet, desktop, order, align, ...rest } = props
   const className = useClassNames(props, [
     'mdc-layout-grid__cell',
     {
@@ -44,16 +44,16 @@ export const GridCell = createComponent(function GridCell(
       [`mdc-layout-grid__cell--span-${desktop || ''}-desktop`]:
         props.desktop !== undefined
     }
-  ]);
-  return <Tag {...rest} ref={ref} className={className} />;
-});
+  ])
+  return <Tag {...rest} ref={ref} className={className} />
+})
 
 /** By default, an inner grid component is included inside of <Grid>. Use GridRow when doing nested Grids. */
-export const GridRow = createComponent(function GridRow(
+export const GridRow = createComponent(function GridRow (
   props,
   ref
 ) {
-  const className = useClassNames(props, ['mdc-layout-grid__inner']);
-  return <Tag {...props} ref={ref} className={className} />;
-});
-GridRow.displayName = 'GridRow';
+  const className = useClassNames(props, ['mdc-layout-grid__inner'])
+  return <Tag {...props} ref={ref} className={className} />
+})
+GridRow.displayName = 'GridRow'

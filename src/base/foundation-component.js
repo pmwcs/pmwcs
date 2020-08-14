@@ -1,125 +1,124 @@
-import { h } from 'preact'
-import { useEffect, useState , useRef, useMemo} from 'preact/hooks'
+import { useEffect, useState, useRef, useMemo } from 'preact/hooks'
 
-import classNames from 'classnames';
-import { eventsMap } from './utils/events-map';
-import { toCamel } from './utils/strings';
-import { handleRef } from './component';
+import classNames from 'classnames'
+import { eventsMap } from './utils/events-map'
+import { toCamel } from './utils/strings'
+import { handleRef } from './component'
 
-const reactPropFromEventName = (evtName) => eventsMap[evtName] || evtName;
+const reactPropFromEventName = (evtName) => eventsMap[evtName] || evtName
 
 export class FoundationElement {
-  constructor(onChange = null) {
-    this._classes = new Set();
-    this._events = {};
-    this._style = {};
-    this._props = {};
-    this._ref = null;
-    this._onChange = onChange;
-    this.onChange = this.onChange.bind(this);
-    this.addClass = this.addClass.bind(this);
-    this.removeClass = this.removeClass.bind(this);
-    this.hasClass = this.hasClass.bind(this);
-    this.setProp = this.setProp.bind(this);
-    this.getProp = this.getProp.bind(this);
-    this.removeProp = this.removeProp.bind(this);
-    this.setStyle = this.setStyle.bind(this);
-    this.addEventListener = this.addEventListener.bind(this);
-    this.removeEventListener = this.removeEventListener.bind(this);
-    this.setRef = this.setRef.bind(this);
+  constructor (onChange = null) {
+    this._classes = new Set()
+    this._events = {}
+    this._style = {}
+    this._props = {}
+    this._ref = null
+    this._onChange = onChange
+    this.onChange = this.onChange.bind(this)
+    this.addClass = this.addClass.bind(this)
+    this.removeClass = this.removeClass.bind(this)
+    this.hasClass = this.hasClass.bind(this)
+    this.setProp = this.setProp.bind(this)
+    this.getProp = this.getProp.bind(this)
+    this.removeProp = this.removeProp.bind(this)
+    this.setStyle = this.setStyle.bind(this)
+    this.addEventListener = this.addEventListener.bind(this)
+    this.removeEventListener = this.removeEventListener.bind(this)
+    this.setRef = this.setRef.bind(this)
   }
 
-  onChange() {
-    this._onChange && this._onChange();
+  onChange () {
+    this._onChange && this._onChange()
   }
 
-  destroy() {
-    this._onChange = null;
-    this._events = {};
-    this._style = {};
-    this._props = {};
-    this._classes = new Set();
+  destroy () {
+    this._onChange = null
+    this._events = {}
+    this._style = {}
+    this._props = {}
+    this._classes = new Set()
 
     setTimeout(() => {
-      this._ref = null;
-    });
+      this._ref = null
+    })
   }
 
   /**************************************************
    * Classes
    **************************************************/
-  addClass(className) {
+  addClass (className) {
     if (!this._classes.has(className)) {
-      this._classes.add(className);
-      this.onChange();
+      this._classes.add(className)
+      this.onChange()
     }
   }
 
-  removeClass(className) {
+  removeClass (className) {
     if (this._classes.has(className)) {
-      this._classes.delete(className);
-      this.onChange();
+      this._classes.delete(className)
+      this.onChange()
     }
   }
 
-  hasClass(className) {
-    return this._classes.has(className);
+  hasClass (className) {
+    return this._classes.has(className)
   }
 
   /**************************************************
    * Props
    **************************************************/
-  setProp(propName, value, silent = false) {
+  setProp (propName, value, silent = false) {
     if (this._props[propName] !== value) {
-      this._props[propName] = value;
-      !silent && this.onChange();
+      this._props[propName] = value
+      !silent && this.onChange()
     }
   }
 
-  getProp(propName) {
-    return this._props[propName];
+  getProp (propName) {
+    return this._props[propName]
   }
 
-  removeProp(propName) {
+  removeProp (propName) {
     if (this._props[propName] !== undefined) {
-      delete this._props[propName];
-      this.onChange();
+      delete this._props[propName]
+      this.onChange()
     }
   }
 
-  props(propsToMerge) {
-    const { className = '', style = {} } = propsToMerge;
+  props (propsToMerge) {
+    const { className = '', style = {} } = propsToMerge
 
     // handle merging events
     // the foundation should be able to pass something onClick as well as a user
     // This wraps them in a function that calls both
     const mergedEvents = Object.entries(propsToMerge).reduce(
       (acc, [key, possibleCallback]) => {
-        const existingCallback = this._events[key];
+        const existingCallback = this._events[key]
         if (
           typeof possibleCallback === 'function' &&
           typeof existingCallback === 'function'
         ) {
           const wrappedCallback = (evt) => {
-            existingCallback(evt);
-            return possibleCallback(evt);
-          };
+            existingCallback(evt)
+            return possibleCallback(evt)
+          }
 
-          acc[key] = wrappedCallback;
+          acc[key] = wrappedCallback
         }
-        return acc;
+        return acc
       },
       { ...this._events }
-    );
+    )
 
     // handle className
-    const mergedClasses = classNames(className, [...this._classes]);
+    const mergedClasses = classNames(className, [...this._classes])
 
     // handle styles
     const mergedStyles = {
       ...this._style,
       ...style
-    };
+    }
 
     return {
       ...propsToMerge,
@@ -127,53 +126,53 @@ export class FoundationElement {
       ...mergedEvents,
       style: mergedStyles,
       className: mergedClasses
-    };
+    }
   }
 
   /**************************************************
    * Styles
    **************************************************/
-  setStyle(propertyName, value) {
+  setStyle (propertyName, value) {
     propertyName = propertyName.startsWith('--')
       ? propertyName
-      : toCamel(propertyName);
+      : toCamel(propertyName)
 
     if (this._style[propertyName] !== value) {
-      this._style[propertyName] = value;
-      this.onChange();
+      this._style[propertyName] = value
+      this.onChange()
     }
   }
 
   /**************************************************
    * Events
    **************************************************/
-  addEventListener(evtName, callback) {
-    const propName = reactPropFromEventName(evtName);
+  addEventListener (evtName, callback) {
+    const propName = reactPropFromEventName(evtName)
     if (this._events[propName] !== callback) {
-      this._events[propName] = callback;
-      this.onChange();
+      this._events[propName] = callback
+      this.onChange()
     }
   }
 
-  removeEventListener(evtName/*, callback*/) {
-    const propName = reactPropFromEventName(evtName);
+  removeEventListener (evtName/*, callback */) {
+    const propName = reactPropFromEventName(evtName)
     if (this._events[propName]) {
-      delete this._events[propName];
-      this.onChange();
+      delete this._events[propName]
+      this.onChange()
     }
   }
 
   /**************************************************
    * Refs
    **************************************************/
-  setRef(el) {
+  setRef (el) {
     if (el) {
-      this._ref = el;
+      this._ref = el
     }
   }
 
-  get ref() {
-    return this._ref;
+  get ref () {
+    return this._ref
   }
 }
 
@@ -182,12 +181,10 @@ const emitFactory = (props) => (
   evtData,
   shouldBubble = false
 ) => {
-  let evt;
-
-  evt = new CustomEvent(evtType, {
+  const evt = new CustomEvent(evtType, {
     detail: evtData,
     bubbles: shouldBubble
-  });
+  })
 
   // bugfix for events coming from form elements
   // and also fits with reacts form pattern better...
@@ -196,20 +193,20 @@ const emitFactory = (props) => (
   Object.defineProperty(evt, 'target', {
     value: evtData,
     writable: false
-  });
+  })
 
   Object.defineProperty(evt, 'currentTarget', {
     value: evtData,
     writable: false
-  });
+  })
 
   // Custom handling for React
-  const propName = evtType;
+  const propName = evtType
 
-  props[propName] && props[propName](evt);
+  props[propName] && props[propName](evt)
 
-  return evt;
-};
+  return evt
+}
 
 export const useFoundation = (
   {
@@ -219,22 +216,21 @@ export const useFoundation = (
     api
   }
 ) => {
-  const [, setIteration] = useState(0);
+  const [, setIteration] = useState(0)
 
-  const props = useRef(inputProps);
-  props.current = inputProps;
+  const props = useRef(inputProps)
+  props.current = inputProps
 
   const elements = useMemo(
     () =>
       Object.keys(elementsInput).reduce((acc, key) => {
         acc[key] = new FoundationElement(() => {
-          setIteration((val) => val + 1);
-        });
-        return acc;
+          setIteration((val) => val + 1)
+        })
+        return acc
       }, {}),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
-  );
+  )
 
   const foundation = useMemo(() => {
     // init foundation
@@ -242,30 +238,28 @@ export const useFoundation = (
       ...elements,
       getProps: () => props.current,
       emit: (...args) => emitFactory(props.current)(...args)
-    });
+    })
 
     // handle apiRefs
-    api && handleRef(props.current.apiRef, api({ foundation: f, ...elements }));
+    api && handleRef(props.current.apiRef, api({ foundation: f, ...elements }))
 
-    return f;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    return f
+  }, [])
 
   useEffect(() => {
-    const f = foundation;
-    f.init();
-    api && handleRef(props.current.apiRef, api({ foundation: f, ...elements }));
-    handleRef(props.current.foundationRef, f);
+    const f = foundation
+    f.init()
+    api && handleRef(props.current.apiRef, api({ foundation: f, ...elements }))
+    handleRef(props.current.foundationRef, f)
 
     return () => {
-      f.destroy();
-      handleRef(props.current.apiRef, null);
-      handleRef(props.current.foundationRef, null);
-      Object.values(elements).map((element) => element.destroy());
-      props.current = {};
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [foundation, elements]);
+      f.destroy()
+      handleRef(props.current.apiRef, null)
+      handleRef(props.current.foundationRef, null)
+      Object.values(elements).map((element) => element.destroy())
+      props.current = {}
+    }
+  }, [foundation, elements])
 
-  return { foundation: foundation, ...elements };
-};
+  return { foundation: foundation, ...elements }
+}

@@ -1,1 +1,1 @@
-import '@pmwc/tooltip/tooltip.css';
+import '@pmwc/tooltip/tooltip.css'

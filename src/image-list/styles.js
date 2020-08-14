@@ -1,1 +1,1 @@
-import '@material/image-list/dist/mdc.image-list.css';
+import '@material/image-list/dist/mdc.image-list.css'

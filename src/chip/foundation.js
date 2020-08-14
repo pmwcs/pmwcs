@@ -1,10 +1,10 @@
-import { useEffect, useCallback } from 'preact/hooks';
+import { useEffect, useCallback } from 'preact/hooks'
 
-import { useId, emptyClientRect, useFoundation } from '@pmwc/base';
-import { MDCChipFoundation } from '@material/chips';
+import { useId, emptyClientRect, useFoundation } from '@pmwc/base'
+import { MDCChipFoundation } from '@material/chips'
 
 export const useChipFoundation = (props) => {
-  const chipId = useId('chip', props);
+  const chipId = useId('chip', props)
 
   const foundationWithElements = useFoundation({
     props,
@@ -16,7 +16,7 @@ export const useChipFoundation = (props) => {
     foundation: ({ rootEl, checkmarkEl, emit, getProps }) =>
       new MDCChipFoundation({
         addClass: (className) => {
-          rootEl.addClass(className);
+          rootEl.addClass(className)
         },
         removeClass: (className) => rootEl.removeClass(className),
         hasClass: (className) => rootEl.hasClass(className),
@@ -29,7 +29,7 @@ export const useChipFoundation = (props) => {
         eventTargetHasClass: (target, className) => {
           return (
             rootEl.hasClass(className) || target.classList.contains(className)
-          );
+          )
         },
         notifyInteraction: () =>
           emit('onInteraction', { chipId }, true /* shouldBubble */),
@@ -52,14 +52,14 @@ export const useChipFoundation = (props) => {
             true /* shouldBubble */
           ),
         notifyNavigation: (key, source) => {
-          //TODO, but probably not needed in case of React
+          // TODO, but probably not needed in case of React
         },
         getComputedStyleValue: (propertyName) =>
           rootEl.ref
             ? window.getComputedStyle(rootEl.ref).getPropertyValue(propertyName)
             : '',
         setStyleProperty: (propertyName, value) => {
-          rootEl.setStyle(propertyName, value);
+          rootEl.setStyle(propertyName, value)
         },
         getAttribute: (attrName) => rootEl.ref?.getAttribute(attrName),
         hasLeadingIcon: () => !!props.icon,
@@ -74,69 +74,69 @@ export const useChipFoundation = (props) => {
           // Not clear in documentation what this should be used for
         },
         hasTrailingAction: () => {
-          return !!getProps().trailingIcon;
+          return !!getProps().trailingIcon
         },
         setTrailingActionAttr: (attr, value) => {
-          const safeAttr = attr === 'tabindex' ? 'tabIndex' : attr;
-          trailingIconEl.setProp(safeAttr, value);
+          const safeAttr = attr === 'tabindex' ? 'tabIndex' : attr
+          trailingIconEl.setProp(safeAttr, value)
         },
         focusTrailingAction: () => {
-          trailingIconEl.ref?.focus();
+          trailingIconEl.ref?.focus()
         },
         isRTL: () => {
           return rootEl.ref
             ? window
-                .getComputedStyle(rootEl.ref)
-                .getPropertyValue('direction') === 'rtl'
-            : false;
+              .getComputedStyle(rootEl.ref)
+              .getPropertyValue('direction') === 'rtl'
+            : false
         }
       })
-  });
+  })
 
-  const { rootEl, trailingIconEl, foundation } = foundationWithElements;
+  const { rootEl, trailingIconEl, foundation } = foundationWithElements
 
   const handleClick = useCallback(
     (evt) => {
       props.onClick?.(evt)
-      return foundation.handleClick(evt);
+      return foundation.handleClick(evt)
     },
     [foundation]
-  );
+  )
 
   const handleKeydown = useCallback(
     (evt) => {
       props.onKeyDown?.(evt)
-      return foundation.handleKeydown(evt);
+      return foundation.handleKeydown(evt)
     },
     [foundation]
-  );
+  )
 
   const handleTransitionEnd = useCallback(
     (evt) => {
-      foundation.handleTransitionEnd(evt);
+      foundation.handleTransitionEnd(evt)
     },
     [foundation]
-  );
+  )
 
   const handleTrailingIconInteraction = useCallback(
     (evt) => {
-      return foundation.handleTrailingActionInteraction(evt);
+      return foundation.handleTrailingActionInteraction(evt)
     },
     [foundation]
-  );
+  )
 
   // Allow customizing the behavior of the trailing icon
   useEffect(() => {
     foundation.setShouldRemoveOnTrailingIconClick(
       props.trailingIconRemovesChip ?? true
-    );
-  }, [foundation, props.trailingIconRemovesChip]);
+    )
+  }, [foundation, props.trailingIconRemovesChip])
 
-  rootEl.setProp('onClick', handleClick, true);
-  rootEl.setProp('onKeyDown', handleKeydown, true);
-  rootEl.setProp('onTransitionEnd', handleTransitionEnd, true);
-  trailingIconEl.setProp('onClick', handleTrailingIconInteraction, true);
-  trailingIconEl.setProp('onKeyDown', handleTrailingIconInteraction, true);
+  rootEl.setProp('onClick', handleClick, true)
+  rootEl.setProp('onKeyDown', handleKeydown, true)
+  rootEl.setProp('onTransitionEnd', handleTransitionEnd, true)
+  trailingIconEl.setProp('onClick', handleTrailingIconInteraction, true)
+  trailingIconEl.setProp('onKeyDown', handleTrailingIconInteraction, true)
 
-  return foundationWithElements;
-};
+  return foundationWithElements
+}

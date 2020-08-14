@@ -1,44 +1,44 @@
 import { h, Fragment } from 'preact'
-import { useState, useEffect, useCallback } from 'preact/hooks';
+import { useState, useEffect, useCallback } from 'preact/hooks'
 
 import {
   Snackbar,
-  SnackbarAction,
-} from './snackbar';
-import { ArrayEmitter } from '@pmwc/base';
+  SnackbarAction
+} from './snackbar'
+import { ArrayEmitter } from '@pmwc/base'
 
 /** A snackbar queue for rendering messages */
-export function SnackbarQueue({
+export function SnackbarQueue ({
   messages,
   ...defaultSnackbarProps
 }) {
-  const currentMessage = messages.array[0];
-  const [, setIteration] = useState(0);
+  const currentMessage = messages.array[0]
+  const [, setIteration] = useState(0)
   const [message, setMessage] = useState(
     messages.array[0]
-  );
+  )
 
   const removeMessage = useCallback(
     (message) => {
-      message && messages.remove(message);
+      message && messages.remove(message)
     },
     [messages]
-  );
+  )
 
   useEffect(() => {
-    let timerId;
+    let timerId
     const doChange = () => {
       if (messages.array[0] !== message) {
-        setIteration(val => val + 1);
-        timerId = window.setTimeout(() => setMessage(messages.array[0]), 150);
+        setIteration(val => val + 1)
+        timerId = window.setTimeout(() => setMessage(messages.array[0]), 150)
       }
-    };
-    messages.on('change', doChange);
+    }
+    messages.on('change', doChange)
     return () => {
-      timerId && clearTimeout(timerId);
-      messages.off('change', doChange);
-    };
-  }, [messages, message]);
+      timerId && clearTimeout(timerId)
+      messages.off('change', doChange)
+    }
+  }, [messages, message])
 
   const {
     body = '',
@@ -47,17 +47,17 @@ export function SnackbarQueue({
     onClose,
     actions,
     ...messageSnackbarProps
-  } = message || {};
+  } = message || {}
 
   const actionProp = actions
-    ? actions.map(({ title, label, ...rest }) => (
-        <SnackbarAction {...rest} label={label || title} />
-      ))
-    : null;
+    ? actions.map(({ title, label, ...rest }, i) => (
+      <SnackbarAction {...rest} key={i} label={label || title} />
+    ))
+    : null
 
   // We are open if we have a message
   // and the current one is the one in state
-  const open = message && message === currentMessage;
+  const open = message && message === currentMessage
 
   return (
     <Snackbar
@@ -71,7 +71,7 @@ export function SnackbarQueue({
           {body}
           {!!image && (
             <div
-              className="rmwc-snackbar__image"
+              className='pmwc-snackbar__image'
               style={{
                 margin: '1rem auto',
                 textAlign: 'center'
@@ -87,28 +87,28 @@ export function SnackbarQueue({
         </Fragment>
       }
       onClose={evt => {
-        onClose?.(evt);
-        removeMessage(message);
+        onClose?.(evt)
+        removeMessage(message)
       }}
       action={actionProp}
     />
-  );
+  )
 }
 
 /** Creates a snackbar queue */
 export const createSnackbarQueue = () => {
-  const messages = new ArrayEmitter();
+  const messages = new ArrayEmitter()
 
   return {
     messages,
     clearAll: () => messages.empty(),
     notify: (message) => {
-      messages.push(message);
+      messages.push(message)
       return {
         close: () => {
-          messages.remove(message);
+          messages.remove(message)
         }
-      };
+      }
     }
-  };
-};
+  }
+}

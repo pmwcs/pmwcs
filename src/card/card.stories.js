@@ -11,7 +11,7 @@ import {
   CardActionIcons,
   CardMedia,
   CardMediaContent,
-  CardPrimaryAction,
+  CardPrimaryAction
 } from './index.js'
 
 import { Typography } from '@pmwc/typography'
@@ -19,63 +19,63 @@ import { ListDivider } from '@pmwc/list'
 
 export default {
   title: 'Card',
-  component: Card,
-};
+  component: Card
+}
 
 export const fullyFeatured = () => (
   <section>
-  <Card style={{ width: '21rem' }}>
-    <CardPrimaryAction>
-      <CardMedia
-        sixteenByNine
-        style={{
-          backgroundImage: 'url(/images/backgrounds/mb-bg-fb-16.png)'
-        }}
-      />
-      <div style={{ padding: '0 1rem 1rem 1rem' }}>
-        <Typography use="headline6" tag="h2">
-          Our Changing Planet
-        </Typography>
-        <Typography
-          use="subtitle2"
-          tag="h3"
-          theme="textSecondaryOnBackground"
-          style={{ marginTop: '-1rem' }}
-        >
-          by Kurt Wagner
-        </Typography>
-        <Typography
-          use="body1"
-          tag="div"
-          theme="textSecondaryOnBackground"
-        >
-          Visit ten places on our planet that are undergoing the biggest
-          changes today.
-        </Typography>
-      </div>
-    </CardPrimaryAction>
-    <CardActions>
-      <CardActionButtons>
-        <CardActionButton>Read</CardActionButton>
-        <CardActionButton>Bookmark</CardActionButton>
-      </CardActionButtons>
-      <CardActionIcons>
-        <CardActionIcon onIcon="favorite" icon="favorite_border" />
-        <CardActionIcon icon="share" />
-        <CardActionIcon icon="more_vert" />
-      </CardActionIcons>
-    </CardActions>
-  </Card>
+    <Card style={{ width: '21rem' }}>
+      <CardPrimaryAction>
+        <CardMedia
+          sixteenByNine
+          style={{
+            backgroundImage: 'url(/images/backgrounds/mb-bg-fb-16.png)'
+          }}
+        />
+        <div style={{ padding: '0 1rem 1rem 1rem' }}>
+          <Typography use='headline6' tag='h2'>
+            Our Changing Planet
+          </Typography>
+          <Typography
+            use='subtitle2'
+            tag='h3'
+            theme='textSecondaryOnBackground'
+            style={{ marginTop: '-1rem' }}
+          >
+            by Kurt Wagner
+          </Typography>
+          <Typography
+            use='body1'
+            tag='div'
+            theme='textSecondaryOnBackground'
+          >
+            Visit ten places on our planet that are undergoing the biggest
+            changes today.
+          </Typography>
+        </div>
+      </CardPrimaryAction>
+      <CardActions>
+        <CardActionButtons>
+          <CardActionButton>Read</CardActionButton>
+          <CardActionButton>Bookmark</CardActionButton>
+        </CardActionButtons>
+        <CardActionIcons>
+          <CardActionIcon onIcon='favorite' icon='favorite_border' />
+          <CardActionIcon icon='share' />
+          <CardActionIcon icon='more_vert' />
+        </CardActionIcons>
+      </CardActions>
+    </Card>
   </section>
 )
 
 export const articlePreview = () => (
   <Card outlined style={{ width: '21rem' }}>
     <Typography
-      use="subtitle1"
-      tag="div"
+      use='subtitle1'
+      tag='div'
       style={{ padding: '0.5rem 1rem' }}
-      theme="textSecondaryOnBackground"
+      theme='textSecondaryOnBackground'
     >
       Headlines
     </Typography>
@@ -84,10 +84,10 @@ export const articlePreview = () => (
 
     <CardPrimaryAction>
       <div style={{ padding: '1rem' }}>
-        <Typography use="headline5" tag="div">
+        <Typography use='headline5' tag='div'>
           Copper on the rise
         </Typography>
-        <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
+        <Typography use='body1' tag='p' theme='textSecondaryOnBackground'>
           Copper price soars amid global market optimism and increased
           demand.
         </Typography>
@@ -98,10 +98,10 @@ export const articlePreview = () => (
 
     <CardPrimaryAction>
       <div style={{ padding: '1rem' }}>
-        <Typography use="headline5" tag="div">
+        <Typography use='headline5' tag='div'>
           U.S. tech startups rebound
         </Typography>
-        <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
+        <Typography use='body1' tag='p' theme='textSecondaryOnBackground'>
           Favorable business conditions have allowed startups to secure
           more fundraising deals compared to last year.
         </Typography>
@@ -112,10 +112,10 @@ export const articlePreview = () => (
 
     <CardPrimaryAction>
       <div style={{ padding: '1rem' }}>
-        <Typography use="headline5" tag="div">
+        <Typography use='headline5' tag='div'>
           Asia's clean energy ambitions
         </Typography>
-        <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
+        <Typography use='body1' tag='p' theme='textSecondaryOnBackground'>
           China plans to invest billions of dollars for the development of
           over 300 clean energy projects in Southeast Asia.
         </Typography>
@@ -126,8 +126,8 @@ export const articlePreview = () => (
 
     <CardActions fullBleed>
       <CardActionButton
-        label="All Business Headlines"
-        trailingIcon="arrow_forward"
+        label='All Business Headlines'
+        trailingIcon='arrow_forward'
       />
     </CardActions>
   </Card>
@@ -144,9 +144,9 @@ export const miniCard = () => (
       >
         <CardMediaContent>
           <Typography
-            use="subtitle2"
-            tag="div"
-            theme="textPrimaryOnDark"
+            use='subtitle2'
+            tag='div'
+            theme='textPrimaryOnDark'
             style={{
               padding: '0.5rem 1rem',
               backgroundImage:
@@ -164,9 +164,9 @@ export const miniCard = () => (
     </CardPrimaryAction>
     <CardActions>
       <CardActionIcons>
-        <CardActionIcon onIcon="favorite" icon="favorite_border" />
-        <CardActionIcon icon="bookmark_border" />
-        <CardActionIcon icon="share" />
+        <CardActionIcon onIcon='favorite' icon='favorite_border' />
+        <CardActionIcon icon='bookmark_border' />
+        <CardActionIcon icon='share' />
       </CardActionIcons>
     </CardActions>
   </Card>

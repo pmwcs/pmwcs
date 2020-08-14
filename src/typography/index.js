@@ -1,6 +1,6 @@
-import {h, createElement} from 'preact'
-import {useProviderContext} from '@pmwc/provider'
-import {useClassNames} from '@pmwc/base'
+import { createElement } from 'preact'
+import { useProviderContext } from '@pmwc/provider'
+import { useClassNames } from '@pmwc/base'
 
 const SPAN = 'span'
 
@@ -21,10 +21,10 @@ const use2tag = {
 }
 
 /** The Typography Component */
-export function Typography(props) {
-  const {use, ...rest} = props;
-  const providerContext = useProviderContext();
-  const typographyOptions = providerContext.typography;
+export function Typography (props) {
+  const { use, ...rest } = props
+  const providerContext = useProviderContext()
+  const typographyOptions = providerContext.typography
   const tag = (typographyOptions === null || typographyOptions === undefined
     ? use2tag[use] || SPAN
     : typographyOptions[use] || typographyOptions.defaultTag || SPAN
@@ -32,7 +32,7 @@ export function Typography(props) {
 
   const className = useClassNames(props, [{
     [`mdc-typography--${props.use}`]: props.use
-  }]);
+  }])
 
   return createElement(tag, { ...rest, className })
 }

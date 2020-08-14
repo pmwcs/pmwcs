@@ -9,42 +9,42 @@ import {
 
 export default {
   title: 'Radio',
-  component: Radio,
-};
+  component: Radio
+}
 
 export const all = () => (
   <section>
-  <Radio
-    label="Cookies"
-    value="cookies"
-    name="myRadioGroup"
-    onChange={evt => console.log(evt.currentTarget.value)}
-  />
+    <Radio
+      label='Cookies'
+      value='cookies'
+      name='myRadioGroup'
+      onChange={evt => console.log(evt.currentTarget.value)}
+    />
 
-  <Radio
-    label="Pizza"
-    value="pizza"
-    name="myRadioGroup"
-    onChange={evt => console.log(evt.currentTarget.value)}
-  />
+    <Radio
+      label='Pizza'
+      value='pizza'
+      name='myRadioGroup'
+      onChange={evt => console.log(evt.currentTarget.value)}
+    />
 
-  <Radio
-    label="Icecream"
-    value="icecream"
-    name="myRadioGroup"
-    onChange={evt => console.log(evt.currentTarget.value)}
-  />
+    <Radio
+      label='Icecream'
+      value='icecream'
+      name='myRadioGroup'
+      onChange={evt => console.log(evt.currentTarget.value)}
+    />
   </section>
 )
 
 export const withState = () => {
-  function Example() {
-    const [value, setValue] = useState('cookies');
+  function Example () {
+    const [value, setValue] = useState('cookies')
 
     return (
       <section>
         <Radio
-          value="cookies"
+          value='cookies'
           checked={value === 'cookies'}
           onChange={evt => setValue(String(evt.currentTarget.value))}
         >
@@ -52,7 +52,7 @@ export const withState = () => {
         </Radio>
 
         <Radio
-          value="pizza"
+          value='pizza'
           checked={value === 'pizza'}
           onChange={evt => setValue(String(evt.currentTarget.value))}
         >
@@ -60,7 +60,7 @@ export const withState = () => {
         </Radio>
 
         <Radio
-          value="icecream"
+          value='icecream'
           checked={value === 'icecream'}
           onChange={evt => setValue(String(evt.currentTarget.value))}
         >

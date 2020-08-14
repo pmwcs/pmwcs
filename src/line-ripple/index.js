@@ -1,22 +1,22 @@
 import { h } from 'preact'
 
-import { useLineRippleFoundation } from './foundation';
-import { createComponent, Tag } from '@pmwc/base';
+import { useLineRippleFoundation } from './foundation'
+import { createComponent, Tag } from '@pmwc/base'
 
-export const LineRipple = createComponent(function LineRipple(
+export const LineRipple = createComponent(function LineRipple (
   props,
   ref
 ) {
-  const { active, center, ...rest } = props;
-  const { rootEl } = useLineRippleFoundation(props);
+  const { active, center, ...rest } = props
+  const { rootEl } = useLineRippleFoundation(props)
 
   return (
     <Tag
       {...rest}
-      tag="span"
+      tag='span'
       element={rootEl}
-      className="mdc-line-ripple"
+      className='mdc-line-ripple'
       ref={ref}
     />
-  );
-});
+  )
+})

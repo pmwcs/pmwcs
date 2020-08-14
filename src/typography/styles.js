@@ -1,1 +1,1 @@
-import '@material/typography/dist/mdc.typography.css';
+import '@material/typography/dist/mdc.typography.css'

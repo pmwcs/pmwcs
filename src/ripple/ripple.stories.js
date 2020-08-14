@@ -9,8 +9,8 @@ import {
 
 export default {
   title: 'Ripple',
-  component: Ripple,
-};
+  component: Ripple
+}
 
 export const standard = () => (
   <Ripple>

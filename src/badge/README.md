@@ -1,4 +1,4 @@
-# Badges `RMWC ADDON`
+# Badges `PMWC ADDON`
 
 > Badges are small status descriptors for UI elements. A badge consists of a small circle, typically containing a number or other short set of characters, that appears in proximity to another object.
 
@@ -36,7 +36,7 @@
 
 ## Usage with other components
 
-The badge component has been designed to play well with the majority of components in RMWC. You can place it inside of any component that accepts children and its default position will be absolute to the top end corner.
+The badge component has been designed to play well with the majority of components in PMWC. You can place it inside of any component that accepts children and its default position will be absolute to the top end corner.
 
 Because passing a Badge as a child doesn't always work (for things like `overflow: hidden` elements), you can use the `BadgeAnchor` component. This is really just a div with `position: relative` and some other sensible layout properties set on it, so you can use this or your own CSS to achieve the same result. Additionally, exact positioning is highly dependent on your design and shape of your components. Badges provide an `inset` property that allows you to adjust the positioning of the Badge as necessary.
 

@@ -1,4 +1,4 @@
-.rmwc-circular-progress {
+.pmwc-circular-progress {
   font-size: 1.5rem;
   position: relative;
   display: inline-block;
@@ -9,44 +9,44 @@
   color: var(--mdc-theme-primary, #6200ee);
 }
 
-.rmwc-circular-progress--size-xsmall {
+.pmwc-circular-progress--size-xsmall {
   font-size: 1.125rem;
 }
 
-.rmwc-circular-progress--size-small {
+.pmwc-circular-progress--size-small {
   font-size: 1.25rem;
 }
 
-.rmwc-circular-progress--size-medium {
+.pmwc-circular-progress--size-medium {
   font-size: 1.5rem;
 }
 
-.rmwc-circular-progress--size-large {
+.pmwc-circular-progress--size-large {
   font-size: 2.25rem;
 }
 
-.rmwc-circular-progress--size-xlarge {
+.pmwc-circular-progress--size-xlarge {
   font-size: 3rem;
 }
 
-.rmwc-circular-progress--indeterminate .rmwc-circular-progress__circle {
-  animation: rmwc-circular-progress-indeterminate-bar-rotate 2s linear infinite;
+.pmwc-circular-progress--indeterminate .pmwc-circular-progress__circle {
+  animation: pmwc-circular-progress-indeterminate-bar-rotate 2s linear infinite;
 }
 
-.rmwc-circular-progress--indeterminate .rmwc-circular-progress__path {
-  animation: rmwc-circular-progress-indeterminate-bar-dash 1.5s ease-in-out
+.pmwc-circular-progress--indeterminate .pmwc-circular-progress__path {
+  animation: pmwc-circular-progress-indeterminate-bar-dash 1.5s ease-in-out
     infinite;
 
   stroke-dasharray: 2.08%, 416%;
   stroke-dashoffset: 0;
 }
 
-.rmwc-circular-progress__circle {
+.pmwc-circular-progress__circle {
   height: 100%;
   width: 100%;
 }
 
-.rmwc-circular-progress__path {
+.pmwc-circular-progress__path {
   -webkit-transition: stroke-dasharray 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   transition: stroke-dasharray 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   fill: none;
@@ -58,22 +58,22 @@
   stroke: currentColor;
 }
 
-.rmwc-circular-progress--thickerstroke .rmwc-circular-progress__path {
+.pmwc-circular-progress--thickerstroke .pmwc-circular-progress__path {
   stroke-width: 0.25rem;
 }
 
 /** Overrides for icons */
-.rmwc-icon .rmwc-circular-progress {
+.pmwc-icon .pmwc-circular-progress {
   font-size: inherit;
 }
 
-@keyframes rmwc-circular-progress-indeterminate-bar-rotate {
+@keyframes pmwc-circular-progress-indeterminate-bar-rotate {
   100% {
     transform: rotate(360deg);
   }
 }
 
-@keyframes rmwc-circular-progress-indeterminate-bar-dash {
+@keyframes pmwc-circular-progress-indeterminate-bar-dash {
   0% {
     stroke-dasharray: 2.08%, 416%;
     stroke-dashoffset: 0%;

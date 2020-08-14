@@ -6,8 +6,8 @@ import { Typography } from './index.js'
 
 export default {
   title: 'Typography',
-  component: Typography,
-};
+  component: Typography
+}
 
 export const all = () => (
   <section className='mdc-typography'>
@@ -29,6 +29,6 @@ export const all = () => (
     </div>
     <div>
       <Typography use='overlay'>Overlay</Typography>
-    </div >
+    </div>
   </section>
 )

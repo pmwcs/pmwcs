@@ -9,6 +9,6 @@ export const raf = (
   _iteration = 1
 ) => {
   window.requestAnimationFrame(() => {
-    _iteration >= frames ? callback() : raf(callback, frames, _iteration + 1);
-  });
-};
+    _iteration >= frames ? callback() : raf(callback, frames, _iteration + 1)
+  })
+}

@@ -126,7 +126,7 @@ function Example() {
 
 ## Form Controls
 
-DataTables play nice with the rest of the RMWC form controls. You are responsible for scripting your own selection behavior.
+DataTables play nice with the rest of the PMWC form controls. You are responsible for scripting your own selection behavior.
 
 ```jsx
 function Example() {

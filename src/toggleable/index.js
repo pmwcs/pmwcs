@@ -1,12 +1,12 @@
-import { h } from 'preact';
+import { h } from 'preact'
 
-import { useId } from '@pmwc/base';
-import { FormField } from '@pmwc/formfield';
+import { useId } from '@pmwc/base'
+import { FormField } from '@pmwc/formfield'
 
-export function useToggleFoundation(props) {
-  const { className, style, rootProps, label, children, disabled } = props;
-  const hasLabel = props.label || props.children;
-  const id = useId('toggle-', props);
+export function useToggleFoundation (props) {
+  const { className, style, rootProps, label, children, disabled } = props
+  const hasLabel = props.label || props.children
+  const id = useId('toggle-', props)
 
   const renderToggle = (toggle) => {
     /**
@@ -22,24 +22,24 @@ export function useToggleFoundation(props) {
             {children}
           </label>
         </FormField>
-      );
+      )
     } else {
-      return toggle;
+      return toggle
     }
-  };
+  }
 
   const toggleRootProps = hasLabel
     ? { disabled }
     : {
-        className,
-        style,
-        disabled,
-        ...rootProps
-      };
+      className,
+      style,
+      disabled,
+      ...rootProps
+    }
 
   return {
     id,
     renderToggle,
     toggleRootProps
-  };
+  }
 }

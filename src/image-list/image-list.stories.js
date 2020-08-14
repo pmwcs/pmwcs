@@ -9,13 +9,13 @@ import {
   ImageListImageAspectContainer,
   ImageListImage,
   ImageListSupporting,
-  ImageListLabel,
+  ImageListLabel
 } from './index.js'
 
 export default {
   title: 'ImageList',
-  component: ImageList,
-};
+  component: ImageList
+}
 
 export const standardLayout = () => (
   <section>

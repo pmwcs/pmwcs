@@ -6,16 +6,16 @@ import './styles.js'
 
 import {
   Slider
-} from './index.js';
+} from './index.js'
 
 export default {
   title: 'Slider',
-  component: Slider,
-};
+  component: Slider
+}
 
 export const basic = () => {
-  function Example() {
-    const [value, setValue] = useState(50);
+  function Example () {
+    const [value, setValue] = useState(50)
     // onInput is required and will fire continuously.
     // onChange is optional and fires at the end of the interaction
     return (
@@ -26,7 +26,7 @@ export const basic = () => {
         discrete
         step={1}
       />
-    );
+    )
   }
 
   return (
@@ -36,7 +36,7 @@ export const basic = () => {
         onChange={evt => console.log(evt)}
       />
 
-      <Example/>
+      <Example />
 
       <Slider discrete displayMarkers min={100} max={200} step={5} />
 

@@ -10,7 +10,7 @@ import {
   MenuSurfaceAnchor,
   SimpleMenu,
   SimpleMenuSurface
-} from './index.js';
+} from './index.js'
 
 import { ListDivider } from '@pmwc/list'
 import { Button } from '@pmwc/button'
@@ -20,12 +20,12 @@ import { Checkbox } from '@pmwc/checkbox'
 
 export default {
   title: 'Menu',
-  component: Menu,
-};
+  component: Menu
+}
 
 export const basic = () => {
-  function Example() {
-    const [open, setOpen] = useState(false);
+  function Example () {
+    const [open, setOpen] = useState(false)
 
     return (
       <MenuSurfaceAnchor>
@@ -45,15 +45,15 @@ export const basic = () => {
           Menu
         </Button>
       </MenuSurfaceAnchor>
-    );
+    )
   }
 
   return <Example />
 }
 
 export const example = () => {
-  function Example() {
-    const [open, setOpen] = useState(false);
+  function Example () {
+    const [open, setOpen] = useState(false)
 
     return (
       <MenuSurfaceAnchor>
@@ -67,14 +67,14 @@ export const example = () => {
           Menu Surface
         </Button>
       </MenuSurfaceAnchor>
-    );
+    )
   }
-  return <Example/>
+  return <Example />
 }
 
 export const other = () => {
-  function Example() {
-    const [open, setOpen] = useState(false);
+  function Example () {
+    const [open, setOpen] = useState(false)
 
     return (
       <MenuSurfaceAnchor>
@@ -82,52 +82,52 @@ export const other = () => {
           <div style={{ padding: '1rem', width: '8rem' }}>Menu</div>
         </MenuSurface>
         {/** The handle can be any component you want */}
-        <IconButton icon="menu" onClick={evt => setOpen(!open)} />
+        <IconButton icon='menu' onClick={evt => setOpen(!open)} />
       </MenuSurfaceAnchor>
-    );
+    )
   }
 
-  return <Example/>
+  return <Example />
 }
 
 export const simplified = () => (
   <section>
-  <SimpleMenu handle={<Button>Simple Menu</Button>}>
-    <MenuItem>Cookies</MenuItem>
-    <MenuItem>Pizza</MenuItem>
-    <MenuItem>Icecream</MenuItem>
-  </SimpleMenu>
+    <SimpleMenu handle={<Button>Simple Menu</Button>}>
+      <MenuItem>Cookies</MenuItem>
+      <MenuItem>Pizza</MenuItem>
+      <MenuItem>Icecream</MenuItem>
+    </SimpleMenu>
 
-  <p>SimpleMenuSurface</p>
+    <p>SimpleMenuSurface</p>
 
-  <SimpleMenuSurface handle={<Button>Simple Menu Surface</Button>}>
-    <div style={{ padding: '1rem', width: '8rem' }}>
-      Make the content whatever you want.
-    </div>
-  </SimpleMenuSurface>
+    <SimpleMenuSurface handle={<Button>Simple Menu Surface</Button>}>
+      <div style={{ padding: '1rem', width: '8rem' }}>
+        Make the content whatever you want.
+      </div>
+    </SimpleMenuSurface>
   </section>
 )
 
 export const anchoring = () => {
-  function Example() {
+  function Example () {
     const [anchorCorner, setAnchorCorner] = useState(
       'topLeft'
-    );
+    )
 
     return (
       <section>
         <MenuSurfaceAnchor>
-          <MenuSurface anchorCorner={anchorCorner} open={true}>
+          <MenuSurface anchorCorner={anchorCorner} open>
             <div style={{ padding: '1rem', width: '8rem' }}>
               anchorCorner: {anchorCorner}
             </div>
           </MenuSurface>
-          <Button raised label="Anchored Menu" />
+          <Button raised label='Anchored Menu' />
         </MenuSurfaceAnchor>
 
         <Select
           value={anchorCorner}
-          label="anchorCorner"
+          label='anchorCorner'
           onChange={evt => setAnchorCorner(evt.currentTarget.value)}
           options={[
             'topLeft',
@@ -141,15 +141,15 @@ export const anchoring = () => {
           ]}
         />
       </section>
-    );
+    )
   }
-  return <Example/>
+  return <Example />
 }
 
 export const renderThroughPortals = () => {
-  function Example() {
-    const [renderToPortal, setRenderToPortal] = useState(true);
-    const options = ['Cookies', 'Pizza', 'Icecream'];
+  function Example () {
+    const [renderToPortal, setRenderToPortal] = useState(true)
+    const options = ['Cookies', 'Pizza', 'Icecream']
     return (
       <section>
         <div
@@ -171,10 +171,10 @@ export const renderThroughPortals = () => {
         <Checkbox
           checked={renderToPortal}
           onChange={evt => setRenderToPortal(evt.currentTarget.checked)}
-          label="renderToPortal"
+          label='renderToPortal'
         />
       </section>
-    );
+    )
   }
-  return <Example/>
+  return <Example />
 }

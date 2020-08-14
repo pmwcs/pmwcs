@@ -1,1 +1,1 @@
-import '@material/elevation/dist/mdc.elevation.css';
+import '@material/elevation/dist/mdc.elevation.css'

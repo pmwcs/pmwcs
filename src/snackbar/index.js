@@ -1,2 +1,2 @@
-export * from './snackbar';
-export * from './snackbar-queue';
+export * from './snackbar'
+export * from './snackbar-queue'

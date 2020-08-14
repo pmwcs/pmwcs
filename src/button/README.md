@@ -75,12 +75,12 @@ The Button component.
 | `danger` | `undefined \| false \| true` | Used to indicate a dangerous action. |
 | `dense` | `undefined \| false \| true` | Make the Button dense. |
 | `disabled` | `undefined \| false \| true` | Make the button disabled |
-| `icon` | `RMWC.IconPropT` | An Icon for the Button |
+| `icon` | `PMWC.IconPropT` | An Icon for the Button |
 | `label` | `React.ReactNode \| any` | Content specified as a label prop. |
 | `outlined` | `undefined \| false \| true` | Make the button outlined. |
 | `raised` | `undefined \| false \| true` | Make the Button raised. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `trailingIcon` | `RMWC.IconPropT` | A trailing icon for the Button |
+| `trailingIcon` | `PMWC.IconPropT` | A trailing icon for the Button |
 | `unelevated` | `undefined \| false \| true` | Make the button unelevated. |
 
 ## References

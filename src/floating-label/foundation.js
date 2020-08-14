@@ -1,7 +1,7 @@
-import { useEffect } from 'preact/hooks';
+import { useEffect } from 'preact/hooks'
 
-import { useFoundation } from '@pmwc/base';
-import { MDCFloatingLabelFoundation } from '@material/floating-label';
+import { useFoundation } from '@pmwc/base'
+import { MDCFloatingLabelFoundation } from '@material/floating-label'
 
 export const useFloatingLabelFoundation = (props) => {
   const { foundation, ...elements } = useFoundation({
@@ -13,10 +13,10 @@ export const useFloatingLabelFoundation = (props) => {
       foundation
     }) => {
       return {
-        getWidth() {
-          return foundation.getWidth();
+        getWidth () {
+          return foundation.getWidth()
         }
-      };
+      }
     },
     foundation: ({ rootEl }) => {
       return new MDCFloatingLabelFoundation({
@@ -31,19 +31,19 @@ export const useFloatingLabelFoundation = (props) => {
           evtType,
           handler
         ) => rootEl.removeEventListener(evtType, handler)
-      });
+      })
     }
-  });
+  })
 
   // Shake
   useEffect(() => {
-    foundation.shake(!!props.shake);
-  }, [props.shake, foundation]);
+    foundation.shake(!!props.shake)
+  }, [props.shake, foundation])
 
   // Float
   useEffect(() => {
-    foundation.float(!!props.float);
-  }, [props.float, foundation]);
+    foundation.float(!!props.float)
+  }, [props.float, foundation])
 
-  return { foundation, ...elements };
-};
+  return { foundation, ...elements }
+}

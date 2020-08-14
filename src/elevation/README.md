@@ -2,10 +2,10 @@
 
 > Elevation is the relative distance between two surfaces along the z-axis.
 
-- Module **@rmwc/elevation**
+- Module **@pmwc/elevation**
 - Import styles:
   - Using CSS Loader
-    - import '@rmwc/elevation/styles';
+    - import '@pmwc/elevation/styles';
   - Or include stylesheets
     - **'@material/elevation/dist/mdc.elevation.css'**
 - MDC Docs: [https://material.io/develop/web/components/elevation/](https://material.io/develop/web/components/elevation/)

@@ -1,9 +1,8 @@
-import { TabIndicatorProps, TabIndicatorApi } from './tab-indicator';
-import { useFoundation, emptyClientRect } from '@pmwc/base';
+import { useFoundation, emptyClientRect } from '@pmwc/base'
 import {
   MDCFadingTabIndicatorFoundation,
-  MDCSlidingTabIndicatorFoundation,
-} from '@material/tab-indicator';
+  MDCSlidingTabIndicatorFoundation
+} from '@material/tab-indicator'
 
 export const useTabIndicatorFoundation = (props) => {
   const { foundation, ...elements } = useFoundation({
@@ -12,10 +11,10 @@ export const useTabIndicatorFoundation = (props) => {
     foundation: ({ rootEl, contentEl }) => {
       const adapter = {
         addClass: (className) => {
-          rootEl.addClass(className);
+          rootEl.addClass(className)
         },
         removeClass: (className) => {
-          rootEl.removeClass(className);
+          rootEl.removeClass(className)
         },
         computeContentClientRect: () => {
           return contentEl.ref?.getBoundingClientRect
@@ -23,32 +22,32 @@ export const useTabIndicatorFoundation = (props) => {
             : emptyClientRect
         },
         setContentStyleProperty: (prop, value) => {
-          contentEl.setStyle(prop, value);
+          contentEl.setStyle(prop, value)
         }
-      };
-
-      if (props.transition === 'fade') {
-        return new MDCFadingTabIndicatorFoundation(adapter);
       }
 
-      return new MDCSlidingTabIndicatorFoundation(adapter);
+      if (props.transition === 'fade') {
+        return new MDCFadingTabIndicatorFoundation(adapter)
+      }
+
+      return new MDCSlidingTabIndicatorFoundation(adapter)
     },
     api: ({
       foundation
     }) => {
       return {
         activate: (previousIndicatorClientRect) => {
-          foundation.activate(previousIndicatorClientRect);
+          foundation.activate(previousIndicatorClientRect)
         },
         deactivate: () => {
-          foundation.deactivate();
+          foundation.deactivate()
         },
         computeContentClientRect: () => {
-          return foundation.computeContentClientRect();
+          return foundation.computeContentClientRect()
         }
-      };
+      }
     }
-  });
+  })
 
-  return { ...elements };
-};
+  return { ...elements }
+}

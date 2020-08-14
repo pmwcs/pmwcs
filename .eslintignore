@@ -1,2 +1,4 @@
 src/**/dist
 src/**/next
+src/pmwc/docs
+**/tmp.*

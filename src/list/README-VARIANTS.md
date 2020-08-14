@@ -241,7 +241,7 @@ A graphic / icon for the ListItem
 
 | Name | Type | Description |
 |------|------|-------------|
-| `icon` | `RMWC.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
+| `icon` | `PMWC.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
 
 
 ## ListItemMeta
@@ -251,7 +251,7 @@ Meta content for the ListItem. This can either by an icon by setting the `icon` 
 
 | Name | Type | Description |
 |------|------|-------------|
-| `icon` | `RMWC.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
+| `icon` | `PMWC.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
 
 
 ## ListDivider
@@ -279,9 +279,9 @@ A simple list item template.
 | `activated` | `undefined \| false \| true` | A modifier for an active state. |
 | `children` | `React.ReactNode` | Children to render |
 | `disabled` | `undefined \| false \| true` | A modifier for a disabled state. |
-| `graphic` | `RMWC.IconPropT` | A graphic icon for the ListItem. |
+| `graphic` | `PMWC.IconPropT` | A graphic icon for the ListItem. |
 | `meta` | `React.ReactNode` | Meta content for the ListItem instead of an icon. |
-| `metaIcon` | `RMWC.IconPropT` | A meta icon for the ListItem |
+| `metaIcon` | `PMWC.IconPropT` | A meta icon for the ListItem |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `secondaryText` | `React.ReactNode` | Secondary Text for the ListItem. |
 | `selected` | `undefined \| false \| true` | A modifier for a selected state. |

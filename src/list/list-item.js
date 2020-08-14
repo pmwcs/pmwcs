@@ -1,13 +1,13 @@
 import { h, cloneElement, isValidElement } from 'preact'
 
-import { classNames, useClassNames, Tag, createComponent } from '@pmwc/base';
-import { withRipple } from '@pmwc/ripple';
-import { Icon } from '@pmwc/icon';
+import { classNames, useClassNames, Tag, createComponent } from '@pmwc/base'
+import { withRipple } from '@pmwc/ripple'
+import { Icon } from '@pmwc/icon'
 
 /** A ListItem component. */
 export const ListItem = withRipple({ surface: false })(
-  createComponent(function ListItem(props, ref) {
-    const { selected, activated, disabled, ...rest } = props;
+  createComponent(function ListItem (props, ref) {
+    const { selected, activated, disabled, ...rest } = props
     const className = useClassNames(props, [
       'mdc-list-item',
       {
@@ -15,101 +15,101 @@ export const ListItem = withRipple({ surface: false })(
         'mdc-list-item--activated': props.activated,
         'mdc-list-item--disabled': props.disabled
       }
-    ]);
+    ])
     return (
-      <Tag tag="li" tabIndex={0} {...rest} className={className} ref={ref} />
-    );
+      <Tag tag='li' tabIndex={0} {...rest} className={className} ref={ref} />
+    )
   })
-);
+)
 
 /** Text Wrapper for the ListItem */
 export const ListItemText = createComponent(
-  function ListItemText(props, ref) {
-    const className = useClassNames(props, ['mdc-list-item__text']);
-    return <Tag tag="span" {...props} ref={ref} className={className} />;
+  function ListItemText (props, ref) {
+    const className = useClassNames(props, ['mdc-list-item__text'])
+    return <Tag tag='span' {...props} ref={ref} className={className} />
   }
-);
+)
 
 /** Primary Text for the ListItem */
 export const ListItemPrimaryText = createComponent(
-  function ListItemPrimaryText(props, ref) {
-    const className = useClassNames(props, ['mdc-list-item__primary-text']);
-    return <Tag tag="span" {...props} ref={ref} className={className} />;
+  function ListItemPrimaryText (props, ref) {
+    const className = useClassNames(props, ['mdc-list-item__primary-text'])
+    return <Tag tag='span' {...props} ref={ref} className={className} />
   }
-);
+)
 
 /** Secondary text for the ListItem */
-export const ListItemSecondaryText = createComponent(function ListItemSecondaryText(props, ref) {
-  const className = useClassNames(props, ['mdc-list-item__secondary-text']);
-  return <Tag tag="span" {...props} ref={ref} className={className} />;
-});
+export const ListItemSecondaryText = createComponent(function ListItemSecondaryText (props, ref) {
+  const className = useClassNames(props, ['mdc-list-item__secondary-text'])
+  return <Tag tag='span' {...props} ref={ref} className={className} />
+})
 
 /** A graphic / icon for the ListItem */
 export const ListItemGraphic = createComponent(
-  function ListItemGraphic(props, ref) {
-    const className = useClassNames(props, ['mdc-list-item__graphic']);
+  function ListItemGraphic (props, ref) {
+    const className = useClassNames(props, ['mdc-list-item__graphic'])
     return (
-      <Icon {...props} aria-hidden="true" ref={ref} className={className} />
-    );
+      <Icon {...props} aria-hidden='true' ref={ref} className={className} />
+    )
   }
-);
+)
 
 /** Meta content for the ListItem. This can either by an icon by setting the `icon` prop, or any other kind of content. */
 export const ListItemMeta = createComponent(
-  function ListItemMeta(props, ref) {
-    const className = useClassNames(props, ['mdc-list-item__meta']);
+  function ListItemMeta (props, ref) {
+    const className = useClassNames(props, ['mdc-list-item__meta'])
 
-    if (!!props.icon) {
+    if (props.icon) {
       return (
-        <Icon {...props} aria-hidden="true" ref={ref} className={className} />
-      );
+        <Icon {...props} aria-hidden='true' ref={ref} className={className} />
+      )
     }
 
     if (isValidElement(props.children)) {
-      const { children, ...rest } = props;
+      const { children, ...rest } = props
       return cloneElement(props.children, {
         ...rest,
         ...props.children.props,
         className: classNames(className, props.children.props.className)
-      });
+      })
     }
 
-    return <Tag {...props} ref={ref} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />
   }
-);
+)
 
 /** A container to group ListItems */
-export const ListGroup = createComponent(function ListGroup(
+export const ListGroup = createComponent(function ListGroup (
   props,
   ref
 ) {
-  const className = useClassNames(props, ['mdc-list-group']);
-  return <Tag {...props} ref={ref} className={className} />;
-});
+  const className = useClassNames(props, ['mdc-list-group'])
+  return <Tag {...props} ref={ref} className={className} />
+})
 
 /** A subheader for the ListGroup */
 export const ListGroupSubheader = createComponent(
-  function ListGroupSubheader(props, ref) {
-    const className = useClassNames(props, ['mdc-list-group__subheader']);
-    return <Tag {...props} ref={ref} className={className} />;
+  function ListGroupSubheader (props, ref) {
+    const className = useClassNames(props, ['mdc-list-group__subheader'])
+    return <Tag {...props} ref={ref} className={className} />
   }
-);
+)
 
 /** A divider for the List */
 export const ListDivider = createComponent(
-  function ListDivider(props, ref) {
-    const className = useClassNames(props, ['mdc-list-divider']);
+  function ListDivider (props, ref) {
+    const className = useClassNames(props, ['mdc-list-divider'])
     return (
       <Tag
-        tag="li"
-        role="separator"
+        tag='li'
+        role='separator'
         {...props}
         ref={ref}
         className={className}
       />
-    );
+    )
   }
-);
+)
 
 /** A simple list item template. */
 export const SimpleListItem = createComponent(
@@ -122,12 +122,12 @@ export const SimpleListItem = createComponent(
         <ListItemPrimaryText>{text}</ListItemPrimaryText>
       ) : (
         text
-      );
+      )
 
     const secondaryTextToRender =
       secondaryText !== undefined ? (
         <ListItemSecondaryText>{secondaryText}</ListItemSecondaryText>
-      ) : null;
+      ) : null
 
     return (
       <ListItem {...rest} ref={ref}>
@@ -146,6 +146,6 @@ export const SimpleListItem = createComponent(
 
         {children}
       </ListItem>
-    );
+    )
   }
-);
+)

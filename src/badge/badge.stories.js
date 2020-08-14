@@ -10,32 +10,32 @@ import {
   BadgeAnchor
 } from './index.js'
 
-import {Button} from '@pmwc/button'
-import {IconButton} from '@pmwc/icon-button'
-import {Avatar} from '@pmwc/avatar'
+import { Button } from '@pmwc/button'
+import { IconButton } from '@pmwc/icon-button'
+import { Avatar } from '@pmwc/avatar'
 
 export default {
   title: 'Badge',
-  component: Badge,
-};
+  component: Badge
+}
 
 export const inline = () => (
   <section className='mdc-typography'>
-    <Badge align="inline" />
-    <Badge align="inline" label={20} />
-    <Badge align="inline" label="99+" />
-    <Badge align="inline" label="New" />
+    <Badge align='inline' />
+    <Badge align='inline' label={20} />
+    <Badge align='inline' label='99+' />
+    <Badge align='inline' label='New' />
   </section>
 )
 
 export const styled = () => (
   <section>
-    <Badge theme={['primaryBg', 'onPrimary']} align="inline" />
-    <Badge style={{ background: 'hotpink' }} align="inline" />
+    <Badge theme={['primaryBg', 'onPrimary']} align='inline' />
+    <Badge style={{ background: 'hotpink' }} align='inline' />
     <Badge
       theme={['secondaryBg', 'onSecondary']}
-      align="inline"
-      label="Theme"
+      align='inline'
+      label='Theme'
     />
   </section>
 )
@@ -44,7 +44,7 @@ export const withOtherComponents = () => (
   <section>
     <p>Raised</p>
     <BadgeAnchor>
-      <Button raised label="Button" />
+      <Button raised label='Button' />
       <Badge />
     </BadgeAnchor>
 
@@ -52,33 +52,33 @@ export const withOtherComponents = () => (
     <BadgeAnchor>
       <Button
         raised
-        label="Button"
+        label='Button'
         theme={['secondaryBg', 'onSecondary']}
       />
-      <Badge style={{ background: 'hotpink' }} label="Hello" />
+      <Badge style={{ background: 'hotpink' }} label='Hello' />
     </BadgeAnchor>
 
     <p>On IconButton</p>
     <BadgeAnchor>
-      <IconButton icon="notifications" />
-      <Badge inset="0.75rem" />
+      <IconButton icon='notifications' />
+      <Badge inset='0.75rem' />
     </BadgeAnchor>
 
     <p>On Avatar</p>
     <BadgeAnchor>
       <Avatar
-        src="images/avatars/ironman.png"
-        size="large"
-        name="Tony Stark"
+        src='images/avatars/ironman.png'
+        size='large'
+        name='Tony Stark'
       />
-      <Badge inset="5px" />
+      <Badge inset='5px' />
     </BadgeAnchor>
 
     <BadgeAnchor>
       <Avatar
-        src="images/avatars/blackwidow.png"
-        size="large"
-        name="Natalia Alianovna Romanova"
+        src='images/avatars/blackwidow.png'
+        size='large'
+        name='Natalia Alianovna Romanova'
         square
       />
       <Badge />
@@ -89,45 +89,45 @@ export const withOtherComponents = () => (
 export const alignment = () => (
   <section>
     <BadgeAnchor>
-      <Button raised label="Align Start" />
-      <Badge align="start" />
+      <Button raised label='Align Start' />
+      <Badge align='start' />
     </BadgeAnchor>
 
     <BadgeAnchor>
-      <Button raised label="Align End" />
-      <Badge align="end" />
+      <Button raised label='Align End' />
+      <Badge align='end' />
     </BadgeAnchor>
   </section>
 )
 
 export const transitions = () => {
-  function Example() {
-    const [label, setLabel] = useState(undefined);
+  function Example () {
+    const [label, setLabel] = useState(undefined)
 
     useEffect(() => {
       const timeout = setTimeout(() => {
         switch (label) {
           case '99+':
-            setLabel(undefined);
-            break;
+            setLabel(undefined)
+            break
           case '':
-            setLabel('99+');
-            break;
+            setLabel('99+')
+            break
           case undefined:
-            setLabel('');
-            break;
+            setLabel('')
+            break
         }
-      }, 1800);
+      }, 1800)
 
-      return () => clearTimeout(timeout);
-    }, [label]);
+      return () => clearTimeout(timeout)
+    }, [label])
 
     return (
       <BadgeAnchor>
-        <Button raised label="Button" />
+        <Button raised label='Button' />
         <Badge label={label} exited={label === undefined} />
       </BadgeAnchor>
-    );
+    )
   }
 
   return <Example />

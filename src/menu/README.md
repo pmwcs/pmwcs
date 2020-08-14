@@ -152,7 +152,7 @@ You can specify any element or selector you want, but the simplest method is to 
   // Somewhere at the top level of your app
   // Render the PMWC Portal
   // You only have to do this once
-  import React from 'react';
+  import { h } from 'preact'
   import { Portal } from '@pmwc/base';
 
   export default function App() {

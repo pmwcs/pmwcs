@@ -13,7 +13,10 @@ const rootd = resolve(__dirname, '..')
 const binDir = resolve(rootd, 'node_modules/.bin')
 const babel = resolve(binDir, 'babel')
 
-const BABEL_OPTS = '--source-maps false --ignore "*.stories.js,dist,next,node_modules"'
+const BABEL_OPTS = [
+  '--source-maps false',
+  '--ignore "*.stories.js,*.spec.js,dist,next,node_modules"'
+].join(' ')
 const BABEL_CONFIG_DIST = resolve(__dirname, '../config/babel.dist.js')
 const BABEL_CONFIG_NEXT = resolve(__dirname, '../config/babel.next.js')
 

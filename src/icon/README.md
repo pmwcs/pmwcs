@@ -216,7 +216,7 @@ A more relevant example involves an app that has a custom / existing icon compon
 
   // 3) Instead, you should set the custom strategy to be your default
   // and add your own handling with PMWCProvider
-  import React from 'react';
+  import { h } from 'preact'
   import * as ReactDOM from 'react-dom';
   import App from './App'; // your main app component
   import { PMWCProvider } from '@pmwc/provider';

@@ -1,6 +1,6 @@
 import { h, Fragment } from 'preact'
 import { mount } from 'enzyme'
-import { act } from 'react-dom/test-utils'
+import { act } from 'preact/test-utils'
 
 export const mountHook = (hook) => {
   mount(<HookWrapper hook={hook} />)

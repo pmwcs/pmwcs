@@ -9,27 +9,31 @@
   "sideEffects": true,
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --fix \"**/*.js\"",
+    "all": "npm-run-all clean lint build test",
     "alpha": "lerna publish --dist-tag next",
-    "alpha:major": "lerna publish premajor --dist-tag next",
-    "alpha:minor": "lerna publish preminor --dist-tag next",
-    "alpha:patch": "lerna publish prepatch --dist-tag next",
     "build": "node scripts/build.js",
     "build-storybook": "build-storybook",
     "clean": "rimraf src/**/dist src/**/next src/**/pmwc*.tgz",
     "clean:all": "lerna clean -y && npm run clean",
     "postinstall": "lerna bootstrap --force-local --hoist",
+    "lint": "eslint --fix \"**/*.js\"",
     "pack": "lerna exec npm pack",
-    "release:major": "lerna publish major --dist-tag latest",
-    "release:minor": "lerna publish minor --dist-tag latest",
-    "release:patch": "lerna publish patch --dist-tag latest",
+    "release": "lerna publish --dist-tag latest",
     "storybook": "start-storybook -p 6006 -s ./public",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
     "@babel/plugin-syntax-optional-chaining": "^7.8.3",
     "@babel/plugin-transform-react-jsx": "^7.10.4",
     "@babel/preset-env": "^7.11.0",
@@ -39,9 +43,12 @@
     "@storybook/addons": "^6.0.7",
     "@storybook/preact": "^6.0.7",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "chalk": "^4.1.0",
     "classnames": "^2.2.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-preact-pure": "^2.2.3",
     "eslint": "^7.6.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-config-standard-jsx": "^8.1.0",
@@ -51,14 +58,13 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "glob": "^7.1.6",
+    "jest": "^26.4.0",
     "lerna": "^3.22.1",
     "lodash.merge": "^4.6.2",
     "material-components-web": "^7.0.0",
     "preact": "^10.4.7",
+    "preact-render-to-string": "^5.1.10",
+    "regenerator-runtime": "^0.13.7",
     "rimraf": "^3.0.2"
-  },
-  "peerDependencies": {
-    "classnames": "^2.2.6",
-    "preact": "^10.4.7"
   }
 }

@@ -94,7 +94,7 @@ export const queue = createSnackbarQueue()
 
 // Somewhere at the top level of your app
 // Render the SnackbarQueue
-import React from 'react';
+import { h } from 'preact'
 import { queue } from './myQueue';
 
 export default function App() {

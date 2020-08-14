@@ -1,4 +1,4 @@
-import { h } from 'preact'
+import { h, Fragment } from 'preact'
 import { useState, useEffect } from 'preact/hooks'
 
 import { ArrayEmitter, randomId } from '@pmwc/base'
@@ -47,7 +47,7 @@ export function DialogQueue ({
   let foundOpen = false
 
   return (
-    <>
+    <Fragment>
       {dialogs.array.map(dialog => {
         const { resolve, reject, id, inputProps, ...rest } = dialog
 
@@ -70,7 +70,7 @@ export function DialogQueue ({
 
         return rendered
       })}
-    </>
+    </Fragment>
   )
 }
 

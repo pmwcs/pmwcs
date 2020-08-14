@@ -10,7 +10,7 @@ You can wrap your top level App component with PMWC provider to set global confi
 ```jsx
 
   `
-  import React from 'react';
+  import { h } from 'preact'
   import * as ReactDOM from 'react-dom';
   import App from './App'; // your main app component
   import { PMWCProvider } from '@pmwc/provider';

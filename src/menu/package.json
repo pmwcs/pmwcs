@@ -20,7 +20,8 @@
   "dependencies": {
     "@material/menu": "^7.0.0",
     "@material/menu-surface": "^7.0.0",
-    "@pmwc/base": "^1.0.0-0"
+    "@pmwc/base": "^1.0.0-0",
+    "@pmwc/list": "^1.0.0-0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

@@ -1,4 +1,4 @@
-import { h, Fragment } from 'preact'
+import { h, Fragment, cloneElement } from 'preact'
 
 import { mergeRefs, Tag, useClassNames, createComponent } from '@pmwc/base'
 import {
@@ -9,6 +9,22 @@ import {
 /***************************************************************************************
  * Drawers
  ***************************************************************************************/
+
+const ariaProps = ({ ariaId, type, open = false }) =>
+  !ariaId
+    ? {}
+    : type === 'region'
+      ? {
+        id: `drawer-${ariaId}`,
+        role: 'region',
+        'aria-labelledby': `control-${ariaId}`
+      }
+      : {
+        id: `control-${ariaId}`,
+        role: 'button',
+        'aria-expanded': open,
+        'aria-controls': `drawer-${ariaId}`
+      }
 
 /** A Drawer component. */
 export const Drawer = createComponent(function Drawer (props, ref) {
@@ -31,14 +47,16 @@ const slidableDrawerFactory = (
     ref
   ) {
     const { rootEl, scrimEl } = useDrawerFoundation(props)
-    const { onOpen, onClose, open, foundationRef, ...rest } = props
+    const { ariaId, onOpen, onClose, open, foundationRef, ...rest } = props
+
     return (
       <Fragment>
         <DrawerRoot
           ref={mergeRefs(rootEl.setRef, ref)}
           {...rootEl.props(rest)}
+          {...ariaProps({ ariaId, open, type: 'region' })}
         />
-        {rest.modal && <DrawerScrim {...scrimEl.props({})} />}
+        {rest.modal && <DrawerScrim {...scrimEl.props({})} ariaId={ariaId} />}
       </Fragment>
     )
   })
@@ -62,7 +80,14 @@ const DrawerRoot = createComponent(function DrawerRoot (
     }
   ])
 
-  return <Tag tag='aside' {...rest} ref={ref} className={className} />
+  return (
+    <Tag
+      tag='aside'
+      {...rest}
+      ref={ref}
+      className={className}
+    />
+  )
 })
 
 /***************************************************************************************
@@ -102,14 +127,18 @@ export const DrawerContent = createComponent(
 )
 
 /** Protects the app's UI from interactions while a modal drawer is open. */
+/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 const DrawerScrim = ({
-  onClick
+  onClick,
+  ariaId
 }) => (
   <div
     className='mdc-drawer-scrim'
     onClick={onClick}
+    {...ariaProps({ ariaId, open: true })}
   />
 )
+/* eslint-enable */
 
 /** For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes. */
 export const DrawerAppContent = createComponent(
@@ -118,3 +147,16 @@ export const DrawerAppContent = createComponent(
     return <Tag {...props} ref={ref} className={className} />
   }
 )
+
+export const DrawerControl = function DrawerControl (props, ref) {
+  const {
+    ariaId,
+    open,
+    children
+  } = props
+
+  return cloneElement(children, {
+    ...children.props,
+    ...ariaProps({ ariaId, open })
+  })
+}

@@ -9,7 +9,8 @@ import {
   DrawerTitle,
   DrawerSubtitle,
   DrawerContent,
-  DrawerAppContent
+  DrawerAppContent,
+  DrawerControl
 } from './index.js'
 
 import { List, ListItem } from '@pmwc/list'
@@ -39,11 +40,12 @@ export const permanent = () => (
 export const dismissible = () => {
   function Example () {
     const [open, setOpen] = useState(true)
+    const ariaId = '1234'
 
     return (
       <section>
         <div style={{ overflow: 'hidden', position: 'relative' }}>
-          <Drawer dismissible open={open}>
+          <Drawer dismissible ariaId={ariaId} open={open}>
             <DrawerHeader>
               <DrawerTitle>DrawerHeader</DrawerTitle>
               <DrawerSubtitle>Subtitle</DrawerSubtitle>
@@ -68,9 +70,11 @@ export const dismissible = () => {
         </div>
 
         <div style={{ textAlign: 'center' }}>
-          <Button onClick={() => setOpen(!open)} raised>
-            Toggle Dismissible
-          </Button>
+          <DrawerControl ariaId={ariaId} open={open}>
+            <Button onClick={() => setOpen(!open)} raised>
+              Toggle Dismissible
+            </Button>
+          </DrawerControl>
         </div>
       </section>
     )
@@ -81,10 +85,11 @@ export const dismissible = () => {
 export const modal = () => {
   function Example () {
     const [open, setOpen] = useState(true)
+    const ariaId = '1234'
 
     return (
       <section>
-        <Drawer modal open={open} onClose={() => setOpen(false)}>
+        <Drawer ariaId={ariaId} modal open={open} onClose={() => setOpen(false)}>
           <DrawerHeader>
             <DrawerTitle>DrawerHeader</DrawerTitle>
             <DrawerSubtitle>Subtitle</DrawerSubtitle>
@@ -98,9 +103,11 @@ export const modal = () => {
           </DrawerContent>
         </Drawer>
 
-        <Button onClick={() => setOpen(!open)} raised>
-          Toggle Modal
-        </Button>
+        <DrawerControl ariaId={ariaId} open={open}>
+          <Button onClick={() => setOpen(!open)} raised>
+            Toggle Modal
+          </Button>
+        </DrawerControl>
       </section>
     )
   }
@@ -110,6 +117,7 @@ export const modal = () => {
 export const rightSideDrawers = () => {
   function Example () {
     const [open, setOpen] = useState(true)
+    const ariaId = 'drawer'
 
     return (
       <section>
@@ -118,6 +126,7 @@ export const rightSideDrawers = () => {
           dir='rtl'
           modal
           open={open}
+          ariaId={ariaId}
           onClose={() => setOpen(false)}
         >
           {/** Set the content back to left-to-right */}
@@ -135,9 +144,11 @@ export const rightSideDrawers = () => {
           </DrawerContent>
         </Drawer>
 
-        <Button onClick={() => setOpen(!open)} raised>
-          Toggle Right Drawer
-        </Button>
+        <DrawerControl open={open} ariaId={ariaId}>
+          <Button onClick={() => setOpen(!open)} raised>
+            Toggle Right Drawer
+          </Button>
+        </DrawerControl>
       </section>
     )
   }

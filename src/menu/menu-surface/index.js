@@ -18,6 +18,7 @@ export const MenuSurface = createComponent(
       onClose,
       renderToPortal,
       fixed,
+      fullwidth,
       apiRef,
       foundationRef,
       ...rest
@@ -28,7 +29,8 @@ export const MenuSurface = createComponent(
     const className = useClassNames(props, [
       'mdc-menu-surface',
       {
-        'mdc-menu-surface--fixed': fixed
+        'mdc-menu-surface--fixed': fixed,
+        'mdc-menu-surface--fullwidth': fullwidth
       }
     ])
 

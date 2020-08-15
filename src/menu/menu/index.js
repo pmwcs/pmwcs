@@ -44,7 +44,7 @@ const isMenuItems = (child) =>
 
 /** A menu component for displaying lists items. */
 export const Menu = createComponent(function Menu (props, ref) {
-  const { children, focusOnOpen, onSelect, foundationRef, ...rest } = props
+  const { children, focusOnOpen, onSelect, foundationRef, fullwidth, ...rest } = props
   const { rootEl, setListApi, setMenuSurfaceApi } = useMenuFoundation(props)
 
   const needsMenuItemsWrapper = (
@@ -62,6 +62,7 @@ export const Menu = createComponent(function Menu (props, ref) {
       className={classNames('mdc-menu', rest.className)}
       apiRef={setMenuSurfaceApi}
       ref={ref}
+      fullwidth={fullwidth}
     >
       {needsMenuItemsWrapper ? (
         <MenuItems {...menuItemsProps}>{children}</MenuItems>

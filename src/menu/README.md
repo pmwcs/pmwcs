@@ -235,6 +235,7 @@ This is just the ListItem component exported from the Menu module for convenienc
 | `apiRef` | `undefined \| (api: MenuSurfaceApi \| null) => void` | An internal api for cross component communication. |
 | `children` | `React.ReactNode` | Children to render. |
 | `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
+| `fullwidth` | `undefined \| false \| true` | Make the menu fullwidth. |
 | `foundationRef` | `React.Ref<MDCMenuSurfaceFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
 | `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
@@ -281,5 +282,3 @@ The same as SimpleMenu, but a generic surface.
 | `open` | `undefined \| false \| true` | Opens the menu. |
 | `renderToPortal` | `PortalPropT` | Renders the menu to a portal. Useful for situations where the content might be cutoff by an overflow: hidden container. You can pass "true" to render to the default PMWC portal. |
 | `rootProps` | `Object` | By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor. |
-
-

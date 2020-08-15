@@ -15,6 +15,7 @@
     "build-storybook": "build-storybook",
     "clean": "rimraf src/**/dist src/**/next src/**/pmwc*.tgz",
     "clean:all": "lerna clean -y && npm run clean",
+    "coverage": "jest --coverage",
     "postinstall": "lerna bootstrap --force-local --hoist",
     "lint": "eslint --fix \"**/*.js\"",
     "pack": "lerna exec npm pack",

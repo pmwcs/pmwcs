@@ -3,3 +3,4 @@ src/**/next
 src/pmwc/docs
 src/tooltip
 **/tmp.*
+coverage/

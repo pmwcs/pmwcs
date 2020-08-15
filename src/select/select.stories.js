@@ -90,16 +90,6 @@ const plainHtml = () => {
   return <Plain />
 }
 
-// eslint-disable-next-line no-unused-vars
-const debug = () => (
-  <Select
-    label='Enhanced'
-    options={['Cookies', 'Pizza', 'Icecream']}
-    enhanced
-    onChange={(evt) => action('Enhanced')(evt.currentTarget.value)}
-  />
-)
-
 export const basic = () => (
   <section>
     <Select

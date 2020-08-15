@@ -154,6 +154,22 @@ function EnhancedMenu (props) {
 
   let currentIndex = 0
 
+  const renderEmpty = () => {
+    if (isEmptyValue(props)) {
+      currentIndex += 1
+      return (
+        <MenuItem
+          role='option'
+          selected={currentIndex - 1 === selectedIndex}
+          data-value=''
+          theme='textDisabledOnBackground'
+        >
+          {placeholder}&nbsp;
+        </MenuItem>
+      )
+    }
+  }
+
   const renderOption = ({
     label,
     option
@@ -185,17 +201,7 @@ function EnhancedMenu (props) {
       className='mdc-select__menu'
       focusOnOpen
     >
-      {isEmptyValue(props) && (
-        <MenuItem
-          role='option'
-          selected={currentIndex - 1 === selectedIndex}
-          data-value=''
-          theme='textDisabledOnBackground'
-        >
-          {placeholder}
-        </MenuItem>
-      )}
-
+      {renderEmpty()}
       {selectOptions.map(
         ({ label, options, ...option }, i) => {
           if (options) {

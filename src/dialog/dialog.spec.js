@@ -1,6 +1,5 @@
 import { h } from 'preact'
 import { mount } from 'enzyme'
-import { act } from 'preact/test-utils'
 
 import {
   Dialog,
@@ -13,7 +12,6 @@ import {
   DialogQueue
 } from './'
 import { wait } from '@pmwc/base/utils/test-utils'
-// import { act } from 'preact/test-utils'
 
 describe('Dialog', () => {
   it('simple Dialog renders', () => {

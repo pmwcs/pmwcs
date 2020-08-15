@@ -138,7 +138,6 @@ export const simplified = () => (
 export const anchoring = () => {
   function Example () {
     const [anchorCorner, setAnchorCorner] = useState('topEnd')
-    const [open, setOpen] = useState(true)
 
     return (
       <section>

@@ -201,6 +201,7 @@ export class CollapsibleList extends Component {
     } = this.props
     const { open, childrenStyle } = this.state
     const ariaId = randomId('accordeon')
+    const ariaControlId = randomId('control')
 
     return (
       <Tag
@@ -218,6 +219,7 @@ export class CollapsibleList extends Component {
             role: 'button',
             'aria-expanded': open,
             'aria-disabled': defaultOpen === true || undefined,
+            'aria-controls': ariaControlId,
             ...handle.props,
             onClick: this.handleClick,
             onKeyDown: this.handleKeydown
@@ -226,6 +228,7 @@ export class CollapsibleList extends Component {
         <div className='pmwc-collapsible-list__children' style={childrenStyle}>
           <div
             className='pmwc-collapsible-list__children-inner'
+            id={ariaControlId}
             role='region'
             aria-labelledby={ariaId}
             ref={(el) => (this.childContainer = el)}

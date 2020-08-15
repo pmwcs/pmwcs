@@ -170,6 +170,7 @@ function EnhancedMenu (props) {
         }
         {...option}
         data-value={option.value}
+        role='option'
       >
         {label}
       </MenuItem>
@@ -179,12 +180,14 @@ function EnhancedMenu (props) {
   return (
     <Menu
       {...rest}
+      role='listbox'
       apiRef={menuApiRef}
       className='mdc-select__menu'
       focusOnOpen
     >
       {isEmptyValue(props) && (
         <MenuItem
+          role='option'
           selected={currentIndex - 1 === selectedIndex}
           data-value=''
           theme='textDisabledOnBackground'
@@ -324,7 +327,6 @@ export const Select = createComponent(function Select (props, ref) {
   return (
     <Fragment>
       <Tag
-        role='listbox'
         {...rootProps}
         {...enhancedListeners}
         element={rootEl}

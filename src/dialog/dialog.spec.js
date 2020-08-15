@@ -1,5 +1,6 @@
 import { h } from 'preact'
 import { mount } from 'enzyme'
+import { act } from 'preact/test-utils'
 
 import {
   Dialog,
@@ -45,6 +46,7 @@ describe('Dialog', () => {
     )
   })
 
+  // FIXME: event bubbling does not work
   it.skip('Dialog lifecycle', async (done) => {
     let open = 0
     let opened = 0
@@ -60,6 +62,7 @@ describe('Dialog', () => {
           el.setProps({ open: false })
         }}
         onClosed={() => closed++}
+        onClick={evt => console.log('bubble', evt)}
       >
         <DialogTitle>Dialog Title</DialogTitle>
 
@@ -71,15 +74,15 @@ describe('Dialog', () => {
       </Dialog>
     )
 
-    console.log(el.props())
     el.setProps({ open: true })
-    console.log(el.props())
     await wait(250)
 
     const acceptButton = el.find('button.mdc-dialog__button').last()
+    console.log(el.debug())
     acceptButton.simulate('click')
-
+    el.find('div.mdc-dialog').first().simulate('click')
     await wait(250)
+
     el.setProps({ open: true })
     await wait(250)
     const cancelButton = el.find('button.mdc-dialog__button').first()
@@ -119,9 +122,10 @@ describe('DialogQueue', () => {
     el.unmount()
   })
 
+  // FIXME: event bubbling does not work
   it.skip('alerts and accepts', async (done) => {
     const queue = createDialogQueue()
-    const el = mount(<DialogQueue dialogs={queue.dialogs} />)
+    const el = mount(<DialogQueue ripple={false} dialogs={queue.dialogs} />)
 
     queue.alert({ title: 'myAlert' }).then(async (resp) => {
       expect(resp).toBe('accept')
@@ -137,10 +141,11 @@ describe('DialogQueue', () => {
     expect(el.html().includes('myAlert')).toBe(true)
     await wait(100)
 
-    el.find('.mdc-dialog__button').first().simulate('click')
+    el.find('button.mdc-dialog__button').first().simulate('click')
   })
 
-  it.skip('alerts and closes', (done) => {
+  // FIXME: event bubbling does not work
+  it.skip('alerts and closes', async (done) => {
     const queue = createDialogQueue()
     const el = mount(<DialogQueue dialogs={queue.dialogs} />)
     queue.alert({ title: 'myAlert' }).then((resp) => {
@@ -148,13 +153,13 @@ describe('DialogQueue', () => {
       done()
     })
 
-    setTimeout(() => {
-      el.update()
+    await wait()
+    el.update()
 
-      el.find('.mdc-dialog__scrim').first().simulate('click')
-    })
+    el.find('div.mdc-dialog__scrim').first().simulate('click')
   })
 
+  // FIXME: event bubbling does not work
   it.skip('confirms and returns true', async (done) => {
     const queue = createDialogQueue()
     const el = mount(<DialogQueue dialogs={queue.dialogs} />)
@@ -170,6 +175,7 @@ describe('DialogQueue', () => {
     el.find('[action="accept"]').first().simulate('click')
   })
 
+  // FIXME: event bubbling does not work
   it.skip('confirms and returns false', async (done) => {
     const queue = createDialogQueue()
     const el = mount(<DialogQueue dialogs={queue.dialogs} />)
@@ -184,6 +190,7 @@ describe('DialogQueue', () => {
     el.find('[action="close"]').first().simulate('click')
   })
 
+  // FIXME: event bubbling does not work
   it.skip('prompts and returns value', async (done) => {
     const queue = createDialogQueue()
     const el = mount(<DialogQueue dialogs={queue.dialogs} />)
@@ -206,6 +213,7 @@ describe('DialogQueue', () => {
     el.find('[action="accept"]').first().simulate('click')
   })
 
+  // FIXME: event bubbling does not work
   it.skip('prompts and returns null', (done) => {
     const queue = createDialogQueue()
     const el = mount(<DialogQueue dialogs={queue.dialogs} />)
@@ -221,6 +229,7 @@ describe('DialogQueue', () => {
     el.find('[action="close"]').first().simulate('click')
   })
 
+  // FIXME: event bubbling does not work
   it.skip('supports onClose', (done) => {
     const queue = createDialogQueue()
     const el = mount(<DialogQueue dialogs={queue.dialogs} />)

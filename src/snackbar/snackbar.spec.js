@@ -59,7 +59,7 @@ describe('Snackbar', () => {
     mount(<Snackbar message={<div>Hello World</div>} />)
   })
 
-  it.skip('handles events', () => {
+  it('handles events', () => {
     const el = mount(
       <Snackbar
         open
@@ -70,16 +70,16 @@ describe('Snackbar', () => {
         action={<SnackbarAction label='foo' />}
       />
     )
+    // el.simulate('keydown')
+    el.find('div').first().simulate('keydown')
 
-    el.simulate('keydown')
-
-    const surface = el.find('.mdc-snackbar__surface')
+    const surface = el.find('div.mdc-snackbar__surface')
     surface.simulate('click')
 
-    const action = el.find('.mdc-snackbar__action').first()
+    const action = el.find('button.mdc-snackbar__action').first()
     action.simulate('click')
 
-    const dismiss = el.find('.mdc-snackbar__dismiss').first()
+    const dismiss = el.find('i.mdc-snackbar__dismiss').first()
     dismiss.simulate('click')
   })
 })

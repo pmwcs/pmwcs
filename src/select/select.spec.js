@@ -142,6 +142,7 @@ describe('Select', () => {
     ).toEqual(true)
   })
 
+  // FIXME: active element is always HTMLBodyElement
   it.skip('can autofocus', () => {
     // eslint-disable-next-line jsx-a11y/no-autofocus
     const el = mount(<Select options={['one', 'two', 'three']} autoFocus />)
@@ -151,11 +152,11 @@ describe('Select', () => {
 
 describe('Select: Lifecycle', () => {
   const getLabel = (el) =>
-    el.find('.mdc-select__selected-text').first().text().trim()
+    el.find('div.mdc-select__selected-text').first().text().trim()
 
-  it.skip('SelectedText is blank with no value', () => {
+  it('SelectedText defaults to first value', () => {
     const el = mount(<Select options={['Cookies', 'Pizza', 'Icecream']} />)
-    expect(getLabel(el)).toBe('')
+    expect(getLabel(el)).toBe('Cookies')
   })
 
   it('SelectedText is blank with no value, enhanced', () => {
@@ -222,14 +223,14 @@ describe('Select: Lifecycle', () => {
     expect(getLabel(el)).toBe('Cookies')
   })
 
-  it.skip('SelectedText is set with async value', (done) => {
+  it.only('SelectedText is set with async value', (done) => {
     const el = mount(
       <Select options={['Cookies', 'Pizza', 'Icecream']} value='' />
     )
 
+    el.setProps({ value: 'Pizza' })
     setTimeout(() => {
-      el.setProps({ value: 'Cookies' })
-      expect(getLabel(el)).toBe('Cookies')
+      expect(getLabel(el)).toBe('Pizza')
       done()
     }, 100)
   })

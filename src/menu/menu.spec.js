@@ -8,6 +8,7 @@ import {
   SimpleMenu,
   SimpleMenuSurface
 } from './'
+import { wait } from '@pmwc/base/utils/test-utils'
 
 describe('Menu', () => {
   it('renders', () => {
@@ -62,6 +63,7 @@ describe('Menu', () => {
     )
   })
 
+  // FIXME: event bubbling in enzyme does not work
   it.skip('SimpleMenu renders', (done) => {
     let val = 0
 
@@ -73,15 +75,16 @@ describe('Menu', () => {
       </SimpleMenu>
     )
 
-    const item = el.find(MenuItem).first()
-    item.simulate('click')
+    // console.log(el.debug())
+    el.find('li.mdc-list-item').first().simulate('click')
     setTimeout(() => {
       expect(val).toBe(1)
       done()
     }, 300)
   })
 
-  it.skip('Menu Item can be nested', () => {
+  // FIXME: event bubbling in enzyme does not work
+  it.skip('Menu Item can be nested', async () => {
     let val = null
 
     const el = mount(
@@ -102,9 +105,9 @@ describe('Menu', () => {
       </SimpleMenu>
     )
 
-    const item = el.find(MenuItem).first()
-    item.simulate('click')
-    expect(val).toBe(val)
+    el.find('li.mdc-list-item').last().simulate('click')
+    await wait(300)
+    expect(val).toBe(2)
   })
 
   it('SimpleMenuSurface renders', (done) => {

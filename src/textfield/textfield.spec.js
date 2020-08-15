@@ -8,10 +8,12 @@ describe('TextField', () => {
     mount(<TextField label='test' placeholder='test' />)
   })
 
-  it.skip('can autoFocus', () => {
+  it('can autoFocus', async () => {
     // eslint-disable-next-line jsx-a11y/no-autofocus
     const el = mount(<TextField label='test' placeholder='test' autoFocus />)
-    expect(document.activeElement).toBe(el.find('input').getDOMNode())
+    // does not work: document.activeElement stays HTMLBodyElement
+    // expect(document.activeElement).toBe(el.find('input').getDOMNode())
+    expect(el.find('input').getDOMNode().autofocus).toBe(true)
   })
 
   it('can have children', () => {

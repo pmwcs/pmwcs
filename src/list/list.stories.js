@@ -1,6 +1,7 @@
 /** @jsx h */
 import { h } from 'preact'
 import { useState } from 'preact/hooks'
+import { action } from '@storybook/addon-actions'
 import './styles.js'
 
 import {
@@ -25,7 +26,7 @@ export default {
 }
 
 export const basic = () => (
-  <List>
+  <List onAction={(evt) => action('onAction')(evt.detail.index)}>
     <ListItem>Cookies</ListItem>
     <ListItem>Pizza</ListItem>
     <ListItem>Icecream</ListItem>

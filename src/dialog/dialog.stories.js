@@ -9,7 +9,9 @@ import {
   DialogContent,
   DialogActions,
   DialogButton,
-  SimpleDialog
+  SimpleDialog,
+  DialogQueue,
+  createDialogQueue
 } from './index.js'
 
 import { Button } from '@pmwc/button'
@@ -73,4 +75,55 @@ export const simplifiedUsage = () => {
     )
   }
   return <Example />
+}
+
+export const dialogQuene = () => {
+  const { dialogs, alert, confirm, prompt } = createDialogQueue()
+
+  function App () {
+    const [response, setResponse] = useState('____________')
+
+    const fireAlert = () =>
+      alert({
+        title: 'Hello!',
+        body: 'Whats going on?'
+      }).then(res => setResponse(res))
+
+    const fireConfirm = () => confirm({
+      title: <b>Are you positive?</b>,
+      body: 'You have selected pizza instead of icecream!',
+      acceptLabel: 'CONFIRM'
+    }).then(res => setResponse(res))
+
+    const firePrompt = () => prompt({
+      title: 'Whats your name?',
+      body: 'Anything will do',
+      acceptLabel: 'Submit',
+      cancelLabel: 'Skip',
+      // For prompts only, you can pass props to the input
+      inputProps: { outlined: true }
+    }).then(res => setResponse(res))
+
+    return (
+      <div>
+        <Button label='Alert' onClick={fireAlert} />
+        <Button label='Confirm' onClick={fireConfirm} />
+        <Button label='Prompt' onClick={firePrompt} />
+        <Button
+          label='In Sequence'
+          onClick={() => {
+            fireAlert()
+            fireConfirm()
+            firePrompt()
+          }}
+        />
+
+        <p>
+          Response: <b>{String(response)}</b>
+        </p>
+        <DialogQueue dialogs={dialogs} />
+      </div>
+    )
+  }
+  return <App />
 }

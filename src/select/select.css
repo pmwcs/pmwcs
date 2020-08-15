@@ -1,3 +1,7 @@
+.mdc-select {
+  outline: none;
+}
+
 .mdc-select__anchor {
   width: 100%;
 }

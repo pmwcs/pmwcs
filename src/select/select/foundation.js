@@ -220,7 +220,6 @@ export const useSelectFoundation = (props) => {
       // in order to get placeholders working correctly
       const adapter = f.adapter
 
-      // @ts-ignore private override
       f.updateLabel = () => {
         const doWork = () => {
           const value = f.getValue()

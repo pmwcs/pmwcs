@@ -154,9 +154,9 @@ describe('Select: Lifecycle', () => {
   const getLabel = (el) =>
     el.find('div.mdc-select__selected-text').first().text().trim()
 
-  it('SelectedText defaults to first value', () => {
+  it('SelectedText is blank with no value', () => {
     const el = mount(<Select options={['Cookies', 'Pizza', 'Icecream']} />)
-    expect(getLabel(el)).toBe('Cookies')
+    expect(getLabel(el)).toBe('')
   })
 
   it('SelectedText is blank with no value, enhanced', () => {
@@ -223,16 +223,16 @@ describe('Select: Lifecycle', () => {
     expect(getLabel(el)).toBe('Cookies')
   })
 
-  it.only('SelectedText is set with async value', (done) => {
+  it('SelectedText is set with async value', (done) => {
     const el = mount(
       <Select options={['Cookies', 'Pizza', 'Icecream']} value='' />
     )
 
-    el.setProps({ value: 'Pizza' })
+    el.setProps({ value: 'Cookies' })
     setTimeout(() => {
-      expect(getLabel(el)).toBe('Pizza')
+      expect(getLabel(el)).toBe('Cookies')
       done()
-    }, 100)
+    }, 300)
   })
 
   it('SelectedText is set with async value, enhanced', (done) => {
@@ -240,8 +240,8 @@ describe('Select: Lifecycle', () => {
       <Select enhanced options={['Cookies', 'Pizza', 'Icecream']} value='' />
     )
 
+    el.setProps({ value: 'Cookies' })
     setTimeout(() => {
-      el.setProps({ value: 'Cookies' })
       expect(getLabel(el)).toBe('Cookies')
       done()
     }, 100)

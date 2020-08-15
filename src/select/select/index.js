@@ -49,8 +49,31 @@ const createSelectOptions = (options) => {
 }
 
 const SelectDropdownArrow = memo(function SelectDropdownArrow () {
-  return <i className='mdc-select__dropdown-icon' />
+  return (
+    <span class='mdc-select__dropdown-icon'>
+      <svg
+        class='mdc-select__dropdown-icon-graphic'
+        viewBox='7 10 10 5'
+      >
+        <polygon
+          class='mdc-select__dropdown-icon-inactive'
+          stroke='none'
+          fill-rule='evenodd'
+          points='7 10 12 15 17 10'
+        />
+        <polygon
+          class='mdc-select__dropdown-icon-active'
+          stroke='none'
+          fill-rule='evenodd'
+          points='7 15 12 10 17 15'
+        />
+      </svg>
+    </span>
+  )
 })
+
+const isEmptyValue = props => props.placeholder !== undefined ||
+  (props.value === undefined && !props.defaultValue)
 
 function NativeMenu (props) {
   const {
@@ -73,8 +96,6 @@ function NativeMenu (props) {
     )
   }
 
-  const isEmptyValue = !props.value && !props.defaultValue
-
   return (
     <select
       tabIndex={0}
@@ -82,8 +103,8 @@ function NativeMenu (props) {
       ref={elementRef}
       className={`pmwc-select__native-control ${rest.className || ''}`}
     >
-      {(props.placeholder !== undefined || isEmptyValue) && (
-        <option value='' disabled={isEmptyValue}>
+      {isEmptyValue(props) && (
+        <option value=''>
           {placeholder}
         </option>
       )}
@@ -162,7 +183,7 @@ function EnhancedMenu (props) {
       className='mdc-select__menu'
       focusOnOpen
     >
-      {!!props.placeholder && (
+      {isEmptyValue(props) && (
         <MenuItem
           selected={currentIndex - 1 === selectedIndex}
           data-value=''
@@ -219,6 +240,7 @@ export const Select = createComponent(function Select (props, ref) {
     inputRef,
     helpText,
     foundationRef,
+    fullwidth,
     ...rest
   } = props
 
@@ -247,10 +269,10 @@ export const Select = createComponent(function Select (props, ref) {
   } = useSelectFoundation(props)
 
   const id = useId('select', props)
-
   const className = useClassNames(props, [
     'mdc-select',
     {
+      'mdc-select--fullwidth': !!fullwidth,
       'mdc-select--outlined': !!outlined,
       'mdc-select--required': !!props.required,
       'mdc-select--invalid': !!invalid,
@@ -259,7 +281,19 @@ export const Select = createComponent(function Select (props, ref) {
     }
   ])
 
-  const enhancedMenuProps = typeof enhanced === 'object' ? enhanced : {}
+  const enhancedMenuProps = typeof enhanced === 'object'
+    ? enhanced
+    : { fullwidth: true }
+
+  const enhancedListeners = enhanced
+    ? {
+      onFocus: handleFocus,
+      onBlur: handleBlur,
+      onClick: handleClick,
+      onKeyDown: handleKeydown,
+      tabIndex: 0
+    }
+    : {}
 
   const defaultValue =
     value !== undefined ? undefined : props.defaultValue || ''
@@ -292,13 +326,18 @@ export const Select = createComponent(function Select (props, ref) {
       <Tag
         role='listbox'
         {...rootProps}
+        {...enhancedListeners}
         element={rootEl}
         ref={ref}
         className={className}
       >
-        <div className='mdc-select__anchor'>
+        <div
+          className='mdc-select__anchor'
+          role='button'
+          aria-haspopup='listbox'
+          aria-labelledby={id}
+        >
           {!!icon && <SelectIcon apiRef={setLeadingIcon} icon={icon} />}
-          <SelectDropdownArrow />
           <SelectedTextEl
             className='mdc-select__selected-text'
             role='button'
@@ -313,15 +352,20 @@ export const Select = createComponent(function Select (props, ref) {
           >
             {selectedTextContent || <Fragment>&nbsp;</Fragment>}
           </SelectedTextEl>
-          {outlined ? (
-            <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
-          ) : (
-            <Fragment>
-              {renderedLabel}
-              <LineRipple active={lineRippleActive} center={lineRippleCenter} />
-            </Fragment>
-          )}
-          {!enhanced && (
+          <SelectDropdownArrow />
+          {outlined
+            ? (
+              <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
+            )
+            : (
+              <Fragment>
+                {renderedLabel}
+                <LineRipple active={lineRippleActive} center={lineRippleCenter} />
+              </Fragment>
+            )}
+        </div>
+        {!enhanced
+          ? (
             <NativeMenu
               {...rest}
               value={value}
@@ -332,33 +376,31 @@ export const Select = createComponent(function Select (props, ref) {
               elementRef={setNativeControl}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              onChange={(evt) =>
-                handleMenuSelected(evt.currentTarget.selectedIndex)}
+              onChange={(evt) => handleMenuSelected(evt.currentTarget.selectedIndex)}
+            />
+          )
+          : (
+            <EnhancedMenu
+              {...rest}
+              {...enhancedMenuProps}
+              anchorCorner='bottomStart'
+              defaultValue={defaultValue}
+              placeholder={placeholder}
+              open={menuOpen}
+              onClose={handleMenuClosed}
+              onOpen={handleMenuOpened}
+              onSelect={(evt) => {
+                handleMenuSelected(evt.detail.index)
+              }}
+              selectOptions={selectOptions}
+              value={value}
+              selectedIndex={selectedIndex}
+              menuApiRef={setMenu}
+              children={children}
             />
           )}
-        </div>
-
-        {enhanced && (
-          <EnhancedMenu
-            {...rest}
-            {...enhancedMenuProps}
-            anchorCorner='bottomStart'
-            defaultValue={defaultValue}
-            placeholder={placeholder}
-            open={menuOpen}
-            onClose={handleMenuClosed}
-            onOpen={handleMenuOpened}
-            onSelect={(evt) => {
-              handleMenuSelected(evt.detail.index)
-            }}
-            selectOptions={selectOptions}
-            value={value}
-            selectedIndex={selectedIndex}
-            menuApiRef={setMenu}
-            children={children}
-          />
-        )}
       </Tag>
+
       {renderHelpText()}
     </Fragment>
   )

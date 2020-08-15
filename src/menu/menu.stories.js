@@ -58,6 +58,9 @@ export const basic = () => {
 
     return (
       <MenuSurfaceAnchor>
+        <Button raised onClick={evt => setOpen(!open)}>
+          Menu
+        </Button>
         <Menu
           open={open}
           onSelect={evt => console.log(evt.detail.index)}
@@ -69,10 +72,6 @@ export const basic = () => {
           <ListDivider />
           <MenuItem>Icecream</MenuItem>
         </Menu>
-
-        <Button raised onClick={evt => setOpen(!open)}>
-          Menu
-        </Button>
       </MenuSurfaceAnchor>
     )
   }
@@ -86,15 +85,14 @@ export const example = () => {
 
     return (
       <MenuSurfaceAnchor>
+        <Button raised onClick={evt => setOpen(!open)}>
+          Menu Surface
+        </Button>
         <MenuSurface open={open} onClose={evt => setOpen(false)}>
           <div style={{ padding: '1rem', width: '8rem' }}>
             Make the content whatever you want.
           </div>
         </MenuSurface>
-
-        <Button raised onClick={evt => setOpen(!open)}>
-          Menu Surface
-        </Button>
       </MenuSurfaceAnchor>
     )
   }
@@ -107,7 +105,7 @@ export const other = () => {
 
     return (
       <MenuSurfaceAnchor>
-        <MenuSurface open={open} onClose={evt => setOpen(false)}>
+        <MenuSurface open={open} onClose={evt => setOpen(false)} style={{ left: '20px', top: '5px' }}>
           <div style={{ padding: '1rem', width: '8rem' }}>Menu</div>
         </MenuSurface>
         {/** The handle can be any component you want */}
@@ -139,34 +137,47 @@ export const simplified = () => (
 
 export const anchoring = () => {
   function Example () {
-    const [anchorCorner, setAnchorCorner] = useState(
-      'topLeft'
-    )
+    const [anchorCorner, setAnchorCorner] = useState('topEnd')
+    const [open, setOpen] = useState(true)
 
     return (
       <section>
-        <MenuSurfaceAnchor>
+        <MenuSurfaceAnchor style={{
+          left: '200px',
+          top: '100px',
+          width: '100%'
+        }}
+        >
           <MenuSurface anchorCorner={anchorCorner} open>
             <div style={{ padding: '1rem', width: '8rem' }}>
               anchorCorner: {anchorCorner}
             </div>
           </MenuSurface>
-          <Button raised label='Anchored Menu' />
+          <Button
+            outlined label='Anchored Menu'
+            style={{ margin: 0, width: '200px', height: '25px' }}
+          />
         </MenuSurfaceAnchor>
 
         <Select
+          style={{
+            position: 'absolute',
+            left: '200px',
+            top: '200px'
+          }}
           value={anchorCorner}
           label='anchorCorner'
           onChange={evt => setAnchorCorner(evt.currentTarget.value)}
           options={[
-            'topLeft',
-            'topRight',
-            'bottomLeft',
-            'bottomRight',
+            'undefined',
             'topStart',
             'topEnd',
+            'topLeft',
+            'topRight',
             'bottomStart',
-            'bottomEnd'
+            'bottomEnd',
+            'bottomLeft',
+            'bottomRight'
           ]}
         />
       </section>
@@ -184,13 +195,12 @@ export const renderThroughPortals = () => {
         <div
           style={{
             marginBottom: '10rem',
-            height: '3.5rem',
-            overflow: 'hidden'
+            height: '5rem'
           }}
         >
-          <MenuSurfaceAnchor>
+          <MenuSurfaceAnchor tag='span'>
             <Button raised>Open Menu</Button>
-            <Menu open renderToPortal={renderToPortal}>
+            <Menu open renderToPortal={renderToPortal} style={{ left: '20px', top: '5px' }}>
               {options.map(o => (
                 <MenuItem key={o}>{o}</MenuItem>
               ))}

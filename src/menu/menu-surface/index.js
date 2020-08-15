@@ -52,6 +52,6 @@ export const MenuSurface = createComponent(
 export const MenuSurfaceAnchor = createComponent(
   function MenuSurfaceAnchor (props, ref) {
     const className = useClassNames(props, ['mdc-menu-surface--anchor'])
-    return <Tag {...props} className={className} ref={ref} />
+    return <Tag tag='span' {...props} className={className} ref={ref} />
   }
 )

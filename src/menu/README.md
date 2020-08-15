@@ -241,7 +241,7 @@ This is just the ListItem component exported from the Menu module for convenienc
 | `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
 | `open` | `undefined \| false \| true` | Opens the menu. |
 | `renderToPortal` | `PortalPropT` | Renders the menu to a portal. Useful for situations where the content might be cutoff by an overflow: hidden container. You can pass "true" to render to the default PMWC portal. |
-
+| style | `{left:'px', right:'px', top:'px', bottom:'px'}` | fine position the menu |
 
 ## MenuSurfaceAnchor
 MenuSurfaceAnchor

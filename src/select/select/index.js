@@ -250,6 +250,7 @@ export const Select = createComponent(function Select (props, ref) {
     helpText,
     foundationRef,
     fullwidth,
+    style,
     ...rest
   } = props
 
@@ -338,6 +339,7 @@ export const Select = createComponent(function Select (props, ref) {
         element={rootEl}
         ref={ref}
         className={className}
+        style={style}
       >
         <div
           className='mdc-select__anchor'

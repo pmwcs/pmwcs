@@ -11,20 +11,11 @@ import {
   util
 } from '@material/menu-surface'
 
-const ANCHOR_CORNER_MAP = {
-  bottomEnd: 'BOTTOM_END',
-  bottomLeft: 'BOTTOM_LEFT',
-  bottomRight: 'BOTTOM_RIGHT',
-  bottomStart: 'BOTTOM_START',
-  topEnd: 'TOP_END',
-  topLeft: 'TOP_LEFT',
-  topRight: 'TOP_RIGHT',
-  topStart: 'TOP_START'
-}
+const toUpperSnake = (str = '') => str.replace(/([A-Z])/, '_$1').toUpperCase()
 
 const getAnchorCornerFromProp = (
   anchorCorner
-) => MDCMenuSurfaceFoundation.Corner[ANCHOR_CORNER_MAP[anchorCorner]]
+) => MDCMenuSurfaceFoundation.Corner[toUpperSnake(anchorCorner)]
 
 export const useMenuSurfaceFoundation = (
   props
@@ -103,6 +94,8 @@ export const useMenuSurfaceFoundation = (
         }
       }
 
+      const { left, right, top, bottom } = rootEl.ref?.style || {}
+
       const getDimensionAdapterMethods = () => {
         return {
           getInnerDimensions: () => {
@@ -133,21 +126,34 @@ export const useMenuSurfaceFoundation = (
             return { x: window.pageXOffset, y: window.pageYOffset }
           },
           setPosition: (position) => {
+            const getPixel = (style = '') => {
+              const num = Number(style.replace(/px$/, ''))
+              return isNaN(num) ? undefined : num
+            }
+
+            const set = (pos, style) => {
+              const px = getPixel(style)
+              const sum = (pos !== undefined)
+                ? pos + (px || 0)
+                : (px || null)
+              return sum
+            }
+
             rootEl.setStyle(
               'left',
-              position.left !== undefined ? position.left : null
+              set(position.left, left)
             )
             rootEl.setStyle(
               'right',
-              position.right !== undefined ? position.right : null
+              set(position.right, right)
             )
             rootEl.setStyle(
               'top',
-              position.top !== undefined ? position.top : null
+              set(position.top, top)
             )
             rootEl.setStyle(
               'bottom',
-              position.bottom !== undefined ? position.bottom : null
+              set(position.bottom, bottom)
             )
           },
           setMaxHeight: (height) => {

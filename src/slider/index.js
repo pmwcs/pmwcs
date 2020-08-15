@@ -50,8 +50,8 @@ export const Slider = createComponent(function Slider (props, ref) {
 
   const {
     value,
-    min,
-    max,
+    min = 0,
+    max = 100,
     discrete,
     displayMarkers,
     step,
@@ -84,9 +84,11 @@ export const Slider = createComponent(function Slider (props, ref) {
     <Tag
       tabIndex={0}
       role='slider'
+      aria-valuemin={min}
       aria-valuemax={max}
       aria-valuenow={value}
       aria-label='Select Value'
+      aria-orientation='horizontal'
       {...(disabled ? { 'aria-disabled': disabled } : {})}
       {...dataStep}
       {...rest}

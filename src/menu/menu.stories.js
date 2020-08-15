@@ -1,7 +1,8 @@
 /** @jsx h */
 import { h } from 'preact'
-import { useState } from 'preact/hooks'
+import { useState, useRef, useEffect } from 'preact/hooks'
 import './styles.js'
+import { MDCMenu } from '@material/menu'
 
 import {
   Menu,
@@ -23,9 +24,37 @@ export default {
   component: Menu
 }
 
+// eslint-disable-next-line no-unused-vars
+const plainHtml = () => {
+  function Plain () {
+    const menuRef = useRef(null)
+    useEffect(() => {
+      const menu = new MDCMenu(menuRef.current)
+      menu.open = true
+    }, [menuRef])
+
+    return (
+      <div ref={menuRef} class='mdc-menu mdc-menu-surface'>
+        <ul class='mdc-list' role='menu' aria-hidden='true' aria-orientation='vertical' tabindex='-1'>
+          <li class='mdc-list-item' role='menuitem'>
+            <span class='mdc-list-item__ripple' />
+            <span class='mdc-list-item__text'>A Menu Item</span>
+          </li>
+          <li class='mdc-list-item' role='menuitem'>
+            <span class='mdc-list-item__ripple' />
+            <span class='mdc-list-item__text'>Another Menu Item</span>
+          </li>
+        </ul>
+      </div>
+    )
+  }
+
+  return <Plain />
+}
+
 export const basic = () => {
   function Example () {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(true)
 
     return (
       <MenuSurfaceAnchor>

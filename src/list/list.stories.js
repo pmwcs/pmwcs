@@ -1,8 +1,11 @@
 /** @jsx h */
 import { h } from 'preact'
-import { useState } from 'preact/hooks'
+import { useState, useRef, useEffect } from 'preact/hooks'
 import { action } from '@storybook/addon-actions'
 import './styles.js'
+
+import { MDCList } from '@material/list'
+import { MDCRipple } from '@material/ripple'
 
 import {
   List,
@@ -25,6 +28,36 @@ export default {
   component: List
 }
 
+// eslint-disable-next-line no-unused-vars
+const plainHtml = () => {
+  function Plain () {
+    const listRef = useRef(null)
+    useEffect(() => {
+      const list = new MDCList(listRef.current)
+      list.listElements.map((listItemEl) => new MDCRipple(listItemEl))
+    }, [listRef])
+
+    return (
+      <ul ref={listRef} class='mdc-list'>
+        <li class='mdc-list-item'>
+          <span class='mdc-list-item__ripple' />
+          <span class='mdc-list-item__text'>Single-line item</span>
+        </li>
+        <li class='mdc-list-item'>
+          <span class='mdc-list-item__ripple' />
+          <span class='mdc-list-item__text'>Single-line item</span>
+        </li>
+        <li class='mdc-list-item'>
+          <span class='mdc-list-item__ripple' />
+          <span class='mdc-list-item__text'>Single-line item</span>
+        </li>
+      </ul>
+    )
+  }
+
+  return <Plain />
+}
+
 export const basic = () => (
   <List onAction={(evt) => action('onAction')(evt.detail.index)}>
     <ListItem>Cookies</ListItem>
@@ -36,7 +69,7 @@ export const basic = () => (
 export const list = () => (
   <List twoLine foundationRef={console.log}>
     <ListItem>
-      <ListItemGraphic icon='star_border' />
+      <ListItemGraphic icon='🍪' />
       <ListItemText>
         <ListItemPrimaryText>Cookies</ListItemPrimaryText>
         <ListItemSecondaryText>$4.99 a dozen</ListItemSecondaryText>
@@ -52,7 +85,7 @@ export const list = () => (
       <ListItemMeta icon='info' />
     </ListItem>
     <ListItem activated>
-      <ListItemGraphic icon='mood' />
+      <ListItemGraphic icon='🍦' />
       <ListItemText>
         <ListItemPrimaryText>Icecream</ListItemPrimaryText>
         <ListItemSecondaryText>$0.99 a scoop</ListItemSecondaryText>
@@ -65,7 +98,7 @@ export const list = () => (
 export const simpleList = () => (
   <List twoLine>
     <SimpleListItem
-      graphic='star_border'
+      graphic='🍪'
       text='Cookies'
       secondaryText='Chocolate chip'
       metaIcon='info'
@@ -78,7 +111,7 @@ export const simpleList = () => (
     />
     <SimpleListItem
       activated
-      graphic='mood'
+      graphic='🍨'
       text='Icecream'
       secondaryText='Chocolate cookie dough'
       meta='Winner!'

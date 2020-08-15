@@ -1,6 +1,6 @@
 import { h, Component, cloneElement } from 'preact'
 
-import { classNames, Tag } from '@pmwc/base'
+import { classNames, Tag, randomId } from '@pmwc/base'
 
 const possiblyFocusElement = (el) => {
   if (!el) return false
@@ -200,6 +200,7 @@ export class CollapsibleList extends Component {
       ...rest
     } = this.props
     const { open, childrenStyle } = this.state
+    const ariaId = randomId('accordeon')
 
     return (
       <Tag
@@ -212,6 +213,11 @@ export class CollapsibleList extends Component {
       >
         <div className='pmwc-collapsible-list__handle'>
           {cloneElement(handle, {
+            tabindex: 0,
+            id: ariaId,
+            role: 'button',
+            'aria-expanded': open,
+            'aria-disabled': defaultOpen === true || undefined,
             ...handle.props,
             onClick: this.handleClick,
             onKeyDown: this.handleKeydown
@@ -220,6 +226,8 @@ export class CollapsibleList extends Component {
         <div className='pmwc-collapsible-list__children' style={childrenStyle}>
           <div
             className='pmwc-collapsible-list__children-inner'
+            role='region'
+            aria-labelledby={ariaId}
             ref={(el) => (this.childContainer = el)}
           >
             {children}

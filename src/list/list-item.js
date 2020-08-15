@@ -7,7 +7,7 @@ import { Icon } from '@pmwc/icon'
 /** A ListItem component. */
 export const ListItem = withRipple({ surface: false })(
   createComponent(function ListItem (props, ref) {
-    const { selected, activated, disabled, ...rest } = props
+    const { selected, activated, disabled, children, ...rest } = props
     const className = useClassNames(props, [
       'mdc-list-item',
       {
@@ -17,7 +17,10 @@ export const ListItem = withRipple({ surface: false })(
       }
     ])
     return (
-      <Tag tag='li' tabIndex={0} {...rest} className={className} ref={ref} />
+      <Tag tag='li' {...rest} className={className} ref={ref}>
+        <span className='mdc-list-item__ripple' />
+        {children}
+      </Tag>
     )
   })
 )

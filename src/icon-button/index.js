@@ -37,17 +37,18 @@ const IconButtonRoot = withRipple({
   surface: false,
   unbounded: true
 })(createComponent(function IconButtonRoot (props, ref) {
-  const { checked, label, foundationRef, ...rest } = props
+  const { checked, label, foundationRef, onKeyDown, ...rest } = props
   const className = useClassNames(props, [
     'mdc-icon-button',
     {
       'mdc-icon-button--on': checked
     }
   ])
+
   return (
     <Icon
-      role='button'
-      tabIndex={0}
+      tag='button'
+      tabindex={0}
       aria-label={label}
       {...rest}
       className={className}
@@ -69,7 +70,7 @@ const IconButtonToggleRoot = withRipple({
   ])
   return (
     <button
-      tabIndex={0}
+      tabindex={0}
       {...rest}
       className={className}
       ref={ref}

@@ -31,7 +31,6 @@ export function useIconButtonFoundation (props) {
     props.onClick?.(evt)
     foundation.handleClick()
   }
-
   rootEl.setProp('onClick', handleClick, true)
 
   return { isOn, foundation, ...elements }

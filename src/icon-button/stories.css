@@ -1,1 +1,10 @@
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+/* @import url('https://fonts.googleapis.com/icon?family=Material+Icons'); */
+/* @import url('https://kit-free.fontawesome.com/releases/latest/css/free.min.css'); */
+
+.icon-button--fa {
+  position: relative;
+  bottom: 17%;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}

@@ -12,7 +12,7 @@ describe.skip('Tooltip', () => {
     )
   })
 
-  it('activateOn', () => {
+  it.skip('activateOn', () => {
     mount(
       <Tooltip content='tooltip' activateOn='click'>
         <span>test</span>
@@ -20,7 +20,7 @@ describe.skip('Tooltip', () => {
     )
   })
 
-  it('showArrow', () => {
+  it.skip('showArrow', () => {
     mount(
       <Tooltip content='tooltip' showArrow>
         <span>test</span>
@@ -28,7 +28,7 @@ describe.skip('Tooltip', () => {
     )
   })
 
-  it('className', () => {
+  it.skip('className', () => {
     mount(
       <Tooltip content='tooltip' className='foo'>
         <span>test</span>
@@ -44,7 +44,7 @@ describe.skip('Tooltip', () => {
     )
   })
 
-  it('leaveDelay', () => {
+  it.skip('leaveDelay', () => {
     mount(
       <Tooltip content='tooltip' leaveDelay={1000}>
         <span>test</span>
@@ -60,7 +60,7 @@ describe.skip('Tooltip', () => {
     )
   })
 
-  it('works with provider', () => {
+  it.skip('works with provider', () => {
     mount(
       <PMWCProvider tooltip={{}}>
         <Tooltip content='tooltip'>

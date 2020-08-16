@@ -30,6 +30,7 @@ export const basic = () => (
   </section>
 )
 
+/*
 export const variants = () => {
   function AlignmentExample () {
     return [
@@ -76,7 +77,7 @@ export const variants = () => {
       </Tooltip>
 
       <Tooltip
-      /** You make something like a popover window by just styling your inner content. */
+      /** You make something like a popover window by just styling your inner content. * /
         content={
           <div
             style={{
@@ -114,7 +115,4 @@ export const variants = () => {
     </section>
   )
 }
-
-export const activation = () => (
-  <section />
-)
+*/

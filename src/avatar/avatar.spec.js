@@ -14,6 +14,6 @@ describe('Avatar', () => {
     mount(<Avatar name='James Friedman' />)
 
     const av = mount(<Avatar name='James' />)
-    expect(av.html()).toBe('<i title="James" tag="span" class="pmwc-icon pmwc-icon--component pmwc-avatar"><div class="pmwc-avatar__icon"></div><div class="pmwc-avatar__text"><div class="pmwc-avatar__text-inner">J</div></div></i>')
+    expect(av.html()).toBe('<span title="James" class="pmwc-icon pmwc-icon--component pmwc-avatar"><div class="pmwc-avatar__icon"></div><div class="pmwc-avatar__text"><div class="pmwc-avatar__text-inner">J</div></div></span>')
   })
 })

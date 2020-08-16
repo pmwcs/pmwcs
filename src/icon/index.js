@@ -1,7 +1,7 @@
 import { h, createElement, cloneElement, isValidElement } from 'preact'
 
 import { useProviderContext } from '@pmwc/provider'
-import { classNames, getDisplayName } from '@pmwc/base'
+import { Tag, classNames, getDisplayName } from '@pmwc/base'
 /**
  * Given content, tries to figure out an appropriate strategy for it
  */
@@ -33,15 +33,16 @@ export const getIconStrategy = function (content, strategy, providerStrategy, pr
 }
 
 const renderLigature = ({ content, ...rest }) => (
-  <i {...rest}>{content}</i>
+  <Tag tag='i' {...rest}>{content}</Tag>
 )
 
 const renderClassName = ({ content, ...rest }) => (
-  <i {...rest} />
+  <Tag tag='i' {...rest} />
 )
 
 const renderUrl = ({ content, ...rest }) => (
-  <i
+  <Tag
+    tag='i'
     {...rest}
     style={{
       ...rest.style,
@@ -55,7 +56,7 @@ const renderComponent = ({ content, ...rest }) => {
     const { children, ...svgRest } = content.props
     return createElement('svg', { ...svgRest, ...rest }, children)
   }
-  return <i {...rest}>{content}</i>
+  return <Tag tag='i' {...rest}>{content}</Tag>
 }
 
 const iconRenderMap = {

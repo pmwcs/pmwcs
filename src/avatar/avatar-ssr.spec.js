@@ -11,6 +11,6 @@ describe('Avatar SSR', () => {
     mount(<AvatarGroup />)
 
     const av = mount(<AvatarCount value={4} />)
-    expect(av).toBe('<i tag="span" class="pmwc-icon pmwc-icon--component pmwc-avatar pmwc-avatar--count"><div class="pmwc-avatar__text"><div class="pmwc-avatar__text-inner">4</div></div></i>')
+    expect(av).toBe('<span class="pmwc-icon pmwc-icon--component pmwc-avatar pmwc-avatar--count"><div class="pmwc-avatar__text"><div class="pmwc-avatar__text-inner">4</div></div></span>')
   })
 })

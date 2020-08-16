@@ -85,7 +85,9 @@ export const all = () => (
         </Icon>
       </li>
       <li>
-        Fontawesome: <Icon basename='fas' prefix='fa-'>camera</Icon>
+        Fontawesome:{' '}
+        <Icon basename='fas' prefix='fa-'>camera</Icon>
+        <Icon basename='fas' prefix='fa-' icon='ice-cream' />
       </li>
       <li>
         SVG:{' '}

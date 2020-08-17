@@ -22,12 +22,14 @@ export const Radio = createComponent(function Radio (props, ref) {
     style,
     inputRef,
     foundationRef,
+    primary,
     ...rest
   } = props
 
   const radio = (
     <RadioRoot
       {...rootEl.props(toggleRootProps)}
+      primary={primary}
       ref={mergeRefs(rootEl.setRef, ref)}
     >
       <input
@@ -61,11 +63,12 @@ const RadioRoot = withRipple({
     props,
     ref
   ) {
-    const { disabled, ...rest } = props
+    const { disabled, primary, ...rest } = props
     const className = useClassNames(props, [
       'mdc-radio',
       {
-        'mdc-radio--disabled': disabled
+        'mdc-radio--disabled': disabled,
+        'mdc-radio--primary': primary
       }
     ])
     return <Tag {...rest} className={className} ref={ref} />

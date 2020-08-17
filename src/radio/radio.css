@@ -1,0 +1,21 @@
+.mdc-radio.mdc-radio--primary .mdc-radio__native-control:enabled:checked + .mdc-radio__background .mdc-radio__outer-circle {
+  border-color: #6200ee;
+  /* @alternate */
+  border-color: var(--mdc-theme-primary, #6200ee);
+}
+.mdc-radio.mdc-radio--primary .mdc-radio__native-control:enabled + .mdc-radio__background .mdc-radio__inner-circle {
+  border-color: #6200ee;
+  /* @alternate */
+  border-color: var(--mdc-theme-primary, #6200ee);
+}
+.mdc-radio.mdc-radio--primary .mdc-radio__background::before {
+  background-color: #6200ee;
+  /* @alternate */
+  background-color: var(--mdc-theme-primary, #6200ee);
+}
+.mdc-radio.mdc-radio--primary .mdc-radio__ripple::before,
+.mdc-radio.mdc-radio--primary .mdc-radio__ripple::after {
+  background-color: #6200ee;
+  /* @alternate */
+  background-color: var(--mdc-theme-primary, #6200ee);
+}

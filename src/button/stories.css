@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('https://kit-free.fontawesome.com/releases/latest/css/free.min.css');
 
-:root {
+/* :root {
   --mdc-theme-error: #ff2222;
   --mdc-theme-on-error: white;
   --mdc-theme-secondary: #018786;
-}
-button { margin: 1em; }
+} */
+.button-stories button { margin: 1em; }
 
 .demo-button-shaped { border-radius: 18px; }

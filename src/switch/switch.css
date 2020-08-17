@@ -1,0 +1,19 @@
+.mdc-switch.mdc-switch--primary.mdc-switch--checked .mdc-switch__track {
+  background-color: #6200ee;
+  /* @alternate */
+  background-color: var(--mdc-theme-primary, #6200ee);
+}
+.mdc-switch.mdc-switch--primary.mdc-switch--checked .mdc-switch__thumb {
+  background-color: #6200ee;
+  /* @alternate */
+  background-color: var(--mdc-theme-primary, #6200ee);
+  border-color: #6200ee;
+  /* @alternate */
+  border-color: var(--mdc-theme-primary, #6200ee);
+}
+.mdc-switch--primary .mdc-switch__thumb-underlay::before,
+.mdc-switch--primary .mdc-switch__thumb-underlay::after {
+  background-color: #6200ee;
+  /* @alternate */
+  background-color: var(--mdc-theme-primary, #6200ee);
+}

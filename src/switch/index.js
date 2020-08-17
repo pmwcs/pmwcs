@@ -25,16 +25,23 @@ export const Switch = createComponent(function Switch (props, ref) {
     checkboxEl
   } = useSwitchFoundation(props)
 
-  const rootClassName = useClassNames(toggleRootProps, ['mdc-switch'])
   const {
     children,
     className,
     label,
     style,
+    primary,
     inputRef,
     foundationRef,
     ...rest
   } = props
+
+  const rootClassName = useClassNames(
+    toggleRootProps, [
+      'mdc-switch', {
+        'mdc-switch--primary': primary
+      }
+    ])
 
   const renderedSwitch = (
     <Tag

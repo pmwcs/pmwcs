@@ -13,8 +13,8 @@ export default {
   component: Button
 }
 
-export const all = () => (
-  <section className='mdc-typography'>
+export const basic = () => (
+  <section className='mdc-typography button-stories'>
     <Typography use='body1'>Icon Buttons</Typography>
 
     <Button label='Icon' icon='favorite' />
@@ -29,6 +29,14 @@ export const all = () => (
     <Button label='Outlined' outlined />
     <Button label='Dense' dense />
     <Button label='No Ripple' ripple={false} />
+
+    <Typography use='body1'>Text Button (secondary)</Typography>
+
+    <Button label='Raised' raised secondary />
+    <Button label='Unelevated' unelevated secondary />
+    <Button label='Outlined' outlined secondary />
+    <Button label='Dense' dense secondary />
+    <Button label='No Ripple' ripple={false} secondary />
 
     <Typography use='body1'>Danger Button</Typography>
 

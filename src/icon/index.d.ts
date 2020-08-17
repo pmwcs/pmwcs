@@ -47,7 +47,10 @@ export interface IconOptions {
 
 export type IconPropT = IconElementT | IconOptions;
 
-/** An Icon component. Most of these options can be set once globallyz, read the documentation on Provider for more info. */
+/**
+ * An Icon component.
+ * Most of these options can be set once globally, read the documentation on Provider for more info.
+ */
 export interface IconProps extends IconOptions {
   /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. */
   icon?: IconPropT;

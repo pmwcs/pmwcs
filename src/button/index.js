@@ -16,6 +16,7 @@ export const Button = withRipple({
     raised,
     unelevated,
     outlined,
+    secondary,
     danger,
     icon,
     label,
@@ -23,6 +24,12 @@ export const Button = withRipple({
     children,
     ...rest
   } = props
+
+  if (secondary) {
+    props.theme = (raised || unelevated)
+      ? ['secondaryBg', 'onSecondary']
+      : 'secondary'
+  }
 
   const className = useClassNames(props, [
     'mdc-button',

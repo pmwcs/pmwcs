@@ -79,7 +79,7 @@ describe('Snackbar', () => {
     const action = el.find('button.mdc-snackbar__action').first()
     action.simulate('click')
 
-    const dismiss = el.find('i.mdc-snackbar__dismiss').first()
+    const dismiss = el.find('button.mdc-snackbar__dismiss').first()
     dismiss.simulate('click')
   })
 })

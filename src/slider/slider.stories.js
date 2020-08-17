@@ -43,3 +43,36 @@ export const basic = () => {
     </section>
   )
 }
+
+export const primary = () => {
+  function Example () {
+    const [value, setValue] = useState(50)
+    // onInput is required and will fire continuously.
+    // onChange is optional and fires at the end of the interaction
+    return (
+      <Slider
+        primary
+        value={value}
+        onChange={evt => setValue(evt.detail.value)}
+        onInput={evt => setValue(evt.detail.value)}
+        discrete
+        step={1}
+      />
+    )
+  }
+
+  return (
+    <section>
+      <Slider
+        primary
+        onInput={evt => console.log(evt)}
+        onChange={evt => console.log(evt)}
+      />
+
+      <Example />
+
+      <Slider primary discrete displayMarkers min={100} max={200} step={5} />
+
+    </section>
+  )
+}

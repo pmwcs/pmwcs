@@ -56,6 +56,7 @@ export const Slider = createComponent(function Slider (props, ref) {
     displayMarkers,
     step,
     disabled,
+    primary,
     onChange,
     onInput,
     children,
@@ -67,6 +68,7 @@ export const Slider = createComponent(function Slider (props, ref) {
     'mdc-slider',
     {
       'mdc-slider--discrete': discrete,
+      'mdc-slider--primary': primary,
       'mdc-slider--display-markers': displayMarkers && discrete
     }
   ])

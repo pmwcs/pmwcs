@@ -92,6 +92,22 @@ export const list = () => (
       </ListItemText>
       <ListItemMeta>Winner!</ListItemMeta>
     </ListItem>
+    <ListItem secondary>
+      <ListItemGraphic secondary icon='local_cafe' />
+      <ListItemText>
+        <ListItemPrimaryText>Coffee</ListItemPrimaryText>
+        <ListItemSecondaryText>$1.99 a cup</ListItemSecondaryText>
+      </ListItemText>
+      <ListItemMeta icon='info' />
+    </ListItem>
+    <ListItem activated secondary>
+      <ListItemGraphic secondary icon='local_cafe' />
+      <ListItemText>
+        <ListItemPrimaryText>Coffee</ListItemPrimaryText>
+        <ListItemSecondaryText>$1.99 a cup</ListItemSecondaryText>
+      </ListItemText>
+      <ListItemMeta>Take it!</ListItemMeta>
+    </ListItem>
   </List>
 )
 
@@ -115,6 +131,21 @@ export const simpleList = () => (
       text='Icecream'
       secondaryText='Chocolate cookie dough'
       meta='Winner!'
+    />
+    <SimpleListItem
+      secondary
+      graphic='local_cafe'
+      text='Cafe'
+      secondaryText='Cappuccino'
+      metaIcon='info'
+    />
+    <SimpleListItem
+      activated
+      secondary
+      graphic='local_cafe'
+      text='Cafe'
+      secondaryText='Cappuccino'
+      metaIcon='info'
     />
   </List>
 )

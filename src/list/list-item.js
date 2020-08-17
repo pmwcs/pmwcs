@@ -7,7 +7,12 @@ import { Icon } from '@pmwc/icon'
 /** A ListItem component. */
 export const ListItem = withRipple({ surface: false })(
   createComponent(function ListItem (props, ref) {
-    const { selected, activated, disabled, children, ...rest } = props
+    const { selected, activated, disabled, children, secondary, ...rest } = props
+
+    if (secondary) {
+      props.theme = 'secondary'
+    }
+
     const className = useClassNames(props, [
       'mdc-list-item',
       {
@@ -50,6 +55,10 @@ export const ListItemSecondaryText = createComponent(function ListItemSecondaryT
 /** A graphic / icon for the ListItem */
 export const ListItemGraphic = createComponent(
   function ListItemGraphic (props, ref) {
+    if (props.secondary) {
+      props.theme = 'secondary'
+    }
+
     const className = useClassNames(props, ['mdc-list-item__graphic'])
     return (
       <Icon {...props} aria-hidden='true' ref={ref} className={className} />
@@ -117,7 +126,7 @@ export const ListDivider = createComponent(
 /** A simple list item template. */
 export const SimpleListItem = createComponent(
   (
-    { text, secondaryText, graphic, metaIcon, meta, children, ...rest },
+    { text, secondaryText, graphic, metaIcon, meta, children, secondary, ...rest },
     ref
   ) => {
     const primaryTextToRender =
@@ -133,8 +142,8 @@ export const SimpleListItem = createComponent(
       ) : null
 
     return (
-      <ListItem {...rest} ref={ref}>
-        {graphic !== undefined && <ListItemGraphic icon={graphic} />}
+      <ListItem {...rest} ref={ref} secondary={secondary}>
+        {graphic !== undefined && <ListItemGraphic icon={graphic} secondary={secondary} />}
         {secondaryTextToRender !== null ? (
           <ListItemText>
             {primaryTextToRender}

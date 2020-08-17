@@ -1,0 +1,5 @@
+.mdc-theme--secondary:not(.mdc-list-item--disabled).mdc-list-item--activated .mdc-list-item__ripple::before,
+.mdc-theme--secondary:not(.mdc-list-item--disabled).mdc-list-item--activated .mdc-list-item__ripple::after {
+	background-color: #018786;
+	background-color: var(--mdc-theme-secondary, #018786);
+}

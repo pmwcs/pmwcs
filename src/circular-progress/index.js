@@ -11,7 +11,11 @@ const SIZE_MAP = {
 
 export const CircularProgress = createComponent(
   function CircularProgress (props, ref) {
-    const { size = 'medium', max = 1, min = 0, progress, ...rest } = props
+    const { size = 'medium', max = 1, min = 0, progress, secondary, ...rest } = props
+
+    if (secondary) {
+      props.theme = 'secondary'
+    }
 
     const className = useClassNames(props, [
       'pmwc-circular-progress',

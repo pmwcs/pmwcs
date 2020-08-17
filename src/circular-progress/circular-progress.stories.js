@@ -12,13 +12,22 @@ export default {
   component: CircularProgress
 }
 
-export const all = () => (
+export const basic = () => (
   <section>
+    <p />
     <CircularProgress />
 
+    <p>secondary</p>
+    <CircularProgress secondary />
+
+    <p>progress={0.3} </p>
     <CircularProgress progress={0.3} />
+
+    <p>progress={0.6}</p>
     <CircularProgress progress={0.6} />
-    <CircularProgress progress={0.9} />
+
+    <p>progress={0.9} secondary</p>
+    <CircularProgress progress={0.9} secondary />
   </section>
 )
 

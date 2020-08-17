@@ -12,6 +12,7 @@ export const LinearProgress = createComponent(
       closed,
       progress,
       buffer,
+      secondary,
       foundationRef,
       ...rest
     } = props
@@ -19,7 +20,8 @@ export const LinearProgress = createComponent(
       'mdc-linear-progress',
       {
         'mdc-linear-progress--reversed': reversed,
-        'mdc-linear-progress--closed': closed
+        'mdc-linear-progress--closed': closed,
+        'mdc-linear-progress--secondary': secondary
       }
     ])
     const { rootEl } = useLinearProgressFoundation(props)

@@ -1,0 +1,5 @@
+.mdc-linear-progress--secondary .mdc-linear-progress__bar-inner {
+  border-color: #018786;
+  /* @alternate */
+  border-color: var(--mdc-theme-seconary, #018786);
+}

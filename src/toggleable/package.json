@@ -9,6 +9,7 @@
   "author": "",
   "main": "dist/index.js",
   "module": "next/index.js",
+  "types": "index.d.ts",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"

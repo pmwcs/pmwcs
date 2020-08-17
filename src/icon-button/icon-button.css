@@ -1,8 +1,6 @@
+.mdc-icon-button:active::before,
 .mdc-icon-button:focus::before,
 .mdc-icon-button:focus-within::before {
   opacity: 0.12 !important;
   background-color: #000 !important;
-}
-.mdc-icon-button {
-  margin: 0;
 }

@@ -18,7 +18,7 @@ const Br = () => (
 )
 
 export const basic = () => (
-  <section>
+  <section className='mdc-typography'>
     <Alert severity='error'>This is an error alert — check it out!</Alert>
     <Br />
     <Alert severity='warning'>This is a warning alert — check it out!</Alert>
@@ -40,7 +40,7 @@ export const basic = () => (
 )
 
 export const outlined = () => (
-  <section>
+  <section className='mdc-typography'>
     <Alert outlined severity='error'>This is an error alert — check it out!</Alert>
     <Br />
     <Alert outlined severity='warning'>This is a warning alert — check it out!</Alert>
@@ -52,7 +52,7 @@ export const outlined = () => (
 )
 
 export const filled = () => (
-  <section>
+  <section className='mdc-typography'>
     <Alert filled severity='error'>This is an error alert — check it out!</Alert>
     <Br />
     <Alert filled severity='warning'>This is a warning alert — check it out!</Alert>
@@ -64,7 +64,7 @@ export const filled = () => (
 )
 
 export const alertTitle = () => (
-  <section>
+  <section className='mdc-typography'>
     <Alert severity='error'>
       <AlertTitle>Error</AlertTitle>
       This is an error alert — <strong>check it out!</strong>
@@ -88,22 +88,58 @@ export const alertTitle = () => (
       This is a success alert — <strong>check it out!</strong>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
     </Alert>
+    <Br />
+
+    <Alert severity='success' filled onClose={() => {}}>
+      <AlertTitle>Success</AlertTitle>
+      This is a success alert — <strong>check it out!</strong>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    </Alert>
+    <Br />
+
+    <Alert severity='info' outlined action={<Button neutral onClick={() => {}}>OK</Button>}>
+      <AlertTitle>Info</AlertTitle>
+      This is a success alert — <strong>check it out!</strong>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    </Alert>
   </section>
 )
 
 export const actions = () => (
-  <section>
-    <Alert onClose={() => {}}>This is a success alert — check it out!</Alert>
+  <section className='mdc-typography'>
+    <Alert onClose={() => {}}>
+      This is a warning alert — check it out!
+    </Alert>
     <Br />
 
-    <Alert
-      action={
-        <Button>
-          UNDO
-        </Button>
-      }
-    >
+    <Alert action={<Button neutral onClick={() => {}}>UNDO</Button>}>
+      This is a warning alert — check it out!
+    </Alert>
+    <Br />
+
+    <Alert severity='success' onClose={() => {}}>
       This is a success alert — check it out!
     </Alert>
+    <Br />
+
+    <Alert severity='info' action={<Button neutral onClick={() => {}}>UNDO</Button>}>
+      This is a success alert — check it out!
+    </Alert>
+    <Br />
+
+    <Alert outlined severity='error' action={<Button neutral onClick={() => {}}>UNDO</Button>}>
+      This is a outlined error alert — check it out!
+    </Alert>
+    <Br />
+
+    <Alert filled severity='error' onClose={() => {}}>
+      This is a filled error alert — check it out!
+    </Alert>
+    <Br />
+
+    <Alert filled severity='info' action={<Button neutral onClick={() => {}}>UNDO</Button>}>
+      This is a filled info alert — check it out!
+    </Alert>
+    <Br />
   </section>
 )

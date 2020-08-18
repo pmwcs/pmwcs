@@ -5,7 +5,6 @@ import { Icon } from '@pmwc/icon'
 import { IconButton } from '@pmwc/icon-button'
 import {
   useClassNames,
-  Tag,
   createComponent,
   createMemoComponent
 } from '@pmwc/base'

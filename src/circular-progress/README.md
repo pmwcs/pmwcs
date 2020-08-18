@@ -66,5 +66,5 @@ A Circular Progress indicator.
 | `min` | `undefined \| number` | Min value for determinate progress bars. |
 | `progress` | `undefined \| number` | Value for determinate progress bars. |
 | `size` | `"xsmall" \| "small" \| "medium" \| "large" \| "xlarge" \| number` | The size of the loader you would like to render. |
-
-
+| `secondary` | `true \| false \| undefined` | Use secondary theme. |
+| `neutral` | `true \| false \| undefined` | Use neutral theme. |

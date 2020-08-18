@@ -1,4 +1,4 @@
-import { h, createElement, cloneElement, isValidElement } from 'preact'
+import { h, cloneElement, isValidElement } from 'preact'
 
 import { useProviderContext } from '@pmwc/provider'
 import { Tag, classNames, getDisplayName } from '@pmwc/base'

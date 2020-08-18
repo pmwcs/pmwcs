@@ -4,3 +4,53 @@
   opacity: 0.12 !important;
   background-color: #000 !important;
 }
+
+.mdc-icon-button.pmwc-icon-button--size-xsmall svg,
+.mdc-icon-button.pmwc-icon-button--size-xsmall img,
+.pmwc-icon-button--size-xsmall {
+  font-size: 1.125rem !important;
+  width: 1em;
+  height: 1em;
+}
+
+.mdc-icon-button.pmwc-icon-button--size-small svg,
+.mdc-icon-button.pmwc-icon-button--size-small img,
+.pmwc-icon-button--size-small {
+  font-size: 1.25rem !important;
+  width: 1em;
+  height: 1em;
+}
+
+.mdc-icon-button.pmwc-icon-button--size-medium svg,
+.mdc-icon-button.pmwc-icon-button--size-medium img,
+.pmwc-icon-button--size-medium {
+  font-size: 1.5rem !important;
+  width: 1em;
+  height: 1em;
+}
+
+.mdc-icon-button.pmwc-icon-button--size-large svg,
+.mdc-icon-button.pmwc-icon-button--size-large img,
+.pmwc-icon-button--size-large {
+  font-size: 2.25rem !important;
+  width: 1em;
+  height: 1em;
+}
+
+.mdc-icon-button.pmwc-icon-button--size-xlarge svg,
+.mdc-icon-button.pmwc-icon-button--size-xlarge img,
+.pmwc-icon-button--size-xlarge {
+  font-size: 3rem !important;
+  width: 1em;
+  height: 1em;
+}
+
+.mdc-icon-button.pmwc-icon-button--size-xsmall,
+.mdc-icon-button.pmwc-icon-button--size-small,
+.mdc-icon-button.pmwc-icon-button--size-medium,
+.mdc-icon-button.pmwc-icon-button--size-large,
+.mdc-icon-button.pmwc-icon-button--size-xlarge {
+  width: 2em;
+  height: 2em;
+  padding: 0.5em;
+}

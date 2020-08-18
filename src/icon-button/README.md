@@ -101,11 +101,10 @@ An IconButton component that can also be used as a toggle.
 |------|------|-------------|
 | `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
 | `disabled` | `undefined \| false \| true` | Makes the button disabled |
-| `foundationRef` | `React.Ref<MDCIconButtonToggleFoundation>` | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. |
-| `icon` | `PMWC.IconPropT` | Icon for the button |
+| `foundationRef` | `Ref<MDCIconButtonToggleFoundation>` | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. |
+| `icon` | `IconPropT` | Icon for the button |
 | `label` | `undefined \| string` | Apply an aria label. |
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
-| `onIcon` | `PMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
+| `onIcon` | `IconPropT` | If specified, renders a toggle with this icon as the on state. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-
-
+| `size` | `xsmall \| small \| medium \| large \| xlarge` | A size to render the icon |

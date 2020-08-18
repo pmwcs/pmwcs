@@ -37,11 +37,12 @@ const IconButtonRoot = withRipple({
   surface: false,
   unbounded: true
 })(createComponent(function IconButtonRoot (props, ref) {
-  const { checked, label, foundationRef, onKeyDown, ...rest } = props
+  const { checked, label, foundationRef, onKeyDown, size, ...rest } = props
   const className = useClassNames(props, [
     'mdc-icon-button',
     {
-      'mdc-icon-button--on': checked
+      'mdc-icon-button--on': checked,
+      [`pmwc-icon-button--size-${size}`]: size
     }
   ])
 
@@ -51,6 +52,7 @@ const IconButtonRoot = withRipple({
       tabindex={0}
       aria-label={label}
       {...rest}
+      size={size}
       className={className}
       ref={ref}
     />
@@ -79,12 +81,13 @@ const IconButtonToggleRoot = withRipple({
 }))
 
 const IconButtonIcon = memo(function IconButtonIcon (props) {
-  const { on, ...rest } = props
+  const { on, size, ...rest } = props
   const className = useClassNames(props, [
     'mdc-icon-button__icon',
     {
-      'mdc-icon-button__icon--on': props.on
+      'mdc-icon-button__icon--on': props.on,
+      [`pmwc-icon-button--size-${size}`]: size
     }
   ])
-  return <Icon {...rest} className={className} />
+  return <Icon {...rest} size={size} className={className} />
 })

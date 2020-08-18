@@ -8,3 +8,7 @@
   text-align: center;
   box-sizing: border-box;
 }
+
+.icon-button-stories li {
+  list-style: none;
+}

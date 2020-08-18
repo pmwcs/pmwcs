@@ -107,4 +107,4 @@ An IconButton component that can also be used as a toggle.
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
 | `onIcon` | `IconPropT` | If specified, renders a toggle with this icon as the on state. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `size` | `xsmall \| small \| medium \| large \| xlarge` | A size to render the icon |
+| `size` | `"xsmall" \| "small" \| "medium" \| "large" \| "xlarge"` | A size to render the icon |

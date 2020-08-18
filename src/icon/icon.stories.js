@@ -36,7 +36,7 @@ const style = `
 }
 `
 
-export const all = () => (
+export const basic = () => (
   <section className='mdc-typography'>
     <style dangerouslySetInnerHTML={{ __html: style }} />
     <Typography use='body1'>
@@ -56,6 +56,22 @@ export const all = () => (
         <Icon size='medium' icon='favorite' />
         <Icon size='large' icon='favorite' />
         <Icon size='xlarge' icon='favorite' />
+      </li>
+
+      <li>
+        filled (default): <Icon icon='grade' />
+      </li>
+      <li>
+        outlined: <Icon outlined icon='grade' />
+      </li>
+      <li>
+        rounded: <Icon rounded icon='grade' />
+      </li>
+      <li>
+        twoTone: <Icon twoTone icon='grade' />
+      </li>
+      <li>
+        sharp: <Icon sharp icon='grade' />
       </li>
     </ul>
 

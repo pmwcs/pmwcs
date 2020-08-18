@@ -1,4 +1,4 @@
-import { VNode } from 'preact'
+import { AnyComponent } from 'preact'
 
 export type IconSizeT = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 
@@ -40,7 +40,15 @@ export interface IconOptions {
   /** A size to render the icon  */
   size?: IconSizeT;
   /** icon name for strategy ligature and component */
-  children?: VNode | string
+  children?: AnyComponent
+  /** material icon variant outlined; basename needs to be set to material-icons */
+  outlined?: boolean;
+  /** material icon variant rounded; basename needs to be set to material-icons  */
+  rounded?: boolean;
+  /** material icon variant two-tone; basename needs to be set to material-icons  */
+  twoTone?: boolean;
+  /** material icon variant sharp; basename needs to be set to material-icons */
+  sharp?: boolean;
   /** Additional props */
   [key: string]: any;
 }

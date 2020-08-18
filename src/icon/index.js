@@ -80,6 +80,7 @@ export function Icon (
     prefix: _prefix,
     basename: _basename,
     children,
+    outlined, rounded, twoTone, sharp,
     ...rest
   }
 ) {
@@ -150,7 +151,13 @@ export function Icon (
       iconClassName,
       {
         [`pmwc-icon--size-${size || ''}`]: !!size
-      }
+      },
+      basenameToUse === 'material-icons' ? {
+        'material-icons-outlined': outlined,
+        'material-icons-round': rounded,
+        'material-icons-two-tone': twoTone,
+        'material-icons-sharp': sharp
+      } : {}
     )
   })
 

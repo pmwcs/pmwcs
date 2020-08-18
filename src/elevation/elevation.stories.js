@@ -13,7 +13,7 @@ export default {
 }
 
 export const basic = () => (
-  <section>
+  <section className='mdc-typography'>
     <Elevation z={21} wrap>
       <span>Wrapped!</span>
     </Elevation>
@@ -45,5 +45,9 @@ export const mouse = () => {
       </Elevation>
     )
   }
-  return <Example />
+  return (
+    <section className='mdc-typography'>
+      <Example />
+    </section>
+  )
 }

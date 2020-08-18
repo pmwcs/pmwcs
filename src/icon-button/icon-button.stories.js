@@ -183,7 +183,7 @@ export const custom = () => (
         {" svg: size='xsmall' style={{color: 'dodgerblue'}}"}
       </li>
       <li>
-        <IconButton onClick={action('svg')} size='large'>
+        <IconButton onClick={action('img')} size='large'>
           <img style={{ borderRadius: '50%' }} alt='Natalia Alianovna Romanova' src='images/avatars/blackwidow.png' />
         </IconButton>
         {" img: size='large'"}

@@ -61,7 +61,7 @@ describe('Icon', () => {
       />
     )
     expect(el.html()).toBe(
-      '<svg class="pmwc-icon pmwc-icon--component material-icons"><path></path></svg>'
+      '<i class="pmwc-icon pmwc-icon--component material-icons"><svg><path></path></svg></i>'
     )
   })
 

@@ -1,6 +1,6 @@
 import { createElement } from 'preact'
 import { useProviderContext } from '@pmwc/provider'
-import { useClassNames } from '@pmwc/base'
+import { Tag, useClassNames } from '@pmwc/base'
 
 const SPAN = 'span'
 
@@ -34,5 +34,5 @@ export function Typography (props) {
     [`mdc-typography--${props.use}`]: props.use
   }])
 
-  return createElement(tag, { ...rest, className })
+  return createElement(Tag, { tag, ...rest, className })
 }

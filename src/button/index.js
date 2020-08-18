@@ -17,18 +17,26 @@ export const Button = withRipple({
     unelevated,
     outlined,
     secondary,
+    neutral,
     danger,
     icon,
     label,
     trailingIcon,
     children,
+    theme,
     ...rest
   } = props
 
-  if (secondary) {
-    props.theme = (raised || unelevated)
-      ? ['secondaryBg', 'onSecondary']
-      : 'secondary'
+  if (!props.disabled) {
+    if (secondary) {
+      props.theme = (raised || unelevated)
+        ? ['secondaryBg', 'onSecondary']
+        : 'secondary'
+    } else if (neutral) {
+      props.theme = (raised || unelevated)
+        ? ['neutralBg', 'onNeutral']
+        : 'neutral'
+    }
   }
 
   const className = useClassNames(props, [

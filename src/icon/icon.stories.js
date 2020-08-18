@@ -14,31 +14,8 @@ export default {
   component: Icon
 }
 
-// css-stylesheet order is broken.
-const style = `
-.pmwc-icon--url {
-  font-size: 1.5rem;
-}
-.pmwc-icon--size-xsmall {
-  font-size: 1.125rem;
-}
-.pmwc-icon--size-small {
-  font-size: 1.25rem;
-}
-.pmwc-icon--size-medium {
-  font-size: 1.5rem;
-}
-.pmwc-icon--size-large {
-  font-size: 2.25rem;
-}
-.pmwc-icon--size-xlarge {
-  font-size: 3rem;
-}
-`
-
 export const basic = () => (
   <section className='mdc-typography'>
-    <style dangerouslySetInnerHTML={{ __html: style }} />
     <Typography use='body1'>
       <a href='https://material.io/resources/icons/?style=baseline'>Material Icons</a>
     </Typography>

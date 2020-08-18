@@ -11,86 +11,69 @@ An alert displays a short, important message in a way that attracts the user's a
 
 ```jsx
 <>
-  <Avatar
-    src="images/avatars/blackwidow.png"
-    size="xsmall"
-    name="Natalia Alianovna Romanova"
-  />
-  <Avatar
-    src="images/avatars/hulk.png"
-    size="small"
-    name="Bruce Banner"
-  />
-  <Avatar
-    src="images/avatars/thor.png"
-    size="medium"
-    name="Thor Odinson"
-  />
-  <Avatar
-    src="images/avatars/captainamerica.png"
-    size="large"
-    name="Steve Rogers"
-  />
-  <Avatar
-    src="images/avatars/ironman.png"
-    size="xlarge"
-    name="Tony Stark"
-  />
+  <Alert severity='error'>This is an error alert — check it out!</Alert>
+  <Alert severity='warning'>This is a warning alert — check it out!</Alert>
+  <Alert severity='info'>This is an info alert — check it out!</Alert>
+  <Alert severity='success'>This is a success alert — check it out!</Alert>
 </>
 ```
 
-## Usage with other components
-
-The avatar component has been designed to work nicely in any of the places you would use an icon.
-
+**defaults to a warning alert**
 ```jsx
-<Button
-  label="Enlist now!"
-  icon={
-    <Avatar
-      src="images/avatars/captainamerica.png"
-      name="Steve Rogers"
-    />
-  }
-/>
+<Alert>This is a warning alert — check it out!</Alert>
 ```
 
+**use with custom icon**
 ```jsx
-<Chip
-  label="Hulk Smash"
-  icon={<Avatar src="images/avatars/hulk.png" name="Bruce Banner" />}
-/>
+<Alert icon='check' severity='success'>This is a success alert — check it out!</Alert>
 ```
 
+**don't display an icon**
 ```jsx
-<TextField
-  label="Message Natalia..."
-  outlined
-  icon={
-    <Avatar
-      src="images/avatars/blackwidow.png"
-      name="Natalia Alianovna Romanova"
-      square
-    />
-  }
-/>
+<Alert icon={false} severity='success'>This is a success alert — check it out!</Alert>
 ```
 
-## Avatar
-An Avatar component for displaying users in a system.
+## Variants
 
-### Props
+### Outlined
 
-| Name | Type | Description |
-|------|------|-------------|
-| `contain` | `undefined \| false \| true` | Contain the avatar image instead of covering. |
-| `interactive` | `undefined \| false \| true` | Make the avatar interactive. |
-| `name` | `undefined \| string` | The name of the user. This will get converted to initials and set the hover title. |
-| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `size` | `PMWC.IconSizeT` | The size of the avatar |
-| `square` | `undefined \| false \| true` | Make the avatar square. |
-| `src` | `undefined \| string` | The url for the image. This gets passed to the Icon component. |
+```jsx
+<>
+  <Alert outlined severity='error'>This is an error alert — check it out!</Alert>
+  <Alert outlined severity='warning'>This is a warning alert — check it out!</Alert>
+  <Alert outlined severity='info'>This is an info alert — check it out!</Alert>
+  <Alert outlined severity='success'>This is a success alert — check it out!</Alert>
+</>
+```
 
+### Filled
+
+```jsx
+<>
+  <Alert filled severity='error'>This is an error alert — check it out!</Alert>
+  <Alert filled severity='warning'>This is a warning alert — check it out!</Alert>
+  <Alert filled severity='info'>This is an info alert — check it out!</Alert>
+  <Alert filled severity='success'>This is a success alert — check it out!</Alert>
+</>
+```
+
+## Actions
+
+```jsx
+<>
+  <Alert onClose={() => {}}>This is a success alert — check it out!</Alert>
+
+  <Alert
+    action={
+      <Button>
+        UNDO
+      </Button>
+    }
+  >
+    This is a success alert — check it out!
+  </Alert>
+</>
+```
 
 ## Alert
 Displays a short, important message in a way that attracts the user's attention without interrupting the user's task.
@@ -99,9 +82,9 @@ Displays a short, important message in a way that attracts the user's attention 
 
 | Name | Type | Description |
 |------|------|-------------|
-| `dense` | `undefined \| false \| true` | Makes the list dense |
-| `interactive` | `undefined \| false \| true` | Make the avatar interactive. |
-| `overflow` | `undefined \| false \| true` | Optionally renders a "+" to indicate overlow. |
-| `size` | `PMWC.IconSizeT` | The size of the avatar |
-| `square` | `undefined \| false \| true` | Make the avatar square. |
-| `value` | `number` | The number of users. |
+| `outlined` | `undefined \| false \| true` | Makes the alert outlined. |
+| `filled` | `undefined \| false \| true` | Makes the alert filled. |
+| `action` | `AnyComponent` | The action to display. It renders after the message, at the end of the alert. |
+| `severity` | `success \| info \| warning \| error` | The size of the avatar |
+| `icon` | `AnyComponent` | Override the icon displayed before the children. |
+| `onClose` | `(event: Event) => void` | Callback fired when the component requests to be closed. |

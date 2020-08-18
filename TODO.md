@@ -17,8 +17,9 @@ https://www.w3.org/TR/wai-aria-practices/examples/
 - [x] Drawer no ARIA
 - [x] Tooltip
   - look for simple solution wo rc-tooltip lib
-- [ ] Alert - README
-  - color attribute??
+- [x] Alert
+  - README
+  - tests
 - [ ] IconButton different sizes
   - primary, secondary
 - [ ] Button add default (neutral) style

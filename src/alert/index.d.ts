@@ -1,11 +1,11 @@
 import { AnyComponent } from 'preact'
 
-export type Severity = 'success' | 'info' | 'warn' | 'error';
+export type Severity = 'success' | 'info' | 'warning' | 'error';
 
 export interface AlertProps {
-  /** Make the alert outlined. */
+  /** Makes the alert outlined. */
   outlined?: boolean;
-  /** Make the alert outlined. */
+  /** Makes the alert filled. */
   filled?: boolean;
   /**
    * The action to display. It renders after the message, at the end of the alert.
@@ -15,10 +15,6 @@ export interface AlertProps {
    * The severity of the alert. This defines the color and icon used.
    */
   severity?: Severity;
-  /**
-   * The main color for the alert. Unless provided, the value is taken from the `severity` prop.
-   */
-  color?: Color;
   /**
    * Override the icon displayed before the children.
    * Unless provided, the icon is mapped to the value of the `severity` prop.

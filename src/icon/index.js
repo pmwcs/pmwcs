@@ -52,10 +52,6 @@ const renderUrl = ({ content, ...rest }) => (
 )
 
 const renderComponent = ({ content, ...rest }) => {
-  if (content.type === 'svg') {
-    const { children, ...svgRest } = content.props
-    return createElement('svg', { ...svgRest, ...rest }, children)
-  }
   return <Tag tag='i' {...rest}>{content}</Tag>
 }
 

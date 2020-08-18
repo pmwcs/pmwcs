@@ -4,3 +4,13 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons+Sharp');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone');
 @import url('https://kit-free.fontawesome.com/releases/latest/css/free.min.css');
+
+.icon-stories li {
+  list-style: none;
+}
+.icon-stories .ion-ionic {
+  display: inline-block;
+  border: 1px solid aqua;
+  width: 1.5em;
+  height: 1.5em;
+}

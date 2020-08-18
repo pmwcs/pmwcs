@@ -2,8 +2,8 @@
 import { h } from 'preact'
 import { PMWCProvider } from '@pmwc/provider'
 
-import './styles.js'
 import './stories.css'
+import './styles.js'
 
 import { Icon } from './index.js'
 
@@ -11,6 +11,9 @@ export default {
   title: 'Icon',
   component: Icon
 }
+
+// set corret font base size
+document.documentElement.style.fontSize = '16px'
 
 export const basic = () => (
   <section className='icon-stories mdc-typography'>

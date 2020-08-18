@@ -84,17 +84,20 @@ The Icon component, (really the icon prop itself) can accept a variety of format
 
 The Material spec details multiple sizes for icons. The Icon component doesn't assign a size by default, but these are available to you to force a size. Please note, this will only work if you've included the PMWC icon css file.
 
+To allow consistent sizing `<html>` needs to have a `font-size: 16px;` CSS attribute set.
+
 ```jsx
 <>
-  {/* 18px */}
+  {/* document.documentElement.style.fontSize = '16px' */}
+  {/* 1.125rem -> 18px */}
   <Icon icon={{ icon: 'favorite', size: 'xsmall' }} />
-  {/* 20px */}
+  {/* 1.25rem -> 20px */}
   <Icon icon={{ icon: 'favorite', size: 'small' }} />
-  {/* 24px */}
+  {/* 1.5rem -> 24px */}
   <Icon icon={{ icon: 'favorite', size: 'medium' }} />
-  {/* 36px */}
+  {/* 2.25rem -> 36px */}
   <Icon icon={{ icon: 'favorite', size: 'large' }} />
-  {/* 48px */}
+  {/* 3rem -> 48px */}
   <Icon icon={{ icon: 'favorite', size: 'xlarge' }} />
 </>
 ```
@@ -278,7 +281,7 @@ An Icon component. Most of these options can be set once globally, read the docu
 | `prefix` | `string` | A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the 'className' strategy. |
 | `basename` | `string` | A base className for the icon namespace, i.e. material-icons. |
 | `render` | `function ({ content, className }) {}` | A render function to use when using the 'custom' strategy. |
-| `size` | `xsmall \| small \| medium \| large \| xlarge` | A size to render the icon |
+| `size` | `"xsmall" \| "small" \| "medium" \| "large" \| "xlarge"` | A size to render the icon |
 | `children` | `AnyComponent` | icon name for strategy ligature and component |
 | `outlined` | `boolean` | material icon variant outlined; basename needs to be set to material-icons |
 | `rounded` | `boolean` | material icon variant rounded; basename needs to be set to material-icons |

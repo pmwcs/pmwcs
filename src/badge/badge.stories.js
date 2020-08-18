@@ -29,7 +29,7 @@ export const inline = () => (
 )
 
 export const styled = () => (
-  <section>
+  <section className='mdc-typography'>
     <Badge theme={['primaryBg', 'onPrimary']} align='inline' />
     <Badge style={{ background: 'hotpink' }} align='inline' />
     <Badge
@@ -41,7 +41,7 @@ export const styled = () => (
 )
 
 export const withOtherComponents = () => (
-  <section>
+  <section className='mdc-typography'>
     <p>Raised</p>
     <BadgeAnchor>
       <Button raised label='Button' />
@@ -87,7 +87,7 @@ export const withOtherComponents = () => (
 )
 
 export const alignment = () => (
-  <section>
+  <section className='mdc-typography'>
     <BadgeAnchor>
       <Button raised label='Align Start' />
       <Badge align='start' />

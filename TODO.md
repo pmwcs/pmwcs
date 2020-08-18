@@ -15,5 +15,11 @@ https://www.w3.org/TR/wai-aria-practices/examples/
   - Styling select
 - [x] List - no Aria on collapsible list
 - [x] Drawer no ARIA
-- [ ] Tooltip
+- [x] Tooltip
   - look for simple solution wo rc-tooltip lib
+- [ ] Alert - README
+  - color attribute??
+- [ ] IconButton different sizes
+  - primary, secondary
+- [ ] Button add default (neutral) style
+- [ ] ButtonGroup is missing

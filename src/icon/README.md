@@ -16,6 +16,24 @@ Icons are not part of the official material-components-web spec, but they are re
 
 There are lots of different strategies for implementing icons on the web, and the Icon component is flexible for most of them. Use ligatures, classNames, inline SVGs, HTML, or URLs to get icons into your app. The default strategy is 'ligature' which works with the material.io font icon set.
 
+Include css for material-icons
+```css
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+```
+
+To use material-icons variants
+```css
+/* outlined */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+/* rounded */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
+/* sharp */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Sharp');
+/* twoTone */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone');
+
+```
+
 ## Basic Usage
 
 The Icon component, (really the icon prop itself) can accept a variety of formats. Anywhere you see a component prop like `icon` or `trailingIcon` will inherit the same behavior.
@@ -255,6 +273,14 @@ An Icon component. Most of these options can be set once globally, read the docu
 
 | Name | Type | Description |
 |------|------|-------------|
-| `icon` | `PMWC.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
-
-
+| `icon` | `AnyComponent` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
+| `strategy` | `ligature \| className \| url \| component \| custom` | Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. 'custom' allows you to specify your own render prop. If not set, 'auto' will be used or the defaults set inside of PMWCProvider. |
+| `prefix` | `string` | A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the 'className' strategy. |
+| `basename` | `string` | A base className for the icon namespace, i.e. material-icons. |
+| `render` | `function ({ content, className }) {}` | A render function to use when using the 'custom' strategy. |
+| `size` | `xsmall \| small \| medium \| large \| xlarge` | A size to render the icon |
+| `children` | `AnyComponent` | icon name for strategy ligature and component |
+| `outlined` | `boolean` | material icon variant outlined; basename needs to be set to material-icons |
+| `rounded` | `boolean` | material icon variant rounded; basename needs to be set to material-icons |
+| `twoTone` | `boolean` | material icon variant two-tone; basename needs to be set to material-icons |
+| `sharp` | `boolean` | material icon variant sharp; basename needs to be set to material-icons |

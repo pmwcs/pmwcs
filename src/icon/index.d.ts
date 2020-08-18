@@ -10,10 +10,9 @@ export type IconStrategyT =
   | 'component'
   | 'custom';
 
-export type IconElementT = VNode | string
-
 export interface IconOptions {
-  icon: IconElementT;
+  /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. */
+  icon: AnyComponent;
   /**
    * Handle multiple methods of embedding an icon.
    * 'ligature' uses ligature style embedding like material-icons,
@@ -21,7 +20,7 @@ export interface IconOptions {
    * 'url' will load a remote image, and
    * 'component' will render content as children like SVGs or any other React node.
    * 'custom' allows you to specify your own render prop.
-   * If not set, 'auto' will be used or the defaults set inside of RMWCProvider.
+   * If not set, 'auto' will be used or the defaults set inside of PMWCProvider.
    * */
   strategy?: IconStrategyT;
   /**

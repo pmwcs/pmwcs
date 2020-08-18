@@ -112,7 +112,20 @@ export function Icon (
   )
 
   const prefixToUse = prefix || providerPrefix
-  const basenameToUse = basename === undefined ? providerBasename : basename
+  const materialVariant = outlined
+    ? 'material-icons-outlined'
+    : rounded
+      ? 'material-icons-round'
+      : sharp
+        ? 'material-icons-sharp'
+        : twoTone
+          ? 'material-icons-two-tone'
+          : providerBasename
+  const basenameToUse = basename !== undefined
+    ? basename
+    : providerBasename === 'material-icons'
+      ? materialVariant
+      : providerBasename
   const iconClassName =
     strategyToUse === 'className' && typeof content === 'string'
       ? `${String(prefixToUse)}${content}`
@@ -147,13 +160,7 @@ export function Icon (
       iconClassName,
       {
         [`pmwc-icon--size-${size || ''}`]: !!size
-      },
-      basenameToUse === 'material-icons' ? {
-        'material-icons-outlined': outlined,
-        'material-icons-round': rounded,
-        'material-icons-two-tone': twoTone,
-        'material-icons-sharp': sharp
-      } : {}
+      }
     )
   })
 

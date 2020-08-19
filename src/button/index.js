@@ -19,6 +19,7 @@ export const Button = withRipple({
     secondary,
     neutral,
     danger,
+    activated,
     icon,
     label,
     trailingIcon,
@@ -45,7 +46,8 @@ export const Button = withRipple({
       'mdc-button--dense': dense,
       'mdc-button--raised': raised,
       'mdc-button--unelevated': unelevated,
-      'mdc-button--outlined': outlined
+      'mdc-button--outlined': outlined,
+      'mdc-button--activated': activated
     }
   ])
 

@@ -21,6 +21,8 @@ export interface ButtonProps extends WithRippleProps, HTMLProps {
   danger?: boolean;
   /** Choose secondary theme. */
   secondary?: boolean;
+  /** Set button as activated. */
+  activated?: boolean;
   /** Content specified as a label prop. */
   label?: AnyComponent;
   /** An Icon for the Button */
@@ -36,3 +38,8 @@ export interface ButtonProps extends WithRippleProps, HTMLProps {
   /** additional styling */
   style?: { [key: string]: any };
 }
+
+/**
+ * The Button component.
+ */
+export const Button : AnyComponent<ButtonProps> = () => {}

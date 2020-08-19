@@ -7,3 +7,6 @@
 .mdc-theme--neutral-bg {
   background-color: var(--mdc-theme-bg-neutral, rgba(224, 224, 224, 0.87)) !important;
 }
+.mdc-button.mdc-button--activated .mdc-button__ripple::before {
+  opacity: 0.24 !important;
+}

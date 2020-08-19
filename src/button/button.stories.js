@@ -24,6 +24,12 @@ export const basic = () => (
     <Button label='No Ripple' ripple={false} />
     <Button label='Disabled' disabled />
 
+    <p>Activated Text Button (activated)</p>
+    <Button label='Activated Raised' activated raised />
+    <Button label='Activated' activated />
+    <Button label='Activated Outlined' activated outlined />
+    <Button label='Activated Disabled' activated disabled />
+
     <p>Secondary Text Button (secondary)</p>
 
     <Button label='Raised' raised secondary />

@@ -60,6 +60,8 @@ export class CollapsibleList extends Component {
     this.handleClick = this.handleClick.bind(this)
     this.handleKeydown = this.handleKeydown.bind(this)
     this.handleFocus = this.handleFocus.bind(this)
+    this.ariaId = randomId('accordeon')
+    this.ariaControlId = randomId('control')
   }
 
   componentDidMount () {
@@ -200,8 +202,6 @@ export class CollapsibleList extends Component {
       ...rest
     } = this.props
     const { open, childrenStyle } = this.state
-    const ariaId = randomId('accordeon')
-    const ariaControlId = randomId('control')
 
     return (
       <Tag
@@ -215,11 +215,11 @@ export class CollapsibleList extends Component {
         <div className='pmwc-collapsible-list__handle'>
           {cloneElement(handle, {
             tabindex: 0,
-            id: ariaId,
+            id: this.ariaId,
             role: 'button',
             'aria-expanded': open,
             'aria-disabled': defaultOpen === true || undefined,
-            'aria-controls': ariaControlId,
+            'aria-controls': this.ariaControlId,
             ...handle.props,
             onClick: this.handleClick,
             onKeyDown: this.handleKeydown
@@ -228,9 +228,9 @@ export class CollapsibleList extends Component {
         <div className='pmwc-collapsible-list__children' style={childrenStyle}>
           <div
             className='pmwc-collapsible-list__children-inner'
-            id={ariaControlId}
+            id={this.ariaControlId}
             role='region'
-            aria-labelledby={ariaId}
+            aria-labelledby={this.ariaId}
             ref={(el) => (this.childContainer = el)}
           >
             {children}

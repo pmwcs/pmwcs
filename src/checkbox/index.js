@@ -49,9 +49,11 @@ export const Checkbox = createComponent(function Checkbox (
     label,
     style,
     primary,
+    neutral,
     indeterminate,
     inputRef,
     foundationRef,
+    theme,
     ...rest
   } = props
 
@@ -60,6 +62,8 @@ export const Checkbox = createComponent(function Checkbox (
       {...rootEl.props({
         checked: rest.checked,
         primary,
+        neutral,
+        theme,
         indeterminate,
         ...toggleRootProps
       })}
@@ -96,7 +100,7 @@ const CheckboxRoot = withRipple({
   ) {
     const isDataTable = useContext(DataTableContext)
     const isDataTableHeader = useContext(DataTableHeadContext)
-    const { disabled, checked, indeterminate, primary, ...rest } = props
+    const { disabled, checked, indeterminate, primary, neutral, ...rest } = props
     const className = useClassNames(props, [
       'mdc-checkbox',
       {
@@ -104,7 +108,8 @@ const CheckboxRoot = withRipple({
         'mdc-data-table__header-row-checkbox': isDataTableHeader,
         'mdc-checkbox--disabled': disabled,
         'mdc-checkbox--selected': checked || indeterminate,
-        'mdc-checkbox--primary': primary
+        'mdc-checkbox--primary': primary,
+        'mdc-checkbox--neutral': neutral
       }
     ])
     return <Tag {...rest} className={className} ref={ref} />

@@ -11,7 +11,9 @@ export default {
 }
 
 export const basic = () => (
-  <section>
+  <section className='mdc-typography'>
+    <p>Default (secondary)</p>
+
     <Checkbox label='Pizza' />
 
     <Checkbox>Icecream</Checkbox>
@@ -19,12 +21,15 @@ export const basic = () => (
     <Checkbox label='Broccoli' indeterminate />
 
     <Checkbox label='Always On' checked />
-    <Checkbox label='Always Off' checked={false} />
-  </section>
-)
 
-export const primary = () => (
-  <section>
+    <Checkbox label='Always Off' checked={false} />
+
+    <Checkbox label='Disabled On' checked disabled />
+
+    <Checkbox label='Disabled Off' disabled />
+
+    <p>(primary)</p>
+
     <Checkbox primary label='Pizza' />
 
     <Checkbox primary>Icecream</Checkbox>
@@ -32,7 +37,28 @@ export const primary = () => (
     <Checkbox primary label='Broccoli' indeterminate />
 
     <Checkbox primary label='Always On' checked />
+
     <Checkbox primary label='Always Off' checked={false} />
+
+    <Checkbox primary label='Disabled On' checked disabled />
+
+    <Checkbox primary label='Disabled Off' disabled />
+
+    <p>(neutral)</p>
+
+    <Checkbox neutral label='Pizza' />
+
+    <Checkbox neutral>Icecream</Checkbox>
+
+    <Checkbox neutral label='Broccoli' indeterminate />
+
+    <Checkbox neutral label='Always On' checked />
+
+    <Checkbox neutral label='Always Off' checked={false} />
+
+    <Checkbox neutral label='Disabled On' checked disabled />
+
+    <Checkbox neutral label='Disabled Off' disabled />
   </section>
 )
 

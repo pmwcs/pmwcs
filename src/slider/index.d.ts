@@ -1,4 +1,4 @@
-import { Ref } from 'preact'
+import { Ref, AnyComponent } from 'preact'
 import { MDCSliderFoundation } from '@material/slider'
 
 /** A Slider component. */
@@ -26,3 +26,5 @@ export interface SliderProps {
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: Ref<MDCSliderFoundation>;
 }
+
+export const Slider : AnyComponent<SliderProps>

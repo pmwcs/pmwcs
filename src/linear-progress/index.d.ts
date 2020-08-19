@@ -1,4 +1,4 @@
-import { Ref } from 'preact'
+import { AnyComponent, Ref } from 'preact'
 import { MDCLinearProgressFoundation } from '@material/linear-progress';
 
 /** A component to display linear progress. */
@@ -16,3 +16,5 @@ export interface LinearProgressProps {
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: Ref<MDCLinearProgressFoundation>;
 }
+
+export const LinearProgress : AnyComponent<LinearProgressProps>;

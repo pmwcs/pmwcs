@@ -1,4 +1,8 @@
-/** A Circular Progress indicator. */
+import { AnyComponent } from 'preact';
+
+/**
+ * A Circular Progress indicator.
+ */
 export interface CircularProgressProps {
   /** Max value for determinate progress bars. */
   max?: number;
@@ -13,3 +17,5 @@ export interface CircularProgressProps {
   /** Choose neutral theme. */
   neutral?: boolean;
 }
+
+export declare const CircularProgress : AnyComponent<CircularProgressProps>;

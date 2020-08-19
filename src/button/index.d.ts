@@ -4,7 +4,7 @@ import { IconPropT } from '@pmwc/icon'
 import { HTMLProps } from '@pmwc/base'
 
 /**
- * The Button component.
+ * The Button component props
  */
 export interface ButtonProps extends WithRippleProps, HTMLProps {
   /** Make the Button dense. */
@@ -42,4 +42,4 @@ export interface ButtonProps extends WithRippleProps, HTMLProps {
 /**
  * The Button component.
  */
-export const Button : AnyComponent<ButtonProps> = () => {}
+export declare const Button : AnyComponent<ButtonProps>

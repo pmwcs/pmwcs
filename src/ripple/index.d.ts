@@ -1,3 +1,5 @@
+import { AnyComponent } from 'preact'
+
 /** Ripples */
 export type RipplePropT =
   | boolean
@@ -6,6 +8,8 @@ export type RipplePropT =
       surface?: boolean;
       unbounded?: boolean;
     };
+
+export const Ripple : AnyComponent<RipplePropT>
 
 export interface WithRippleProps {
   /** Adds a ripple effect to the component */

@@ -1,3 +1,4 @@
+import { AnyComponent } from 'preact'
 import { ToggleableProps } from '@pmwc/toggleable';
 import { WithRippleProps } from '@pmwc/ripple';
 import { MDCRadioFoundation } from '@material/radio'
@@ -8,3 +9,5 @@ export interface RadioProps
   /** use primary color - default is secondary. */
   primary?: boolean;
 }
+
+export const Radio : AnyComponent<RadioProps>;

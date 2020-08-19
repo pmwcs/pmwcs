@@ -1,3 +1,5 @@
+import { AnyComponent } from 'preact'
+
 /** The Elevation Component */
 export interface ElevationProps {
   /** A number from 0 - 24 for different levels of elevation */
@@ -7,3 +9,5 @@ export interface ElevationProps {
   /** Allows the elevation classes to be merged onto the child component instead of creating an new DOM node. */
   wrap?: boolean;
 }
+
+export declare const Elevation : AnyComponent<ElevationProps>;

@@ -41,6 +41,8 @@ export interface ListProps {
   vertical?: boolean;
 }
 
+export const List : AnyComponent<ListProps>;
+
 /** A ListItem component. */
 export interface ListItemProps extends WithRippleProps {
   /** A modifier for a selected state. */
@@ -53,14 +55,22 @@ export interface ListItemProps extends WithRippleProps {
   secondary?: boolean;
 }
 
+export const ListItem : AnyComponent<ListItemProps>;
+
 /** Text Wrapper for the ListItem */
 export interface ListItemTextProps {}
+
+export const ListItemText : AnyComponent<ListItemTextProps>;
 
 /** Primary Text for the ListItem */
 export interface ListItemPrimaryTextProps {}
 
+export const ListItemPrimaryText : AnyComponent<ListItemPrimaryTextProps>;
+
 /** Secondary text for the ListItem */
 export interface ListItemSecondaryTextProps {}
+
+export const ListItemSecondaryText : AnyComponent<ListItemSecondaryTextProps>;
 
 /** A graphic / icon for the ListItem */
 export interface ListItemGraphicProps extends IconProps {
@@ -68,17 +78,27 @@ export interface ListItemGraphicProps extends IconProps {
   secondary?: boolean;
 }
 
+export const ListItemGraphic : AnyComponent<ListItemGraphicProps>;
+
 /** Meta content for the ListItem. This can either by an icon by setting the `icon` prop, or any other kind of content. */
 export interface ListItemMetaProps extends IconProps {}
+
+export const ListItemMeta : AnyComponent<ListItemMetaProps>;
 
 /** A container to group ListItems */
 export interface ListGroupProps {}
 
+export const ListGroup : AnyComponent<ListGroupProps>;
+
 /** A subheader for the ListGroup */
 export interface ListGroupSubheaderProps {}
 
+export const ListGroupSubheader : AnyComponent<ListGroupSubheaderProps>;
+
 /** A divider for the List */
 export interface ListDividerProps {}
+
+export const ListDivider : AnyComponent<ListDividerProps>;
 
 /** A simple list item template. */
 export interface SimpleListItemProps extends ListItemProps {
@@ -98,6 +118,8 @@ export interface SimpleListItemProps extends ListItemProps {
   secondary?: boolean;
 }
 
+export const SimpleListItem : AnyComponent<SimpleListItemProps>;
+
 /** A collapsible list component. */
 export interface CollapsibleListProps {
   /** The handle that opens and closes the collapsible section. Usually a ListItem. */
@@ -111,3 +133,5 @@ export interface CollapsibleListProps {
   /** Callback for when the collapsible list closes. */
   onClose?: () => void;
 }
+
+export const CollapsibleList : AnyComponent<CollapsibleListProps>;

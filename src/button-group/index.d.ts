@@ -3,7 +3,7 @@ import { WithRippleProps } from '@pmwc/ripple'
 import { HTMLProps } from '@pmwc/base'
 
 /**
- * The ButtonGroup component.
+ * The ButtonGroup component props
  */
 export interface ButtonGroupProps extends WithRippleProps, HTMLProps {
   /** Make the Buttons in the ButtonGroup dense. */
@@ -27,4 +27,4 @@ export interface ButtonGroupProps extends WithRippleProps, HTMLProps {
 /**
  * The ButtonGroup component.
  */
-export const ButtonGroup: AnyComponent<ButtonGroupProps> = () => {}
+export declare const ButtonGroup: AnyComponent<ButtonGroupProps>

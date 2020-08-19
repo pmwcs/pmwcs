@@ -22,3 +22,13 @@ export interface ToggleableProps<Foundation> {
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: Ref<Foundation>;
 }
+
+export type ToggleHTMLProps = HTMLProps;
+
+export function useToggleFoundation<Foundation>(
+  props: ToggleableProps<Foundation> & ToggleHTMLProps
+): {
+  id: string,
+  renderToggle: (toggle: AnyComponent) => JSX.Element,
+  toggleRootProps: ToggleableProps<Foundation>['rootProps']
+}

@@ -1,3 +1,4 @@
+import { AnyComponent } from 'preact'
 import { WithRippleProps } from '@pmwc/ripple'
 import { ToggleableProps } from '@pmwc/toggleable'
 import { MDCSwitchFoundation } from '@material/switch'
@@ -8,3 +9,5 @@ export interface SwitchProps
   /** use primary color - default is secondary. */
   primary?: boolean;
 }
+
+export const Switch : AnyComponent<SwitchProps>;

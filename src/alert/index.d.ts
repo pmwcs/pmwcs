@@ -2,6 +2,9 @@ import { AnyComponent } from 'preact'
 
 export type Severity = 'success' | 'info' | 'warning' | 'error';
 
+/**
+ * Alert Component props
+ */
 export interface AlertProps {
   /** Makes the alert outlined. */
   outlined?: boolean;
@@ -26,3 +29,8 @@ export interface AlertProps {
    */
   onClose?: (event: Event) => void;
 }
+
+/**
+ * Alert Component
+ */
+export declare const Alert : AnyComponent<AlertProps>

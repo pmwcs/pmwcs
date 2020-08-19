@@ -12,7 +12,7 @@ export type IconStrategyT =
 
 export interface IconOptions {
   /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. */
-  icon: AnyComponent;
+  icon?: any;
   /**
    * Handle multiple methods of embedding an icon.
    * 'ligature' uses ligature style embedding like material-icons,
@@ -33,9 +33,9 @@ export interface IconOptions {
   basename?: string;
   /** A render function to use when using the 'custom' strategy. */
   render?: (props: {
-    content: IconElementT;
+    content: AnyComponent;
     className: string;
-  }) => React.ReactNode;
+  }) => AnyComponent;
   /** A size to render the icon  */
   size?: IconSizeT;
   /** icon name for strategy ligature and component */
@@ -52,7 +52,7 @@ export interface IconOptions {
   [key: string]: any;
 }
 
-export type IconPropT = IconElementT | IconOptions;
+export type IconPropT = AnyComponent | IconOptions;
 
 /**
  * An Icon component.
@@ -62,3 +62,5 @@ export interface IconProps extends IconOptions {
   /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. */
   icon?: IconPropT;
 }
+
+export declare const Icon : AnyComponent<IconProps>;

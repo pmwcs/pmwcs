@@ -1,6 +1,8 @@
 import { AnyComponent } from 'preact'
 
-/** A Badge component for indicating alerts or counts. */
+/**
+* Badge component props
+ */
 export interface BadgeProps {
   /** How to align the badge. */
   align?: 'end' | 'start' | 'inline';
@@ -11,3 +13,8 @@ export interface BadgeProps {
   /** Animates the badge out of view. When this class is removed, the badge will return to view. */
   exited?: boolean;
 }
+
+/**
+ * A Badge component for indicating alerts or counts.
+ */
+export declare const Badge : AnyComponent<BadgeProps>

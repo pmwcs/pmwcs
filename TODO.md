@@ -20,7 +20,7 @@ https://www.w3.org/TR/wai-aria-practices/examples/
 - [x] Alert
   - README
   - tests
-- [ ] IconButton different sizes
+- [x] IconButton different sizes
   - primary, secondary
-- [ ] Button add default (neutral) style
+- [x] Button add default (neutral) style
 - [ ] ButtonGroup is missing

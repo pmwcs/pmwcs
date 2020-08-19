@@ -64,28 +64,28 @@
 }
 
 /* rmwc addon support for neutral */
-:root {
-  --mdc-theme-checkbox-neutral-border: #6d6d6d;
-  --mdc-theme-checkbox-neutral: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
-}
-
 .mdc-checkbox.mdc-checkbox--neutral .mdc-checkbox__native-control:checked ~ .mdc-checkbox__background::before,
 .mdc-checkbox.mdc-checkbox--neutral .mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background::before,
 .mdc-checkbox.mdc-checkbox--neutral .mdc-checkbox__native-control[data-indeterminate=true] ~ .mdc-checkbox__background::before {
-  background-color: var(--mdc-theme-checkbox-neutral);
+  background-color: var(--mdc-theme-bg-neutral, rgba(224, 224, 224, 0.87));
 }
 .mdc-checkbox.mdc-checkbox--neutral.mdc-checkbox--selected .mdc-checkbox__ripple::before,
 .mdc-checkbox.mdc-checkbox--neutral.mdc-checkbox--selected .mdc-checkbox__ripple::after {
-  background-color: var(--mdc-theme-checkbox-neutral);
+  background-color: var(--mdc-theme-neutral-ripple, rgba(0, 0, 0, 0.87));
 }
 .mdc-checkbox.mdc-checkbox--neutral.mdc-ripple-upgraded--background-focused.mdc-checkbox--selected .mdc-checkbox__ripple::before,
 .mdc-checkbox.mdc-checkbox--neutral.mdc-ripple-upgraded--background-focused.mdc-checkbox--selected .mdc-checkbox__ripple::after {
-  background-color: var(--mdc-theme-checkbox-neutral);
+  background-color: var(--mdc-theme-neutral-ripple, rgba(0, 0, 0, 0.87));
 }
 .mdc-checkbox--neutral .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background,
 .mdc-checkbox--neutral .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background,
 .mdc-checkbox--neutral .mdc-checkbox__native-control[data-indeterminate=true]:enabled ~ .mdc-checkbox__background {
-  /* border-color: var(--mdc-theme-checkbox-neutral); */
-  border-color: var(--mdc-theme-checkbox-neutral-border);
-  background-color: var(--mdc-theme-checkbox-neutral);
+  border-color: var(--mdc-theme-bg-neutral, rgba(224, 224, 224, 0.87));
+  background-color: var(--mdc-theme-bg-neutral, rgba(224, 224, 224, 0.87));
+}
+.mdc-checkbox--neutral .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background .mdc-checkbox__checkmark {
+  color: var(--mdc-theme-on-neutral, rgba(0, 0, 0, 0.87));
+}
+.mdc-checkbox--neutral .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background .mdc-checkbox__mixedmark {
+  border-color: var(--mdc-theme-on-neutral, rgba(0, 0, 0, 0.87));
 }

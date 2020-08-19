@@ -1,14 +1,9 @@
-:root {
-  --mdc-theme-on-neutral: rgba(0, 0, 0, 0.87);
-  --mdc-theme-bg-neutral: #e0e0e0;
-}
-
 .mdc-theme--neutral {
   color: inherit !important;
 }
 .mdc-theme--on-neutral {
-  color: var(--mdc-theme-on-neutral) !important;
+  color: var(--mdc-theme-on-neutral, rgba(0, 0, 0, 0.87)) !important;
 }
 .mdc-theme--neutral-bg {
-  background-color: var(--mdc-theme-bg-neutral) !important;
+  background-color: var(--mdc-theme-bg-neutral, rgba(224, 224, 224, 0.87)) !important;
 }

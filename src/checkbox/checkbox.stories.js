@@ -16,13 +16,9 @@ export const basic = () => (
 
     <Checkbox label='Pizza' />
 
-    <Checkbox>Icecream</Checkbox>
+    <Checkbox checked>Icecream</Checkbox>
 
     <Checkbox label='Broccoli' indeterminate />
-
-    <Checkbox label='Always On' checked />
-
-    <Checkbox label='Always Off' checked={false} />
 
     <Checkbox label='Disabled On' checked disabled />
 
@@ -32,13 +28,9 @@ export const basic = () => (
 
     <Checkbox primary label='Pizza' />
 
-    <Checkbox primary>Icecream</Checkbox>
+    <Checkbox primary checked>Icecream</Checkbox>
 
     <Checkbox primary label='Broccoli' indeterminate />
-
-    <Checkbox primary label='Always On' checked />
-
-    <Checkbox primary label='Always Off' checked={false} />
 
     <Checkbox primary label='Disabled On' checked disabled />
 
@@ -48,13 +40,9 @@ export const basic = () => (
 
     <Checkbox neutral label='Pizza' />
 
-    <Checkbox neutral>Icecream</Checkbox>
+    <Checkbox neutral checked>Icecream</Checkbox>
 
     <Checkbox neutral label='Broccoli' indeterminate />
-
-    <Checkbox neutral label='Always On' checked />
-
-    <Checkbox neutral label='Always Off' checked={false} />
 
     <Checkbox neutral label='Disabled On' checked disabled />
 
@@ -65,12 +53,31 @@ export const basic = () => (
 export const withState = () => {
   function Example () {
     const [checked, setChecked] = useState(false)
+    const [indeterminate, setIndeterminate] = useState(false)
+    const [pos, setPos] = useState(0)
+
+    const arr = [
+      () => setChecked(!checked),
+      () => setIndeterminate(!indeterminate)
+    ]
+
+    // const onChange = evt => setChecked(!!evt.currentTarget.checked)
+    const onChange = () => {
+      arr[pos]()
+      setPos((pos + 1) % 2)
+    }
+
     return (
-      <Checkbox
-        label='Cookies'
-        checked={checked}
-        onChange={evt => setChecked(!!evt.currentTarget.checked)}
-      />
+      <section className='mdc-typography'>
+        <Checkbox
+          label='Cookies'
+          checked={checked}
+          indeterminate={indeterminate}
+          onChange={onChange}
+        />
+        {checked ? ' checked' : ''}
+        {indeterminate ? ' indeterminate' : ''}
+      </section>
     )
   }
   return <Example />

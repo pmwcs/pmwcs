@@ -1,3 +1,5 @@
+export * from './utils/useControlled'
+
 /** HTML properties */
 export type HTMLProps = {
   tag?: string;
@@ -22,5 +24,6 @@ export class ArrayEmitter<T> extends EventEmitter {
   empty() : void;
   remove(item: T) : boolean;
 }
+
 
 // TODO: complete

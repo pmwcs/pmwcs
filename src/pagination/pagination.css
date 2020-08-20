@@ -38,6 +38,14 @@
   border-radius: 50%;
 }
 
+.pmwc-pagination-item--round.mdc-icon-button {
+  border-radius: 4px;
+}
+.pmwc-pagination-item--round.mdc-icon-button::before ,
+.pmwc-pagination-item--round.mdc-icon-button::after {
+  border-radius: 4px;
+}
+
 .pmwc-pagination-item--selected {
 	/* background-color: rgba(0, 0, 0, 0.12); */
   color: var(--mdc-theme-on-standard, rgba(0, 0, 0, 0.87));

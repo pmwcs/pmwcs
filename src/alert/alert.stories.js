@@ -97,7 +97,7 @@ export const alertTitle = () => (
     </Alert>
     <Br />
 
-    <Alert severity='info' outlined action={<Button neutral onClick={() => {}}>OK</Button>}>
+    <Alert severity='info' outlined action={<Button standard onClick={() => {}}>OK</Button>}>
       <AlertTitle>Info</AlertTitle>
       This is a success alert — <strong>check it out!</strong>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -112,7 +112,7 @@ export const actions = () => (
     </Alert>
     <Br />
 
-    <Alert action={<Button neutral onClick={() => {}}>UNDO</Button>}>
+    <Alert action={<Button standard onClick={() => {}}>UNDO</Button>}>
       This is a warning alert — check it out!
     </Alert>
     <Br />
@@ -122,12 +122,12 @@ export const actions = () => (
     </Alert>
     <Br />
 
-    <Alert severity='info' action={<Button neutral onClick={() => {}}>UNDO</Button>}>
+    <Alert severity='info' action={<Button standard onClick={() => {}}>UNDO</Button>}>
       This is a success alert — check it out!
     </Alert>
     <Br />
 
-    <Alert outlined severity='error' action={<Button neutral onClick={() => {}}>UNDO</Button>}>
+    <Alert outlined severity='error' action={<Button standard onClick={() => {}}>UNDO</Button>}>
       This is a outlined error alert — check it out!
     </Alert>
     <Br />
@@ -137,7 +137,7 @@ export const actions = () => (
     </Alert>
     <Br />
 
-    <Alert filled severity='info' action={<Button neutral onClick={() => {}}>UNDO</Button>}>
+    <Alert filled severity='info' action={<Button standard onClick={() => {}}>UNDO</Button>}>
       This is a filled info alert — check it out!
     </Alert>
     <Br />

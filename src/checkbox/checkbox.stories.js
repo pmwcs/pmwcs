@@ -36,17 +36,17 @@ export const basic = () => (
 
     <Checkbox primary label='Disabled Off' disabled />
 
-    <p>(neutral)</p>
+    <p>(standard)</p>
 
-    <Checkbox neutral label='Pizza' />
+    <Checkbox standard label='Pizza' />
 
-    <Checkbox neutral checked>Icecream</Checkbox>
+    <Checkbox standard checked>Icecream</Checkbox>
 
-    <Checkbox neutral label='Broccoli' indeterminate />
+    <Checkbox standard label='Broccoli' indeterminate />
 
-    <Checkbox neutral label='Disabled On' checked disabled />
+    <Checkbox standard label='Disabled On' checked disabled />
 
-    <Checkbox neutral label='Disabled Off' disabled />
+    <Checkbox standard label='Disabled Off' disabled />
   </section>
 )
 

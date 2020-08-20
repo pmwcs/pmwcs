@@ -14,8 +14,8 @@ export interface CircularProgressProps {
   size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | number;
   /** Choose secondary theme. */
   secondary?: boolean;
-  /** Choose neutral theme. */
-  neutral?: boolean;
+  /** Choose standard theme. */
+  standard?: boolean;
 }
 
 export declare const CircularProgress : AnyComponent<CircularProgressProps>;

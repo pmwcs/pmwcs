@@ -1,11 +1,11 @@
-.mdc-theme--neutral {
+.mdc-theme--standard {
   color: inherit !important;
 }
-.mdc-theme--on-neutral {
-  color: var(--mdc-theme-on-neutral, rgba(0, 0, 0, 0.87)) !important;
+.mdc-theme--on-standard {
+  color: var(--mdc-theme-on-standard, rgba(0, 0, 0, 0.87)) !important;
 }
-.mdc-theme--neutral-bg {
-  background-color: var(--mdc-theme-bg-neutral, rgba(224, 224, 224, 0.87)) !important;
+.mdc-theme--standard-bg {
+  background-color: var(--mdc-theme-bg-standard, rgba(224, 224, 224, 0.87)) !important;
 }
 .mdc-button.mdc-button--activated .mdc-button__ripple::before {
   opacity: 0.24 !important;

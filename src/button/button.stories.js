@@ -39,14 +39,14 @@ export const basic = () => (
     <Button label='No Ripple' ripple={false} secondary />
     <Button label='Disabled' secondary disabled />
 
-    <p>Text Button (neutral)</p>
+    <p>Text Button (standard)</p>
 
-    <Button label='Raised' raised neutral />
-    <Button label='Unelevated' unelevated neutral />
-    <Button label='Outlined' outlined neutral />
-    <Button label='Dense' dense neutral />
-    <Button label='No Ripple' ripple={false} neutral />
-    <Button label='Disabled' neutral disabled />
+    <Button label='Raised' raised standard />
+    <Button label='Unelevated' unelevated standard />
+    <Button label='Outlined' outlined standard />
+    <Button label='Dense' dense standard />
+    <Button label='No Ripple' ripple={false} standard />
+    <Button label='Disabled' standard disabled />
 
     <p>Danger Button (danger)</p>
 
@@ -81,10 +81,10 @@ export const withIcons = () => (
     <Button secondary label='Rate it!' icon='star' raised />
 
     <p> </p>
-    <Button neutral label='Icon' icon='favorite' />
-    <Button neutral label='Trailing' trailingIcon='keyboard_arrow_right' />
-    <Button neutral label='Loading' icon={<CircularProgress neutral />} />
-    <Button neutral label='Rate it!' icon='star' raised />
+    <Button standard label='Icon' icon='favorite' />
+    <Button standard label='Trailing' trailingIcon='keyboard_arrow_right' />
+    <Button standard label='Loading' icon={<CircularProgress standard />} />
+    <Button standard label='Rate it!' icon='star' raised />
 
   </section>
 )

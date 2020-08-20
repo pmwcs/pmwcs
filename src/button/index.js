@@ -17,7 +17,7 @@ export const Button = withRipple({
     unelevated,
     outlined,
     secondary,
-    neutral,
+    standard,
     danger,
     activated,
     icon,
@@ -33,10 +33,10 @@ export const Button = withRipple({
       props.theme = (raised || unelevated)
         ? ['secondaryBg', 'onSecondary']
         : 'secondary'
-    } else if (neutral) {
+    } else if (standard) {
       props.theme = (raised || unelevated)
-        ? ['neutralBg', 'onNeutral']
-        : 'neutral'
+        ? ['standardBg', 'onStandard']
+        : 'standard'
     }
   }
 

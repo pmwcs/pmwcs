@@ -12,7 +12,7 @@ export const ButtonGroup = createComponent(function ButtonGroup (props, ref) {
     unelevated,
     dense,
     secondary,
-    neutral,
+    standard,
     ripple,
     children,
     ...rest
@@ -23,8 +23,8 @@ export const ButtonGroup = createComponent(function ButtonGroup (props, ref) {
   const className = useClassNames(props, [
     'pmwc-button-group',
     {
-      'mdc-theme--neutral-bg': neutral && isFilled,
-      'mdc-theme--on-neutral': neutral,
+      'mdc-theme--standard-bg': standard && isFilled,
+      'mdc-theme--on-standard': standard,
       'pmwc-button-group--raised': raised,
       'pmwc-button-group--dense': dense
     }
@@ -38,7 +38,7 @@ export const ButtonGroup = createComponent(function ButtonGroup (props, ref) {
         dense,
         secondary,
         ripple,
-        neutral
+        standard
       }))}
     </Tag>
   )

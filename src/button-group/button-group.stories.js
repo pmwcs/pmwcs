@@ -36,7 +36,7 @@ export const basic = () => (
     </ButtonGroup>
     <Br />
 
-    <ButtonGroup neutral>
+    <ButtonGroup standard>
       <Button>One</Button>
       <Button>Two</Button>
       <Button>Three</Button>
@@ -68,7 +68,7 @@ export const raised = () => (
     </ButtonGroup>
     <Br />
 
-    <ButtonGroup raised neutral>
+    <ButtonGroup raised standard>
       <Button>One</Button>
       <Button>Two</Button>
       <Button>Three</Button>
@@ -106,7 +106,7 @@ export const unelevated = () => (
     </ButtonGroup>
     <Br />
 
-    <ButtonGroup unelevated neutral>
+    <ButtonGroup unelevated standard>
       <Button>One</Button>
       <Button>Two</Button>
       <Button>Three</Button>
@@ -131,14 +131,14 @@ export const outlined = () => (
     </ButtonGroup>
     <Br />
 
-    <ButtonGroup outlined neutral>
+    <ButtonGroup outlined standard>
       <Button>One</Button>
       <Button>Two</Button>
       <Button>Three</Button>
     </ButtonGroup>
     <Br />
 
-    <ButtonGroup outlined neutral>
+    <ButtonGroup outlined standard>
       <Button><Icon icon='favorite' /></Button>
       <Button><Icon icon='local_pizza' /></Button>
       <Button><Icon icon='mood' /></Button>
@@ -163,14 +163,14 @@ export const dense = () => (
     </ButtonGroup>
     <Br />
 
-    <ButtonGroup dense neutral>
+    <ButtonGroup dense standard>
       <Button>One</Button>
       <Button>Two</Button>
       <Button>Three</Button>
     </ButtonGroup>
     <Br />
 
-    <ButtonGroup dense neutral>
+    <ButtonGroup dense standard>
       <Button><Icon icon='favorite' /></Button>
       <Button><Icon icon='local_pizza' /></Button>
       <Button><Icon icon='mood' /></Button>

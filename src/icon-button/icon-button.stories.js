@@ -66,7 +66,7 @@ export const basic = () => (
           icon='star'
           label='Rate this!'
           style={{ color: 'red' }}
-          onClick={action('disabled')}
+          onClick={action('code red')}
         />
         {' style={{ color: \'red\' }}'}
       </li>

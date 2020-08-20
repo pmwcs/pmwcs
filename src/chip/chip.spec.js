@@ -2,7 +2,7 @@ import { h } from 'preact'
 import { mount } from 'enzyme'
 import { Chip, ChipSet } from './'
 import { useChipFoundation } from './foundation'
-import { mountHook } from '@pmwc/base/utils/test-utils'
+import { mountHook } from '../test-utils'
 import { MDCChipFoundation } from '@material/chips'
 
 describe('Chip', () => {

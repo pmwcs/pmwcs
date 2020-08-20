@@ -10,7 +10,7 @@ import {
   closest
 } from './'
 import { FoundationElement } from './foundation-component'
-import { wait } from './utils/test-utils'
+import { wait } from '../test-utils'
 
 jest.spyOn(console, 'warn')
 

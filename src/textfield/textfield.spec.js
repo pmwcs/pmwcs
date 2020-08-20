@@ -1,7 +1,7 @@
 import { h } from 'preact'
 import { mount } from 'enzyme'
 import { TextField, TextFieldHelperText } from './'
-import { wait } from '@pmwc/base/utils/test-utils'
+import { wait } from '../test-utils'
 
 describe('TextField', () => {
   it('renders', () => {

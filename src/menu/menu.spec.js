@@ -8,7 +8,7 @@ import {
   SimpleMenu,
   SimpleMenuSurface
 } from './'
-import { wait } from '@pmwc/base/utils/test-utils'
+import { wait } from '../test-utils'
 
 describe('Menu', () => {
   it('renders', () => {

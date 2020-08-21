@@ -27,7 +27,7 @@ export const Pagination = createComponent(function Pagination (props, ref) {
     onChange,
     page,
     renderItem = (item) => <PaginationItem {...item} />,
-    shape = 'round',
+    rounded,
     showFirstButton,
     showLastButton,
     siblingCount,
@@ -55,7 +55,7 @@ export const Pagination = createComponent(function Pagination (props, ref) {
               ...item,
               color: primary ? 'primary' : secondary ? 'secondary' : undefined,
               'aria-label': getItemAriaLabel(item.type, item.page, item.selected),
-              shape,
+              rounded,
               size,
               variant
             })}

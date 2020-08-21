@@ -45,3 +45,48 @@ export const basic = () => (
 
   </section>
 )
+
+export const rounded = () => (
+  <section className='mdc-typography'>
+    <Pagination rounded />
+    <Br />
+
+    <Pagination rounded count={3} defaultPage={1} />
+    <Br />
+
+    <Pagination rounded count={5} defaultPage={3} showFirstButton showLastButton />
+    <Br />
+
+    <Pagination rounded count={99} primary defaultPage={2} />
+    <Br />
+
+    <Pagination rounded count={999} secondary defaultPage={5} />
+    <Br />
+
+    <Pagination rounded count={10} disabled />
+    <Br />
+
+  </section>
+)
+
+export const sizes = () => (
+  <section className='mdc-typography'>
+    <Br />
+    <Pagination size='small' count={99} />
+
+    <Br />
+    <Pagination size='small' count={999} />
+
+    <Br />
+    <Pagination size='medium' count={99} />
+
+    <Br />
+    <Pagination count={999} />
+
+    <Br />
+    <Pagination size='large' count={99} />
+
+    <Br />
+    <Pagination size='large' count={999} />
+  </section>
+)

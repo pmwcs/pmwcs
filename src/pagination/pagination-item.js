@@ -13,10 +13,10 @@ export const PaginationItem = (createComponent(function PaginationItem (props, r
     disabled = false,
     page,
     selected = false,
-    // shape = 'round',
+    rounded,
     size = 'medium',
     type = 'page',
-    // variant = 'text',
+    ripple,
     ...rest
   } = props
 
@@ -30,6 +30,8 @@ export const PaginationItem = (createComponent(function PaginationItem (props, r
   const icon = normalizedIcons[type]
 
   const isEllipsis = type === 'start-ellipsis' || type === 'end-ellipsis'
+  const primary = color === 'primary'
+  const secondary = color === 'secondary'
 
   const className_ = useClassNames(props, [
     className,
@@ -38,12 +40,15 @@ export const PaginationItem = (createComponent(function PaginationItem (props, r
       'mdc-icon-button': !isEllipsis,
       [`${BEM}--disabled`]: disabled,
       [`${BEM}--selected`]: selected,
-      [`${BEM}--primary`]: color === 'primary',
-      [`${BEM}--secondary`]: color === 'secondary',
+      [`${BEM}--primary`]: primary,
+      [`${BEM}--secondary`]: secondary,
       [`${BEM}--size-${size}`]: size !== 'medium',
-      [`${BEM}--text`]: !icon
+      [`${BEM}--text`]: !icon,
+      [`${BEM}--rounded`]: rounded
     }
   ])
+
+  const ripple_ = ripple === false ? false : { secondary, primary }
 
   return isEllipsis
     ? (
@@ -55,7 +60,11 @@ export const PaginationItem = (createComponent(function PaginationItem (props, r
         tabindex={0}
         className={className_}
         icon={icon}
+        primary={primary}
+        secondary={secondary}
         disabled={disabled}
+        size={size}
+        ripple={ripple_}
         {...rest}
       >
         {type === 'page' && page}

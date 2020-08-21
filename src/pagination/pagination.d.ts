@@ -38,17 +38,13 @@ export interface PaginationProps
    */
   renderItem?: (params: PaginationRenderItemParams) => React.ReactNode;
   /**
-   * The shape of the pagination items.
+   * The shape of the pagination items: rounded egdes instead of circle
    */
-  shape?: 'round' | 'rounded';
+  rounded?: boolean;
   /**
    * The size of the pagination component.
    */
   size?: 'small' | 'medium' | 'large';
-  /**
-   * The variant to use.
-   */
-  variant?: 'text' | 'outlined';
 }
 
 export type PaginationClassKey = 'root' | 'ul';

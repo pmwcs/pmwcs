@@ -1,20 +1,15 @@
 import { AnyComponent } from 'preact';
+import { HTMLProps } from '@pmwc/base'
+import { WithRippleProps } from '@pmwc/ripple'
 import { UsePaginationItem, UsePaginationProps } from './usePagination';
 
 export interface PaginationRenderItemParams extends UsePaginationItem {
   color: PaginationProps['color'];
-  shape: PaginationProps['shape'];
   size: PaginationProps['size'];
-  variant: PaginationProps['variant'];
 }
 
 export interface PaginationProps
-  extends UsePaginationProps,
-    StandardProps<React.HTMLAttributes<HTMLElement>, PaginationClassKey, 'children' | 'onChange'> {
-  /**
-   * The active color.
-   */
-  color?: 'primary' | 'secondary' | 'standard';
+  extends UsePaginationProps, WithRippleProps, HTMLProps {
   /**
    * Accepts a function which returns a string value that provides a user-friendly name for the current page.
    *
@@ -45,6 +40,14 @@ export interface PaginationProps
    * The size of the pagination component.
    */
   size?: 'small' | 'medium' | 'large';
+  /**
+   * Primary theme for Pagination Component
+   */
+  primary?: boolean;
+  /**
+   * Secondary theme for Pagination Component
+   */
+  secondary?: boolean;
 }
 
 export type PaginationClassKey = 'root' | 'ul';

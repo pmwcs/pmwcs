@@ -20,6 +20,7 @@
   "dependencies": {
     "@pmwc/base": "^1.0.0-0",
     "@pmwc/icon": "^1.0.0-0",
+    "@pmwc/ripple": "^1.0.0-0",
     "@pmwc/icon-button": "^1.0.0-0",
     "@pmwc/typography": "^1.0.0-0"
   },

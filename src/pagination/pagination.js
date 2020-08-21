@@ -16,7 +16,6 @@ function defaultGetAriaLabel (type, page, selected) {
 export const Pagination = createComponent(function Pagination (props, ref) {
   const {
     boundaryCount,
-    classes,
     className,
     count,
     defaultPage,
@@ -32,7 +31,6 @@ export const Pagination = createComponent(function Pagination (props, ref) {
     showLastButton,
     siblingCount,
     size = 'medium',
-    variant = 'text',
     primary,
     secondary,
     ...other
@@ -53,11 +51,11 @@ export const Pagination = createComponent(function Pagination (props, ref) {
           <li key={index}>
             {renderItem({
               ...item,
-              color: primary ? 'primary' : secondary ? 'secondary' : undefined,
               'aria-label': getItemAriaLabel(item.type, item.page, item.selected),
+              primary,
+              secondary,
               rounded,
-              size,
-              variant
+              size
             })}
           </li>
         ))}

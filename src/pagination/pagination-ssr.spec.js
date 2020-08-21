@@ -7,10 +7,27 @@ import { Pagination } from './'
 
 describe('Pagination SSR', () => {
   it('renders', () => {
-    mount()
+    mount(<Pagination count={2} />)
   })
   it('renders equal', () => {
-    const alert = mount()
-    expect(alert).toEqual('<div class="pmwc-alert pmwc-alert--success"><i aria-hidden="true" class="pmwc-icon pmwc-icon--component material-icons pmwc-alert-icon pmwc-alert-icon--success"><svg viewBox="0 0 24 24" class="pmwc-icon-svg"><path d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"></path></svg></i><div class="pmwc-alert-message mdc-typography--body2"><div class="pmwc-alert-title mdc-typography--body1">Success</div>This is a success alert — check it out!</div></div>')
+    const alert = mount(<Pagination count={2} defaultPage={2} />)
+    expect(alert).toEqual(
+      '<nav aria-label="pagination navigation">' +
+      '<ul class="pmwc-pagination">' +
+      '<li>' +
+      '<button tabindex="0" aria-label="Go to previous page" class="pmwc-icon pmwc-icon--ligature material-icons pmwc-pagination-item mdc-icon-button mdc-icon-button pmwc-icon-button--size-medium pmwc-icon--size-medium" data-mdc-ripple-is-unbounded>navigate_before</button>' +
+      '</li>' +
+      '<li>' +
+      '<button tabindex="0" aria-label="Go to page 1" class="pmwc-icon pmwc-icon--ligature material-icons pmwc-pagination-item mdc-icon-button pmwc-pagination-item--text mdc-icon-button pmwc-icon-button--size-medium pmwc-icon--size-medium" data-mdc-ripple-is-unbounded>1</button>' +
+      '</li>' +
+      '<li>' +
+      '<button tabindex="0" aria-label="page 2" aria-current="true" class="pmwc-icon pmwc-icon--ligature material-icons pmwc-pagination-item mdc-icon-button pmwc-pagination-item--selected pmwc-pagination-item--text mdc-icon-button pmwc-icon-button--size-medium pmwc-icon--size-medium" data-mdc-ripple-is-unbounded>2</button>' +
+      '</li>' +
+      '<li>' +
+      '<button tabindex="0" aria-label="Go to next page" disabled class="pmwc-icon pmwc-icon--ligature material-icons pmwc-pagination-item mdc-icon-button pmwc-pagination-item--disabled mdc-icon-button pmwc-icon-button--size-medium pmwc-icon--size-medium" data-mdc-ripple-is-unbounded>navigate_next</button>' +
+      '</li>' +
+      '</ul>' +
+      '</nav>'
+    )
   })
 })

@@ -6,13 +6,12 @@ const BEM = 'pmwc-pagination-item'
 
 export const PaginationItem = (createComponent(function PaginationItem (props, ref) {
   const {
-    classes,
     className,
-    color = 'standard',
-    component,
     disabled = false,
     page,
     selected = false,
+    primary,
+    secondary,
     rounded,
     size = 'medium',
     type = 'page',
@@ -30,8 +29,6 @@ export const PaginationItem = (createComponent(function PaginationItem (props, r
   const icon = normalizedIcons[type]
 
   const isEllipsis = type === 'start-ellipsis' || type === 'end-ellipsis'
-  const primary = color === 'primary'
-  const secondary = color === 'secondary'
 
   const className_ = useClassNames(props, [
     className,

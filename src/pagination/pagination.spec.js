@@ -1,79 +1,34 @@
-import * as React from 'react';
-import { expect } from 'chai';
-import { spy } from 'sinon';
-import { getClasses } from '@material-ui/core/test-utils';
-import createMount from 'test/utils/createMount';
-import describeConformance from '@material-ui/core/test-utils/describeConformance';
-import { createClientRender } from 'test/utils/createClientRender';
-import Pagination from './Pagination';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { h } from 'preact'
+import { mount } from 'enzyme'
+import { Pagination } from '.'
 
-describe('<Pagination />', () => {
-  let classes;
-  const mount = createMount();
-  const render = createClientRender();
-
-  before(() => {
-    classes = getClasses(<Pagination />);
-  });
-
-  describeConformance(<Pagination />, () => ({
-    classes,
-    inheritComponent: 'nav',
-    mount,
-    refInstanceof: window.HTMLElement,
-
-    skip: ['componentProp'],
-  }));
-
+describe('Pagination', () => {
   it('should render', () => {
-    const { container } = render(<Pagination />);
-
-    expect(container.firstChild).to.have.class(classes.root);
-  });
+    const el = mount(<Pagination count={2} />)
+    const html = el.html()
+    expect(html.includes('<nav aria-label="pagination navigation">')).toEqual(true)
+    expect(html.includes('<ul class="pmwc-pagination">')).toEqual(true)
+    expect(el.find('button').length).toEqual(4)
+  })
 
   it('moves aria-current to the specified page', () => {
-    const { container, getAllByRole } = render(<Pagination count={3} page={1} />);
-
-    // previous, page 1
-    const [, page1] = getAllByRole('button');
-    expect(page1).to.have.attribute('aria-current', 'true');
-    // verifying no regression from previous bug where `page` wasn't intercepted
-    expect(container.querySelector('[page]')).to.equal(null);
-  });
+    const el = mount(<Pagination count={3} page={1} />)
+    expect(el.find('button').map((e) => e.props()['aria-label'])).toEqual([
+      'Go to previous page',
+      'page 1',
+      'Go to page 2',
+      'Go to page 3',
+      'Go to next page'
+    ])
+    expect(el.find('button').at(1).props()['aria-current']).toEqual('true')
+    expect(el.find('button').at(2).props()['aria-current']).toEqual(undefined)
+  })
 
   it('fires onChange when a different page is clicked', () => {
-    const handleChange = spy();
-    const { getAllByRole } = render(<Pagination count={3} onChange={handleChange} page={1} />);
-
-    // previous, page 1, page 2
-    const [, , page2] = getAllByRole('button');
-    page2.click();
-
-    expect(handleChange.callCount).to.equal(1);
-  });
-
-  it('renders controls with correct order in rtl theme', () => {
-    const { getAllByRole } = render(
-      <ThemeProvider
-        theme={createMuiTheme({
-          direction: 'rtl',
-        })}
-      >
-        <Pagination count={5} page={3} showFirstButton showLastButton />
-      </ThemeProvider>,
-    );
-
-    const buttons = getAllByRole('button');
-
-    expect(buttons[0].querySelector('svg')).to.have.attribute('data-mui-test', 'LastPageIcon');
-    expect(buttons[1].querySelector('svg')).to.have.attribute('data-mui-test', 'NavigateNextIcon');
-    expect(buttons[2].textContent).to.equal('1');
-    expect(buttons[6].textContent).to.equal('5');
-    expect(buttons[7].querySelector('svg')).to.have.attribute(
-      'data-mui-test',
-      'NavigateBeforeIcon',
-    );
-    expect(buttons[8].querySelector('svg')).to.have.attribute('data-mui-test', 'FirstPageIcon');
-  });
-});
+    let page
+    const handleChange = (_, page_) => { page = page_ }
+    const el = mount(<Pagination count={3} onChange={handleChange} page={1} />)
+    el.find('button').at(2).simulate('click')
+    expect(page).toEqual(2)
+  })
+})

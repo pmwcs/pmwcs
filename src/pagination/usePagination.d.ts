@@ -64,7 +64,7 @@ export interface UsePaginationProps {
 }
 
 export interface UsePaginationItem {
-  onClick: React.ReactEventHandler;
+  onClick: Event;
   type: 'page' | 'first' | 'last' | 'next' | 'previous' | 'start-ellipsis' | 'end-ellipsis';
   page: number;
   selected: boolean;

@@ -70,6 +70,24 @@ export const basic = () => (
         />
         {' style={{ color: \'red\' }}'}
       </li>
+      <li>
+        <IconButton
+          icon='star'
+          label='Rate this!'
+          primary
+          onClick={action('primary')}
+        />
+        {' primary'}
+      </li>
+      <li>
+        <IconButton
+          icon='star'
+          label='Rate this!'
+          secondary
+          onClick={action('secondary')}
+        />
+        {' secondary'}
+      </li>
     </ul>
   </section>
 )

@@ -37,7 +37,7 @@ const IconButtonRoot = withRipple({
   surface: false,
   unbounded: true
 })(createComponent(function IconButtonRoot (props, ref) {
-  const { checked, label, foundationRef, onKeyDown, size, ...rest } = props
+  const { checked, label, foundationRef, onKeyDown, size, primary, secondary, ripple, ...rest } = props
   const className = useClassNames(props, [
     'mdc-icon-button',
     {

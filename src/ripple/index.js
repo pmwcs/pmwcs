@@ -38,6 +38,7 @@ export const Ripple = withDomNode()(function Ripple (props) {
     children,
     className,
     primary,
+    secondary,
     accent,
     unbounded,
     surface,
@@ -75,7 +76,7 @@ export const Ripple = withDomNode()(function Ripple (props) {
     {
       'mdc-ripple-surface': typeof surface === 'boolean' ? surface : surface === undefined,
       'mdc-ripple-surface--primary': primary,
-      'mdc-ripple-surface--accent': accent
+      'mdc-ripple-surface--accent': accent || secondary
     }
   )
 

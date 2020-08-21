@@ -12,26 +12,26 @@ export default {
   component: Ripple
 }
 
-export const standard = () => (
-  <Ripple>
-    <p>Standard Ripple</p>
-  </Ripple>
-)
+export const basic = () => (
+  <section className='mdc-typography'>
+    <Ripple>
+      <p style={{ height: '4em' }}>Standard Ripple</p>
+    </Ripple>
 
-export const primary = () => (
-  <Ripple primary>
-    <p>Primary</p>
-  </Ripple>
-)
+    <Ripple primary>
+      <p style={{ height: '4em' }}>Primary Ripple</p>
+    </Ripple>
 
-export const accent = () => (
-  <Ripple accent>
-    <p>Accent</p>
-  </Ripple>
+    <Ripple accent>
+      <p style={{ height: '4em' }}>Accent Ripple</p>
+    </Ripple>
+  </section>
 )
 
 export const unbounded = () => (
-  <Ripple unbounded>
-    <p>Unbounded</p>
-  </Ripple>
+  <section className='mdc-typography'>
+    <Ripple unbounded>
+      <p style={{ height: '4em' }}>Unbounded</p>
+    </Ripple>
+  </section>
 )

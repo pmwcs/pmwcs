@@ -12,7 +12,7 @@ export default {
 }
 
 export const basic = () => (
-  <section>
+  <section className='mdc-typography'>
     <p>basic</p>
     <LinearProgress />
 

@@ -6,6 +6,8 @@ import {
 } from './index.js'
 
 import { Button } from '@pmwc/button'
+import { List, SimpleListItem } from '@pmwc/list'
+import { Chip } from '@pmwc/chip'
 
 export default {
   title: 'CircularProgress',
@@ -13,7 +15,7 @@ export default {
 }
 
 export const basic = () => (
-  <section>
+  <section className='mdc-typography'>
     <p />
     <CircularProgress />
 
@@ -32,7 +34,7 @@ export const basic = () => (
 )
 
 export const sizing = () => (
-  <section>
+  <section className='mdc-typography'>
     <CircularProgress size='xsmall' />
     <CircularProgress size='small' />
     <CircularProgress size='medium' />
@@ -43,18 +45,18 @@ export const sizing = () => (
 )
 
 export const useWithOthers = () => (
-  <section>
+  <section className='mdc-typography'>
     <Button
       icon={<CircularProgress theme='secondary' />}
       label='Cookies'
     />
-    {/*
+
     <List>
-      <SimpleListItem graphic={<CircularProgress />} text="Pizza" />
-      <SimpleListItem graphic="favorite" text="Icecream" />
+      <SimpleListItem graphic={<CircularProgress />} text='Pizza' />
+      <SimpleListItem graphic='favorite' text='Icecream' />
     </List>
 
-    <Chip icon={<CircularProgress />} label="Donuts" />
-    */}
+    <Chip icon={<CircularProgress />} label='Donuts' />
+
   </section>
 )

@@ -74,7 +74,11 @@ export const simplifiedUsage = () => {
       </section>
     )
   }
-  return <Example />
+  return (
+    <section className='mdc-typography'>
+      <Example />
+    </section>
+  )
 }
 
 export const dialogQuene = () => {
@@ -125,5 +129,9 @@ export const dialogQuene = () => {
       </div>
     )
   }
-  return <App />
+  return (
+    <section className='mdc-typography'>
+      <App />
+    </section>
+  )
 }

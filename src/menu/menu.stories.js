@@ -76,7 +76,11 @@ export const basic = () => {
     )
   }
 
-  return <Example />
+  return (
+    <section className='mdc-typography'>
+      <Example />
+    </section>
+  )
 }
 
 export const example = () => {
@@ -96,7 +100,11 @@ export const example = () => {
       </MenuSurfaceAnchor>
     )
   }
-  return <Example />
+  return (
+    <section className='mdc-typography'>
+      <Example />
+    </section>
+  )
 }
 
 export const other = () => {
@@ -114,11 +122,15 @@ export const other = () => {
     )
   }
 
-  return <Example />
+  return (
+    <section className='mdc-typography'>
+      <Example />
+    </section>
+  )
 }
 
 export const simplified = () => (
-  <section>
+  <section className='mdc-typography'>
     <SimpleMenu handle={<Button>Simple Menu</Button>}>
       <MenuItem>Cookies</MenuItem>
       <MenuItem>Pizza</MenuItem>
@@ -182,7 +194,11 @@ export const anchoring = () => {
       </section>
     )
   }
-  return <Example />
+  return (
+    <section className='mdc-typography'>
+      <Example />
+    </section>
+  )
 }
 
 export const renderThroughPortals = () => {
@@ -214,5 +230,9 @@ export const renderThroughPortals = () => {
       </section>
     )
   }
-  return <Example />
+  return (
+    <section className='mdc-typography'>
+      <Example />
+    </section>
+  )
 }

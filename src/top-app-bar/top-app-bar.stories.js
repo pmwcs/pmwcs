@@ -19,7 +19,7 @@ export default {
 }
 
 export const basic = () => (
-  <section>
+  <section className='mdc-typography'>
     <TopAppBar>
       <TopAppBarRow>
         <TopAppBarSection>
@@ -34,7 +34,7 @@ export const basic = () => (
 )
 
 export const allFeatures = () => (
-  <section>
+  <section className='mdc-typography'>
     <TopAppBar>
       <TopAppBarRow>
         <TopAppBarSection alignStart>
@@ -60,7 +60,7 @@ export const allFeatures = () => (
 )
 
 export const simple = () => (
-  <section>
+  <section className='mdc-typography'>
     <SimpleTopAppBar
       title='test'
       navigationIcon
@@ -81,7 +81,7 @@ export const simple = () => (
 )
 
 export const fixed = () => (
-  <section>
+  <section className='mdc-typography'>
     <TopAppBar fixed>
       <TopAppBarRow>
         <TopAppBarSection>
@@ -96,7 +96,7 @@ export const fixed = () => (
 )
 
 export const dense = () => (
-  <section>
+  <section className='mdc-typography'>
     <TopAppBar dense>
       <TopAppBarRow>
         <TopAppBarSection>
@@ -111,7 +111,7 @@ export const dense = () => (
 )
 
 export const short = () => (
-  <section>
+  <section className='mdc-typography'>
     {/** Additionally you can specify shortCollapsed to have it always minimized */}
     <TopAppBar short>
       <TopAppBarRow>
@@ -131,7 +131,7 @@ export const short = () => (
 )
 
 export const prominent = () => (
-  <section>
+  <section className='mdc-typography'>
     <TopAppBar prominent>
       <TopAppBarRow>
         <TopAppBarSection>

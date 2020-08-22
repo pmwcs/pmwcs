@@ -17,7 +17,7 @@ export default {
 }
 
 export const themeOptions = () => (
-  <section>
+  <section className='mdc-typography'>
     <div style={{ backgroundColor: '#ddd' }}>
       {[
         'primary',
@@ -67,44 +67,50 @@ export const themeOptions = () => (
 )
 
 export const themeProvider = () => (
-  <ThemeProvider
-    options={{
-      primary: 'red',
-      secondary: 'blue'
-    }}
-  >
-    <Button raised>Cookies</Button>
-    <Checkbox label='Pizza' defaultChecked />
-    <Radio label='Icecream' defaultChecked />
-  </ThemeProvider>
+  <section className='mdc-typography'>
+    <ThemeProvider
+      options={{
+        primary: 'red',
+        secondary: 'blue'
+      }}
+    >
+      <Button raised>Cookies</Button>
+      <Checkbox label='Pizza' defaultChecked />
+      <Radio label='Icecream' defaultChecked />
+    </ThemeProvider>
+  </section>
 )
 
 export const themeProvider2 = () => (
-  <ThemeProvider
-    options={{
-      primary: 'lightpink',
-      secondary: 'black',
-      onPrimary: '#000',
-      textPrimaryOnBackground: 'black'
-    }}
-  >
-    <Button raised>Cookies</Button>
-    <Checkbox label='Pizza' defaultChecked />
-    <Radio label='Icecream' defaultChecked />
-  </ThemeProvider>
+  <section className='mdc-typography'>
+    <ThemeProvider
+      options={{
+        primary: 'lightpink',
+        secondary: 'black',
+        onPrimary: '#000',
+        textPrimaryOnBackground: 'black'
+      }}
+    >
+      <Button raised>Cookies</Button>
+      <Checkbox label='Pizza' defaultChecked />
+      <Radio label='Icecream' defaultChecked />
+    </ThemeProvider>
+  </section>
 )
 
 export const themeProvider3 = () => (
-  <Theme use={['primaryBg', 'onPrimary']} wrap>
-    {/* Add Theme colors to your own components. */}
-    <div style={{ width: '4rem', height: '4rem', padding: '1rem' }}>
-      Cookies
-    </div>
-  </Theme>
+  <section className='mdc-typography'>
+    <Theme use={['primaryBg', 'onPrimary']} wrap>
+      {/* Add Theme colors to your own components. */}
+      <div style={{ width: '4rem', height: '4rem', padding: '1rem' }}>
+        Cookies
+      </div>
+    </Theme>
+  </section>
 )
 
 export const themeComponent = () => (
-  <section>
+  <section className='mdc-typography'>
     {/* These two examples are roughly equivalent. */}
     <Theme use={['secondaryBg', 'onSecondary']} wrap>
       <Button>Pizza</Button>
@@ -115,7 +121,7 @@ export const themeComponent = () => (
 )
 
 export const themeComponent2 = () => (
-  <section>
+  <section className='mdc-typography'>
     {/* Text is one of the cases where `wrap` is not required. By default `Theme` will insert `span` tags. */}
     <h3>
       I <Theme use='primary'>Want</Theme>{' '}

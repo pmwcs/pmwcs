@@ -1,0 +1,32 @@
+{
+  "name": "@pmwc/data-table-pagination",
+  "version": "1.0.0-0",
+  "description": "PMWC data-table-pagination component",
+  "keywords": [
+    "pmwc"
+  ],
+  "license": "MIT",
+  "author": "",
+  "sideEffects": [
+    "./styles.js",
+    "*.css"
+  ],
+  "main": "dist/index.js",
+  "module": "next/index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "publish:dist": "npm publish dist --access=public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@material/data-table": "^7.0.0",
+    "@pmwc/base": "^1.0.0-0",
+    "@pmwc/icon": "^1.0.0-0"
+  },
+  "peerDependencies": {
+    "preact": "^10.4.7"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

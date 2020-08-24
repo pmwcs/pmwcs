@@ -234,7 +234,7 @@ export const Select = createComponent(function Select (props, ref) {
   const {
     placeholder,
     children,
-    value,
+    value: value_,
     outlined,
     label = '',
     options = [],
@@ -253,6 +253,12 @@ export const Select = createComponent(function Select (props, ref) {
     style,
     ...rest
   } = props
+
+  // convert value to string as otherwise initial value for controlled component
+  // while using numbers not working
+  const value = props.value = value_ !== undefined
+    ? String(value_)
+    : value_
 
   const selectOptions = createSelectOptions(options)
   const {

@@ -176,9 +176,13 @@ export const validation = () => (
 )
 
 export const controlled = () => {
-  function Controlled (props) {
-    const [value, setValue] = useState(props.options[0])
+  const initialValue = (option) => typeof option === 'object'
+    ? option.value
+    : option
 
+  function Controlled (props) {
+    const [value, setValue] = useState(initialValue(props.options[0]))
+    console.log(value, typeof value)
     return (
       <Select
         {...props}
@@ -196,6 +200,27 @@ export const controlled = () => {
       <Controlled
         label='Controlled'
         options={['Cookies', 'Pizza', 'Icecream']}
+      />
+      <Br />
+
+      <Controlled
+        label='Controlled only numbers'
+        options={[
+          { value: 4, label: 'Cookies' },
+          { value: 7, label: 'Pizza' },
+          { value: 8, label: 'Icecream' }
+        ]}
+      />
+      <Br />
+
+      <Controlled
+        enhanced
+        label='Enhanced only numbers'
+        options={[
+          { value: 4, label: 'Cookies' },
+          { value: 7, label: 'Pizza' },
+          { value: 8, label: 'Icecream' }
+        ]}
       />
       <Br />
 

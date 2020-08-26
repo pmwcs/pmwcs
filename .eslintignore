@@ -1,6 +1,7 @@
+**/tmp.*
+coverage/
 src/**/dist
 src/**/next
 src/pmwc/docs
 src/tooltip
-**/tmp.*
-coverage/
+storybook-static/

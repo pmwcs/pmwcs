@@ -1,6 +1,6 @@
-node_modules/
-coverage/
-storybook-static/
-*.tgz
-*.log
 .*
+*.log
+*.tgz
+coverage/
+node_modules/
+storybook-static/

@@ -1,7 +1,7 @@
+*.log
+*.tgz
 **/node_modules/
 coverage/
-storybook-static/
 src/**/dist
 src/**/next
-*.tgz
-*.log
+storybook-static/

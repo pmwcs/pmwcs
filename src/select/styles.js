@@ -1,5 +1,5 @@
-import '@pmwc/select/select.css'
 import '@material/select/dist/mdc.select.css'
+import '@pmwc/select/select.css'
 import '@pmwc/floating-label/styles'
 import '@pmwc/notched-outline/styles'
 import '@pmwc/line-ripple/styles'

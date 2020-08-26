@@ -41,6 +41,10 @@ export interface SelectProps {
   icon?: IconPropT;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCSelectFoundation>;
+  /** Use a smaller version. `label` will not be displayed. */
+  size?: 'small';
+  /** Do not display the bottom border. Has no effect if used with `outlined` */
+  noBorder?: boolean;
 }
 
 export type SelectHTMLProps = HTMLProps;

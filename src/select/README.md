@@ -231,5 +231,5 @@ A Select Component
 | `required` | `undefined \| false \| true` | Makes the Select required. |
 | `rootProps` | `Object` | Props for the root element. By default, additional props spread to the native select element. |
 | `value` | `undefined \| string` | The value for a controlled select. |
-
-
+| `size` | `undefined \| 'small'` | Use a smaller version. `label` will not be displayed. |
+| `noBorder` | `undefined \| true \| false` | Do not display the bottom border. Has no effect if used with `outlined`  |

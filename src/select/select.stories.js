@@ -91,7 +91,7 @@ const plainHtml = () => {
 }
 
 export const basic = () => (
-  <section>
+  <section className='mdc-typography'>
     <Select
       label='Standard'
       options={['Cookies', 'Pizza', 'Icecream']}
@@ -235,3 +235,45 @@ export const controlled = () => {
     </section>
   )
 }
+
+export const small = () => (
+  <section className='mdc-typography'>
+    <p>size='small'</p>
+    <Select
+      size='small'
+      label='Standard'
+      options={['Cookies', 'Pizza', 'Icecream']}
+      onChange={(evt) => action('Standard')(evt.currentTarget.value)}
+    />
+
+    <p>size='small' noBorder placeholder='--Order--'</p>
+    <Select
+      size='small'
+      noBorder
+      placeholder='--Order--'
+      style={{ minWidth: '4rem' }}
+      label='Standard'
+      options={['Cookies', 'Pizza', 'Icecream']}
+      onChange={(evt) => action('Standard')(evt.currentTarget.value)}
+    />
+
+    <p>size='small' noBorder enhanced</p>
+    <Select
+      size='small'
+      noBorder
+      enhanced
+      label='Standard'
+      options={['Cookies', 'Pizza', 'Icecream']}
+      onChange={(evt) => action('Standard')(evt.currentTarget.value)}
+    />
+
+    <p>size='small' outlined</p>
+    <Select
+      size='small'
+      outlined
+      label='Standard'
+      options={['Cookies', 'Pizza', 'Icecream']}
+      onChange={(evt) => action('Standard')(evt.currentTarget.value)}
+    />
+  </section>
+)

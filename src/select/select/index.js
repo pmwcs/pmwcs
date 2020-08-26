@@ -251,6 +251,8 @@ export const Select = createComponent(function Select (props, ref) {
     foundationRef,
     fullwidth,
     style,
+    size,
+    noBorder,
     ...rest
   } = props
 
@@ -284,6 +286,7 @@ export const Select = createComponent(function Select (props, ref) {
     handleMenuSelected
   } = useSelectFoundation(props)
 
+  const isSmall = size === 'small'
   const id = useId('select', props)
   const className = useClassNames(props, [
     'mdc-select',
@@ -293,7 +296,9 @@ export const Select = createComponent(function Select (props, ref) {
       'mdc-select--required': !!props.required,
       'mdc-select--invalid': !!invalid,
       'mdc-select--with-leading-icon': !!icon,
-      'mdc-select--no-label': !label
+      'mdc-select--no-label': !label || isSmall,
+      'mdc-select--no-border': noBorder,
+      [`mdc-select--size-${size}`]: size
     }
   ])
 
@@ -314,11 +319,13 @@ export const Select = createComponent(function Select (props, ref) {
   const defaultValue =
     value !== undefined ? undefined : props.defaultValue || ''
 
-  const renderedLabel = (
-    <FloatingLabel float={floatLabel} apiRef={setFloatingLabel} htmlFor={id}>
-      {label}
-    </FloatingLabel>
-  )
+  const renderedLabel = isSmall
+    ? null
+    : (
+      <FloatingLabel float={floatLabel} apiRef={setFloatingLabel} htmlFor={id}>
+        {label}
+      </FloatingLabel>
+    )
 
   const renderHelpText = () => {
     const shouldRender = !!helpText

@@ -1,6 +1,7 @@
 /** @jsx h */
 
 import { h } from 'preact'
+import { action } from '@storybook/addon-actions'
 
 import './styles.js'
 // import './stories.css'
@@ -117,12 +118,12 @@ export const actions = () => (
     </Alert>
     <Br />
 
-    <Alert severity='success' onClose={() => {}}>
+    <Alert severity='success' onClose={action('onClose')}>
       This is a success alert — check it out!
     </Alert>
     <Br />
 
-    <Alert severity='info' action={<Button standard onClick={() => {}}>UNDO</Button>}>
+    <Alert severity='info' action={<Button standard onClick={action('undo')}>UNDO</Button>}>
       This is a success alert — check it out!
     </Alert>
     <Br />

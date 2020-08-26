@@ -23,4 +23,4 @@ https://www.w3.org/TR/wai-aria-practices/examples/
 - [x] IconButton different sizes
   - primary, secondary
 - [x] Button add default (neutral) style
-- [ ] ButtonGroup is missing
+- [x] ButtonGroup is missing

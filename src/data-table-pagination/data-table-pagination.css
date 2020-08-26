@@ -2,21 +2,3 @@
   display: flex;
   align-items: center;
 }
-.pmwc-table-pagination .mdc-select {
-  min-width: unset;
-}
-.pmwc-table-pagination .mdc-select__selected-text{
-  font-size: 0.875rem;
-}
-.pmwc-table-pagination .mdc-select .mdc-select__anchor {
-  height: unset;
-  padding-left: 12px;
-}
-.pmwc-table-pagination .mdc-select__dropdown-icon {
-  margin-left: 4px;
-  margin-right: 4px;
-}
-.pmwc-table-pagination .mdc-select .mdc-line-ripple::before {
-  border-bottom-color: transparent !important;
-  border-bottom-with: 0px !important;
-}

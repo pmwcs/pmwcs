@@ -120,6 +120,8 @@ export const DataTablePagination = createComponent(function DataTablePagination 
       {labelRowsPerPage}
       &nbsp;
       <Select
+        noBorder
+        size='small'
         enhanced={enhanced}
         value={rowsPerPage}
         options={rowsPerPageOptions_}

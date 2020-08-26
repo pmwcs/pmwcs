@@ -16,7 +16,7 @@ import {
   SimpleDataTable
 } from './'
 
-describe('DataTable', () => {
+describe('DataTable SSR', () => {
   it('renders', () => {
     mount(
       <DataTable>
@@ -51,7 +51,7 @@ describe('DataTable', () => {
   })
 })
 
-describe('SimpleDataTable', () => {
+describe('SimpleDataTable SSR', () => {
   it('renders', () => {
     mount(
       <SimpleDataTable

@@ -1,6 +1,6 @@
 /** @jsx h */
 import { h } from 'preact'
-// import { useState } from 'preact/hooks'
+import { useState } from 'preact/hooks'
 import { action } from '@storybook/addon-actions'
 import './styles.js'
 
@@ -44,6 +44,35 @@ export const basic = () => {
         onChangePage={action('page')}
         onChangeRowsPerPage={action('rows')}
       />
+    </section>
+  )
+}
+
+export const controlled = () => {
+  function Controlled () {
+    const [page, setPage] = useState(2)
+    const rowsPerPageOptions = [
+      10, 25, { value: -1, label: 'Todas' }
+    ]
+    const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageOptions[0])
+
+    return (
+      <DataTablePagination
+        count={55}
+        page={page}
+        rowsPerPage={rowsPerPage}
+        rowsPerPageOptions={rowsPerPageOptions}
+        onChangePage={(_, page) => setPage(page)}
+        onChangeRowsPerPage={(_, rowsPerPage) => setRowsPerPage(rowsPerPage)}
+        labelRowsPerPage='Filas por página'
+        labelDisplayedRows={({ from, to, count }) => `del ${from} a ${to} ${count === -1 ? '' : `de ${count}`}`}
+      />
+    )
+  }
+
+  return (
+    <section className='mdc-typography'>
+      <Controlled />
     </section>
   )
 }

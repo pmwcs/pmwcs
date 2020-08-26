@@ -66,6 +66,7 @@
     "preact": "^10.4.7",
     "preact-render-to-string": "^5.1.10",
     "regenerator-runtime": "^0.13.7",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "sinon": "^9.0.3"
   }
 }

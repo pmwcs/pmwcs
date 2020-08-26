@@ -9,7 +9,7 @@ const BEM = 'pmwc-table-pagination'
 const defaultLabelDisplayedRows = ({ from, to, count }) => `${from}-${to} of ${count !== -1 ? count : `more than ${to}`}`
 
 const getFromTo = (page, count, rowsPerPage) => {
-  if (page === -1) {
+  if (page === -1 || rowsPerPage === -1) {
     return { isFirst: true, isLast: true, from: 1, to: count }
   }
   const to_ = page * rowsPerPage

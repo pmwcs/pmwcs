@@ -1,9 +1,9 @@
 import { h } from 'preact'
 
-import { withRipple } from '@pmwc/ripple'
-import { Button } from '@pmwc/button'
-import { IconButton } from '@pmwc/icon-button'
-import { useClassNames, Tag, createComponent } from '@pmwc/base'
+import { withRipple } from '@pmwcs/ripple'
+import { Button } from '@pmwcs/button'
+import { IconButton } from '@pmwcs/icon-button'
+import { useClassNames, Tag, createComponent } from '@pmwcs/base'
 
 /** A Card Component */
 export const Card = createComponent(function Card (props, ref) {

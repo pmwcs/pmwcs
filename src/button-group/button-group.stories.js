@@ -4,12 +4,12 @@ import { h } from 'preact'
 import { useState } from 'preact/hooks'
 
 import './styles.js'
-import '@pmwc/button/button.css'
+import '@pmwcs/button/button.css'
 import './stories.css'
 
 import { ButtonGroup } from './index.js'
-import { Button } from '@pmwc/button'
-import { Icon } from '@pmwc/icon'
+import { Button } from '@pmwcs/button'
+import { Icon } from '@pmwcs/icon'
 
 export default {
   title: 'ButtonGroup',

@@ -2,13 +2,13 @@ import { h, cloneElement, isValidElement } from 'preact'
 import { useEffect, useState } from 'preact/hooks'
 import { Children } from 'preact/compat'
 
-import { List, ListItem } from '@pmwc/list'
+import { List, ListItem } from '@pmwcs/list'
 import {
   getDisplayName,
   classNames,
   useClassNames,
   createComponent
-} from '@pmwc/base'
+} from '@pmwcs/base'
 
 import {
   MenuSurface,

@@ -2,8 +2,8 @@ import { AnyComponent, Ref } from 'preact'
 
 import { MDCTabFoundation } from '@material/tab';
 import { MDCTabBarFoundation } from '@material/tab-bar';
-import { IconPropT } from '@pmwc/icon';
-import { HTMLProps } from '@pmwc/base';
+import { IconPropT } from '@pmwcs/icon';
+import { HTMLProps } from '@pmwcs/base';
 
 export type TabOnInteractionEventT = CustomEvent<{ tabId: string }>;
 

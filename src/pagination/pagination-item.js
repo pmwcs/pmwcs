@@ -1,6 +1,6 @@
 import { h } from 'preact'
-import { createComponent, useClassNames } from '@pmwc/base'
-import { IconButton } from '@pmwc/icon-button'
+import { createComponent, useClassNames } from '@pmwcs/base'
+import { IconButton } from '@pmwcs/icon-button'
 
 const BEM = 'pmwc-pagination-item'
 

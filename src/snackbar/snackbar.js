@@ -1,11 +1,11 @@
 import { h, Fragment } from 'preact'
 
 import { MDCSnackbarFoundation } from '@material/snackbar'
-import { Button } from '@pmwc/button'
-import { useClassNames, Tag, createComponent } from '@pmwc/base'
+import { Button } from '@pmwcs/button'
+import { useClassNames, Tag, createComponent } from '@pmwcs/base'
 import { useSnackbarFoundation } from './foundation'
-import { IconButton } from '@pmwc/icon-button'
-import { Icon } from '@pmwc/icon'
+import { IconButton } from '@pmwcs/icon-button'
+import { Icon } from '@pmwcs/icon'
 
 /*********************************************************************
  * Snackbar

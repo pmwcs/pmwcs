@@ -1,8 +1,8 @@
 import { h } from 'preact'
 import { memo, forwardRef } from 'preact/compat'
 
-import { Tag, useClassNames, mergeRefs, createComponent } from '@pmwc/base'
-import { withRipple } from '@pmwc/ripple'
+import { Tag, useClassNames, mergeRefs, createComponent } from '@pmwcs/base'
+import { withRipple } from '@pmwcs/ripple'
 import { useRadioFoundation } from './foundation'
 
 /*********************************************************************

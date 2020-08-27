@@ -7,7 +7,7 @@ import {
   useFoundation,
   focusTrapFactory,
   triggerWindowResize
-} from '@pmwc/base'
+} from '@pmwcs/base'
 
 const useDrawerFoundationFactory = (MDCConstructor) =>
   function useDrawerFoundation (props) {

@@ -1,8 +1,8 @@
 import { h, Component, cloneElement, isValidElement, createContext } from 'preact'
 import { findDOMNode, forwardRef, Children } from 'preact/compat'
 
-import { classNames } from '@pmwc/base'
-import { useProviderContext } from '@pmwc/provider'
+import { classNames } from '@pmwcs/base'
+import { useProviderContext } from '@pmwcs/provider'
 import { useRippleFoundation } from './foundation'
 
 const RippleSurfaceContext = createContext({})

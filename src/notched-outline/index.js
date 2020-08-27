@@ -1,7 +1,7 @@
 import { h } from 'preact'
 import { memo } from 'preact/compat'
 import { useNotchedOutlineFoundation } from './foundation'
-import { createComponent, Tag } from '@pmwc/base'
+import { createComponent, Tag } from '@pmwcs/base'
 
 /*********************************************************************
  * Notched Outline

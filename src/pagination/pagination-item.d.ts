@@ -1,5 +1,5 @@
 import { AnyComponent } from 'preact'
-import { WithRippleProps } from '@pmwc/ripple'
+import { WithRippleProps } from '@pmwcs/ripple'
 
 export interface PaginationItemProps extends WithRippleProps {
     /**

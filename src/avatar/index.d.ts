@@ -1,6 +1,6 @@
 import { AnyComponent } from 'preact'
-import { WithRippleProps } from '@pmwc/ripple'
-import { IconSizeT } from '@pmwc/icon'
+import { WithRippleProps } from '@pmwcs/ripple'
+import { IconSizeT } from '@pmwcs/icon'
 
 /** An Avatar component for displaying users in a system. */
 export interface AvatarProps extends WithRippleProps {

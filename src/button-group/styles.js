@@ -1,1 +1,1 @@
-import '@pmwc/button-group/button-group.css'
+import '@pmwcs/button-group/button-group.css'

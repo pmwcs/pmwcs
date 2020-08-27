@@ -1,5 +1,5 @@
 import { h, Fragment } from 'preact'
-import { useClassNames, Tag, createComponent } from '@pmwc/base'
+import { useClassNames, Tag, createComponent } from '@pmwcs/base'
 
 /** A Badge component for indicating alerts or counts. */
 export const Badge = createComponent(function Badge (props, ref) {

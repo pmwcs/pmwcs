@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import { createComponent, useClassNames } from '@pmwc/base'
+import { createComponent, useClassNames } from '@pmwcs/base'
 
 import usePagination from './usePagination'
 import { PaginationItem } from './pagination-item'

@@ -24,8 +24,8 @@ const providerDefaults = {
 export const ProviderContext = createContext(providerDefaults)
 export const useProviderContext = () => useContext(ProviderContext)
 
-/** A provider for setting global options in PMWC. */
-export const PMWCProvider = function (props) {
+/** A provider for setting global options in PMWCS. */
+export const PMWCSProvider = function (props) {
   const { children, ...rest } = props
   return (createElement(
     ProviderContext.Provider,

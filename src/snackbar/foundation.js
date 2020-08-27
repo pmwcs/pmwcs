@@ -1,7 +1,7 @@
 import { useEffect } from 'preact/hooks'
 
 import { MDCSnackbarFoundation, util } from '@material/snackbar'
-import { closest, triggerWindowResize, useFoundation } from '@pmwc/base'
+import { closest, triggerWindowResize, useFoundation } from '@pmwcs/base'
 
 /** Monkey patch the foundation to accept dynamic reasons rather than just "action" */
 // @ts-ignore

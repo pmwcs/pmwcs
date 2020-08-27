@@ -1,6 +1,6 @@
 import { h, Component, cloneElement } from 'preact'
 
-import { classNames, Tag, randomId } from '@pmwc/base'
+import { classNames, Tag, randomId } from '@pmwcs/base'
 
 const possiblyFocusElement = (el) => {
   if (!el) return false

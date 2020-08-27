@@ -1,5 +1,5 @@
 import { AnyComponent } from 'preact'
-import { HTMLProps } from '@pmwc/base'
+import { HTMLProps } from '@pmwcs/base'
 
 export type TypographyT =
   | 'headline1'

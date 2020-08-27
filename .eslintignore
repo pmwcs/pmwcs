@@ -2,6 +2,6 @@
 coverage/
 src/**/dist
 src/**/next
-src/pmwc/docs
+src/pmwcs/docs
 src/tooltip
 storybook-static/

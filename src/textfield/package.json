@@ -1,22 +1,22 @@
 {
-  "name": "@pmwc/textfield",
+  "name": "@pmwcs/textfield",
   "version": "1.0.0-0",
-  "description": "PMWC textfield component",
+  "description": "PMWCS textfield component",
   "keywords": [
-    "pmwc",
+    "pmwcs",
     "preact",
     "material",
     "web",
     "components",
     "textfield"
   ],
-  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "homepage": "https://github.com/pmwcs/pmwcs#readme",
   "bugs": {
-    "url": "https://github.com/pmwc/pmwc/issues"
+    "url": "https://github.com/pmwcs/pmwcs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmwc/pmwc.git",
+    "url": "git+https://github.com/pmwcs/pmwcs.git",
     "directory": "src/textfield"
   },
   "license": "MIT",
@@ -34,12 +34,12 @@
   },
   "dependencies": {
     "@material/textfield": "^7.0.0",
-    "@pmwc/base": "^1.0.0-0",
-    "@pmwc/floating-label": "^1.0.0-0",
-    "@pmwc/icon": "^1.0.0-0",
-    "@pmwc/line-ripple": "^1.0.0-0",
-    "@pmwc/notched-outline": "^1.0.0-0",
-    "@pmwc/ripple": "^1.0.0-0"
+    "@pmwcs/base": "^1.0.0-0",
+    "@pmwcs/floating-label": "^1.0.0-0",
+    "@pmwcs/icon": "^1.0.0-0",
+    "@pmwcs/line-ripple": "^1.0.0-0",
+    "@pmwcs/notched-outline": "^1.0.0-0",
+    "@pmwcs/ripple": "^1.0.0-0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

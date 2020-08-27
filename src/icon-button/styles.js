@@ -1,4 +1,4 @@
 import '@material/icon-button/dist/mdc.icon-button.css'
-import '@pmwc/icon/styles'
-import '@pmwc/ripple/styles'
-import '@pmwc/icon-button/icon-button.css'
+import '@pmwcs/icon/styles'
+import '@pmwcs/ripple/styles'
+import '@pmwcs/icon-button/icon-button.css'

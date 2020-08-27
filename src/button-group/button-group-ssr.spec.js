@@ -5,7 +5,7 @@
 import { h } from 'preact'
 import mount from 'preact-render-to-string'
 import { ButtonGroup } from './'
-import { Button } from '@pmwc/button'
+import { Button } from '@pmwcs/button'
 
 describe('ButtonGroup SSR', () => {
   it('renders', () => {

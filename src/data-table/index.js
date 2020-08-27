@@ -2,14 +2,14 @@ import { h } from 'preact'
 import { useContext } from 'preact/hooks'
 import { memo } from 'preact/compat'
 
-import { Icon } from '@pmwc/icon'
+import { Icon } from '@pmwcs/icon'
 import {
   useClassNames,
   Tag,
   createComponent,
   DataTableHeadContext,
   DataTableContext
-} from '@pmwc/base'
+} from '@pmwcs/base'
 
 /** The DataTable Component. */
 export const DataTable = createComponent(function DataTable (

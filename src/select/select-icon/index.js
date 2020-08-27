@@ -1,7 +1,7 @@
 import { h } from 'preact'
 
-import { Icon } from '@pmwc/icon'
-import { useClassNames } from '@pmwc/base'
+import { Icon } from '@pmwcs/icon'
+import { useClassNames } from '@pmwcs/base'
 import { useSelectIconFoundation } from './foundation'
 
 export const SelectIcon = function SelectIcon (props) {

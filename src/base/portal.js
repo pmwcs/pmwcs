@@ -24,7 +24,7 @@ export function PortalChild ({
 
       !element &&
         console.warn(
-          'No default Portal found. Did you forget to include it in the root of your app? `import { Portal } from "@pmwc/base";`'
+          'No default Portal found. Did you forget to include it in the root of your app? `import { Portal } from "@pmwcs/base";`'
         )
     } else if (typeof renderTo === 'string') {
       element = document.querySelector(renderTo) || undefined

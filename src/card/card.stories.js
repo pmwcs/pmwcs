@@ -14,8 +14,8 @@ import {
   CardPrimaryAction
 } from './index.js'
 
-import { Typography } from '@pmwc/typography'
-import { ListDivider } from '@pmwc/list'
+import { Typography } from '@pmwcs/typography'
+import { ListDivider } from '@pmwcs/list'
 
 export default {
   title: 'Card',

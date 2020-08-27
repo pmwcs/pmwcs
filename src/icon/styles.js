@@ -1,1 +1,1 @@
-import '@pmwc/icon/icon.css'
+import '@pmwcs/icon/icon.css'

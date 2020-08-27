@@ -1,13 +1,13 @@
-# Circular Progress (PMWC Addon)
+# Circular Progress (PMWCS Addon)
 
 > Circular progress indicators display progress by animating an indicator along an invisible circular track in a clockwise direction. They can be applied directly to a surface, such as a button or card.
 
-- Module **@pmwc/circular-progress**
+- Module **@pmwcs/circular-progress**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/circular-progress/styles';
+    - import '@pmwcs/circular-progress/styles';
   - Or include stylesheets
-    - **'@pmwc/circular-progress/circular-progress.css'**
+    - **'@pmwcs/circular-progress/circular-progress.css'**
 
 
 ## Basic Usage

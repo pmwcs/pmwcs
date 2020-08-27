@@ -2,7 +2,7 @@ import { h, Fragment } from 'preact'
 import { memo } from 'preact/compat'
 
 import { useLinearProgressFoundation } from './foundation'
-import { Tag, useClassNames, createComponent } from '@pmwc/base'
+import { Tag, useClassNames, createComponent } from '@pmwcs/base'
 
 /** A component to display linear progress. */
 export const LinearProgress = createComponent(

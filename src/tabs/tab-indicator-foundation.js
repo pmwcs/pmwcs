@@ -1,4 +1,4 @@
-import { useFoundation, emptyClientRect } from '@pmwc/base'
+import { useFoundation, emptyClientRect } from '@pmwcs/base'
 import {
   MDCFadingTabIndicatorFoundation,
   MDCSlidingTabIndicatorFoundation

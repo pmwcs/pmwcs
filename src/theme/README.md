@@ -2,20 +2,20 @@
 
 MDC Theme is a foundational module that themes MDC Web components.
 
-- Module **@pmwc/theme**
+- Module **@pmwcs/theme**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/theme/styles';
+    - import '@pmwcs/theme/styles';
   - Or include stylesheets
     - **'@material/theme/dist/mdc.theme.css'**
-    - **'@pmwc/theme/theme.css'**
+    - **'@pmwcs/theme/theme.css'**
 - MDC Docs: [https://material.io/develop/web/components/theme/](https://material.io/develop/web/components/theme/)
 
 ## Theme Options
 
 The Theme module fully embraces using CSS variables for runtime theming. This allows for some really powerful usecases like a built in dark mode, custom palettes for your clients, or dynamic configuration for accessibility.
 
-Support for theming inside of `material-components-web` is not without issue, so PMWC maintains a theme fixes file to correct any anomalies for you. Please make sure you include both!
+Support for theming inside of `material-components-web` is not without issue, so PMWCS maintains a theme fixes file to correct any anomalies for you. Please make sure you include both!
 
 **Important** You should include the theme style sheets BEFORE any of your other styles.
 
@@ -111,7 +111,7 @@ Theming in `material-components-web` isn't perfect, but a few basic options will
 
 ## Theme Component
 
-The Theme component allows you to apply theme colors to PMWC components, or components of your own. Almost every component in PMWC has a `theme` prop that you can use that takes the same options as the `Theme` component's `use` prop.
+The Theme component allows you to apply theme colors to PMWCS components, or components of your own. Almost every component in PMWCS has a `theme` prop that you can use that takes the same options as the `Theme` component's `use` prop.
 
 ```jsx
 <Theme use={['primaryBg', 'onPrimary']} wrap>
@@ -163,7 +163,7 @@ A Theme Component.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `use` | `PMWC.ThemePropT` | A theme option as a string, a space separated string for multiple values, or an array of valid theme options. |
+| `use` | `PMWCS.ThemePropT` | A theme option as a string, a space separated string for multiple values, or an array of valid theme options. |
 | `wrap` | `undefined \| false \| true` | Collapse the styles directly onto the child component. This eliminates the need for a wrapping `span` element and may be required for applying things like background-colors. |
 
 

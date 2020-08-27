@@ -10,7 +10,7 @@ import {
   createSnackbarQueue
 } from './index.js'
 
-import { Button } from '@pmwc/button'
+import { Button } from '@pmwcs/button'
 
 export default {
   title: 'Snackbar',

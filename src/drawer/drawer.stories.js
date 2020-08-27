@@ -13,8 +13,8 @@ import {
   DrawerControl
 } from './index.js'
 
-import { List, ListItem } from '@pmwc/list'
-import { Button } from '@pmwc/button'
+import { List, ListItem } from '@pmwcs/list'
+import { Button } from '@pmwcs/button'
 
 export default {
   title: 'Drawer',

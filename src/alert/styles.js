@@ -1,1 +1,1 @@
-import '@pmwc/alert/alert.css'
+import '@pmwcs/alert/alert.css'

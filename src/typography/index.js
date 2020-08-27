@@ -1,6 +1,6 @@
 import { createElement } from 'preact'
-import { useProviderContext } from '@pmwc/provider'
-import { Tag, useClassNames } from '@pmwc/base'
+import { useProviderContext } from '@pmwcs/provider'
+import { Tag, useClassNames } from '@pmwcs/base'
 
 const SPAN = 'span'
 

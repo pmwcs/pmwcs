@@ -1,6 +1,6 @@
 import { AnyComponent } from 'preact'
-import { WithRippleProps } from '@pmwc/ripple'
-import { ToggleableProps } from '@pmwc/toggleable'
+import { WithRippleProps } from '@pmwcs/ripple'
+import { ToggleableProps } from '@pmwcs/toggleable'
 import { MDCSwitchFoundation } from '@material/switch'
 
 /** A Switch component. */

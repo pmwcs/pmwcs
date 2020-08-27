@@ -1,8 +1,8 @@
 import { h } from 'preact'
-import { createComponent, useControlled, useClassNames } from '@pmwc/base'
-import { Typography } from '@pmwc/typography'
-import { IconButton } from '@pmwc/icon-button'
-import { Select } from '@pmwc/select'
+import { createComponent, useControlled, useClassNames } from '@pmwcs/base'
+import { Typography } from '@pmwcs/typography'
+import { IconButton } from '@pmwcs/icon-button'
+import { Select } from '@pmwcs/select'
 
 const BEM = 'pmwc-table-pagination'
 

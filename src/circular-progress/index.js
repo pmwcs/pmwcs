@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import { useClassNames, Tag, createComponent } from '@pmwc/base'
+import { useClassNames, Tag, createComponent } from '@pmwcs/base'
 
 const SIZE_MAP = {
   xsmall: 18,

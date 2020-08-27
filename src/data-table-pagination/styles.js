@@ -1,3 +1,3 @@
-import '@pmwc/data-table-pagination/data-table-pagination.css'
-import '@pmwc/icon-button/styles'
-import '@pmwc/select/styles'
+import '@pmwcs/data-table-pagination/data-table-pagination.css'
+import '@pmwcs/icon-button/styles'
+import '@pmwcs/select/styles'

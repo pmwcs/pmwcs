@@ -1,22 +1,22 @@
 {
-  "name": "@pmwc/data-table-pagination",
+  "name": "@pmwcs/data-table-pagination",
   "version": "1.0.0-0",
-  "description": "PMWC data-table-pagination component",
+  "description": "PMWCS data-table-pagination component",
   "keywords": [
-    "pmwc",
+    "pmwcs",
     "preact",
     "material",
     "web",
     "components",
     "data-table-pagination"
   ],
-  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "homepage": "https://github.com/pmwcs/pmwcs#readme",
   "bugs": {
-    "url": "https://github.com/pmwc/pmwc/issues"
+    "url": "https://github.com/pmwcs/pmwcs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmwc/pmwc.git",
+    "url": "git+https://github.com/pmwcs/pmwcs.git",
     "directory": "src/data-table-pagination"
   },
   "license": "MIT",
@@ -34,10 +34,10 @@
   },
   "dependencies": {
     "@material/data-table": "^7.0.0",
-    "@pmwc/base": "^1.0.0-0",
-    "@pmwc/icon-button": "^1.0.0-0",
-    "@pmwc/select": "^1.0.0-0",
-    "@pmwc/typography": "^1.0.0-0"
+    "@pmwcs/base": "^1.0.0-0",
+    "@pmwcs/icon-button": "^1.0.0-0",
+    "@pmwcs/select": "^1.0.0-0",
+    "@pmwcs/typography": "^1.0.0-0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

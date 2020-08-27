@@ -1,6 +1,6 @@
 import { h } from 'preact'
 
-import { Tag, useClassNames, wrapChild, createComponent } from '@pmwc/base'
+import { Tag, useClassNames, wrapChild, createComponent } from '@pmwcs/base'
 
 /** The Elevation Component */
 export const Elevation = createComponent(function Elevation (

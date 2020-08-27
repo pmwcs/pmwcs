@@ -2,15 +2,15 @@
 
 Top App Bar acts as a container for items such as application title, navigation icon, and action items.
 
-- Module **@pmwc/top-app-bar**
+- Module **@pmwcs/top-app-bar**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/top-app-bar/styles';
+    - import '@pmwcs/top-app-bar/styles';
   - Or include stylesheets
     - **'@material/top-app-bar/dist/mdc.top-app-bar.css'**
     - **'@material/icon-button/dist/mdc.icon-button.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
-    - **'@pmwc/icon/icon.css'**
+    - **'@pmwcs/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/top-app-bar/](https://material.io/develop/web/components/top-app-bar/)
 
 Whats the difference between the TopAppBar and Toolbar? Toolbar is technically deprecated (although it still works just fine). TopAppBar functionality continues to be worked on by the `material-components-web` team.
@@ -198,10 +198,10 @@ A navigation icon for the top app bar. This is an instance of the Icon component
 | `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
 | `disabled` | `undefined \| false \| true` | Makes the button disabled |
 | `foundationRef` | `React.Ref<MDCIconButtonToggleFoundation>` | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. |
-| `icon` | `PMWC.IconPropT` | Icon for the button |
+| `icon` | `PMWCS.IconPropT` | Icon for the button |
 | `label` | `undefined \| string` | Apply an aria label. |
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
-| `onIcon` | `PMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
+| `onIcon` | `PMWCS.IconPropT` | If specified, renders a toggle with this icon as the on state. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 
 
@@ -215,10 +215,10 @@ Action items for the top app bar. This is an instance of the Icon component.
 | `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
 | `disabled` | `undefined \| false \| true` | Makes the button disabled |
 | `foundationRef` | `React.Ref<MDCIconButtonToggleFoundation>` | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. |
-| `icon` | `PMWC.IconPropT` | Icon for the button |
+| `icon` | `PMWCS.IconPropT` | Icon for the button |
 | `label` | `undefined \| string` | Apply an aria label. |
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
-| `onIcon` | `PMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
+| `onIcon` | `PMWCS.IconPropT` | If specified, renders a toggle with this icon as the on state. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 
 

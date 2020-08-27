@@ -1,15 +1,15 @@
 import { h } from 'preact'
 import { mount } from 'enzyme'
-import { PMWCProvider } from './'
+import { PMWCSProvider } from './'
 import { Button } from '../button'
 import { Icon } from '../icon'
 
 describe('Provider', () => {
   it('renders', () => {
     const el = mount(
-      <PMWCProvider>
+      <PMWCSProvider>
         <div />
-      </PMWCProvider>
+      </PMWCSProvider>
     )
 
     el.setProps({ ripple: false })
@@ -17,18 +17,18 @@ describe('Provider', () => {
 
   it('can set default ripple', () => {
     const dom = mount(
-      <PMWCProvider ripple={false}>
+      <PMWCSProvider ripple={false}>
         <Button />
-      </PMWCProvider>
+      </PMWCSProvider>
     )
     expect(!!~dom.html().search('mdc-ripple-surface')).toEqual(false)
   })
 
   it('can set icon options', () => {
     const el = mount(
-      <PMWCProvider icon={{ basename: 'my-icon-lib-test' }}>
+      <PMWCSProvider icon={{ basename: 'my-icon-lib-test' }}>
         <Icon icon='foo' />
-      </PMWCProvider>
+      </PMWCSProvider>
     )
     expect(!!~el.html().search('my-icon-lib-test')).toEqual(true)
   })

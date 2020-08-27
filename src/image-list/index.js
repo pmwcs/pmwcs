@@ -1,6 +1,6 @@
 import { h } from 'preact'
 
-import { Tag, useClassNames, createComponent } from '@pmwc/base'
+import { Tag, useClassNames, createComponent } from '@pmwcs/base'
 
 /** The root of the Image List. */
 export const ImageList = createComponent(function ImageList (

@@ -20,7 +20,7 @@ export interface IconOptions {
    * 'url' will load a remote image, and
    * 'component' will render content as children like SVGs or any other React node.
    * 'custom' allows you to specify your own render prop.
-   * If not set, 'auto' will be used or the defaults set inside of PMWCProvider.
+   * If not set, 'auto' will be used or the defaults set inside of PMWCSProvider.
    * */
   strategy?: IconStrategyT;
   /**

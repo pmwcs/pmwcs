@@ -1,5 +1,5 @@
 import { useEffect } from 'preact/hooks'
-import { useFoundation } from '@pmwc/base'
+import { useFoundation } from '@pmwcs/base'
 import { MDCLineRippleFoundation } from '@material/line-ripple'
 
 export const useLineRippleFoundation = (props) => {

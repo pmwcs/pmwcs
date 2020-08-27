@@ -1,7 +1,7 @@
 import { AnyComponent } from 'preact'
-import { HTMLProps } from '@pmwc/base'
-import { MenuProps } from '@pmwc/menu'
-import { IconPropT, IconProps } from '@pmwc/icon'
+import { HTMLProps } from '@pmwcs/base'
+import { MenuProps } from '@pmwcs/menu'
+import { IconPropT, IconProps } from '@pmwcs/icon'
 import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
 
 export interface FormattedOption

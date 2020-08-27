@@ -5,9 +5,9 @@ import {
   CircularProgress
 } from './index.js'
 
-import { Button } from '@pmwc/button'
-import { List, SimpleListItem } from '@pmwc/list'
-import { Chip } from '@pmwc/chip'
+import { Button } from '@pmwcs/button'
+import { List, SimpleListItem } from '@pmwcs/list'
+import { Chip } from '@pmwcs/chip'
 
 export default {
   title: 'CircularProgress',

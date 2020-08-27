@@ -1,5 +1,5 @@
 import { AnyComponent, Ref } from 'preact';
-import { IconPropT } from '@pmwc/icon';
+import { IconPropT } from '@pmwcs/icon';
 import { MDCChipFoundation } from '@material/chips'
 
 /** A Chip component. */

@@ -1,18 +1,18 @@
 import { h, Fragment, isValidElement } from 'preact'
 import { memo } from 'preact/compat'
 
-import { useClassNames, useId, Tag, createComponent } from '@pmwc/base'
-import { FloatingLabel } from '@pmwc/floating-label'
-import { LineRipple } from '@pmwc/line-ripple'
+import { useClassNames, useId, Tag, createComponent } from '@pmwcs/base'
+import { FloatingLabel } from '@pmwcs/floating-label'
+import { LineRipple } from '@pmwcs/line-ripple'
 
-import { NotchedOutline } from '@pmwc/notched-outline'
+import { NotchedOutline } from '@pmwcs/notched-outline'
 import {
   Menu,
   MenuItem,
   MenuItems
-} from '@pmwc/menu'
-import { ListGroup, ListGroupSubheader, ListDivider } from '@pmwc/list'
-import { withRipple } from '@pmwc/ripple'
+} from '@pmwcs/menu'
+import { ListGroup, ListGroupSubheader, ListDivider } from '@pmwcs/list'
+import { withRipple } from '@pmwcs/ripple'
 
 import { useSelectFoundation } from './foundation'
 import { SelectIcon } from '../select-icon'

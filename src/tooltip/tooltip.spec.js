@@ -1,7 +1,7 @@
 import { h } from 'preact'
 import { mount } from 'enzyme'
 import { Tooltip } from './'
-import { PMWCProvider } from '../provider'
+import { PMWCSProvider } from '../provider'
 
 describe.skip('Tooltip', () => {
   it('renders', () => {
@@ -62,11 +62,11 @@ describe.skip('Tooltip', () => {
 
   it.skip('works with provider', () => {
     mount(
-      <PMWCProvider tooltip={{}}>
+      <PMWCSProvider tooltip={{}}>
         <Tooltip content='tooltip'>
           <span>test</span>
         </Tooltip>
-      </PMWCProvider>
+      </PMWCSProvider>
     )
   })
 })

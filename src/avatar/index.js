@@ -1,13 +1,13 @@
 import { h, Fragment } from 'preact'
 
-import { Icon } from '@pmwc/icon'
-import { withRipple } from '@pmwc/ripple'
+import { Icon } from '@pmwcs/icon'
+import { withRipple } from '@pmwcs/ripple'
 import {
   useClassNames,
   Tag,
   createComponent,
   createMemoComponent
-} from '@pmwc/base'
+} from '@pmwcs/base'
 
 const getInitialsForName = (name) => {
   if (name) {

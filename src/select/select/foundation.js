@@ -1,6 +1,6 @@
 import { useCallback, useState, useRef, useEffect } from 'preact/hooks'
 
-import { useFoundation, raf } from '@pmwc/base'
+import { useFoundation, raf } from '@pmwcs/base'
 import {
   MDCSelectFoundation,
   cssClasses

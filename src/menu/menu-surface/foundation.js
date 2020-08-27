@@ -5,7 +5,7 @@ import {
   closest,
   emptyClientRect,
   raf
-} from '@pmwc/base'
+} from '@pmwcs/base'
 import {
   MDCMenuSurfaceFoundation,
   util

@@ -14,9 +14,9 @@ import {
   SimpleDataTable
 } from './index.js'
 
-import { Checkbox } from '@pmwc/checkbox'
-import { Switch } from '@pmwc/switch'
-import { Select } from '@pmwc/select'
+import { Checkbox } from '@pmwcs/checkbox'
+import { Switch } from '@pmwcs/switch'
+import { Select } from '@pmwcs/select'
 
 export default {
   title: 'DataTable',

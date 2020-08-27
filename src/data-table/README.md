@@ -2,14 +2,14 @@
 
 Data tables display sets of data.
 
-- Module **@pmwc/data-table**
+- Module **@pmwcs/data-table**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/data-table/styles';
+    - import '@pmwcs/data-table/styles';
   - Or include stylesheets
     - **'@material/data-table/dist/mdc.data-table.css'**
-    - **'@pmwc/data-table/data-table.css'**
-    - **'@pmwc/icon/icon.css'**
+    - **'@pmwcs/data-table/data-table.css'**
+    - **'@pmwcs/icon/icon.css'**
 
 
 ## Standard Table
@@ -126,7 +126,7 @@ function Example() {
 
 ## Form Controls
 
-DataTables play nice with the rest of the PMWC form controls. You are responsible for scripting your own selection behavior.
+DataTables play nice with the rest of the PMWCS form controls. You are responsible for scripting your own selection behavior.
 
 ```jsx
 function Example() {

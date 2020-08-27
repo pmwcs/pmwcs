@@ -7,7 +7,7 @@ import './styles.js'
 // import './stories.css'
 
 import { Alert, AlertTitle } from './index.js'
-import { Button } from '@pmwc/button'
+import { Button } from '@pmwcs/button'
 
 export default {
   title: 'Alert',

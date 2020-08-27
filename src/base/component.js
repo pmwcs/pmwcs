@@ -50,7 +50,7 @@ export function createComponent (Component) {
   // for a generic placeholder for typescript inference,
   // we don't actually have to pay the penalty for using it at runtime :)
   const WrappedComponent = () => createElement(Fragment, null)
-  WrappedComponent.displayName = Component.constructor.name || 'PMWCComponent'
+  WrappedComponent.displayName = Component.constructor.name || 'PMWCSComponent'
   ForwardComponent.displayName = WrappedComponent.displayName
   return ForwardComponent
 }

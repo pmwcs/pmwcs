@@ -2,10 +2,10 @@
 
 Material Design’s text sizes and styles were developed to balance content density and reading comfort under typical usage conditions.
 
-- Module **@pmwc/typography**
+- Module **@pmwcs/typography**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/typography/styles';
+    - import '@pmwcs/typography/styles';
   - Or include stylesheets
     - **'@material/typography/dist/mdc.typography.css'**
 - MDC Docs: [https://material.io/develop/web/components/typography/](https://material.io/develop/web/components/typography/)
@@ -41,7 +41,7 @@ Material Design’s text sizes and styles were developed to balance content dens
 You can globally map specify type classes to HTML tags for semantics, or specify a default to be used instead of `span`.
 
 ```jsx
-<PMWCProvider
+<PMWCSProvider
   typography={{
     /** Make all Typography components default to <div>  */
     defaultTag: 'div',
@@ -61,7 +61,7 @@ You can globally map specify type classes to HTML tags for semantics, or specify
   <Typography use="headline5">Rendered with `h5`</Typography>
   <Typography use="body2">Rendered with `p`</Typography>
   <Typography use="body1">Custom rendering</Typography>
-</PMWCProvider>
+</PMWCSProvider>
 ```
 
 ## Typography

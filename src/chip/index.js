@@ -1,10 +1,10 @@
 import { h } from 'preact'
 import { memo, forwardRef } from 'preact/compat'
 
-import { withRipple } from '@pmwc/ripple'
-import { Icon } from '@pmwc/icon'
+import { withRipple } from '@pmwcs/ripple'
+import { Icon } from '@pmwcs/icon'
 import { useChipFoundation } from './foundation'
-import { Tag, useClassNames, createComponent } from '@pmwc/base'
+import { Tag, useClassNames, createComponent } from '@pmwcs/base'
 
 /** A Chip component. */
 export const Chip = withRipple({})(

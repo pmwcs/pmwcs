@@ -1,4 +1,4 @@
 import '@material/checkbox/dist/mdc.checkbox.css'
-import '@pmwc/formfield/styles'
-import '@pmwc/ripple/styles'
-import '@pmwc/checkbox/checkbox.css'
+import '@pmwcs/formfield/styles'
+import '@pmwcs/ripple/styles'
+import '@pmwcs/checkbox/checkbox.css'

@@ -1,8 +1,8 @@
 import { AnyComponent } from 'preact'
 import { MDCSnackbarFoundation } from '@material/snackbar';
-import { HTMLProps, ArrayEmitter } from '@pmwc/base';
-import { ButtonProps } from '@pmwc/button';
-import { IconPropT } from '@pmwc/icon';
+import { HTMLProps, ArrayEmitter } from '@pmwcs/base';
+import { ButtonProps } from '@pmwcs/button';
+import { IconPropT } from '@pmwcs/icon';
 
 export type SnackbarOnOpenEventT = CustomEvent<{}>;
 export type SnackbarOnCloseEventT = CustomEvent<{ reason?: string }>;

@@ -1,17 +1,17 @@
-# Collapsible Lists (PMWC Addon)
+# Collapsible Lists (PMWCS Addon)
 
 Lists are continuous, vertical indexes of text or images.
 
-- Module **@pmwc/list**
+- Module **@pmwcs/list**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/list/styles';
+    - import '@pmwcs/list/styles';
   - Or include stylesheets
     - **'@material/list/dist/mdc.list.css'**
-    - **'@pmwc/list/collapsible-list.css'**
+    - **'@pmwcs/list/collapsible-list.css'**
 
 
-Collapsible lists aren't part of the material spec, but they've been added to PMWC after continuing requests from the community. They present an accordion style navigation element to progressively reveal content. They've have been built to work with the `List` and `ListItem` components in regards to keyboard events and styling, but they technically be used with any kind of content.
+Collapsible lists aren't part of the material spec, but they've been added to PMWCS after continuing requests from the community. They present an accordion style navigation element to progressively reveal content. They've have been built to work with the `List` and `ListItem` components in regards to keyboard events and styling, but they technically be used with any kind of content.
 
 ```jsx
 <List>

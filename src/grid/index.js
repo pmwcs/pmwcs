@@ -5,7 +5,7 @@ import {
   Tag,
   useClassNames,
   createComponent
-} from '@pmwc/base'
+} from '@pmwcs/base'
 
 /** A Grid component */
 export const Grid = createComponent(function Grid (props, ref) {

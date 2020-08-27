@@ -1,6 +1,6 @@
 /** @jsx h */
 import { h } from 'preact'
-import { PMWCProvider } from '@pmwc/provider'
+import { PMWCSProvider } from '@pmwcs/provider'
 
 import './stories.css'
 import './styles.js'
@@ -149,14 +149,14 @@ export const custom = () => (
         {' '}custom use
       </li>
       <li>
-        <PMWCProvider
+        <PMWCSProvider
           icon={{
             strategy: 'custom',
             render: (props) => <span style={{ background: 'pink' }}>Custom + {props.content}</span>
           }}
         >
           <Icon icon='test' />
-        </PMWCProvider>
+        </PMWCSProvider>
         {' '}custom with Provider
       </li>
     </ul>

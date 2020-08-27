@@ -1,6 +1,6 @@
 import { h } from 'preact'
 
-import { Tag } from '@pmwc/base'
+import { Tag } from '@pmwcs/base'
 import { useTabScrollerFoundation } from './tab-scroller-foundation'
 
 export function TabScroller (props) {

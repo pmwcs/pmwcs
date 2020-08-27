@@ -6,10 +6,10 @@ import './styles.js'
 // import './stories.css'
 
 import { AvatarGroup, Avatar, AvatarCount } from './index.js'
-import { Typography } from '@pmwc/typography'
-import { Button } from '@pmwc/button'
-import { Chip } from '@pmwc/chip'
-import { TextField } from '@pmwc/textfield'
+import { Typography } from '@pmwcs/typography'
+import { Button } from '@pmwcs/button'
+import { Chip } from '@pmwcs/chip'
+import { TextField } from '@pmwcs/textfield'
 
 export default {
   title: 'Avatar',

@@ -1,6 +1,6 @@
 import { h, Fragment } from 'preact'
 
-import { classNames } from '@pmwc/base'
+import { classNames } from '@pmwcs/base'
 
 /** A Tooltip component for displaying informative popover information. */
 /* for the moment we go with the poor man variant */

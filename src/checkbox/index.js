@@ -9,8 +9,8 @@ import {
   createComponent,
   DataTableContext,
   DataTableHeadContext
-} from '@pmwc/base'
-import { withRipple } from '@pmwc/ripple'
+} from '@pmwcs/base'
+import { withRipple } from '@pmwcs/ripple'
 import { useCheckboxFoundation } from './foundation'
 
 /*********************************************************************

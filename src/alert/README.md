@@ -1,13 +1,13 @@
-# Alert (PMWC Addon)
+# Alert (PMWCS Addon)
 
 An alert displays a short, important message in a way that attracts the user's attention without interrupting the user's task.
 
-- Module **@pmwc/alert**
+- Module **@pmwcs/alert**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/alert/styles';
+    - import '@pmwcs/alert/styles';
   - Or include stylesheets
-    - **'@pmwc/alert/alert.css'**
+    - **'@pmwcs/alert/alert.css'**
 
 ```jsx
 <>

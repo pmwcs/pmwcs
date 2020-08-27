@@ -7,8 +7,8 @@ import {
   Tag,
   useClassNames,
   createComponent
-} from '@pmwc/base'
-import { withRipple } from '@pmwc/ripple'
+} from '@pmwcs/base'
+import { withRipple } from '@pmwcs/ripple'
 import { useSwitchFoundation } from './foundation'
 
 /*********************************************************************

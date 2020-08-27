@@ -1,6 +1,6 @@
 import { AnyComponent, Ref } from 'preact';
 import { MDCTopAppBarFoundation } from '@material/top-app-bar';
-import { IconButtonProps } from '@pmwc/icon-button';
+import { IconButtonProps } from '@pmwcs/icon-button';
 
 export type TopAppBarOnNavEventT = CustomEvent<{}>;
 

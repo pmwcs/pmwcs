@@ -1,22 +1,22 @@
 {
-  "name": "@pmwc/elevation",
+  "name": "@pmwcs/elevation",
   "version": "1.0.0-0",
-  "description": "PMWC elevation component",
+  "description": "PMWCS elevation component",
   "keywords": [
-    "pmwc",
+    "pmwcs",
     "preact",
     "material",
     "web",
     "components",
     "elevation"
   ],
-  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "homepage": "https://github.com/pmwcs/pmwcs#readme",
   "bugs": {
-    "url": "https://github.com/pmwc/pmwc/issues"
+    "url": "https://github.com/pmwcs/pmwcs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmwc/pmwc.git",
+    "url": "git+https://github.com/pmwcs/pmwcs.git",
     "directory": "src/elevation"
   },
   "license": "MIT",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@material/elevation": "^7.0.0",
-    "@pmwc/base": "^1.0.0-0"
+    "@pmwcs/base": "^1.0.0-0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

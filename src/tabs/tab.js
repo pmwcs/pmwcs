@@ -6,9 +6,9 @@ import {
   useClassNames,
   Tag,
   createComponent
-} from '@pmwc/base'
-import { Icon } from '@pmwc/icon'
-import { withRipple, RippleSurface } from '@pmwc/ripple'
+} from '@pmwcs/base'
+import { Icon } from '@pmwcs/icon'
+import { withRipple, RippleSurface } from '@pmwcs/ripple'
 
 import { TabBarContext } from './tab-bar-context'
 import { TabIndicator } from './tab-indicator'

@@ -1,6 +1,6 @@
 import { useRef, useEffect, useCallback, useState } from 'preact/hooks'
 
-import { useFoundation } from '@pmwc/base'
+import { useFoundation } from '@pmwcs/base'
 import { MDCTabBarFoundation } from '@material/tab-bar'
 
 export const useTabBarFoundation = (

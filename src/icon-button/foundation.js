@@ -1,5 +1,5 @@
 import { useEffect } from 'preact/hooks'
-import { useFoundation } from '@pmwc/base'
+import { useFoundation } from '@pmwcs/base'
 import { MDCIconButtonToggleFoundation } from '@material/icon-button'
 
 export function useIconButtonFoundation (props) {

@@ -1,6 +1,6 @@
 import { useEffect, useCallback } from 'preact/hooks'
 
-import { useId, emptyClientRect, useFoundation } from '@pmwc/base'
+import { useId, emptyClientRect, useFoundation } from '@pmwcs/base'
 import { MDCChipFoundation } from '@material/chips'
 
 export const useChipFoundation = (props) => {

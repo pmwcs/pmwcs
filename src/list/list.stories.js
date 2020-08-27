@@ -19,9 +19,9 @@ import {
   CollapsibleList
 } from './index.js'
 
-import { Checkbox } from '@pmwc/checkbox'
-import { Switch } from '@pmwc/switch'
-import { Radio } from '@pmwc/radio'
+import { Checkbox } from '@pmwcs/checkbox'
+import { Switch } from '@pmwcs/switch'
+import { Radio } from '@pmwcs/radio'
 
 export default {
   title: 'List',

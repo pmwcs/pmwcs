@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import { createComponent, mergeRefs } from '@pmwc/base'
+import { createComponent, mergeRefs } from '@pmwcs/base'
 import { useFloatingLabelFoundation } from './foundation'
 
 export const FloatingLabel = createComponent(function FloatingLabel (props, ref) {

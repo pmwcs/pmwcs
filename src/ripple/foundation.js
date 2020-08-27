@@ -1,6 +1,6 @@
 import { useCallback, useRef, useEffect } from 'preact/hooks'
 
-import { useFoundation, emptyClientRect, matches, applyPassive } from '@pmwc/base'
+import { useFoundation, emptyClientRect, matches, applyPassive } from '@pmwcs/base'
 
 import { MDCRippleFoundation, util } from '@material/ripple'
 

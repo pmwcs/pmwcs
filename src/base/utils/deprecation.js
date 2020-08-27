@@ -1,6 +1,6 @@
 export const deprecationWarning = function (message) {
   if (process && process.env && process.env.NODE_ENV !== 'production') {
-    console.warn('PMWC Deprecation Warning: ' + message)
+    console.warn('PMWCS Deprecation Warning: ' + message)
   }
 }
 export const handleDeprecations = function (props_, deprecate, displayName) {

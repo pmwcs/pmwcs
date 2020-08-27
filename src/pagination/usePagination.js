@@ -3,7 +3,7 @@
  * @license MIT
  */
 
-import { useControlled } from '@pmwc/base'
+import { useControlled } from '@pmwcs/base'
 
 export default function usePagination (props = {}) {
   // keep default values in sync with @default tags in Pagination.propTypes

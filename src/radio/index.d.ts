@@ -1,6 +1,6 @@
 import { AnyComponent } from 'preact'
-import { ToggleableProps } from '@pmwc/toggleable';
-import { WithRippleProps } from '@pmwc/ripple';
+import { ToggleableProps } from '@pmwcs/toggleable';
+import { WithRippleProps } from '@pmwcs/ripple';
 import { MDCRadioFoundation } from '@material/radio'
 
 /** A Checkbox component. */

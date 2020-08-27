@@ -1,5 +1,5 @@
 import { useState } from 'preact/hooks'
-import { useFoundation } from '@pmwc/base'
+import { useFoundation } from '@pmwcs/base'
 import { MDCTextFieldCharacterCounterFoundation } from '@material/textfield'
 
 export const useTextFieldCharacterCountFoundation = (

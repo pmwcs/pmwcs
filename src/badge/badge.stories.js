@@ -10,9 +10,9 @@ import {
   BadgeAnchor
 } from './index.js'
 
-import { Button } from '@pmwc/button'
-import { IconButton } from '@pmwc/icon-button'
-import { Avatar } from '@pmwc/avatar'
+import { Button } from '@pmwcs/button'
+import { IconButton } from '@pmwcs/icon-button'
+import { Avatar } from '@pmwcs/avatar'
 
 export default {
   title: 'Badge',

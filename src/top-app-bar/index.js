@@ -1,6 +1,6 @@
 import { h } from 'preact'
-import { useClassNames, Tag, createComponent } from '@pmwc/base'
-import { IconButton } from '@pmwc/icon-button'
+import { useClassNames, Tag, createComponent } from '@pmwcs/base'
+import { IconButton } from '@pmwcs/icon-button'
 import { useTopAppBarFoundation } from './foundation'
 
 /** A TopAppBar component */

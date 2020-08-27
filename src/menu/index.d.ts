@@ -1,8 +1,8 @@
 import { Ref, AnyComponent } from 'preact'
 
 import { MDCMenuFoundation } from '@material/menu';
-import { ListItemProps, ListProps, ListApi } from '@pmwc/list';
-import { HTMLProps, PortalPropT } from '@pmwc/base';
+import { ListItemProps, ListProps, ListApi } from '@pmwcs/list';
+import { HTMLProps, PortalPropT } from '@pmwcs/base';
 import { Corner, MDCMenuSurfaceFoundation } from '@material/menu-surface';
 
 /****************************************************************

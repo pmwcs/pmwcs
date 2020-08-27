@@ -1,14 +1,14 @@
-# Pagination (PMWC Addon)
+# Pagination (PMWCS Addon)
 
 The Pagination component enables the user to select a specific page from a range of pages.
 
-- Module **@pmwc/pagination**
+- Module **@pmwcs/pagination**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/pagination/styles';
+    - import '@pmwcs/pagination/styles';
   - Or include stylesheets
-    - **'@pmwc/icon-button/styles'**
-    - **'@pmwc/pagination/pagination.css'**
+    - **'@pmwcs/icon-button/styles'**
+    - **'@pmwcs/pagination/pagination.css'**
 
 **Uncontrolled**
 

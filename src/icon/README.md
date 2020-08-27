@@ -2,17 +2,17 @@
 
 Material icons use geometric shapes to visually represent core ideas, capabilities, or topics.
 
-- Module **@pmwc/icon**
+- Module **@pmwcs/icon**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/icon/styles';
+    - import '@pmwcs/icon/styles';
   - Or include stylesheets
-    - **'@pmwc/icon/icon.css'**
+    - **'@pmwcs/icon/icon.css'**
 - MDC Docs: [https://material.io/icons](https://material.io/icons)
 
 ## Setup
 
-Icons are not part of the official material-components-web spec, but they are referenced many times in the documentation. PMWC provides a declarative way to use icons. Note that PMWC does not ship with any icons of its own. Make sure you include an icon set! You can use any one you want, but Google's Material Icons are available through open source. Follow Google's developer guide to get them setup with your app. https://google.github.io/material-design-icons/
+Icons are not part of the official material-components-web spec, but they are referenced many times in the documentation. PMWCS provides a declarative way to use icons. Note that PMWCS does not ship with any icons of its own. Make sure you include an icon set! You can use any one you want, but Google's Material Icons are available through open source. Follow Google's developer guide to get them setup with your app. https://google.github.io/material-design-icons/
 
 There are lots of different strategies for implementing icons on the web, and the Icon component is flexible for most of them. Use ligatures, classNames, inline SVGs, HTML, or URLs to get icons into your app. The default strategy is 'ligature' which works with the material.io font icon set.
 
@@ -82,7 +82,7 @@ The Icon component, (really the icon prop itself) can accept a variety of format
 
 ## Icon Sizing
 
-The Material spec details multiple sizes for icons. The Icon component doesn't assign a size by default, but these are available to you to force a size. Please note, this will only work if you've included the PMWC icon css file.
+The Material spec details multiple sizes for icons. The Icon component doesn't assign a size by default, but these are available to you to force a size. Please note, this will only work if you've included the PMWCS icon css file.
 
 To allow consistent sizing `<html>` needs to have a `font-size: 16px;` CSS attribute set.
 
@@ -117,7 +117,7 @@ This is for icon fonts that support ligatures like material-icons. This is the d
 
 ## URLs
 
-This is for icons that are accessible via HTTP(S) and will be loaded directly into an `img` tag. This can be auto-detected for things that look like urls. The image will be set as a backgroundImage of the icon. Make sure you impor the PMWC icon css file for this to work properly.
+This is for icons that are accessible via HTTP(S) and will be loaded directly into an `img` tag. This can be auto-detected for things that look like urls. The image will be set as a backgroundImage of the icon. Make sure you impor the PMWCS icon css file for this to work properly.
 
 ```jsx
 <>
@@ -174,9 +174,9 @@ This will render a child component inside of the icon. This is useful for all so
 
 ## Classnames
 
-Some font icon sets like Ion Icons and Glyph Icons render based on a className that is set. PMWC docs doesn't include extra icon fonts so there is no example to render, but the below code should give you an approximation.
+Some font icon sets like Ion Icons and Glyph Icons render based on a className that is set. PMWCS docs doesn't include extra icon fonts so there is no example to render, but the below code should give you an approximation.
 
-**THIS CANNOT BE AUTO DETECTED**. You'll have to explicitly set the strategy directly on the Icon or specify it globally via the PMWCProvider.
+**THIS CANNOT BE AUTO DETECTED**. You'll have to explicitly set the strategy directly on the Icon or specify it globally via the PMWCSProvider.
 
 ```jsx
 <>
@@ -190,10 +190,10 @@ Some font icon sets like Ion Icons and Glyph Icons render based on a className t
     }}
   />
   {/**
-   * Set the option globally throug PMWCProvider
+   * Set the option globally throug PMWCSProvider
    * Glyphicons <span class="glyphicons glyphicons-heart"></span>
    **/}
-  <PMWCProvider
+  <PMWCSProvider
     icon={{
       strategy: 'className',
       basename: 'glyphicons',
@@ -201,13 +201,13 @@ Some font icon sets like Ion Icons and Glyph Icons render based on a className t
     }}
   >
     <Icon icon="heart" />
-  </PMWCProvider>
+  </PMWCSProvider>
 </>
 ```
 
 ## Custom Rendering
 
-Sometimes, you just need to do your own thing. Maybe you have a legacy project that already has icons and you want to incorporate them with PMWC. If none of the other strategies are what you need, then you can hijack the whole thing and delegate it to your own render function.
+Sometimes, you just need to do your own thing. Maybe you have a legacy project that already has icons and you want to incorporate them with PMWCS. If none of the other strategies are what you need, then you can hijack the whole thing and delegate it to your own render function.
 
 ```jsx
 <Icon
@@ -225,23 +225,23 @@ A more relevant example involves an app that has a custom / existing icon compon
 
   `
   // 1) Your app has an icon component you use
-  import { MyIconComponent } from '@pmwc/icon';
+  import { MyIconComponent } from '@pmwcs/icon';
   <MyIconComponent name="search" />
 
-  // 2) Now you are using PMWC, lots of components are instances of Icons
+  // 2) Now you are using PMWCS, lots of components are instances of Icons
   // You need to be able to delegate the handling of an icon prop to your own component
-  import { TextField } from '@pmwc/textField';
-  import { Chip } from '@pmwc/chip';
+  import { TextField } from '@pmwcs/textField';
+  import { Chip } from '@pmwcs/chip';
   <TextField icon="favorite" />
   <Chip icon="favorite" />
 
   // 3) Instead, you should set the custom strategy to be your default
-  // and add your own handling with PMWCProvider
+  // and add your own handling with PMWCSProvider
   import { h } from 'preact'
   import * as ReactDOM from 'react-dom';
   import App from './App'; // your main app component
-  import { PMWCProvider } from '@pmwc/provider';
-  import { MyIconComponent } from '@pmwc/icon';
+  import { PMWCSProvider } from '@pmwcs/provider';
+  import { MyIconComponent } from '@pmwcs/icon';
 
   const iconRenderHandler = ({ content, className, ...rest }) => {
     // content is whatever was passed to the icon prop
@@ -255,15 +255,15 @@ A more relevant example involves an app that has a custom / existing icon compon
   };
 
   ReactDOM.render(
-    <PMWCProvider icon={{strategy: 'custom', render: iconRenderHandler}}>
+    <PMWCSProvider icon={{strategy: 'custom', render: iconRenderHandler}}>
       <App />
-    </PMWCProvider>,
+    </PMWCSProvider>,
     document.getElementById('root')
   );
 
   // 4) Now anywhere in your app that an Icon instance is used, it will be
   // delegated to your handler and render your custom component
-  import { TextFieldIcon } from '@pmwc/textfield';
+  import { TextFieldIcon } from '@pmwcs/textfield';
   <TextFieldIcon icon="search" />
 `
 
@@ -277,7 +277,7 @@ An Icon component. Most of these options can be set once globally, read the docu
 | Name | Type | Description |
 |------|------|-------------|
 | `icon` | `AnyComponent` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
-| `strategy` | `ligature \| className \| url \| component \| custom` | Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. 'custom' allows you to specify your own render prop. If not set, 'auto' will be used or the defaults set inside of PMWCProvider. |
+| `strategy` | `ligature \| className \| url \| component \| custom` | Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. 'custom' allows you to specify your own render prop. If not set, 'auto' will be used or the defaults set inside of PMWCSProvider. |
 | `prefix` | `string` | A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the 'className' strategy. |
 | `basename` | `string` | A base className for the icon namespace, i.e. material-icons. |
 | `render` | `function ({ content, className }) {}` | A render function to use when using the 'custom' strategy. |

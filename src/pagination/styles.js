@@ -1,2 +1,2 @@
-import '@pmwc/icon-button/styles'
-import '@pmwc/pagination/pagination.css'
+import '@pmwcs/icon-button/styles'
+import '@pmwcs/pagination/pagination.css'

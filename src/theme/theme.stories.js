@@ -7,9 +7,9 @@ import {
   ThemeProvider
 } from './index.js'
 
-import { Button } from '@pmwc/button'
-import { Checkbox } from '@pmwc/checkbox'
-import { Radio } from '@pmwc/radio'
+import { Button } from '@pmwcs/button'
+import { Checkbox } from '@pmwcs/checkbox'
+import { Radio } from '@pmwcs/radio'
 
 export default {
   title: 'Theme',

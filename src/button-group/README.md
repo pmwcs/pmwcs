@@ -1,13 +1,13 @@
-# ButtonGroup (PMWC Addon)
+# ButtonGroup (PMWCS Addon)
 
 The ButtonGroup component can be used to group related buttons.
 
-- Module **@pmwc/button-group**
+- Module **@pmwcs/button-group**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/button-group/styles';
+    - import '@pmwcs/button-group/styles';
   - Or include stylesheets
-    - **'@pmwc/button-group/button-group.css'**
+    - **'@pmwcs/button-group/button-group.css'**
 - MDC Docs: [https://material.io/develop/web/components/buttons/](https://material.io/develop/web/components/buttons/)
 
 ```jsx

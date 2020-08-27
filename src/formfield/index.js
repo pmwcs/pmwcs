@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import { Tag, useClassNames, createComponent } from '@pmwc/base'
+import { Tag, useClassNames, createComponent } from '@pmwcs/base'
 import { useFormfieldFoundation } from './foundation'
 
 /** A FormField component. */

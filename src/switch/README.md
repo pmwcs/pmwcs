@@ -2,10 +2,10 @@
 
 On/off switches toggle the state of a single settings option. The option that the switch controls, as well as the state it’s in, should be made clear from the corresponding inline label. Switches take on the same visual properties of the radio button.
 
-- Module **@pmwc/switch**
+- Module **@pmwcs/switch**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/switch/styles';
+    - import '@pmwcs/switch/styles';
   - Or include stylesheets
     - **'@material/switch/dist/mdc.switch.css'**
     - **'@material/form-field/dist/mdc.form-field.css'**

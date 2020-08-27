@@ -1,22 +1,22 @@
 {
-  "name": "@pmwc/top-app-bar",
+  "name": "@pmwcs/top-app-bar",
   "version": "1.0.0-0",
-  "description": "PMWC top-app-bar component",
+  "description": "PMWCS top-app-bar component",
   "keywords": [
-    "pmwc",
+    "pmwcs",
     "preact",
     "material",
     "web",
     "components",
     "top-app-bar"
   ],
-  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "homepage": "https://github.com/pmwcs/pmwcs#readme",
   "bugs": {
-    "url": "https://github.com/pmwc/pmwc/issues"
+    "url": "https://github.com/pmwcs/pmwcs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmwc/pmwc.git",
+    "url": "git+https://github.com/pmwcs/pmwcs.git",
     "directory": "src/top-app-bar"
   },
   "license": "MIT",
@@ -34,10 +34,10 @@
   },
   "dependencies": {
     "@material/top-app-bar": "^7.0.0",
-    "@pmwc/base": "^1.0.0-0",
-    "@pmwc/icon": "^1.0.0-0",
-    "@pmwc/icon-button": "^1.0.0-0",
-    "@pmwc/ripple": "^1.0.0-0"
+    "@pmwcs/base": "^1.0.0-0",
+    "@pmwcs/icon": "^1.0.0-0",
+    "@pmwcs/icon-button": "^1.0.0-0",
+    "@pmwcs/ripple": "^1.0.0-0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

@@ -2,10 +2,10 @@
 
 Cards contain content and actions about a single subject.
 
-- Module **@pmwc/card**
+- Module **@pmwcs/card**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/card/styles';
+    - import '@pmwcs/card/styles';
   - Or include stylesheets
     - **'@material/card/dist/mdc.card.css'**
     - **'@material/button/dist/mdc.button.css'**
@@ -227,10 +227,10 @@ A card action Icon
 | `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
 | `disabled` | `undefined \| false \| true` | Makes the button disabled |
 | `foundationRef` | `React.Ref<MDCIconButtonToggleFoundation>` | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. |
-| `icon` | `PMWC.IconPropT` | Icon for the button |
+| `icon` | `PMWCS.IconPropT` | Icon for the button |
 | `label` | `undefined \| string` | Apply an aria label. |
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
-| `onIcon` | `PMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
+| `onIcon` | `PMWCS.IconPropT` | If specified, renders a toggle with this icon as the on state. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 
 
@@ -245,12 +245,12 @@ A card action Button
 | `danger` | `undefined \| false \| true` | Used to indicate a dangerous action. |
 | `dense` | `undefined \| false \| true` | Make the Button dense. |
 | `disabled` | `undefined \| false \| true` | Make the button disabled |
-| `icon` | `PMWC.IconPropT` | An Icon for the Button |
+| `icon` | `PMWCS.IconPropT` | An Icon for the Button |
 | `label` | `React.ReactNode \| any` | Content specified as a label prop. |
 | `outlined` | `undefined \| false \| true` | Make the button outlined. |
 | `raised` | `undefined \| false \| true` | Make the Button raised. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `trailingIcon` | `PMWC.IconPropT` | A trailing icon for the Button |
+| `trailingIcon` | `PMWCS.IconPropT` | A trailing icon for the Button |
 | `unelevated` | `undefined \| false \| true` | Make the button unelevated. |
 
 

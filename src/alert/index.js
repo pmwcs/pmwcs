@@ -1,13 +1,13 @@
 import { h } from 'preact'
 
-import { Typography } from '@pmwc/typography'
-import { Icon } from '@pmwc/icon'
-import { IconButton } from '@pmwc/icon-button'
+import { Typography } from '@pmwcs/typography'
+import { Icon } from '@pmwcs/icon'
+import { IconButton } from '@pmwcs/icon-button'
 import {
   useClassNames,
   createComponent,
   createMemoComponent
-} from '@pmwc/base'
+} from '@pmwcs/base'
 import {
   SvgAlert
 } from './icons.js'

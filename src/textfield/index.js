@@ -1,12 +1,12 @@
 import { h, Fragment, isValidElement } from 'preact'
 import { memo, forwardRef } from 'preact/compat'
 
-import { useClassNames, Tag, useId, createComponent } from '@pmwc/base'
-import { Icon } from '@pmwc/icon'
-import { LineRipple } from '@pmwc/line-ripple'
-import { FloatingLabel } from '@pmwc/floating-label'
-import { NotchedOutline } from '@pmwc/notched-outline'
-import { withRipple } from '@pmwc/ripple'
+import { useClassNames, Tag, useId, createComponent } from '@pmwcs/base'
+import { Icon } from '@pmwcs/icon'
+import { LineRipple } from '@pmwcs/line-ripple'
+import { FloatingLabel } from '@pmwcs/floating-label'
+import { NotchedOutline } from '@pmwcs/notched-outline'
+import { withRipple } from '@pmwcs/ripple'
 
 import { useTextFieldIconFoundation } from './textfield-icon-foundation'
 import { useTextFieldCharacterCountFoundation } from './textfield-character-count-foundation'

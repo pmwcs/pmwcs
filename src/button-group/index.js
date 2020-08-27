@@ -1,6 +1,6 @@
 import { h, cloneElement } from 'preact'
 
-import { Tag, useClassNames, createComponent } from '@pmwc/base'
+import { Tag, useClassNames, createComponent } from '@pmwcs/base'
 
 /**
  * The ButtonGroup component.

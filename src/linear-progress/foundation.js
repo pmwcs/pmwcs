@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'preact/hooks'
 import { MDCLinearProgressFoundation } from '@material/linear-progress'
-import { useFoundation } from '@pmwc/base'
+import { useFoundation } from '@pmwcs/base'
 
 export const useLinearProgressFoundation = (props) => {
   const { foundation, ...elements } = useFoundation({

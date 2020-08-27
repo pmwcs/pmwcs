@@ -8,7 +8,7 @@ import {
   createComponent,
   Tag,
   useClassNames
-} from '@pmwc/base'
+} from '@pmwcs/base'
 
 import { getAutoColorsForTheme } from './utils'
 

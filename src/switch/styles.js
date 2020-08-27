@@ -1,4 +1,4 @@
 import '@material/switch/dist/mdc.switch.css'
-import '@pmwc/switch/switch.css'
-import '@pmwc/formfield/styles'
-import '@pmwc/ripple/styles'
+import '@pmwcs/switch/switch.css'
+import '@pmwcs/formfield/styles'
+import '@pmwcs/ripple/styles'

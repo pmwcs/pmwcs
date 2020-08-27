@@ -1,9 +1,9 @@
 import { h } from 'preact'
 import { memo } from 'preact/compat'
 
-import { withRipple } from '@pmwc/ripple'
-import { Icon } from '@pmwc/icon'
-import { useClassNames, createComponent, createMemoComponent } from '@pmwc/base'
+import { withRipple } from '@pmwcs/ripple'
+import { Icon } from '@pmwcs/icon'
+import { useClassNames, createComponent, createMemoComponent } from '@pmwcs/base'
 
 /**
  * The Button component.

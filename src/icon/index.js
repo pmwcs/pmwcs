@@ -1,7 +1,7 @@
 import { h, cloneElement, isValidElement } from 'preact'
 
-import { useProviderContext } from '@pmwc/provider'
-import { Tag, classNames, getDisplayName } from '@pmwc/base'
+import { useProviderContext } from '@pmwcs/provider'
+import { Tag, classNames, getDisplayName } from '@pmwcs/base'
 /**
  * Given content, tries to figure out an appropriate strategy for it
  */

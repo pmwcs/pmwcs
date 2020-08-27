@@ -1,7 +1,7 @@
 import { h } from 'preact'
 
-import { classNames, Tag } from '@pmwc/base'
-import { Icon } from '@pmwc/icon'
+import { classNames, Tag } from '@pmwcs/base'
+import { Icon } from '@pmwcs/icon'
 import { useTabIndicatorFoundation } from './tab-indicator-foundation'
 
 export function TabIndicator (

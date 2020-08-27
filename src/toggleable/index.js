@@ -1,7 +1,7 @@
 import { h } from 'preact'
 
-import { useId } from '@pmwc/base'
-import { FormField } from '@pmwc/formfield'
+import { useId } from '@pmwcs/base'
+import { FormField } from '@pmwcs/formfield'
 
 export function useToggleFoundation (props) {
   const { className, style, rootProps, label, children, disabled } = props

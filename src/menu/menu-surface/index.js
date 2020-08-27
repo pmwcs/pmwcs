@@ -1,6 +1,6 @@
 import { h } from 'preact'
 
-import { useClassNames, Tag, createComponent, PortalChild } from '@pmwc/base'
+import { useClassNames, Tag, createComponent, PortalChild } from '@pmwcs/base'
 import { useMenuSurfaceFoundation } from './foundation'
 
 /****************************************************************

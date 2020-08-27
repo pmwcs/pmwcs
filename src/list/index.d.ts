@@ -1,6 +1,6 @@
 import { Ref, AnyComponent } from 'preact'
-import { WithRippleProps } from '@pmwc/ripple'
-import { IconProps, IconPropT } from '@pmwc/icon'
+import { WithRippleProps } from '@pmwcs/ripple'
+import { IconProps, IconPropT } from '@pmwcs/icon'
 import { MDCListFoundation } from '@material/list'
 
 export interface ListApi {

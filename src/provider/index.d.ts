@@ -45,12 +45,12 @@ type TypographyOptions = {
 };
 
 /** A provider for setting global options in RMWC. */
-export interface PMWCProviderProps {
+export interface PMWCSProviderProps {
   /** Enable / Disable interaction ripples globally */
   ripple?: boolean;
   /**
    * Global options for icons
-   * @see @pmwc/icons IconOptions
+   * @see @pmwcs/icons IconOptions
    */
   icon?: Partial<IconOptions>;
   /** Global tooltip options */
@@ -62,4 +62,4 @@ export interface PMWCProviderProps {
 }
 
 /** A provider for setting global options in RMWC. */
-export declare const RMWCProvider : AnyComponent<PMWCProviderProps>
+export declare const RMWCProvider : AnyComponent<PMWCSProviderProps>

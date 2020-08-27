@@ -1,22 +1,22 @@
 {
-  "name": "@pmwc/switch",
+  "name": "@pmwcs/switch",
   "version": "1.0.0-0",
-  "description": "PMWC switch component",
+  "description": "PMWCS switch component",
   "keywords": [
-    "pmwc",
+    "pmwcs",
     "preact",
     "material",
     "web",
     "components",
     "switch"
   ],
-  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "homepage": "https://github.com/pmwcs/pmwcs#readme",
   "bugs": {
-    "url": "https://github.com/pmwc/pmwc/issues"
+    "url": "https://github.com/pmwcs/pmwcs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmwc/pmwc.git",
+    "url": "git+https://github.com/pmwcs/pmwcs.git",
     "directory": "src/switch"
   },
   "license": "MIT",
@@ -34,10 +34,10 @@
   },
   "dependencies": {
     "@material/switch": "^7.0.0",
-    "@pmwc/base": "^1.0.0-0",
-    "@pmwc/formfield": "^1.0.0-0",
-    "@pmwc/ripple": "^1.0.0-0",
-    "@pmwc/toggleable": "^1.0.0-0"
+    "@pmwcs/base": "^1.0.0-0",
+    "@pmwcs/formfield": "^1.0.0-0",
+    "@pmwcs/ripple": "^1.0.0-0",
+    "@pmwcs/toggleable": "^1.0.0-0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

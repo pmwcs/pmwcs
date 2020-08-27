@@ -1,6 +1,6 @@
 import { AnyComponent } from 'preact';
-import { HTMLProps } from '@pmwc/base'
-import { WithRippleProps } from '@pmwc/ripple'
+import { HTMLProps } from '@pmwcs/base'
+import { WithRippleProps } from '@pmwcs/ripple'
 import { UsePaginationItem, UsePaginationProps } from './usePagination';
 
 export interface PaginationRenderItemParams extends UsePaginationItem {

@@ -2,17 +2,17 @@
 
 Text fields allow users to input, edit, and select text.
 
-- Module **@pmwc/textfield**
+- Module **@pmwcs/textfield**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/textfield/styles';
+    - import '@pmwcs/textfield/styles';
   - Or include stylesheets
     - **'@material/textfield/dist/mdc.textfield.css'**
     - **'@material/floating-label/dist/mdc.floating-label.css'**
     - **'@material/notched-outline/dist/mdc.notched-outline.css'**
     - **'@material/line-ripple/dist/mdc.line-ripple.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
-    - **'@pmwc/icon/icon.css'**
+    - **'@pmwcs/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/text-field/](https://material.io/develop/web/components/input-controls/text-field/)
 
 ## TextField Variants
@@ -124,7 +124,7 @@ A TextField component for accepting text input from a user.
 | `foundationRef` | `React.Ref<MDCTextFieldFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `fullwidth` | `undefined \| false \| true` | Makes the TextField fullwidth. |
 | `helpText` | `React.ReactNode \| TextFieldHelperTextProps` | Adds help text to the field |
-| `icon` | `PMWC.IconPropT` | Add a leading icon. |
+| `icon` | `PMWCS.IconPropT` | Add a leading icon. |
 | `inputRef` | `React.Ref<HTMLInputElement \| HTMLTextAreaElement \| null>` | A reference to the native input or textarea. |
 | `invalid` | `undefined \| false \| true` | Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used. |
 | `label` | `React.ReactNode` | A label for the input. |
@@ -133,6 +133,6 @@ A TextField component for accepting text input from a user.
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `rootProps` | `Object` | By default, props spread to the input. These props are for the component's root container. |
 | `textarea` | `undefined \| false \| true` | Makes a multiline TextField. |
-| `trailingIcon` | `PMWC.IconPropT` | Add a trailing icon. |
+| `trailingIcon` | `PMWCS.IconPropT` | Add a trailing icon. |
 | `type` | `undefined \| string` | The type of input field to render, search, number, etc |
 | `value` | `string \| number` | Sets the value for controlled TextFields. |

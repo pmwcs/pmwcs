@@ -11,7 +11,7 @@ const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x)
 const addAliases = config => {
   config.resolve.alias = {
     ...(config.resolve.alias || {}),
-    '@pmwc': path.resolve(root, 'src'),
+    '@pmwcs': path.resolve(root, 'src'),
     '@doc-utils': path.resolve(root, 'src', 'doc-utils')
   }
 
@@ -19,7 +19,7 @@ const addAliases = config => {
 }
 
 const webpack = (config) => {
-  console.log('Starting PMWC ❤️')
+  console.log('Starting PMWCS ❤️')
   return pipe(addAliases)(config)
 }
 

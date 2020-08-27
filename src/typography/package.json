@@ -1,22 +1,22 @@
 {
-  "name": "@pmwc/typography",
+  "name": "@pmwcs/typography",
   "version": "1.0.0-0",
-  "description": "PMWC typography component",
+  "description": "PMWCS typography component",
   "keywords": [
-    "pmwc",
+    "pmwcs",
     "preact",
     "material",
     "web",
     "components",
     "typography"
   ],
-  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "homepage": "https://github.com/pmwcs/pmwcs#readme",
   "bugs": {
-    "url": "https://github.com/pmwc/pmwc/issues"
+    "url": "https://github.com/pmwcs/pmwcs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmwc/pmwc.git",
+    "url": "git+https://github.com/pmwcs/pmwcs.git",
     "directory": "src/typography"
   },
   "license": "MIT",
@@ -34,8 +34,8 @@
   },
   "dependencies": {
     "@material/typography": "^7.0.0",
-    "@pmwc/base": "^1.0.0-0",
-    "@pmwc/provider": "^1.0.0-0"
+    "@pmwcs/base": "^1.0.0-0",
+    "@pmwcs/provider": "^1.0.0-0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

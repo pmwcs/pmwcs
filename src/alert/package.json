@@ -1,22 +1,22 @@
 {
-  "name": "@pmwc/alert",
+  "name": "@pmwcs/alert",
   "version": "1.0.0-0",
-  "description": "PMWC alert component",
+  "description": "PMWCS alert component",
   "keywords": [
-    "pmwc",
+    "pmwcs",
     "preact",
     "material",
     "web",
     "components",
     "alert"
   ],
-  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "homepage": "https://github.com/pmwcs/pmwcs#readme",
   "bugs": {
-    "url": "https://github.com/pmwc/pmwc/issues"
+    "url": "https://github.com/pmwcs/pmwcs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmwc/pmwc.git",
+    "url": "git+https://github.com/pmwcs/pmwcs.git",
     "directory": "src/alert"
   },
   "license": "MIT",
@@ -32,12 +32,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@pmwc/base": "^1.0.0-0",
-    "@pmwc/icon": "^1.0.0-0",
-    "@pmwc/icon-button": "^1.0.0-0",
-    "@pmwc/typography": "^1.0.0-0"
+    "@pmwcs/base": "^1.0.0-0",
+    "@pmwcs/icon": "^1.0.0-0",
+    "@pmwcs/icon-button": "^1.0.0-0",
+    "@pmwcs/typography": "^1.0.0-0"
   },
-  "devDependencies": {},
   "peerDependencies": {
     "preact": "^10.4.7"
   },

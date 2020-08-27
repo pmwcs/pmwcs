@@ -13,11 +13,11 @@ import {
   SimpleMenuSurface
 } from './index.js'
 
-import { ListDivider } from '@pmwc/list'
-import { Button } from '@pmwc/button'
-import { IconButton } from '@pmwc/icon-button'
-import { Select } from '@pmwc/select'
-import { Checkbox } from '@pmwc/checkbox'
+import { ListDivider } from '@pmwcs/list'
+import { Button } from '@pmwcs/button'
+import { IconButton } from '@pmwcs/icon-button'
+import { Select } from '@pmwcs/select'
+import { Checkbox } from '@pmwcs/checkbox'
 
 export default {
   title: 'Menu',

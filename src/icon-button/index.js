@@ -1,9 +1,9 @@
 import { h } from 'preact'
 import { memo } from 'preact/compat'
 
-import { useClassNames, createComponent } from '@pmwc/base'
-import { Icon } from '@pmwc/icon'
-import { withRipple } from '@pmwc/ripple'
+import { useClassNames, createComponent } from '@pmwcs/base'
+import { Icon } from '@pmwcs/icon'
+import { withRipple } from '@pmwcs/ripple'
 import { useIconButtonFoundation } from './foundation'
 
 /** An IconButton component that can also be used as a toggle. */

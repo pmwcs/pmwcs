@@ -1,6 +1,6 @@
 import { AnyComponent, Ref } from 'preact';
-import { PortalPropT, HTMLProps, ArrayEmitter } from '@pmwc/base'
-import { ButtonProps } from '@pmwc/button'
+import { PortalPropT, HTMLProps, ArrayEmitter } from '@pmwcs/base'
+import { ButtonProps } from '@pmwcs/button'
 import { MDCDialogFoundation } from '@material/dialog'
 
 /** A Dialog component. */

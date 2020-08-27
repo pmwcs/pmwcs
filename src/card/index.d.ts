@@ -1,5 +1,5 @@
 import { AnyComponent } from 'preact'
-import { ButtonProps } from '@pmwc/button'
+import { ButtonProps } from '@pmwcs/button'
 
 /**
   * A Card Component

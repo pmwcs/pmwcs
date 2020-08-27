@@ -2,17 +2,17 @@
 
 Tabs make it easy to explore and switch between different views.
 
-- Module **@pmwc/tabs**
+- Module **@pmwcs/tabs**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/tabs/styles';
+    - import '@pmwcs/tabs/styles';
   - Or include stylesheets
     - **'@material/tab-bar/dist/mdc.tab-bar.css'**
     - **'@material/tab/dist/mdc.tab.css'**
     - **'@material/tab-scroller/dist/mdc.tab-scroller.css'**
     - **'@material/tab-indicator/dist/mdc.tab-indicator.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
-    - **'@pmwc/icon/icon.css'**
+    - **'@pmwcs/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/tabs/tab-bar/](https://material.io/develop/web/components/tabs/tab-bar/)
 
 ## Basic Usage
@@ -115,7 +115,7 @@ function Example() {
 
 ## Icons as Indicators
 
-`material-components-web` has some light support for using icons as indicators (it's buried in their docs but there are no working examples or demos). Support has been added to PMWC, but your mileage may vary since it will require quite a bit of manual positioning and styling. By default, the icons appear full size at the center of the tab, effectively making them overlay images.
+`material-components-web` has some light support for using icons as indicators (it's buried in their docs but there are no working examples or demos). Support has been added to PMWCS, but your mileage may vary since it will require quite a bit of manual positioning and styling. By default, the icons appear full size at the center of the tab, effectively making them overlay images.
 
 ```jsx
 <TabBar>
@@ -182,8 +182,8 @@ A Tab component
 |------|------|-------------|
 | `children` | `React.ReactNode` | The label for the tab, passed as children. |
 | `foundationRef` | `React.Ref<MDCTabFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
-| `icon` | `PMWC.IconPropT` | The icon to use for the tab. |
-| `iconIndicator` | `PMWC.IconPropT` | Optionally use a custom icon for the active indicator, instead of the underline. |
+| `icon` | `PMWCS.IconPropT` | The icon to use for the tab. |
+| `iconIndicator` | `PMWCS.IconPropT` | Optionally use a custom icon for the active indicator, instead of the underline. |
 | `label` | `any` | A label for the tab. |
 | `minWidth` | `undefined \| false \| true` | Indicates that the tab should shrink in size to be as narrow as possible without causing text to wrap. |
 | `onInteraction` | `undefined \| (evt: TabOnInteractionEventT) => void` | Fires when a tab has been interacted with. This is captures both keyboard and click events. evt.detail = { tabId: string } |

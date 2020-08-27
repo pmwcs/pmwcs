@@ -1,6 +1,6 @@
 import { useRef, useContext, useEffect, useMemo } from 'preact/hooks'
 
-import { useFoundation, useId, emptyClientRect } from '@pmwc/base'
+import { useFoundation, useId, emptyClientRect } from '@pmwcs/base'
 import { MDCTabFoundation } from '@material/tab'
 import { TabBarContext } from './tab-bar-context'
 

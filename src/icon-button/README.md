@@ -2,13 +2,13 @@
 
 Icon buttons allow users to take actions, and make choices, with a single tap.
 
-- Module **@pmwc/icon-button**
+- Module **@pmwcs/icon-button**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/icon-button/styles';
+    - import '@pmwcs/icon-button/styles';
   - Or include stylesheets
     - **'@material/icon-button/dist/mdc.icon-button.css'**
-    - **'@pmwc/icon/icon.css'**
+    - **'@pmwcs/icon/icon.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/buttons/icon-buttons/](https://material.io/develop/web/components/buttons/icon-buttons/)
 
@@ -28,7 +28,7 @@ Icon buttons allow users to take actions, and make choices, with a single tap.
     tag="a"
     target="_blank"
     href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      'You should definitely be using PMWC for your next project! https://pmwc.io'
+      'You should definitely be using PMWCS for your next project!'
     )}`}
   />
 </>

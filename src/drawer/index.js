@@ -1,6 +1,6 @@
 import { h, Fragment, cloneElement } from 'preact'
 
-import { mergeRefs, Tag, useClassNames, createComponent } from '@pmwc/base'
+import { mergeRefs, Tag, useClassNames, createComponent } from '@pmwcs/base'
 import {
   useDismissableDrawerFoundation,
   useModalDrawerFoundation

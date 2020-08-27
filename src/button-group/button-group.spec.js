@@ -1,7 +1,7 @@
 import { h } from 'preact'
 import { mount } from 'enzyme'
 import { ButtonGroup } from './'
-import { Button } from '@pmwc/button'
+import { Button } from '@pmwcs/button'
 
 describe('Button', () => {
   it('renders', () => {

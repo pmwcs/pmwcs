@@ -1,7 +1,7 @@
 import { h } from 'preact'
 import { memo } from 'preact/compat'
 
-import { Button } from '@pmwc/button'
+import { Button } from '@pmwcs/button'
 import { MDCDialogFoundation } from '@material/dialog'
 
 import {
@@ -9,7 +9,7 @@ import {
   Tag,
   createComponent,
   PortalChild
-} from '@pmwc/base'
+} from '@pmwcs/base'
 import { useDialogFoundation } from './foundation'
 
 /*********************************************************************

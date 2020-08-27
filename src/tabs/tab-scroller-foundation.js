@@ -1,4 +1,4 @@
-import { useFoundation, emptyClientRect, matches } from '@pmwc/base'
+import { useFoundation, emptyClientRect, matches } from '@pmwcs/base'
 
 import {
   MDCTabScrollerFoundation,

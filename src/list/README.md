@@ -2,14 +2,14 @@
 
 Lists are continuous, vertical indexes of text or images.
 
-- Module **@pmwc/list**
+- Module **@pmwcs/list**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/list/styles';
+    - import '@pmwcs/list/styles';
   - Or include stylesheets
     - **'@material/list/dist/mdc.list.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
-    - **'@pmwc/icon/icon.css'**
+    - **'@pmwcs/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/lists/](https://material.io/develop/web/components/lists/)
 
 ## Basic Usage
@@ -128,7 +128,7 @@ A graphic / icon for the ListItem
 
 | Name | Type | Description |
 |------|------|-------------|
-| `icon` | `PMWC.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
+| `icon` | `PMWCS.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
 
 
 ## ListItemMeta
@@ -138,7 +138,7 @@ Meta content for the ListItem. This can either by an icon by setting the `icon` 
 
 | Name | Type | Description |
 |------|------|-------------|
-| `icon` | `PMWC.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
+| `icon` | `PMWCS.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
 
 
 ## ListDivider
@@ -166,9 +166,9 @@ A simple list item template.
 | `activated` | `undefined \| false \| true` | A modifier for an active state. |
 | `children` | `React.ReactNode` | Children to render |
 | `disabled` | `undefined \| false \| true` | A modifier for a disabled state. |
-| `graphic` | `PMWC.IconPropT` | A graphic icon for the ListItem. |
+| `graphic` | `PMWCS.IconPropT` | A graphic icon for the ListItem. |
 | `meta` | `React.ReactNode` | Meta content for the ListItem instead of an icon. |
-| `metaIcon` | `PMWC.IconPropT` | A meta icon for the ListItem |
+| `metaIcon` | `PMWCS.IconPropT` | A meta icon for the ListItem |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `secondaryText` | `React.ReactNode` | Secondary Text for the ListItem. |
 | `selected` | `undefined \| false \| true` | A modifier for a selected state. |

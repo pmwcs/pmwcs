@@ -1,5 +1,5 @@
-import { useToggleFoundation } from '@pmwc/toggleable'
-import { useFoundation } from '@pmwc/base'
+import { useToggleFoundation } from '@pmwcs/toggleable'
+import { useFoundation } from '@pmwcs/base'
 import { MDCRadioFoundation } from '@material/radio'
 
 export const useRadioFoundation = (props) => {

@@ -2,16 +2,16 @@
 
 Menus display a list of choices on a transient sheet of material.
 
-- Module **@pmwc/menu**
+- Module **@pmwcs/menu**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/menu/styles';
+    - import '@pmwcs/menu/styles';
   - Or include stylesheets
     - **'@material/menu/dist/mdc.menu.css'**
     - **'@material/menu-surface/dist/mdc.menu-surface.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
     - **'@material/list/dist/mdc.list.css'**
-    - **'@pmwc/icon/icon.css'**
+    - **'@pmwcs/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/menus/](https://material.io/develop/web/components/menus/)
 
 ## Basic Usage
@@ -82,7 +82,7 @@ function Example() {
 
 ## Simplified usage
 
-PMWC provides a convenience `SimpleMenu` component that takes a handle as a prop, and manages the open state for you.
+PMWCS provides a convenience `SimpleMenu` component that takes a handle as a prop, and manages the open state for you.
 
 ```jsx
 <SimpleMenu handle={<Button>Simple Menu</Button>}>
@@ -143,17 +143,17 @@ function Example() {
 
 ## Rendering through Portals
 
-Occasionally, you may find your menu being cut off from being inside a container that is styled to be `overflow:hidden`. PMWC provides a `renderToPortal` prop that lets you use React's portal functionality to render the menu dropdown in a different container.
+Occasionally, you may find your menu being cut off from being inside a container that is styled to be `overflow:hidden`. PMWCS provides a `renderToPortal` prop that lets you use React's portal functionality to render the menu dropdown in a different container.
 
-You can specify any element or selector you want, but the simplest method is to pass `true` and use PMWC's built in `Portal` component.
+You can specify any element or selector you want, but the simplest method is to pass `true` and use PMWCS's built in `Portal` component.
 
 ```jsx
 
   // Somewhere at the top level of your app
-  // Render the PMWC Portal
+  // Render the PMWCS Portal
   // You only have to do this once
   import { h } from 'preact'
-  import { Portal } from '@pmwc/base';
+  import { Portal } from '@pmwcs/base';
 
   export default function App() {
     return (
@@ -240,7 +240,7 @@ This is just the ListItem component exported from the Menu module for convenienc
 | `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
 | `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
 | `open` | `undefined \| false \| true` | Opens the menu. |
-| `renderToPortal` | `PortalPropT` | Renders the menu to a portal. Useful for situations where the content might be cutoff by an overflow: hidden container. You can pass "true" to render to the default PMWC portal. |
+| `renderToPortal` | `PortalPropT` | Renders the menu to a portal. Useful for situations where the content might be cutoff by an overflow: hidden container. You can pass "true" to render to the default PMWCS portal. |
 | style | `{left:'px', right:'px', top:'px', bottom:'px'}` | fine position the menu |
 
 ## MenuSurfaceAnchor
@@ -280,5 +280,5 @@ The same as SimpleMenu, but a generic surface.
 | `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
 | `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
 | `open` | `undefined \| false \| true` | Opens the menu. |
-| `renderToPortal` | `PortalPropT` | Renders the menu to a portal. Useful for situations where the content might be cutoff by an overflow: hidden container. You can pass "true" to render to the default PMWC portal. |
+| `renderToPortal` | `PortalPropT` | Renders the menu to a portal. Useful for situations where the content might be cutoff by an overflow: hidden container. You can pass "true" to render to the default PMWCS portal. |
 | `rootProps` | `Object` | By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor. |

@@ -1,6 +1,6 @@
 import { AnyComponent } from 'preact'
-import { WithRippleProps } from '@pmwc/ripple'
-import { IconPropT } from '@pmwc/icon'
+import { WithRippleProps } from '@pmwcs/ripple'
+import { IconPropT } from '@pmwcs/icon'
 
 /** A floating action button component */
 export interface FabProps extends WithRippleProps {

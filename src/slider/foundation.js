@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'preact/hooks'
 
-import { useFoundation, emptyClientRect, debounce } from '@pmwc/base'
+import { useFoundation, emptyClientRect, debounce } from '@pmwcs/base'
 
 import { MDCSliderFoundation } from '@material/slider'
 

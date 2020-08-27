@@ -1,22 +1,22 @@
 {
-  "name": "@pmwc/drawer",
+  "name": "@pmwcs/drawer",
   "version": "1.0.0-0",
-  "description": "PMWC drawer component",
+  "description": "PMWCS drawer component",
   "keywords": [
-    "pmwc",
+    "pmwcs",
     "preact",
     "material",
     "web",
     "components",
     "drawer"
   ],
-  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "homepage": "https://github.com/pmwcs/pmwcs#readme",
   "bugs": {
-    "url": "https://github.com/pmwc/pmwc/issues"
+    "url": "https://github.com/pmwcs/pmwcs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmwc/pmwc.git",
+    "url": "git+https://github.com/pmwcs/pmwcs.git",
     "directory": "src/drawer"
   },
   "license": "MIT",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@material/drawer": "^7.0.0",
-    "@pmwc/base": "^1.0.0-0"
+    "@pmwcs/base": "^1.0.0-0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

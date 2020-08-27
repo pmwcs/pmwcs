@@ -1,4 +1,4 @@
 import '@material/top-app-bar/dist/mdc.top-app-bar.css'
-import '@pmwc/icon-button/styles'
-import '@pmwc/ripple/styles'
-import '@pmwc/icon/styles'
+import '@pmwcs/icon-button/styles'
+import '@pmwcs/ripple/styles'
+import '@pmwcs/icon/styles'

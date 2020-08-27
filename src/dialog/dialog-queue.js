@@ -1,8 +1,8 @@
 import { h, Fragment } from 'preact'
 import { useState, useEffect } from 'preact/hooks'
 
-import { ArrayEmitter, randomId } from '@pmwc/base'
-import { TextField } from '@pmwc/textfield'
+import { ArrayEmitter, randomId } from '@pmwcs/base'
+import { TextField } from '@pmwcs/textfield'
 import { SimpleDialog } from './dialog'
 
 /** A snackbar queue for rendering messages */

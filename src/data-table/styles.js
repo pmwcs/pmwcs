@@ -1,3 +1,3 @@
 import '@material/data-table/dist/mdc.data-table.css'
-import '@pmwc/data-table/data-table.css'
-import '@pmwc/icon/styles'
+import '@pmwcs/data-table/data-table.css'
+import '@pmwcs/icon/styles'

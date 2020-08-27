@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import { Tag, useClassNames, createComponent } from '@pmwc/base'
+import { Tag, useClassNames, createComponent } from '@pmwcs/base'
 import { useListFoundation } from './foundation'
 
 export const List = createComponent(function List (props, ref) {

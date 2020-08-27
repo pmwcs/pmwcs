@@ -1,7 +1,7 @@
 import { AnyComponent } from 'preact'
-import { WithRippleProps } from '@pmwc/ripple'
-import { IconPropT } from '@pmwc/icon'
-import { HTMLProps } from '@pmwc/base'
+import { WithRippleProps } from '@pmwcs/ripple'
+import { IconPropT } from '@pmwcs/icon'
+import { HTMLProps } from '@pmwcs/base'
 
 /**
  * The Button component props

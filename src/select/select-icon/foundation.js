@@ -1,4 +1,4 @@
-import { useFoundation } from '@pmwc/base'
+import { useFoundation } from '@pmwcs/base'
 import { MDCSelectIconFoundation } from '@material/select'
 
 export const useSelectIconFoundation = (props) => {

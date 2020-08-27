@@ -4,14 +4,14 @@
 
 import { h } from 'preact'
 import mount from 'preact-render-to-string'
-import { PMWCProvider } from './'
+import { PMWCSProvider } from './'
 
 describe('Provider SSR', () => {
   it('renders', () => {
     const el = mount(
-      <PMWCProvider>
+      <PMWCSProvider>
         <div />
-      </PMWCProvider>
+      </PMWCSProvider>
     )
     expect(el).toEqual('<div></div>')
   })

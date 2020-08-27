@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'preact/hooks'
-import { useFoundation } from '@pmwc/base'
+import { useFoundation } from '@pmwcs/base'
 import { MDCNotchedOutlineFoundation } from '@material/notched-outline'
 
 export const useNotchedOutlineFoundation = (props) => {

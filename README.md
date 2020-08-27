@@ -1,10 +1,10 @@
-# PMWC - Preact Material Web Components
+# PMWCS - Preact Material Web Components
 
-This project is a fork of [RMWC][] replacing React with [preact][]. 👏 Thanks to these 👓 awesome projects.
+This project is a fork of [RMWC][] replacing React with [preact][]. A round of applause 👏 and thanks to these 👓 awesome projects.
 
 I'm aware that preact/compat together with webpack alias would allow to use [RMWC][]. Nonetheless to simplify usage with preact the decision was made to fork RMWC.
 
-PMWC is a Preact UI Kit built on Google's official [Material Components Web][] library v7.x.x
+PMWCS is a Preact UI Kit built on Google's official [Material Components Web][] library v7.x.x
 
 Features:
 
@@ -16,4 +16,3 @@ Features:
 [RMWC]: https://rmwc.io/
 [Material Components Web]: https://github.com/material-components/material-components-web#readme
 [preact]: https://preactjs.com
-

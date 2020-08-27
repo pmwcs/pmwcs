@@ -1,6 +1,6 @@
 import { AnyComponent, Ref } from 'preact'
-import { IconPropT, IconSizeT } from '@pmwc/icon'
-import { WithRippleProps } from '@pmwc/ripple'
+import { IconPropT, IconSizeT } from '@pmwcs/icon'
+import { WithRippleProps } from '@pmwcs/ripple'
 import { MDCIconButtonToggleFoundation } from '@material/icon-button'
 
 /** An IconButton component that can also be used as a toggle. */

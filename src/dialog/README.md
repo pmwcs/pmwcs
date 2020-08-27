@@ -2,10 +2,10 @@
 
 Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks.
 
-- Module **@pmwc/dialog**
+- Module **@pmwcs/dialog**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/dialog/styles';
+    - import '@pmwcs/dialog/styles';
   - Or include stylesheets
     - **'@material/dialog/dist/mdc.dialog.css'**
     - **'@material/button/dist/mdc.button.css'**
@@ -47,7 +47,7 @@ function Example() {
 
 ## Simplified Usage
 
-Material Dialogs are a complex component. PMWC contains an additional `SimpleDialog` component for ease of use that internally contains the default structure already built out. Illustrated below is both the standard and simple dialog usage.
+Material Dialogs are a complex component. PMWCS contains an additional `SimpleDialog` component for ease of use that internally contains the default structure already built out. Illustrated below is both the standard and simple dialog usage.
 
 ```jsx
 function Example() {
@@ -82,7 +82,7 @@ Setup is nice and easy, create a queue object you can pass around in your code b
 
 // Create a file that exports your queue
 // myQueue.js
-import { createDialogQueue } from '@pmwc/dialog';
+import { createDialogQueue } from '@pmwcs/dialog';
 
 export const queue = createDialogQueue()
 ```
@@ -184,17 +184,17 @@ queue.prompt({
 
 ## Rendering through Portals
 
-Occasionally, you may find your dialog being cut off from being inside a container that is styled to be `overflow:hidden`. PMWC provides a `renderToPortal` prop that lets you use React's portal functionality to render the menu dropdown in a different container.
+Occasionally, you may find your dialog being cut off from being inside a container that is styled to be `overflow:hidden`. PMWCS provides a `renderToPortal` prop that lets you use React's portal functionality to render the menu dropdown in a different container.
 
-You can specify any element or selector you want, but the simplest method is to pass `true` and use PMWC's built in `Portal` component.
+You can specify any element or selector you want, but the simplest method is to pass `true` and use PMWCS's built in `Portal` component.
 
 ```jsx
 
   // Somewhere at the top level of your app
-  // Render the PMWC Portal
+  // Render the PMWCS Portal
   // You only have to do this once
   import { h } from 'preact'
-  import { Portal } from '@pmwc/base';
+  import { Portal } from '@pmwcs/base';
 
   export default function App() {
     return (
@@ -275,7 +275,7 @@ A Dialog component.
 | `onOpened` | `undefined \| (evt: DialogOnOpenedEventT) => void` | Callback for when the Dialog finishes opening |
 | `open` | `undefined \| false \| true` | Whether or not the Dialog is showing. |
 | `preventOutsideDismiss` | `undefined \| false \| true` | Prevent the dialog from closing when the scrim is clicked or escape key is pressed. |
-| `renderToPortal` | `PortalPropT` | Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass "true" to render to the default PMWC portal. |
+| `renderToPortal` | `PortalPropT` | Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass "true" to render to the default PMWCS portal. |
 
 
 ## DialogTitle
@@ -305,13 +305,13 @@ Action buttons for the Dialog.
 | `danger` | `undefined \| false \| true` | Used to indicate a dangerous action. |
 | `dense` | `undefined \| false \| true` | Make the Button dense. |
 | `disabled` | `undefined \| false \| true` | Make the button disabled |
-| `icon` | `PMWC.IconPropT` | An Icon for the Button |
+| `icon` | `PMWCS.IconPropT` | An Icon for the Button |
 | `isDefaultAction` | `undefined \| false \| true` | Indicates this is the default selected action when pressing enter |
 | `label` | `React.ReactNode \| any` | Content specified as a label prop. |
 | `outlined` | `undefined \| false \| true` | Make the button outlined. |
 | `raised` | `undefined \| false \| true` | Make the Button raised. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `trailingIcon` | `PMWC.IconPropT` | A trailing icon for the Button |
+| `trailingIcon` | `PMWCS.IconPropT` | A trailing icon for the Button |
 | `unelevated` | `undefined \| false \| true` | Make the button unelevated. |
 
 
@@ -335,7 +335,7 @@ A SimpleDialog component for ease of use.
 | `onOpened` | `undefined \| (evt: DialogOnOpenedEventT) => void` | Callback for when the Dialog finishes opening |
 | `open` | `undefined \| false \| true` | Whether or not the Dialog is showing. |
 | `preventOutsideDismiss` | `undefined \| false \| true` | Prevent the dialog from closing when the scrim is clicked or escape key is pressed. |
-| `renderToPortal` | `PortalPropT` | Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass "true" to render to the default PMWC portal. |
+| `renderToPortal` | `PortalPropT` | Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass "true" to render to the default PMWCS portal. |
 | `title` | `React.ReactNode` | A title for the default Dialog template. |
 
 

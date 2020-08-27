@@ -1,7 +1,7 @@
 import { h } from 'preact'
 import { useRef } from 'preact/hooks'
 
-import { Tag, useClassNames, createComponent } from '@pmwc/base'
+import { Tag, useClassNames, createComponent } from '@pmwcs/base'
 
 import { TabScroller } from './tab-scroller'
 import { TabBarContext } from './tab-bar-context'

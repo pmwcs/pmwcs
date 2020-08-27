@@ -1,22 +1,22 @@
 {
-  "name": "@pmwc/linear-progress",
+  "name": "@pmwcs/linear-progress",
   "version": "1.0.0-0",
-  "description": "PMWC linear-progress component",
+  "description": "PMWCS linear-progress component",
   "keywords": [
-    "pmwc",
+    "pmwcs",
     "preact",
     "material",
     "web",
     "components",
     "linear-progress"
   ],
-  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "homepage": "https://github.com/pmwcs/pmwcs#readme",
   "bugs": {
-    "url": "https://github.com/pmwc/pmwc/issues"
+    "url": "https://github.com/pmwcs/pmwcs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmwc/pmwc.git",
+    "url": "git+https://github.com/pmwcs/pmwcs.git",
     "directory": "src/linear-progress"
   },
   "license": "MIT",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@material/linear-progress": "^7.0.0",
-    "@pmwc/base": "^1.0.0-0"
+    "@pmwcs/base": "^1.0.0-0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

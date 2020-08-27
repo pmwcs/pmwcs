@@ -1,5 +1,5 @@
 import { AnyComponent, Ref } from 'preact'
-import { HTMLProps } from '@pmwc/base'
+import { HTMLProps } from '@pmwcs/base'
 
 export interface ToggleableProps<Foundation> {
   /** A DOM ID for the toggle. */

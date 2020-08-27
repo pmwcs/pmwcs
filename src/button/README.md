@@ -2,13 +2,13 @@
 
 Buttons communicate the action that will occur when the user touches them.
 
-- Module **@pmwc/button**
+- Module **@pmwcs/button**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/button/styles';
+    - import '@pmwcs/button/styles';
   - Or include stylesheets
     - **'@material/button/dist/mdc.button.css'**
-    - **'@pmwc/@pmwc/icon/icon.css'**
+    - **'@pmwcs/@pmwcs/icon/icon.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/buttons/](https://material.io/develop/web/components/buttons/)
 
@@ -76,12 +76,12 @@ The Button component.
 | `dense` | `undefined \| false \| true` | Make the Button dense. |
 | `disabled` | `undefined \| false \| true` | Make the button disabled |
 | `activated` | `undefined \| false \| true` | Make the button activated |
-| `icon` | `PMWC.IconPropT` | An Icon for the Button |
+| `icon` | `PMWCS.IconPropT` | An Icon for the Button |
 | `label` | `React.ReactNode \| any` | Content specified as a label prop. |
 | `outlined` | `undefined \| false \| true` | Make the button outlined. |
 | `raised` | `undefined \| false \| true` | Make the Button raised. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `trailingIcon` | `PMWC.IconPropT` | A trailing icon for the Button |
+| `trailingIcon` | `PMWCS.IconPropT` | A trailing icon for the Button |
 | `unelevated` | `undefined \| false \| true` | Make the button unelevated. |
 
 ## References

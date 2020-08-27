@@ -1,7 +1,7 @@
 import { h } from 'preact'
 import { memo, forwardRef } from 'preact/compat'
 
-import { useClassNames, Tag, createComponent } from '@pmwc/base'
+import { useClassNames, Tag, createComponent } from '@pmwcs/base'
 import { useSliderFoundation } from './foundation'
 
 const SliderTrack = memo(

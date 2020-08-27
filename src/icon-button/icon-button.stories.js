@@ -6,7 +6,7 @@ import './stories.css'
 import './styles.js'
 
 import { IconButton } from './index.js'
-import { Icon } from '@pmwc/icon'
+import { Icon } from '@pmwcs/icon'
 
 export default {
   title: 'IconButton',

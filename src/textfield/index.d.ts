@@ -1,8 +1,8 @@
 import { AnyComponent, Ref } from 'preact'
 
-import { HTMLProps } from '@pmwc/base';
-import { IconProps, IconPropT } from '@pmwc/icon';
-import { WithRippleProps } from '@pmwc/ripple';
+import { HTMLProps } from '@pmwcs/base';
+import { IconProps, IconPropT } from '@pmwcs/icon';
+import { WithRippleProps } from '@pmwcs/ripple';
 import {
   MDCTextFieldCharacterCounterFoundation,
   MDCTextFieldFoundation

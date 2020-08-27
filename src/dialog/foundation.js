@@ -7,7 +7,7 @@ import {
   useFoundation,
   focusTrapFactory,
   triggerWindowResize
-} from '@pmwc/base'
+} from '@pmwcs/base'
 
 const isScrollable = (el) => {
   return el.scrollHeight > el.offsetHeight

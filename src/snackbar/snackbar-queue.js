@@ -5,7 +5,7 @@ import {
   Snackbar,
   SnackbarAction
 } from './snackbar'
-import { ArrayEmitter } from '@pmwc/base'
+import { ArrayEmitter } from '@pmwcs/base'
 
 /** A snackbar queue for rendering messages */
 export function SnackbarQueue ({

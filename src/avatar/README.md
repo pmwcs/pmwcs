@@ -1,14 +1,14 @@
-# Avatars (PMWC Addon)
+# Avatars (PMWCS Addon)
 
 Avatars are virtual representations of users in a system.
 
-- Module **@pmwc/avatar**
+- Module **@pmwcs/avatar**
 - Import styles:
   - Using CSS Loader
-    - import '@pmwc/avatar/styles';
+    - import '@pmwcs/avatar/styles';
   - Or include stylesheets
-    - **'@pmwc/avatar/avatar.css'**
-    - **'@pmwc/icon/icon.css'**
+    - **'@pmwcs/avatar/avatar.css'**
+    - **'@pmwcs/icon/icon.css'**
     - **'@material/ripple/dist/mdc.ripple.css'**
 
 
@@ -159,7 +159,7 @@ An Avatar component for displaying users in a system.
 | `interactive` | `undefined \| false \| true` | Make the avatar interactive. |
 | `name` | `undefined \| string` | The name of the user. This will get converted to initials and set the hover title. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `size` | `PMWC.IconSizeT` | The size of the avatar |
+| `size` | `PMWCS.IconSizeT` | The size of the avatar |
 | `square` | `undefined \| false \| true` | Make the avatar square. |
 | `src` | `undefined \| string` | The url for the image. This gets passed to the Icon component. |
 
@@ -183,6 +183,6 @@ An Avatar count for displaying list overflow.
 |------|------|-------------|
 | `interactive` | `undefined \| false \| true` | Make the avatar interactive. |
 | `overflow` | `undefined \| false \| true` | Optionally renders a "+" to indicate overlow. |
-| `size` | `PMWC.IconSizeT` | The size of the avatar |
+| `size` | `PMWCS.IconSizeT` | The size of the avatar |
 | `square` | `undefined \| false \| true` | Make the avatar square. |
 | `value` | `number` | The number of users. |

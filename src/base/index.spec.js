@@ -14,7 +14,7 @@ import { wait } from '../test-utils'
 
 jest.spyOn(console, 'warn')
 
-describe('PMWC', () => {
+describe('PMWCS', () => {
   it('works', () => {})
 })
 

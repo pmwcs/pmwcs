@@ -1,7 +1,7 @@
 import { h } from 'preact'
 import { mount } from 'enzyme'
 import { Typography } from './'
-import { PMWCProvider } from '../provider'
+import { PMWCSProvider } from '../provider'
 
 describe('Typography', () => {
   it('renders', () => {
@@ -31,9 +31,9 @@ describe('Typography', () => {
     expect(myRef).toBeTruthy()
   })
 
-  it('works with PMWCProvider', () => {
+  it('works with PMWCSProvider', () => {
     mount(
-      <PMWCProvider
+      <PMWCSProvider
         typography={{
           /** Make all Typography components default to <div>  */
           defaultTag: 'div',
@@ -53,13 +53,13 @@ describe('Typography', () => {
         <Typography use='headline5'>Rendered with `h5`</Typography>
         <Typography use='body2'>Rendered with `p`</Typography>
         <Typography use='body1'>Custom rendering</Typography>
-      </PMWCProvider>
+      </PMWCSProvider>
     )
 
     mount(
-      <PMWCProvider typography={undefined}>
+      <PMWCSProvider typography={undefined}>
         <Typography use='headline6'>Rendered default `div`</Typography>
-      </PMWCProvider>
+      </PMWCSProvider>
     )
   })
 })

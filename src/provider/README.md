@@ -1,11 +1,11 @@
 # Provider
 
-A component that provides global configuration for PMWC.
+A component that provides global configuration for PMWCS.
 
-- Module **@pmwc/provider**
+- Module **@pmwcs/provider**
 
 
-You can wrap your top level App component with PMWC provider to set global configuration options. Just pass the options in as props.
+You can wrap your top level App component with PMWCS provider to set global configuration options. Just pass the options in as props.
 
 ```jsx
 
@@ -13,11 +13,11 @@ You can wrap your top level App component with PMWC provider to set global confi
   import { h } from 'preact'
   import * as ReactDOM from 'react-dom';
   import App from './App'; // your main app component
-  import { PMWCProvider } from '@pmwc/provider';
+  import { PMWCSProvider } from '@pmwcs/provider';
 
   // This example disables ripples globally by default
   ReactDOM.render(
-    <PMWCProvider
+    <PMWCSProvider
       // Globally disable ripples
       ripple={false}
       // Global options for icons
@@ -40,15 +40,15 @@ You can wrap your top level App component with PMWC provider to set global confi
       }}
     >
       <App />
-    </PMWCProvider>,
+    </PMWCSProvider>,
     document.getElementById('root'),
   );
 `
 
 ```
 
-## PMWCProvider
-A provider for setting global options in PMWC.
+## PMWCSProvider
+A provider for setting global options in PMWCS.
 
 ### Props
 

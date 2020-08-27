@@ -3,8 +3,22 @@
   "version": "1.0.0-0",
   "description": "PMWC pagination component",
   "keywords": [
-    "pmwc"
+    "pmwc",
+    "preact",
+    "material",
+    "web",
+    "components",
+    "pagination"
   ],
+  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "bugs": {
+    "url": "https://github.com/pmwc/pmwc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmwc/pmwc.git",
+    "directory": "src/pagination"
+  },
   "license": "MIT",
   "author": "",
   "sideEffects": [
@@ -20,8 +34,8 @@
   "dependencies": {
     "@pmwc/base": "^1.0.0-0",
     "@pmwc/icon": "^1.0.0-0",
-    "@pmwc/ripple": "^1.0.0-0",
     "@pmwc/icon-button": "^1.0.0-0",
+    "@pmwc/ripple": "^1.0.0-0",
     "@pmwc/typography": "^1.0.0-0"
   },
   "peerDependencies": {

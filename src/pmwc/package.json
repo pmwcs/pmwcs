@@ -2,6 +2,22 @@
   "name": "@pmwc/pmwc",
   "version": "1.0.0",
   "description": "PMWC is a Preact UI Kit built on Google's official Material Components Web library.",
+  "keywords": [
+    "pmwc",
+    "preact",
+    "material",
+    "web",
+    "components"
+  ],
+  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "bugs": {
+    "url": "https://github.com/pmwc/pmwc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmwc/pmwc.git",
+    "directory": "src/pmwc"
+  },
   "license": "MIT",
   "sideEffects": true,
   "main": "dist/index.js",

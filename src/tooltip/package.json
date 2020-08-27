@@ -2,6 +2,23 @@
   "name": "@pmwc/tooltip",
   "version": "1.0.0",
   "description": "Tooltips display informative text when users hover over, focus on, or tap an element.",
+  "keywords": [
+    "pmwc",
+    "preact",
+    "material",
+    "web",
+    "components",
+    "tooltip"
+  ],
+  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "bugs": {
+    "url": "https://github.com/pmwc/pmwc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmwc/pmwc.git",
+    "directory": "src/tooltip"
+  },
   "main": "dist/index.js",
   "module": "next/index.js",
   "types": "index.d.ts",

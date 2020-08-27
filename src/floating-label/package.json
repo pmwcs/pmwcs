@@ -3,8 +3,22 @@
   "version": "1.0.0-0",
   "description": "PMWC floating-label component",
   "keywords": [
-    "pmwc"
+    "pmwc",
+    "preact",
+    "material",
+    "web",
+    "components",
+    "floating-label"
   ],
+  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "bugs": {
+    "url": "https://github.com/pmwc/pmwc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmwc/pmwc.git",
+    "directory": "src/floating-label"
+  },
   "license": "MIT",
   "author": "",
   "sideEffects": [

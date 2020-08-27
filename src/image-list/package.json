@@ -3,8 +3,22 @@
   "version": "1.0.0-0",
   "description": "PMWC image-list component",
   "keywords": [
-    "pmwc"
+    "pmwc",
+    "preact",
+    "material",
+    "web",
+    "components",
+    "image-list"
   ],
+  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "bugs": {
+    "url": "https://github.com/pmwc/pmwc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmwc/pmwc.git",
+    "directory": "src/image-list"
+  },
   "license": "MIT",
   "author": "",
   "sideEffects": [

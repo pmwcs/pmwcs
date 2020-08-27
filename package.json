@@ -4,6 +4,14 @@
   "private": true,
   "description": "RMWC is a Preact UI Kit built on Google's official Material Components Web library.",
   "keywords": [],
+  "homepage": "https://github.com/pmwc/pmwc#readme",
+  "bugs": {
+    "url": "https://github.com/pmwc/pmwc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmwc/pmwc.git"
+  },
   "license": "MIT",
   "author": "",
   "sideEffects": true,
@@ -32,6 +40,7 @@
     "not ie <= 11",
     "not op_mini all"
   ],
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.4",

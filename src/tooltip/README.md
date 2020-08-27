@@ -1,4 +1,4 @@
-# Tooltips `PMWC ADDON`
+# Tooltips (PMWC Addon)
 
 Tooltips display informative text when users hover over, focus on, or tap an element.
 
@@ -8,7 +8,6 @@ Tooltips display informative text when users hover over, focus on, or tap an ele
     - import '@pmwc/tooltip/styles';
   - Or include stylesheets
     - **'@pmwc/tooltip/tooltip.css'**
-
 
 ## Basic Usage
 
@@ -182,5 +181,3 @@ A Tooltip component for displaying informative popover information.
 | `leaveDelay` | `undefined \| number` | Delay in milliseconds before hiding the tooltip when interacting via touch or mouse. |
 | `open` | `undefined \| false \| true` | Manually control the open state |
 | `showArrow` | `undefined \| false \| true` | Whether or not to show an arrow on the Tooltip. Defaults to `false`. |
-
-

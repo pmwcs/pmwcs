@@ -1,4 +1,4 @@
-# Badges `PMWC ADDON`
+# Badges (PMWC Addon)
 
 > Badges are small status descriptors for UI elements. A badge consists of a small circle, typically containing a number or other short set of characters, that appears in proximity to another object.
 
@@ -156,6 +156,3 @@ A Badge component for indicating alerts or counts.
 
 ## BadgeAnchor
 An anchor component for badges.
-
-
-

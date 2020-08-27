@@ -14,6 +14,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@pmwc/alert": "^1.0.0-0",
     "@pmwc/avatar": "^1.0.0-0",
     "@pmwc/badge": "^1.0.0-0",
     "@pmwc/base": "^1.0.0-0",
@@ -23,6 +24,7 @@
     "@pmwc/chip": "^1.0.0-0",
     "@pmwc/circular-progress": "^1.0.0-0",
     "@pmwc/data-table": "^1.0.0-0",
+    "@pmwc/data-table-pagination": "^1.0.0-0",
     "@pmwc/dialog": "^1.0.0-0",
     "@pmwc/drawer": "^1.0.0-0",
     "@pmwc/elevation": "^1.0.0-0",
@@ -38,6 +40,7 @@
     "@pmwc/list": "^1.0.0-0",
     "@pmwc/menu": "^1.0.0-0",
     "@pmwc/notched-outline": "^1.0.0-0",
+    "@pmwc/pagination": "^1.0.0-0",
     "@pmwc/provider": "^1.0.0-0",
     "@pmwc/radio": "^1.0.0-0",
     "@pmwc/ripple": "^1.0.0-0",

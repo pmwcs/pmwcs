@@ -1,4 +1,4 @@
-# Collapsible Lists `PMWC ADDON`
+# Collapsible Lists (PMWC Addon)
 
 Lists are continuous, vertical indexes of text or images.
 
@@ -129,5 +129,3 @@ A collapsible list component.
 | `onClose` | `undefined \| () => void` | Callback for when the collapsible list closes. |
 | `onOpen` | `undefined \| () => void` | Callback for when the collapsible list opens. |
 | `open` | `undefined \| false \| true` | Show the collapsible list as open. |
-
-

@@ -1,4 +1,4 @@
-# Avatars `PMWC ADDON`
+# Avatars (PMWC Addon)
 
 Avatars are virtual representations of users in a system.
 
@@ -186,5 +186,3 @@ An Avatar count for displaying list overflow.
 | `size` | `PMWC.IconSizeT` | The size of the avatar |
 | `square` | `undefined \| false \| true` | Make the avatar square. |
 | `value` | `number` | The number of users. |
-
-

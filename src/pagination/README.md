@@ -1,4 +1,4 @@
-# Pagination `PMWC ADDON`
+# Pagination (PMWC Addon)
 
 The Pagination component enables the user to select a specific page from a range of pages.
 

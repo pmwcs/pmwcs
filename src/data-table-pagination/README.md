@@ -1,4 +1,4 @@
-# Data Table Pagination `PMWC ADDON`
+# Data Table Pagination (PMWC Addon)
 
 Pagination for data tables.
 

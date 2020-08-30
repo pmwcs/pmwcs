@@ -4,4 +4,4 @@
 coverage/
 src/**/dist
 src/**/next
-storybook-static/
+#storybook-static/

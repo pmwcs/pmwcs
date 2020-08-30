@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/radio",
-  "version": "1.0.0-0",
+  "version": "1.0.0-1",
   "description": "PMWCS radio component",
   "keywords": [
     "pmwcs",
@@ -34,9 +34,9 @@
   },
   "dependencies": {
     "@material/radio": "^7.0.0",
-    "@pmwcs/base": "^1.0.0-0",
-    "@pmwcs/ripple": "^1.0.0-0",
-    "@pmwcs/toggleable": "^1.0.0-0"
+    "@pmwcs/base": "^1.0.0-1",
+    "@pmwcs/ripple": "^1.0.0-1",
+    "@pmwcs/toggleable": "^1.0.0-1"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

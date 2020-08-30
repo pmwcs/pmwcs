@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/ripple",
-  "version": "1.0.0-0",
+  "version": "1.0.0-1",
   "description": "PMWCS ripple component",
   "keywords": [
     "pmwcs",
@@ -34,8 +34,8 @@
   },
   "dependencies": {
     "@material/ripple": "^7.0.0",
-    "@pmwcs/base": "^1.0.0-0",
-    "@pmwcs/provider": "^1.0.0-0"
+    "@pmwcs/base": "^1.0.0-1",
+    "@pmwcs/provider": "^1.0.0-1"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

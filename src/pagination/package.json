@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/pagination",
-  "version": "1.0.0-0",
+  "version": "1.0.0-1",
   "description": "PMWCS pagination component",
   "keywords": [
     "pmwcs",
@@ -32,11 +32,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@pmwcs/base": "^1.0.0-0",
-    "@pmwcs/icon": "^1.0.0-0",
-    "@pmwcs/icon-button": "^1.0.0-0",
-    "@pmwcs/ripple": "^1.0.0-0",
-    "@pmwcs/typography": "^1.0.0-0"
+    "@pmwcs/base": "^1.0.0-1",
+    "@pmwcs/icon": "^1.0.0-1",
+    "@pmwcs/icon-button": "^1.0.0-1",
+    "@pmwcs/ripple": "^1.0.0-1",
+    "@pmwcs/typography": "^1.0.0-1"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

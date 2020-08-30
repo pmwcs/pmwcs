@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/dialog",
-  "version": "1.0.0-0",
+  "version": "1.0.0-1",
   "description": "PMWCS dialog component",
   "keywords": [
     "pmwcs",
@@ -34,10 +34,10 @@
   },
   "dependencies": {
     "@material/dialog": "^7.0.0",
-    "@pmwcs/base": "^1.0.0-0",
-    "@pmwcs/button": "^1.0.0-0",
-    "@pmwcs/ripple": "^1.0.0-0",
-    "@pmwcs/textfield": "^1.0.0-0"
+    "@pmwcs/base": "^1.0.0-1",
+    "@pmwcs/button": "^1.0.0-1",
+    "@pmwcs/ripple": "^1.0.0-1",
+    "@pmwcs/textfield": "^1.0.0-1"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

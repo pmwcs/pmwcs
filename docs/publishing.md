@@ -14,4 +14,4 @@
 
         NPM_CONFIG_OTP=*** npx lerna exec "npm publish --tag=latest"
 
-    consider `npx lerna exec --no-bail` option if OTP token expires during publish
+    consider `npx lerna exec --no-bail` option if OTP token expires during publish.

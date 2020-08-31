@@ -20,7 +20,7 @@
     "all": "npm-run-all clean lint build test",
     "alpha": "lerna publish --dist-tag next",
     "build": "node scripts/build.js",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -s ./public",
     "clean": "rimraf coverage src/**/dist src/**/next src/**/pmwcs*.tgz",
     "clean:all": "npm-run-all -p clean clean:lerna clean:sb clean:nm",
     "clean:lerna": "lerna clean -y",

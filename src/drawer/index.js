@@ -39,9 +39,7 @@ export const Drawer = createComponent(function Drawer (props, ref) {
   return <DrawerRoot {...props} ref={ref} />
 })
 
-const slidableDrawerFactory = (
-  useDrawerFoundation
-) => {
+const slidableDrawerFactory = (useDrawerFoundation) => {
   const DrawerInner = createComponent(function DrawerInner (
     props,
     ref

@@ -23,9 +23,9 @@ const useDrawerFoundationFactory = (MDCConstructor) =>
         let previousFocusEl
 
         const f = new MDCConstructor({
-          addClass: (className) => rootEl.addClass(className),
-          removeClass: (className) => rootEl.removeClass(className),
-          hasClass: (className) => rootEl.hasClass(className),
+          addClass: (className) => rootEl.ref?.classList.add(className),
+          removeClass: (className) => rootEl.ref?.classList.remove(className),
+          hasClass: (className) => rootEl.ref?.classList.contains(className),
           elementHasClass: (element, className) =>
             element.classList.contains(className),
           saveFocus: () => {
@@ -49,7 +49,7 @@ const useDrawerFoundationFactory = (MDCConstructor) =>
             }
           },
           notifyClose: () => {
-            // emit('onClose', {}, true /* shouldBubble */);
+            emit('onClose', {}, true /* shouldBubble */);
           },
           notifyOpen: () => {
             emit('onOpen', {}, true /* shouldBubble */)

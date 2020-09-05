@@ -21,7 +21,7 @@
     "alpha": "lerna publish --dist-tag next",
     "build": "node scripts/build.js",
     "build-storybook": "build-storybook -s ./public",
-    "clean": "rimraf coverage src/**/dist src/**/next src/**/pmwcs*.tgz",
+    "clean": "rimraf coverage src/**/node_modules src/**/dist src/**/next src/**/pmwcs*.tgz",
     "clean:all": "npm-run-all -p clean clean:lerna clean:sb clean:nm",
     "clean:lerna": "lerna clean -y",
     "clean:nm": "rimraf **/node_modules",
@@ -31,7 +31,7 @@
     "lint": "eslint --fix \"**/*.js\"",
     "pack": "lerna exec npm pack",
     "release": "lerna publish --dist-tag latest",
-    "storybook": "start-storybook -p 6006 -s ./public",
+    "storybook": "npm run clean && start-storybook -p 6006 -s ./public",
     "test": "jest"
   },
   "browserslist": [

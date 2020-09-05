@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/select",
-  "version": "1.0.0-1",
+  "version": "1.0.0-2",
   "description": "PMWCS select component",
   "keywords": [
     "pmwcs",
@@ -34,14 +34,14 @@
   },
   "dependencies": {
     "@material/select": "^7.0.0",
-    "@pmwcs/base": "^1.0.0-1",
-    "@pmwcs/floating-label": "^1.0.0-1",
-    "@pmwcs/icon": "^1.0.0-1",
-    "@pmwcs/line-ripple": "^1.0.0-1",
-    "@pmwcs/list": "^1.0.0-1",
-    "@pmwcs/menu": "^1.0.0-1",
-    "@pmwcs/notched-outline": "^1.0.0-1",
-    "@pmwcs/ripple": "^1.0.0-1"
+    "@pmwcs/base": "^1.0.0-2",
+    "@pmwcs/floating-label": "^1.0.0-2",
+    "@pmwcs/icon": "^1.0.0-2",
+    "@pmwcs/line-ripple": "^1.0.0-2",
+    "@pmwcs/list": "^1.0.0-2",
+    "@pmwcs/menu": "^1.0.0-2",
+    "@pmwcs/notched-outline": "^1.0.0-2",
+    "@pmwcs/ripple": "^1.0.0-2"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

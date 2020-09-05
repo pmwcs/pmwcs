@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/tabs",
-  "version": "1.0.0-1",
+  "version": "1.0.0-2",
   "description": "PMWCS tabs component",
   "keywords": [
     "pmwcs",
@@ -37,9 +37,9 @@
     "@material/tab-bar": "^7.0.0",
     "@material/tab-indicator": "^7.0.0",
     "@material/tab-scroller": "^7.0.0",
-    "@pmwcs/base": "^1.0.0-1",
-    "@pmwcs/icon": "^1.0.0-1",
-    "@pmwcs/ripple": "^1.0.0-1"
+    "@pmwcs/base": "^1.0.0-2",
+    "@pmwcs/icon": "^1.0.0-2",
+    "@pmwcs/ripple": "^1.0.0-2"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

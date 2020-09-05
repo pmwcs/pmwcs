@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/alert",
-  "version": "1.0.0-1",
+  "version": "1.0.0-2",
   "description": "PMWCS alert component",
   "keywords": [
     "pmwcs",
@@ -32,10 +32,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@pmwcs/base": "^1.0.0-1",
-    "@pmwcs/icon": "^1.0.0-1",
-    "@pmwcs/icon-button": "^1.0.0-1",
-    "@pmwcs/typography": "^1.0.0-1"
+    "@pmwcs/base": "^1.0.0-2",
+    "@pmwcs/icon": "^1.0.0-2",
+    "@pmwcs/icon-button": "^1.0.0-2",
+    "@pmwcs/typography": "^1.0.0-2"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

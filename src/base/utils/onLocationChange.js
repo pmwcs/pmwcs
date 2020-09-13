@@ -1,9 +1,11 @@
+import { isBrowserEnv } from './isBrowserEnv'
+
 /**
  * wrapper around history functions to create custom event
  * 'locationchange'
  */
 export function onLocationChange () {
-  if (onLocationChange.wrapped) return
+  if (onLocationChange.wrapped || !isBrowserEnv()) return
 
   onLocationChange.wrapped = true
 

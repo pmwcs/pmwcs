@@ -2,11 +2,12 @@ import { h, Fragment } from 'preact'
 import { useEffect, useState, useRef } from 'preact/hooks'
 import { createPortal } from 'preact/compat'
 
+import { windowVar } from './index.js'
+
 const PORTAL_ID = 'pmwcPortal'
 
 export function Portal () {
-  const el = useRef(document.createElement('div'))
-
+  const el = useRef(windowVar?.document.createElement('div'))
   return <div ref={el} id={PORTAL_ID} />
 }
 

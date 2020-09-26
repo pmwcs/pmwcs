@@ -8,11 +8,6 @@
 	align-items: center;
 }
 
-.pmwc-pagination > li {
-  /* width: 3em; */
-}
-
-
 .pmwc-pagination-item {
   --pmwc-pagination-dim: 2rem;
   --pmwc-pagination-font-size-text: 0.875rem;
@@ -47,8 +42,8 @@
 
 .pmwc-pagination-item.mdc-icon-button {
   font-size: var(--pmwc-pagination-font-size-icon) !important;
-  width: var(--pmwc-pagination-dim);;
-  height: var(--pmwc-pagination-dim);;
+  width: var(--pmwc-pagination-dim);
+  height: var(--pmwc-pagination-dim);
   border-radius: 50%;
 }
 .pmwc-pagination-item--text.mdc-icon-button {
@@ -65,8 +60,7 @@
 }
 
 .pmwc-pagination-item--selected {
-	/* background-color: rgba(0, 0, 0, 0.12); */
-  color: var(--mdc-theme-on-standard, rgba(0, 0, 0, 0.87));
+	color: var(--mdc-theme-on-standard, rgba(0, 0, 0, 0.87));
 	background-color: var(--mdc-theme-bg-standard, rgba(224, 224, 224, 0.87));
 }
 
@@ -80,7 +74,9 @@
   background-color: var(--mdc-theme-secondary, #018786)
 }
 
-.pmwc-pagination-item.mdc-icon-button:active::before, .mdc-icon-button:focus::before, .mdc-icon-button:focus-within::before {
+.pmwc-pagination-item.mdc-icon-button:active::before,
+.mdc-icon-button:focus::before,
+.mdc-icon-button:focus-within::before {
 	opacity: 0 !important;
 }
 

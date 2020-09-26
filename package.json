@@ -28,7 +28,7 @@
     "clean:sb": "rimraf storybook-static",
     "coverage": "jest --coverage",
     "postinstall": "lerna bootstrap --force-local --hoist",
-    "lint": "eslint --fix \"**/*.js\"",
+    "lint": "eslint --fix \"./**/*.js\"",
     "pack": "lerna exec npm pack",
     "release": "lerna publish --dist-tag latest",
     "storybook": "npm run clean && start-storybook -p 6006 -s ./public",

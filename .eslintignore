@@ -5,3 +5,4 @@ src/**/next
 src/pmwcs/docs
 src/tooltip
 storybook-static/
+../*

@@ -9,18 +9,18 @@ export function onLocationChange () {
 
   onLocationChange.wrapped = true
 
-  history.pushState = (f => function pushState(...args) {
+  history.pushState = (f => function pushState (...args) {
     const ret = f.apply(this, args)
     window.dispatchEvent(new Event('pushstate'))
     window.dispatchEvent(new Event('locationchange'))
-    return ret;
+    return ret
   })(history.pushState)
 
-  history.replaceState = (f => function replaceState(...args) {
+  history.replaceState = (f => function replaceState (...args) {
     const ret = f.apply(this, args)
-    window.dispatchEvent(new Event('replacestate'));
-    window.dispatchEvent(new Event('locationchange'));
-    return ret;
+    window.dispatchEvent(new Event('replacestate'))
+    window.dispatchEvent(new Event('locationchange'))
+    return ret
   })(history.replaceState)
 
   window.addEventListener('popstate', () => {

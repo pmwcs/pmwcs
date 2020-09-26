@@ -24,14 +24,14 @@ export const all = () => (
     </ChipSet>
 
     <ChipSet>
-    <Chip
-      icon='favorite'
-      label='Outlined'
-      trailingIcon='close'
-      onRemove={evt => action('onRemove')(evt.detail)}
-      onInteraction={evt => action('onInteraction')(evt.detail)}
-      onTrailingIconInteraction={evt => action('onTrailingIconIteraction')(evt.detail)}
-    />
+      <Chip
+        icon='favorite'
+        label='Outlined'
+        trailingIcon='close'
+        onRemove={evt => action('onRemove')(evt.detail)}
+        onInteraction={evt => action('onInteraction')(evt.detail)}
+        onTrailingIconInteraction={evt => action('onTrailingIconIteraction')(evt.detail)}
+      />
     </ChipSet>
 
     <ChipSet>

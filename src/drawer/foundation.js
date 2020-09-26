@@ -49,7 +49,7 @@ const useDrawerFoundationFactory = (MDCConstructor) =>
             }
           },
           notifyClose: () => {
-            emit('onClose', {}, true /* shouldBubble */);
+            emit('onClose', {}, true /* shouldBubble */)
           },
           notifyOpen: () => {
             emit('onOpen', {}, true /* shouldBubble */)

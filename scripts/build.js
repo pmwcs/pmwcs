@@ -18,6 +18,7 @@ const BABEL_OPTS = [
   '--ignore "*.stories.js,*.spec.js,dist,next,node_modules"'
 ].join(' ')
 const BABEL_CONFIG_DIST = resolve(__dirname, '../config/babel.dist.js')
+// eslint-disable-next-line no-unused-vars
 const BABEL_CONFIG_NEXT = resolve(__dirname, '../config/babel.next.js')
 
 // ----
@@ -41,7 +42,7 @@ const buildPackage = async ({ cwd }) => {
   try {
     await clean({ cwd, dirs: ['dist', 'next'] })
     await Promise.all([
-      await transpile({ cwd, config: BABEL_CONFIG_DIST, outdir: 'dist' }),
+      await transpile({ cwd, config: BABEL_CONFIG_DIST, outdir: 'dist' })
       // await transpile({ cwd, config: BABEL_CONFIG_NEXT, outdir: 'next' })
     ])
       .then(arr => {

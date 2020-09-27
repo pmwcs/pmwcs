@@ -10,13 +10,13 @@
  */
 
 html {
- line-height: 1.15; /* 1 */
- -webkit-text-size-adjust: 100%; /* 2 */
- box-sizing: border-box; /* 3 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  box-sizing: border-box; /* 3 */
 }
 
 *, *:before, *:after {
- box-sizing: inherit; /* 3 */
+  box-sizing: inherit; /* 3 */
 }
 
 /* Sections

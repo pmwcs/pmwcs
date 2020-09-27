@@ -18,12 +18,16 @@ const BABEL_OPTS = [
   '--ignore "*.stories.js,*.spec.js,dist,next,node_modules"'
 ].join(' ')
 const BABEL_CONFIG_DIST = resolve(__dirname, '../config/babel.dist.js')
-// eslint-disable-next-line no-unused-vars
-const BABEL_CONFIG_NEXT = resolve(__dirname, '../config/babel.next.js')
+// const BABEL_CONFIG_NEXT = resolve(__dirname, '../config/babel.next.js')
 
 // ----
 
 let failed = false
+
+const genIndexScss = async () => execP(
+  './scss.sh',
+  { ...execOpts, cwd: __dirname }
+)
 
 const getFiles = () => globSync(resolve(__dirname, '../src/*/package.json'))
   .map(pckJson => dirname(pckJson))
@@ -58,6 +62,7 @@ const buildPackage = async ({ cwd }) => {
 }
 
 const build = async () => {
+  await genIndexScss()
   const dirs = getFiles()
   // const dirs = [ `${__dirname}/../src/base` ]
   const queue = dirs.map(cwd => () => buildPackage({ cwd }))

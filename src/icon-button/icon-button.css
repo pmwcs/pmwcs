@@ -21,6 +21,8 @@
   height: 1em;
 }
 
+.mdc-icon-button svg,
+.mdc-icon-button img,
 .mdc-icon-button.pmwc-icon-button--size-medium svg,
 .mdc-icon-button.pmwc-icon-button--size-medium img,
 .pmwc-icon-button--size-medium {
@@ -53,4 +55,28 @@
   width: 2em;
   height: 2em;
   padding: 0.5em;
+}
+
+.pmwc-icon-button--outlined {
+  box-shadow: 0px 0px 1.2px #000;
+}
+
+.pmwc-icon-button--primary {
+  color: #6200ee;
+  color: var(--mdc-theme-primary, #6200ee);
+}
+.pmwc-icon-button--primary::before,
+.pmwc-icon-button--primary::after {
+	background-color: #6200ee;
+	background-color: var(--mdc-theme-primary, #6200ee) ;
+}
+
+.pmwc-icon-button--secondary {
+  color: #018786;
+  color: var(--mdc-theme-secondary, #018786);
+}
+.pmwc-icon-button--secondary::before,
+.pmwc-icon-button--secondary::after {
+	background-color: #018786;
+	background-color: var(--mdc-theme-secondary, #018786) ;
 }

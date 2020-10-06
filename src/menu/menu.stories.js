@@ -1,6 +1,8 @@
 /** @jsx h */
 import { h } from 'preact'
 import { useState, useRef, useEffect } from 'preact/hooks'
+import { action } from '@storybook/addon-actions'
+
 import './styles.js'
 import { MDCMenu } from '@material/menu'
 
@@ -18,6 +20,7 @@ import { Button } from '@pmwcs/button'
 import { IconButton } from '@pmwcs/icon-button'
 import { Select } from '@pmwcs/select'
 import { Checkbox } from '@pmwcs/checkbox'
+import { Portal } from '@pmwcs/base'
 
 export default {
   title: 'Menu',
@@ -63,7 +66,7 @@ export const basic = () => {
         </Button>
         <Menu
           open={open}
-          onSelect={evt => console.log(evt.detail.index)}
+          onSelect={evt => action('onSelect')(evt.detail.index)}
           onClose={evt => setOpen(false)}
         >
           <MenuItem>Cookies</MenuItem>
@@ -209,8 +212,8 @@ export const renderThroughPortals = () => {
       <section>
         <div
           style={{
-            marginBottom: '10rem',
-            height: '5rem'
+            marginBottom: '7em',
+            height: '5em'
           }}
         >
           <MenuSurfaceAnchor tag='span'>
@@ -232,6 +235,10 @@ export const renderThroughPortals = () => {
   }
   return (
     <section className='mdc-typography'>
+      <div style={{ position: 'relative', width: '10em', left: '10em', border: '1px dashed fuchsia', color: 'fuchsia' }}>
+        Portal
+        <Portal />
+      </div>
       <Example />
     </section>
   )

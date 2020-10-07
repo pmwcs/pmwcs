@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/textfield",
-  "version": "1.0.0-2",
+  "version": "1.0.0",
   "description": "PMWCS textfield component",
   "keywords": [
     "pmwcs",
@@ -34,12 +34,12 @@
   },
   "dependencies": {
     "@material/textfield": "^7.0.0",
-    "@pmwcs/base": "^1.0.0-2",
-    "@pmwcs/floating-label": "^1.0.0-2",
-    "@pmwcs/icon": "^1.0.0-2",
-    "@pmwcs/line-ripple": "^1.0.0-2",
-    "@pmwcs/notched-outline": "^1.0.0-2",
-    "@pmwcs/ripple": "^1.0.0-2"
+    "@pmwcs/base": "^1.0.0",
+    "@pmwcs/floating-label": "^1.0.0",
+    "@pmwcs/icon": "^1.0.0",
+    "@pmwcs/line-ripple": "^1.0.0",
+    "@pmwcs/notched-outline": "^1.0.0",
+    "@pmwcs/ripple": "^1.0.0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

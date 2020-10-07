@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/fab",
-  "version": "1.0.0-2",
+  "version": "1.0.0",
   "description": "PMWCS fab component",
   "keywords": [
     "pmwcs",
@@ -34,9 +34,9 @@
   },
   "dependencies": {
     "@material/fab": "^7.0.0",
-    "@pmwcs/base": "^1.0.0-2",
-    "@pmwcs/icon": "^1.0.0-2",
-    "@pmwcs/ripple": "^1.0.0-2"
+    "@pmwcs/base": "^1.0.0",
+    "@pmwcs/icon": "^1.0.0",
+    "@pmwcs/ripple": "^1.0.0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

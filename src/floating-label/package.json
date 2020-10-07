@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/floating-label",
-  "version": "1.0.0-2",
+  "version": "1.0.0",
   "description": "PMWCS floating-label component",
   "keywords": [
     "pmwcs",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@material/floating-label": "^7.0.0",
-    "@pmwcs/base": "^1.0.0-2"
+    "@pmwcs/base": "^1.0.0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

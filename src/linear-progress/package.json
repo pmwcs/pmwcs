@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/linear-progress",
-  "version": "1.0.0-2",
+  "version": "1.0.0",
   "description": "PMWCS linear-progress component",
   "keywords": [
     "pmwcs",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@material/linear-progress": "^7.0.0",
-    "@pmwcs/base": "^1.0.0-2"
+    "@pmwcs/base": "^1.0.0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

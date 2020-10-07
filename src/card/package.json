@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/card",
-  "version": "1.0.0-2",
+  "version": "1.0.0",
   "description": "PMWCS card component",
   "keywords": [
     "pmwcs",
@@ -34,10 +34,10 @@
   },
   "dependencies": {
     "@material/button": "^7.0.0",
-    "@pmwcs/base": "^1.0.0-2",
-    "@pmwcs/button": "^1.0.0-2",
-    "@pmwcs/icon-button": "^1.0.0-2",
-    "@pmwcs/ripple": "^1.0.0-2"
+    "@pmwcs/base": "^1.0.0",
+    "@pmwcs/button": "^1.0.0",
+    "@pmwcs/icon-button": "^1.0.0",
+    "@pmwcs/ripple": "^1.0.0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

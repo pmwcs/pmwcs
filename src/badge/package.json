@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/badge",
-  "version": "1.0.0-2",
+  "version": "1.0.0",
   "description": "PMWCS badge component",
   "keywords": [
     "pmwcs",
@@ -33,7 +33,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@pmwcs/base": "^1.0.0-2"
+    "@pmwcs/base": "^1.0.0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

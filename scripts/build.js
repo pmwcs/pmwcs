@@ -18,11 +18,16 @@ const BABEL_OPTS = [
   '--ignore "*.stories.js,*.spec.js,dist,next,node_modules"'
 ].join(' ')
 const BABEL_CONFIG_DIST = resolve(__dirname, '../config/babel.dist.js')
-const BABEL_CONFIG_NEXT = resolve(__dirname, '../config/babel.next.js')
+// const BABEL_CONFIG_NEXT = resolve(__dirname, '../config/babel.next.js')
 
 // ----
 
 let failed = false
+
+const genIndexScss = async () => execP(
+  './scss.sh',
+  { ...execOpts, cwd: __dirname }
+)
 
 const getFiles = () => globSync(resolve(__dirname, '../src/*/package.json'))
   .map(pckJson => dirname(pckJson))
@@ -41,8 +46,8 @@ const buildPackage = async ({ cwd }) => {
   try {
     await clean({ cwd, dirs: ['dist', 'next'] })
     await Promise.all([
-      await transpile({ cwd, config: BABEL_CONFIG_DIST, outdir: 'dist' }),
-      await transpile({ cwd, config: BABEL_CONFIG_NEXT, outdir: 'next' })
+      await transpile({ cwd, config: BABEL_CONFIG_DIST, outdir: 'dist' })
+      // await transpile({ cwd, config: BABEL_CONFIG_NEXT, outdir: 'next' })
     ])
       .then(arr => {
         console.log('%s %s\n  %s',
@@ -57,6 +62,7 @@ const buildPackage = async ({ cwd }) => {
 }
 
 const build = async () => {
+  await genIndexScss()
   const dirs = getFiles()
   // const dirs = [ `${__dirname}/../src/base` ]
   const queue = dirs.map(cwd => () => buildPackage({ cwd }))

@@ -37,11 +37,14 @@ const IconButtonRoot = withRipple({
   surface: false,
   unbounded: true
 })(createComponent(function IconButtonRoot (props, ref) {
-  const { checked, label, foundationRef, onKeyDown, size, primary, secondary, ripple, ...rest } = props
+  const { checked, label, foundationRef, onKeyDown, size, primary, secondary, outlined, ripple, ...rest } = props
   const className = useClassNames(props, [
     'mdc-icon-button',
     {
       'mdc-icon-button--on': checked,
+      'pmwc-icon-button--primary': primary,
+      'pmwc-icon-button--secondary': secondary,
+      'pmwc-icon-button--outlined': outlined,
       [`pmwc-icon-button--size-${size}`]: size
     }
   ])

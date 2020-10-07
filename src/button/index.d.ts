@@ -21,6 +21,8 @@ export interface ButtonProps extends WithRippleProps, HTMLProps {
   danger?: boolean;
   /** Choose secondary theme. */
   secondary?: boolean;
+  /** Choose standard theme. */
+  standard?: boolean;
   /** Set button as activated. */
   activated?: boolean;
   /** Content specified as a label prop. */

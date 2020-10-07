@@ -108,3 +108,6 @@ An IconButton component that can also be used as a toggle.
 | `onIcon` | `IconPropT` | If specified, renders a toggle with this icon as the on state. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `size` | `"xsmall" \| "small" \| "medium" \| "large" \| "xlarge"` | A size to render the icon |
+| `primary` | `undefined \| false \| true` | Choose primary theme. |
+| `secondary` | `undefined \| false \| true` | Choose secondary theme. |
+| `outlined` | `undefined \| false \| true` | Make the button outlined. |

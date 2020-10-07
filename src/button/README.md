@@ -78,6 +78,8 @@ The Button component.
 | `activated` | `undefined \| false \| true` | Make the button activated |
 | `icon` | `PMWCS.IconPropT` | An Icon for the Button |
 | `label` | `React.ReactNode \| any` | Content specified as a label prop. |
+| `primary` | `undefined \| false \| true` | Make the button primary. |
+| `secondary` | `undefined \| false \| true` | Make the button secondary. |
 | `outlined` | `undefined \| false \| true` | Make the button outlined. |
 | `raised` | `undefined \| false \| true` | Make the Button raised. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |

@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/card",
-  "version": "1.0.0-1",
+  "version": "1.0.0",
   "description": "PMWCS card component",
   "keywords": [
     "pmwcs",
@@ -26,7 +26,7 @@
     "*.css"
   ],
   "main": "dist/index.js",
-  "module": "next/index.js",
+  "module": "index.js",
   "types": "index.d.ts",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
@@ -34,10 +34,10 @@
   },
   "dependencies": {
     "@material/button": "^7.0.0",
-    "@pmwcs/base": "^1.0.0-1",
-    "@pmwcs/button": "^1.0.0-1",
-    "@pmwcs/icon-button": "^1.0.0-1",
-    "@pmwcs/ripple": "^1.0.0-1"
+    "@pmwcs/base": "^1.0.0",
+    "@pmwcs/button": "^1.0.0",
+    "@pmwcs/icon-button": "^1.0.0",
+    "@pmwcs/ripple": "^1.0.0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

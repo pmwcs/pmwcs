@@ -1,0 +1,43 @@
+{
+  "name": "@pmwcs/ellipsis",
+  "version": "1.0.0",
+  "description": "PMWCS ellipsis component",
+  "keywords": [
+    "pmwcs",
+    "preact",
+    "material",
+    "web",
+    "components",
+    "ellipsis"
+  ],
+  "homepage": "https://github.com/pmwcs/pmwcs#readme",
+  "bugs": {
+    "url": "https://github.com/pmwcs/pmwcs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmwcs/pmwcs.git",
+    "directory": "src/ellipsis"
+  },
+  "license": "MIT",
+  "author": "",
+  "sideEffects": [
+    "./styles.js",
+    "*.css"
+  ],
+  "main": "dist/index.js",
+  "module": "index.js",
+  "scripts": {
+    "publish:dist": "npm publish dist --access=public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@pmwcs/base": "^1.0.0"
+  },
+  "peerDependencies": {
+    "preact": "^10.4.7"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

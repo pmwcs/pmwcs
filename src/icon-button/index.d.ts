@@ -21,6 +21,12 @@ export interface IconButtonProps extends WithRippleProps {
   foundationRef?: Ref<MDCIconButtonToggleFoundation>;
   /** A size to render the icon  */
   size?: IconSizeT;
+  /** Choose primary theme */
+  primary?: boolean;
+  /** Choose secondary theme */
+  secondary?: boolean;
+  /** Choose outlined style */
+  outlined?: boolean;
 }
 
 /**

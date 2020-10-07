@@ -6,6 +6,7 @@ import './styles.js'
 // import './stories.css'
 
 import { TextField } from './index.js'
+import { Alert } from '@pmwcs/alert'
 
 export default {
   title: 'TextField',
@@ -103,9 +104,16 @@ export const validation = () => (
 )
 
 export const HtmlInputTypes = () => (
-  <section>
+  <section className='html-input-types'>
+    <style dangerouslySetInnerHTML={{
+      __html: '.html-input-types .pmwc-alert { margin-bottom: 0.5em; }'
+    }}
+    />
 
     <TextField label='text' type='text' />
+    <Br />
+
+    <TextField label='password' type='password' />
     <Br />
 
     <TextField label='color' type='color' style={{ width: '6rem' }} />
@@ -114,8 +122,16 @@ export const HtmlInputTypes = () => (
     <TextField label='date' type='date' />
     <Br />
 
+    <Alert>
+      <code>type=datetime-local</code> not supported in: Firefox
+    </Alert>
+
     <TextField label='datetime-local' type='datetime-local' />
     <Br />
+
+    <Alert>
+      <code>type=month</code> not supported in: Firefox
+    </Alert>
 
     <TextField label='month' type='month' />
     <Br />
@@ -125,6 +141,10 @@ export const HtmlInputTypes = () => (
 
     <TextField label='time' type='time' />
     <Br />
+
+    <Alert>
+      <code>type=week</code> not supported in: Firefox
+    </Alert>
 
     <TextField label='week' type='week' />
     <Br />

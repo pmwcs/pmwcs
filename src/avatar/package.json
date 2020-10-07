@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/avatar",
-  "version": "1.0.0-1",
+  "version": "1.0.0",
   "description": "PMWCS avatar component",
   "keywords": [
     "pmwcs",
@@ -26,16 +26,16 @@
     "*.css"
   ],
   "main": "dist/index.js",
-  "module": "next/index.js",
+  "module": "index.js",
   "types": "index.d.ts",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@pmwcs/base": "^1.0.0-1",
-    "@pmwcs/icon": "^1.0.0-1",
-    "@pmwcs/ripple": "^1.0.0-1"
+    "@pmwcs/base": "^1.0.0",
+    "@pmwcs/icon": "^1.0.0",
+    "@pmwcs/ripple": "^1.0.0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

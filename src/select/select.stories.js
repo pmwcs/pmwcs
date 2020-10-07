@@ -97,16 +97,18 @@ export const basic = () => (
       options={['Cookies', 'Pizza', 'Icecream']}
       onChange={(evt) => action('Standard')(evt.currentTarget.value)}
     />
-    <Br />
 
+    <Br />
+    {/* outlined */}
     <Select
       label='Outlined'
       options={['Cookies', 'Pizza', 'Icecream']}
       outlined
       onChange={(evt) => action('Outlined')(evt.currentTarget.value)}
     />
-    <Br />
 
+    <Br />
+    {/* with help text */}
     <Select
       label='With Icon'
       options={['Cookies', 'Pizza', 'Icecream']}
@@ -114,6 +116,13 @@ export const basic = () => (
       helpText='Choose your favorite snack...'
       icon='favorite'
       onChange={(evt) => action('With Icon')(evt.currentTarget.value)}
+    />
+
+    <Br />
+    {/* no label */}
+    <Select
+      options={['Cookies', 'Pizza', 'Icecream']}
+      onChange={(evt) => action('Standard')(evt.currentTarget.value)}
     />
   </section>
 )

@@ -1,5 +1,7 @@
 /** @jsx h */
 import { h } from 'preact'
+import { action } from '@storybook/addon-actions'
+
 import './styles.js'
 
 import {
@@ -64,14 +66,14 @@ export const simple = () => (
     <SimpleTopAppBar
       title='test'
       navigationIcon
-      onNav={() => console.log('Navigate')}
+      onNav={() => action('navigate')()}
       actionItems={[
         {
           icon: 'file_download',
-          onClick: () => console.log('Do Something')
+          onClick: () => action('file_download')()
         },
-        { icon: 'print', onClick: () => console.log('Do Something') },
-        { icon: 'bookmark', onClick: () => console.log('Do Something') }
+        { icon: 'print', onClick: () => action('print')() },
+        { icon: 'bookmark', onClick: () => action('bookmark')() }
       ]}
     />
     <TopAppBarFixedAdjust />

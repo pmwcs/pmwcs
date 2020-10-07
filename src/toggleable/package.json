@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/toggleable",
-  "version": "1.0.0-1",
+  "version": "1.0.0",
   "description": "PMWCS toggeable internal module",
   "keywords": [
     "pmwcs",
@@ -22,15 +22,15 @@
   "license": "MIT",
   "author": "",
   "main": "dist/index.js",
-  "module": "next/index.js",
+  "module": "index.js",
   "types": "index.d.ts",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@pmwcs/base": "^1.0.0-1",
-    "@pmwcs/formfield": "^1.0.0-1"
+    "@pmwcs/base": "^1.0.0",
+    "@pmwcs/formfield": "^1.0.0"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

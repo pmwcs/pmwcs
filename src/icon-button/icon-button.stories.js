@@ -88,6 +88,25 @@ export const basic = () => (
         />
         {' secondary'}
       </li>
+      <li>
+        <IconButton
+          icon='star'
+          label='Rate this!'
+          outlined
+          onClick={action('outlined')}
+        />
+        {' outlined'}
+      </li>
+      <li>
+        <IconButton
+          icon='star'
+          label='Rate this!'
+          outlined
+          primary
+          onClick={action('primary outlined')}
+        />
+        {' primary outlined'}
+      </li>
     </ul>
   </section>
 )

@@ -148,12 +148,12 @@ export const withRipple = ({
             unbounded={rippleOptions.unbounded || defaultUnbounded}
             surface={rippleOptions.surface || defaultSurface}
           >
-            <WrapComponent {...(rest)} ref={ref} />
+            <WrapComponent {...rest} ref={ref} />
           </Ripple>
         )
       }
 
-      return <WrapComponent {...(rest)} ref={ref} />
+      return <WrapComponent {...rest} ref={ref} />
     }
   )
 

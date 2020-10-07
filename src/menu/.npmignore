@@ -1,9 +1,7 @@
 node_modules/
 package-lock.json
 *.stories.js
+*.spec.js
 *.tgz
 *.log
 .*
-/*.js
-/menu
-/menu-surface

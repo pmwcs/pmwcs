@@ -60,7 +60,6 @@ describe('Dialog', () => {
           el.setProps({ open: false })
         }}
         onClosed={() => closed++}
-        onClick={evt => console.log('bubble', evt)}
       >
         <DialogTitle>Dialog Title</DialogTitle>
 

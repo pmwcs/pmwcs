@@ -2,10 +2,7 @@ import 'regenerator-runtime/runtime'
 import Adapter from 'enzyme-adapter-preact-pure'
 import Enzyme from 'enzyme'
 
-// import rmwcTestPolyfill from './base/test-polyfill';
-
 Enzyme.configure({ adapter: new Adapter() })
-// rmwcTestPolyfill();
 
 const consoleError = console.error
 

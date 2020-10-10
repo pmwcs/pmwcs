@@ -46,8 +46,8 @@ const buildPackage = async ({ cwd }) => {
   try {
     await clean({ cwd, dirs: ['dist', 'next'] })
     await Promise.all([
-      await transpile({ cwd, config: BABEL_CONFIG_DIST, outdir: 'dist' }),
-      await transpile({ cwd, config: BABEL_CONFIG_NEXT, outdir: 'next' })
+      await transpile({ cwd, config: BABEL_CONFIG_NEXT, outdir: 'next' }),
+      await transpile({ cwd, config: BABEL_CONFIG_DIST, outdir: 'dist' })
     ])
       .then(arr => {
         console.log('%s %s\n  %s',

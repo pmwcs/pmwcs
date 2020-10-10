@@ -22,7 +22,7 @@
   "license": "MIT",
   "author": "",
   "main": "dist/index.js",
-  "module": "index.js",
+  "module": "next/index.js",
   "types": "index.d.ts",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",

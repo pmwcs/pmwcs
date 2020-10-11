@@ -35,6 +35,7 @@
     "@pmwcs/badge": "^1.0.0",
     "@pmwcs/base": "^1.0.0",
     "@pmwcs/button": "^1.0.0",
+    "@pmwcs/button-group": "^1.0.0",
     "@pmwcs/card": "^1.0.0",
     "@pmwcs/checkbox": "^1.0.0",
     "@pmwcs/chip": "^1.0.0",
@@ -44,6 +45,7 @@
     "@pmwcs/dialog": "^1.0.0",
     "@pmwcs/drawer": "^1.0.0",
     "@pmwcs/elevation": "^1.0.0",
+    "@pmwcs/ellipsis": "^1.0.0",
     "@pmwcs/fab": "^1.0.0",
     "@pmwcs/floating-label": "^1.0.0",
     "@pmwcs/formfield": "^1.0.0",
@@ -68,6 +70,7 @@
     "@pmwcs/textfield": "^1.0.0",
     "@pmwcs/theme": "^1.0.0",
     "@pmwcs/toggleable": "^1.0.0",
+    "@pmwcs/tooltip": "^1.0.0",
     "@pmwcs/top-app-bar": "^1.0.0",
     "@pmwcs/typography": "^1.0.0",
     "material-components-web": "^7.0.0"

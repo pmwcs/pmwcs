@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/toggleable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PMWCS toggeable internal module",
   "keywords": [
     "pmwcs",
@@ -29,8 +29,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@pmwcs/base": "^1.0.0",
-    "@pmwcs/formfield": "^1.0.0"
+    "@pmwcs/base": "^1.0.1",
+    "@pmwcs/formfield": "^1.0.1"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

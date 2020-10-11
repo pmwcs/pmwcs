@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/circular-progress",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PMWCS circular-progress component",
   "keywords": [
     "pmwcs",
@@ -33,7 +33,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@pmwcs/base": "^1.0.0"
+    "@pmwcs/base": "^1.0.1"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/menu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PMWCS menu component",
   "keywords": [
     "pmwcs",
@@ -35,8 +35,8 @@
   "dependencies": {
     "@material/menu": "^7.0.0",
     "@material/menu-surface": "^7.0.0",
-    "@pmwcs/base": "^1.0.0",
-    "@pmwcs/list": "^1.0.0"
+    "@pmwcs/base": "^1.0.1",
+    "@pmwcs/list": "^1.0.1"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

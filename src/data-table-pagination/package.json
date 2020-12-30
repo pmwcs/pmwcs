@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/data-table-pagination",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "PMWCS data-table-pagination component",
   "keywords": [
     "pmwcs",
@@ -34,10 +34,10 @@
   },
   "dependencies": {
     "@material/data-table": "^7.0.0",
-    "@pmwcs/base": "^1.0.1",
-    "@pmwcs/icon-button": "^1.0.1",
-    "@pmwcs/select": "^1.0.1",
-    "@pmwcs/typography": "^1.0.1"
+    "@pmwcs/base": "^1.0.2",
+    "@pmwcs/icon-button": "^1.0.2",
+    "@pmwcs/select": "^1.0.2",
+    "@pmwcs/typography": "^1.0.2"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

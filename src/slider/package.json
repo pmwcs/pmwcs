@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/slider",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "PMWCS slider component",
   "keywords": [
     "pmwcs",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@material/slider": "^7.0.0",
-    "@pmwcs/base": "^1.0.1"
+    "@pmwcs/base": "^1.0.2"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

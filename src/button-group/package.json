@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/button-group",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "PMWCS button-group component",
   "keywords": [
     "pmwcs",
@@ -33,11 +33,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@pmwcs/base": "^1.0.1",
-    "@pmwcs/ripple": "^1.0.1"
+    "@pmwcs/base": "^1.0.2",
+    "@pmwcs/ripple": "^1.0.2"
   },
   "devDependencies": {
-    "@pmwcs/button": "^1.0.1"
+    "@pmwcs/button": "^1.0.2"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

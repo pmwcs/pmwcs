@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/button",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "PMWCS button component",
   "keywords": [
     "pmwcs",
@@ -34,9 +34,9 @@
   },
   "dependencies": {
     "@material/button": "^7.0.0",
-    "@pmwcs/base": "^1.0.1",
-    "@pmwcs/icon": "^1.0.1",
-    "@pmwcs/ripple": "^1.0.1"
+    "@pmwcs/base": "^1.0.2",
+    "@pmwcs/icon": "^1.0.2",
+    "@pmwcs/ripple": "^1.0.2"
   },
   "peerDependencies": {
     "preact": "^10.4.7"

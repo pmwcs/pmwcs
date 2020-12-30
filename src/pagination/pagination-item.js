@@ -50,7 +50,7 @@ export const PaginationItem = (createComponent(function PaginationItem (props, r
   return isEllipsis
     ? (
       <div ref={ref} disabled className={className_}>…</div>
-    )
+      )
     : (
       <IconButton
         ref={ref}
@@ -66,5 +66,5 @@ export const PaginationItem = (createComponent(function PaginationItem (props, r
       >
         {type === 'page' && page}
       </IconButton>
-    )
+      )
 }))

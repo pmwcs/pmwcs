@@ -37,8 +37,8 @@ export const useTopAppBarFoundation = (
         getTotalActionItems: () => {
           return rootEl.ref
             ? rootEl.ref.querySelectorAll(
-              MDCTopAppBarFoundation.strings.ACTION_ITEM_SELECTOR
-            ).length
+                MDCTopAppBarFoundation.strings.ACTION_ITEM_SELECTOR
+              ).length
             : 0
         }
       }

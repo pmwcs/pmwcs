@@ -1,3 +1,5 @@
+/* eslint react/no-find-dom-node: off */
+
 import { h, Component, cloneElement, isValidElement, createContext } from 'preact'
 import { findDOMNode, forwardRef, Children } from 'preact/compat'
 

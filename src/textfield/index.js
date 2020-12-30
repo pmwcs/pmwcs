@@ -105,30 +105,36 @@ export const TextField = createComponent(function TextField (
 
     return (
       <div className='mdc-text-field-helper-line'>
-        {helpText && shouldSpread ? (
-          <TextFieldHelperText {...(helpText)} />
-        ) : (
-          <TextFieldHelperText>{helpText}</TextFieldHelperText>
-        )}
+        {helpText && shouldSpread
+          ? (
+            <TextFieldHelperText {...(helpText)} />
+            )
+          : (
+            <TextFieldHelperText>{helpText}</TextFieldHelperText>
+            )}
         {!textarea && renderedCharacterCounter}
       </div>
     )
   }
 
-  const renderedLabel = label ? (
-    <FloatingLabel
-      shake={shakeLabel}
-      float={floatLabel}
-      apiRef={setFloatingLabel}
-      id={labelId}
-    >
-      {label}
-    </FloatingLabel>
-  ) : null
+  const renderedLabel = label
+    ? (
+      <FloatingLabel
+        shake={shakeLabel}
+        float={floatLabel}
+        apiRef={setFloatingLabel}
+        id={labelId}
+      >
+        {label}
+      </FloatingLabel>
+      )
+    : null
 
-  const renderedCharacterCounter = characterCount ? (
-    <TextFieldCharacterCount apiRef={setCharacterCounter} />
-  ) : null
+  const renderedCharacterCounter = characterCount
+    ? (
+      <TextFieldCharacterCount apiRef={setCharacterCounter} />
+      )
+    : null
 
   return (
     <Fragment>
@@ -154,18 +160,20 @@ export const TextField = createComponent(function TextField (
           ref={inputRef}
         />
 
-        {outlined ? (
-          <Fragment>
-            <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
-            {!!trailingIcon && renderIcon(trailingIcon, 'trailing')}
-          </Fragment>
-        ) : (
-          <Fragment>
-            {renderedLabel}
-            {!!trailingIcon && renderIcon(trailingIcon, 'trailing')}
-            <LineRipple active={lineRippleActive} center={lineRippleCenter} />
-          </Fragment>
-        )}
+        {outlined
+          ? (
+            <Fragment>
+              <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
+              {!!trailingIcon && renderIcon(trailingIcon, 'trailing')}
+            </Fragment>
+            )
+          : (
+            <Fragment>
+              {renderedLabel}
+              {!!trailingIcon && renderIcon(trailingIcon, 'trailing')}
+              <LineRipple active={lineRippleActive} center={lineRippleCenter} />
+            </Fragment>
+            )}
       </TextFieldRoot>
       {renderHelpText(renderedCharacterCounter)}
     </Fragment>

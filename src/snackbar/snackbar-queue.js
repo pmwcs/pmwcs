@@ -52,7 +52,7 @@ export function SnackbarQueue ({
   const actionProp = actions
     ? actions.map(({ title, label, ...rest }, i) => (
       <SnackbarAction {...rest} key={i} label={label || title} />
-    ))
+      ))
     : null
 
   // We are open if we have a message

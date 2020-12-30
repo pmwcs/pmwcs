@@ -44,10 +44,10 @@ export const CircularProgress = createComponent(
     const circularStyle = (size) => {
       return progress !== undefined
         ? {
-          strokeDasharray: `${
+            strokeDasharray: `${
               2 * Math.PI * (size / 2.4) * calculateRatio(progress)
             }, 666.66%`
-        }
+          }
         : undefined
     }
 

@@ -129,29 +129,27 @@ export const SimpleListItem = createComponent(
     { text, secondaryText, graphic, metaIcon, meta, children, secondary, ...rest },
     ref
   ) => {
-    const primaryTextToRender =
-      text && secondaryText !== undefined ? (
-        <ListItemPrimaryText>{text}</ListItemPrimaryText>
-      ) : (
-        text
-      )
+    const primaryTextToRender = text && secondaryText !== undefined
+      ? <ListItemPrimaryText>{text}</ListItemPrimaryText>
+      : text
 
-    const secondaryTextToRender =
-      secondaryText !== undefined ? (
-        <ListItemSecondaryText>{secondaryText}</ListItemSecondaryText>
-      ) : null
+    const secondaryTextToRender = secondaryText !== undefined
+      ? <ListItemSecondaryText>{secondaryText}</ListItemSecondaryText>
+      : null
 
     return (
       <ListItem {...rest} ref={ref} secondary={secondary}>
         {graphic !== undefined && <ListItemGraphic icon={graphic} secondary={secondary} />}
-        {secondaryTextToRender !== null ? (
-          <ListItemText>
-            {primaryTextToRender}
-            {secondaryTextToRender}
-          </ListItemText>
-        ) : (
-          primaryTextToRender
-        )}
+        {secondaryTextToRender !== null
+          ? (
+            <ListItemText>
+              {primaryTextToRender}
+              {secondaryTextToRender}
+            </ListItemText>
+            )
+          : (
+              primaryTextToRender
+            )}
         {(!!meta || !!metaIcon) && (
           <ListItemMeta icon={metaIcon}>{meta}</ListItemMeta>
         )}

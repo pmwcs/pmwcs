@@ -86,8 +86,8 @@ export const useChipFoundation = (props) => {
         isRTL: () => {
           return rootEl.ref
             ? window
-              .getComputedStyle(rootEl.ref)
-              .getPropertyValue('direction') === 'rtl'
+                .getComputedStyle(rootEl.ref)
+                .getPropertyValue('direction') === 'rtl'
             : false
         }
       })

@@ -1,10 +1,10 @@
-export var closest = function (element, selector) {
+export const closest = function (element, selector) {
   if (element instanceof Element) {
     /* istanbul ignore else  */
     if (element && element.closest) {
       return element.closest(selector)
     } else {
-      var el = element
+      let el = element
       while (el) {
         if (matches(el, selector)) {
           return el
@@ -15,9 +15,9 @@ export var closest = function (element, selector) {
   }
   return null
 }
-export var matches = function (element, selector) {
+export const matches = function (element, selector) {
   /* istanbul ignore next  */
-  var nativeMatches = element.matches ||
+  const nativeMatches = element.matches ||
         element.webkitMatchesSelector ||
         element.msMatchesSelector
   return nativeMatches.call(element, selector)

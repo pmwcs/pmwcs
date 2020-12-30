@@ -1,6 +1,6 @@
 export default (function () {
   if (global.window) {
-    var hyperform = require('hyperform')
+    const hyperform = require('hyperform')
     hyperform(window)
     Object.defineProperty(window.HTMLElement.prototype, 'dataset', {
       writable: true,

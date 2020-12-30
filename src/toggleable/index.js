@@ -31,11 +31,11 @@ export function useToggleFoundation (props) {
   const toggleRootProps = hasLabel
     ? { disabled }
     : {
-      className,
-      style,
-      disabled,
-      ...rootProps
-    }
+        className,
+        style,
+        disabled,
+        ...rootProps
+      }
 
   return {
     id,

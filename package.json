@@ -77,7 +77,7 @@
     "lodash.merge": "^4.6.2",
     "material-components-web": "^7.0.0",
     "npm-run-all": "^4.1.5",
-    "preact": "10.5.7",
+    "preact": "~10.5.9",
     "preact-render-to-string": "^5.1.12",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",

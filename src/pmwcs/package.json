@@ -73,7 +73,7 @@
     "@pmwcs/tooltip": "^1.0.2",
     "@pmwcs/top-app-bar": "^1.0.2",
     "@pmwcs/typography": "^1.0.2",
-    "material-components-web": "^7.0.0"
+    "material-components-web": "^11.0.0"
   },
   "peerDependencies": {
     "preact": "^10.5.13"

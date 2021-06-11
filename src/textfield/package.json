@@ -33,7 +33,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@material/textfield": "^7.0.0",
+    "@material/textfield": "^11.0.0",
     "@pmwcs/base": "^1.0.2",
     "@pmwcs/floating-label": "^1.0.2",
     "@pmwcs/icon": "^1.0.2",

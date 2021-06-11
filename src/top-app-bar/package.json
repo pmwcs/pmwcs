@@ -33,7 +33,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@material/top-app-bar": "^7.0.0",
+    "@material/top-app-bar": "^11.0.0",
     "@pmwcs/base": "^1.0.2",
     "@pmwcs/icon": "^1.0.2",
     "@pmwcs/icon-button": "^1.0.2",

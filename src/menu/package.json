@@ -33,8 +33,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@material/menu": "^7.0.0",
-    "@material/menu-surface": "^7.0.0",
+    "@material/menu": "^11.0.0",
+    "@material/menu-surface": "^11.0.0",
     "@pmwcs/base": "^1.0.2",
     "@pmwcs/list": "^1.0.2"
   },

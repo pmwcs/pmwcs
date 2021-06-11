@@ -33,7 +33,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@material/typography": "^7.0.0",
+    "@material/typography": "^11.0.0",
     "@pmwcs/base": "^1.0.2",
     "@pmwcs/provider": "^1.0.2"
   },

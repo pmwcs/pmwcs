@@ -76,7 +76,7 @@
     "material-components-web": "^7.0.0"
   },
   "peerDependencies": {
-    "preact": "^10.5.11"
+    "preact": "^10.5.13"
   },
   "publishConfig": {
     "access": "public"

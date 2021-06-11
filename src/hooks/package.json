@@ -21,8 +21,7 @@
   },
   "license": "MIT",
   "author": "",
-  "sideEffects": [
-  ],
+  "sideEffects": [],
   "main": "dist/index.js",
   "module": "next/index.js",
   "types": "index.d.ts",
@@ -30,10 +29,9 @@
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "peerDependencies": {
-    "preact": "^10.5.11"
+    "preact": "^10.5.13"
   },
   "publishConfig": {
     "access": "public"

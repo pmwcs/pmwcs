@@ -38,7 +38,7 @@
     "@pmwcs/typography": "^1.0.2"
   },
   "peerDependencies": {
-    "preact": "^10.5.11"
+    "preact": "^10.5.13"
   },
   "publishConfig": {
     "access": "public"

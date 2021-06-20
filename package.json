@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/pmwcs",
-  "version": "1.0.0-0",
+  "version": "1.1.0",
   "private": true,
   "description": "RMWC is a Preact UI Kit built on Google's official Material Components Web library.",
   "keywords": [],

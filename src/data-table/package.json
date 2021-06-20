@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/data-table",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "PMWCS data-table component",
   "keywords": [
     "pmwcs",
@@ -34,8 +34,8 @@
   },
   "dependencies": {
     "@material/data-table": "^7.0.0",
-    "@pmwcs/base": "^1.0.2",
-    "@pmwcs/icon": "^1.0.2"
+    "@pmwcs/base": "^1.1.0",
+    "@pmwcs/icon": "^1.1.0"
   },
   "peerDependencies": {
     "preact": "^10.5.13"

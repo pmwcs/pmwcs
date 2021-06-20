@@ -1,4 +1,0 @@
-/**
- * @credits material-ui
- * @license MIT
- */

@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/alert",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "PMWCS alert component",
   "keywords": [
     "pmwcs",
@@ -26,19 +26,19 @@
     "*.css"
   ],
   "main": "dist/index.js",
-  "module": "index.js",
+  "module": "next/index.js",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@pmwcs/base": "^1.0.0",
-    "@pmwcs/icon": "^1.0.0",
-    "@pmwcs/icon-button": "^1.0.0",
-    "@pmwcs/typography": "^1.0.0"
+    "@pmwcs/base": "^1.0.2",
+    "@pmwcs/icon": "^1.0.2",
+    "@pmwcs/icon-button": "^1.0.2",
+    "@pmwcs/typography": "^1.0.2"
   },
   "peerDependencies": {
-    "preact": "^10.4.7"
+    "preact": "^10.5.13"
   },
   "publishConfig": {
     "access": "public"

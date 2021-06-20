@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-export var eventsMap = {
+export const eventsMap = {
   blur: 'onBlur',
   cancel: 'onCancel',
   click: 'onClick',

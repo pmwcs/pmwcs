@@ -15,16 +15,16 @@ const ariaProps = ({ ariaId, type, open = false }) =>
     ? {}
     : type === 'region'
       ? {
-        id: `drawer-${ariaId}`,
-        role: 'region',
-        'aria-labelledby': `control-${ariaId}`
-      }
+          id: `drawer-${ariaId}`,
+          role: 'region',
+          'aria-labelledby': `control-${ariaId}`
+        }
       : {
-        id: `control-${ariaId}`,
-        role: 'button',
-        'aria-expanded': open,
-        'aria-controls': `drawer-${ariaId}`
-      }
+          id: `control-${ariaId}`,
+          role: 'button',
+          'aria-expanded': open,
+          'aria-controls': `drawer-${ariaId}`
+        }
 
 /** A Drawer component. */
 export const Drawer = createComponent(function Drawer (props, ref) {

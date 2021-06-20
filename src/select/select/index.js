@@ -308,12 +308,12 @@ export const Select = createComponent(function Select (props, ref) {
 
   const enhancedListeners = enhanced
     ? {
-      onFocus: handleFocus,
-      onBlur: handleBlur,
-      onClick: handleClick,
-      onKeyDown: handleKeydown,
-      tabIndex: 0
-    }
+        onFocus: handleFocus,
+        onBlur: handleBlur,
+        onClick: handleClick,
+        onKeyDown: handleKeydown,
+        tabIndex: 0
+      }
     : {}
 
   const defaultValue =
@@ -325,7 +325,7 @@ export const Select = createComponent(function Select (props, ref) {
       <FloatingLabel float={floatLabel} apiRef={setFloatingLabel} htmlFor={id}>
         {label}
       </FloatingLabel>
-    )
+      )
 
   const renderHelpText = () => {
     const shouldRender = !!helpText
@@ -337,11 +337,13 @@ export const Select = createComponent(function Select (props, ref) {
     const shouldSpread =
       typeof helpText === 'object' && !isValidElement(helpText)
 
-    return helpText && shouldSpread ? (
-      <SelectHelperText {...helpText} />
-    ) : (
-      <SelectHelperText>{helpText}</SelectHelperText>
-    )
+    return helpText && shouldSpread
+      ? (
+        <SelectHelperText {...helpText} />
+        )
+      : (
+        <SelectHelperText>{helpText}</SelectHelperText>
+        )
   }
 
   return (
@@ -379,20 +381,19 @@ export const Select = createComponent(function Select (props, ref) {
           {outlined
             ? (
               <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
-            )
+              )
             : (
               <Fragment>
                 {renderedLabel}
                 <LineRipple active={lineRippleActive} center={lineRippleCenter} />
               </Fragment>
-            )}
+              )}
         </div>
         {!enhanced
           ? (
             <NativeMenu
               {...rest}
               value={value}
-              children={children}
               defaultValue={defaultValue}
               placeholder={placeholder}
               selectOptions={selectOptions}
@@ -400,8 +401,9 @@ export const Select = createComponent(function Select (props, ref) {
               onFocus={handleFocus}
               onBlur={handleBlur}
               onChange={(evt) => handleMenuSelected(evt.currentTarget.selectedIndex)}
-            />
-          )
+            >{children}
+            </NativeMenu>
+            )
           : (
             <EnhancedMenu
               {...rest}
@@ -419,9 +421,9 @@ export const Select = createComponent(function Select (props, ref) {
               value={value}
               selectedIndex={selectedIndex}
               menuApiRef={setMenu}
-              children={children}
-            />
-          )}
+            >{children}
+            </EnhancedMenu>
+            )}
       </Tag>
 
       {renderHelpText()}

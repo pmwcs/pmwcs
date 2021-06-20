@@ -130,13 +130,13 @@ export const DataTableHeadCell = createComponent(
     const onClickProp =
       sort !== undefined
         ? {
-          onClick: (evt) => {
-            onSortChange &&
+            onClick: (evt) => {
+              onSortChange &&
                 onSortChange(sort === null ? 1 : sort === 1 ? -1 : null)
 
-            onClick && onClick(evt)
+              onClick && onClick(evt)
+            }
           }
-        }
         : {}
 
     return (

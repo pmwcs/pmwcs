@@ -4,10 +4,10 @@
 import { createContext } from 'preact'
 
 /** Are we inside of a data table */
-export var DataTableContext = createContext(false)
+export const DataTableContext = createContext(false)
 
 /**
  * Context to allow us to let our rows in the header know to use the right classes.
  * This method is being used to avoid a breaking change from PMWCS to MDC tables and also to inform other components of styles needed.
  */
-export var DataTableHeadContext = createContext(false)
+export const DataTableHeadContext = createContext(false)

@@ -119,14 +119,13 @@ describe('Select', () => {
     mount(<Select rootProps={{ name: 'test' }} />)
   })
 
-  it('can be disabled', async (done) => {
+  it('can be disabled', async () => {
     const el = mount(<Select disabled={false} options={['1', '2', '3']} />)
 
     expect(el.html().includes('mdc-select--disabled')).toBe(false)
     el.setProps({ disabled: true })
 
     expect(el.html().includes('mdc-select--disabled')).toBe(true)
-    done()
   })
 
   it('can have custom classnames', () => {

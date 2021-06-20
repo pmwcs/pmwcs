@@ -81,9 +81,9 @@ export const Avatar = createComponent(function Avatar (
   const initials = getInitialsForName(name)
   const avatarStyle = src
     ? {
-      backgroundImage: `url(${src})`,
-      backgroundSize: contain ? 'contain' : 'cover'
-    }
+        backgroundImage: `url(${src})`,
+        backgroundSize: contain ? 'contain' : 'cover'
+      }
     : {}
 
   return (

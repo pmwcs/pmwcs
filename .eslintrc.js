@@ -26,7 +26,8 @@ module.exports = {
     'jsx-a11y'
   ],
   rules: {
-    'react/jsx-handler-names': 'warn'
+    'react/jsx-handler-names': 'warn',
+    'node/no-path-concat': 'off'
   },
   settings: {
     react: {

@@ -148,22 +148,22 @@ const hexToRgb = (hex) => {
   if (hex.length === 4) {
     hex = hex + hex.slice(1)
   }
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
   return result
     ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
-    }
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      }
     : {
-      r: 0,
-      g: 0,
-      b: 0
-    }
+        r: 0,
+        g: 0,
+        b: 0
+      }
 }
 
 const luminance = (r, g, b) => {
-  var a = [r, g, b].map(function (v) {
+  const a = [r, g, b].map(function (v) {
     v /= 255
     return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4)
   })

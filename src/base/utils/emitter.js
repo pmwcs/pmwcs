@@ -18,7 +18,7 @@ export class EventEmitter {
   trigger (event, ...args) {
     this.events_ = this.events_ || {}
     if (event in this.events_ === false) return
-    for (var i = 0; i < this.events_[event].length; i++) {
+    for (let i = 0; i < this.events_[event].length; i++) {
       this.events_[event][i].apply(
         this,
         args

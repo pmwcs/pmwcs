@@ -17,9 +17,9 @@ export const Badge = createComponent(function Badge (props, ref) {
   const finalStyle =
     inset !== undefined
       ? {
-        ...style,
-        '--pmwc-badge-inset': inset
-      }
+          ...style,
+          '--pmwc-badge-inset': inset
+        }
       : style
 
   return (

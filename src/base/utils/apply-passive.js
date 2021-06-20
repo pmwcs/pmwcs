@@ -24,7 +24,7 @@
  * Stores result from applyPassive to avoid redundant processing to detect
  * passive event listener support.
  */
-var supportsPassive_
+let supportsPassive_
 /**
  * Determine whether the current browser supports passive event listeners, and
  * if so, use them.

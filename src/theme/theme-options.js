@@ -1,4 +1,4 @@
-export var themeOptions = [
+export const themeOptions = [
   'primary',
   'secondary',
   'background',

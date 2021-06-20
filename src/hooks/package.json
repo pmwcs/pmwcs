@@ -1,0 +1,39 @@
+{
+  "name": "@pmwcs/hooks",
+  "version": "1.0.2",
+  "description": "PMWCS hooks",
+  "keywords": [
+    "pmwcs",
+    "preact",
+    "material",
+    "web",
+    "components",
+    "hooks"
+  ],
+  "homepage": "https://github.com/pmwcs/pmwcs#readme",
+  "bugs": {
+    "url": "https://github.com/pmwcs/pmwcs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmwcs/pmwcs.git",
+    "directory": "src/icon"
+  },
+  "license": "MIT",
+  "author": "",
+  "sideEffects": [],
+  "main": "dist/index.js",
+  "module": "next/index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "publish:dist": "npm publish dist --access=public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "preact": "^10.5.13"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

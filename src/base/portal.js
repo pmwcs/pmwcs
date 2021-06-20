@@ -6,9 +6,9 @@ import { windowVar } from './index.js'
 
 const PORTAL_ID = 'pmwcPortal'
 
-export function Portal () {
+export function Portal ({ id = PORTAL_ID }) {
   const el = useRef(windowVar?.document.createElement('div'))
-  return <div ref={el} id={PORTAL_ID} />
+  return <div ref={el} id={id} />
 }
 
 export function PortalChild ({

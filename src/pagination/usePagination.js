@@ -121,27 +121,27 @@ export default function usePagination (props = {}) {
   const items = itemList.map((item) => {
     return typeof item === 'number'
       ? {
-        onClick: (event) => {
-          handleClick(event, item)
-        },
-        type: 'page',
-        page: item,
-        selected: item === page,
-        disabled,
-        'aria-current': item === page ? 'true' : undefined
-      }
+          onClick: (event) => {
+            handleClick(event, item)
+          },
+          type: 'page',
+          page: item,
+          selected: item === page,
+          disabled,
+          'aria-current': item === page ? 'true' : undefined
+        }
       : {
-        onClick: (event) => {
-          handleClick(event, buttonPage(item))
-        },
-        type: item,
-        page: buttonPage(item),
-        selected: false,
-        disabled:
+          onClick: (event) => {
+            handleClick(event, buttonPage(item))
+          },
+          type: item,
+          page: buttonPage(item),
+          selected: false,
+          disabled:
             disabled ||
             (item.indexOf('ellipsis') === -1 &&
               (item === 'next' || item === 'last' ? page >= count : page <= 1))
-      }
+        }
   })
 
   return {

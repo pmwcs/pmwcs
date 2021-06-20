@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/tooltip",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Tooltips display informative text when users hover over, focus on, or tap an element.",
   "keywords": [
     "pmwcs",
@@ -20,17 +20,17 @@
     "directory": "src/tooltip"
   },
   "main": "dist/index.js",
-  "module": "index.js",
+  "module": "next/index.js",
   "types": "index.d.ts",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@pmwcs/base": "^1.0.0"
+    "@pmwcs/base": "^1.0.2"
   },
   "peerDependencies": {
-    "preact": "^10.4.7"
+    "preact": "^10.5.13"
   },
   "publishConfig": {
     "access": "public"

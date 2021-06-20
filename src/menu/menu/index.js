@@ -65,19 +65,21 @@ export const Menu = createComponent(function Menu (props, ref) {
       fullwidth={fullwidth}
       style={style}
     >
-      {needsMenuItemsWrapper ? (
-        <MenuItems {...menuItemsProps}>{children}</MenuItems>
-      ) : (
-        Children.map(children, (child) => {
-          if (isMenuItems(child)) {
-            return cloneElement(child, {
-              ...(isValidElement(child) ? (child.props) : {}),
-              ...menuItemsProps
+      {needsMenuItemsWrapper
+        ? (
+          <MenuItems {...menuItemsProps}>{children}</MenuItems>
+          )
+        : (
+            Children.map(children, (child) => {
+              if (isMenuItems(child)) {
+                return cloneElement(child, {
+                  ...(isValidElement(child) ? (child.props) : {}),
+                  ...menuItemsProps
+                })
+              }
+              return child
             })
-          }
-          return child
-        })
-      )}
+          )}
     </MenuSurface>
   )
 })

@@ -1,6 +1,6 @@
 {
   "name": "@pmwcs/fab",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "PMWCS fab component",
   "keywords": [
     "pmwcs",
@@ -26,7 +26,7 @@
     "*.css"
   ],
   "main": "dist/index.js",
-  "module": "index.js",
+  "module": "next/index.js",
   "types": "index.d.ts",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
@@ -34,12 +34,12 @@
   },
   "dependencies": {
     "@material/fab": "^7.0.0",
-    "@pmwcs/base": "^1.0.0",
-    "@pmwcs/icon": "^1.0.0",
-    "@pmwcs/ripple": "^1.0.0"
+    "@pmwcs/base": "^1.0.2",
+    "@pmwcs/icon": "^1.0.2",
+    "@pmwcs/ripple": "^1.0.2"
   },
   "peerDependencies": {
-    "preact": "^10.4.7"
+    "preact": "^10.5.13"
   },
   "publishConfig": {
     "access": "public"

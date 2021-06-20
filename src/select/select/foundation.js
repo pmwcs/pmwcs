@@ -53,9 +53,9 @@ export const useSelectFoundation = (props) => {
         const items = () =>
           (isNative()
             ? Array.apply(
-                null,
-                nativeControl.current?.options
-              )
+              null,
+              nativeControl.current?.options
+            )
             : menu.current?.items()) || []
 
         const getValue = (el) => {

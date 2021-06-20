@@ -1,14 +1,14 @@
 {
-  "name": "@pmwcs/select",
+  "name": "@pmwcs/hooks",
   "version": "1.0.2",
-  "description": "PMWCS select component",
+  "description": "PMWCS hooks",
   "keywords": [
     "pmwcs",
     "preact",
     "material",
     "web",
     "components",
-    "select"
+    "hooks"
   ],
   "homepage": "https://github.com/pmwcs/pmwcs#readme",
   "bugs": {
@@ -17,14 +17,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pmwcs/pmwcs.git",
-    "directory": "src/select"
+    "directory": "src/icon"
   },
   "license": "MIT",
   "author": "",
-  "sideEffects": [
-    "./styles.js",
-    "*.css"
-  ],
+  "sideEffects": [],
   "main": "dist/index.js",
   "module": "next/index.js",
   "types": "index.d.ts",
@@ -32,17 +29,7 @@
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "@material/select": "^7.0.0",
-    "@pmwcs/base": "^1.0.2",
-    "@pmwcs/floating-label": "^1.0.2",
-    "@pmwcs/icon": "^1.0.2",
-    "@pmwcs/line-ripple": "^1.0.2",
-    "@pmwcs/list": "^1.0.2",
-    "@pmwcs/menu": "^1.0.2",
-    "@pmwcs/notched-outline": "^1.0.2",
-    "@pmwcs/ripple": "^1.0.2"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "preact": "^10.5.13"
   },

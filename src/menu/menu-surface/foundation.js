@@ -298,8 +298,8 @@ export const useMenuSurfaceFoundation = (
     if (open) {
       const focusableElements = rootEl.ref
         ? rootEl.ref.querySelectorAll(
-            MDCMenuSurfaceFoundation.strings.FOCUSABLE_ELEMENTS
-          )
+          MDCMenuSurfaceFoundation.strings.FOCUSABLE_ELEMENTS
+        )
         : []
       firstFocusableElementRef.current =
         focusableElements.length > 0 ? focusableElements[0] : null
